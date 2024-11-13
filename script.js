@@ -1,6 +1,10 @@
 // Preloader
 window.addEventListener('load', function() {
-    document.getElementById('preloader').style.display = 'none';
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+        preloader.style.display = 'none';
+    }, 500);
 });
 
 // Fade-in effect
@@ -37,8 +41,11 @@ const propertyModal = document.getElementById('propertyModal');
 const propertyTitle = document.getElementById('propertyTitle');
 const propertySlider = document.getElementById('propertySlider');
 const propertyDescription = document.getElementById('propertyDescription');
+const propertyDetails = document.getElementById('propertyDetails');
 const propertyContact = document.getElementById('propertyContact');
 const closePropertyModal = document.getElementById('closePropertyModal');
+const prevSlide = document.getElementById('prevSlide');
+const nextSlide = document.getElementById('nextSlide');
 
 const properties = [
     {
@@ -50,6 +57,12 @@ const properties = [
             "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
             "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
         ],
+        details: {
+            bedrooms: 5,
+            bathrooms: 6,
+            area: "500 m²",
+            parking: 3
+        },
         whatsapp: "593987167782"
     },
     {
@@ -61,6 +74,12 @@ const properties = [
             "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
             "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80"
         ],
+        details: {
+            bedrooms: 3,
+            bathrooms: 2,
+            area: "150 m²",
+            parking: 1
+        },
         whatsapp: "593987167782"
     },
     {
@@ -72,9 +91,17 @@ const properties = [
             "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
             "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80"
         ],
+        details: {
+            bedrooms: 4,
+            bathrooms: 3,
+            area: "300 m²",
+            parking: 2
+        },
         whatsapp: "593987167782"
     }
 ];
+
+let currentPropertyIndex = 0;
 
 document.querySelectorAll('.property-details').forEach(button => {
     button.addEventListener('click', function() {
@@ -84,9 +111,17 @@ document.querySelectorAll('.property-details').forEach(button => {
         if (property) {
             propertyTitle.textContent = property.title;
             propertyDescription.textContent = property.description;
-            propertySlider.innerHTML = property.images.map(img => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover mb-4">`).join('');
+            propertySlider.innerHTML = property.images.map(img => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`).join('');
+            propertyDetails.innerHTML = `
+                <div><strong>Habitaciones:</strong> ${property.details.bedrooms}</div>
+                <div><strong>Baños:</strong> ${property.details.bathrooms}</div>
+                <div><strong>Área:</strong> ${property.details.area}</div>
+                <div><strong>Estacionamientos:</strong> ${property.details.parking}</div>
+            `;
             propertyContact.href = `https://wa.me/${property.whatsapp}?text=Hola, estoy interesado en la propiedad: ${property.title}`;
             propertyModal.classList.remove('hidden');
+            currentPropertyIndex = 0;
+            updateSlider();
         }
     });
 });
@@ -95,10 +130,105 @@ closePropertyModal.addEventListener('click', () => {
     propertyModal.classList.add('hidden');
 });
 
-// Close modal if clicking outside
 propertyModal.addEventListener('click', (e) => {
     if (e.target === propertyModal) {
         propertyModal.classList.add('hidden');
+    }
+});
+
+function updateSlider() {
+    const images = propertySlider.querySelectorAll('img');
+    images.forEach((img, index) => {
+        img.style.display = index === currentPropertyIndex ? 'block' : 'none';
+    });
+}
+
+prevSlide.addEventListener('click', () => {
+    const images = propertySlider.querySelectorAll('img');
+    currentPropertyIndex = (currentPropertyIndex - 1 + images.length) % images.length;
+    updateSlider();
+});
+
+nextSlide.addEventListener('click', () => {
+    const images = propertySlider.querySelectorAll('img');
+    currentPropertyIndex = (currentPropertyIndex + 1) % images.length;
+    updateSlider();
+});
+
+// Investment Opportunities Modal
+const investmentModal = document.getElementById('investmentModal');
+const investmentTitle = document.getElementById('investmentTitle');
+const investmentContent = document.getElementById('investmentContent');
+const closeInvestmentModal = document.getElementById('closeInvestmentModal');
+
+const investments = [
+    {
+        id: 1,
+        title: "Invertir en Samborondón",
+        content: `
+            <p class="mb-4">Samborondón es una de las zonas más exclusivas y de mayor crecimiento en Ecuador. Invertir aquí ofrece excelentes oportunidades de rentabilidad a largo plazo.</p>
+            <h3 class="text-xl font-bold mb-2">Ventajas de invertir en Samborondón:</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li>Zona de alto prestigio y demanda constante</li>
+                <li>Infraestructura moderna y en constante desarrollo</li>
+                <li>Excelentes colegios y universidades en la zona</li>
+                <li>Cercanía a centros comerciales y áreas de entretenimiento</li>
+            </ul>
+            <p>Contáctenos para conocer las mejores oportunidades de inversión en Samborondón.</p>
+        `
+    },
+    {
+        id: 2,
+        title: "Invertir en Estados Unidos",
+        content: `
+            <p class="mb-4">El mercado inmobiliario de Estados Unidos ofrece estabilidad y potencial de crecimiento para inversionistas internacionales.</p>
+            <h3 class="text-xl font-bold mb-2">Beneficios de invertir en Estados Unidos:</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li>Mercado inmobiliario estable y regulado</li>
+                <li>Oportunidades en diversas ciudades y estados</li>
+                <li>Posibilidad de obtener visas de inversionista</li>
+                <li>Potencial de apreciación a largo plazo</li>
+            </ul>
+            <p>Descubra cómo podemos ayudarle a invertir en el mercado estadounidense.</p>
+        `
+    },
+    {
+        id: 3,
+        title: "Invertir en Panamá",
+        content: `
+            <p class="mb-4">Panamá se ha convertido en un hub de inversiones inmobiliarias en Latinoamérica, ofreciendo un mercado dinámico y en crecimiento.</p>
+            <h3 class="text-xl font-bold mb-2">Razones para invertir en Panamá:</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li>Economía dolarizada y estable</li>
+                <li>Incentivos fiscales para inversionistas extranjeros</li>
+                <li>Ubicación estratégica y excelente conectividad</li>
+                <li>Mercado de alquileres activo para propiedades de lujo</li>
+            </ul>
+            <p>Explore las oportunidades que Panamá tiene para ofrecer a inversionistas como usted.</p>
+        `
+    }
+];
+
+document.querySelectorAll('.investment-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const investmentId = parseInt(this.getAttribute('data-investment-id'));
+        const investment = investments.find(i => i.id === investmentId);
+
+        if (investment) {
+            investmentTitle.textContent = investment.title;
+            investmentContent.innerHTML = investment.content;
+            investmentModal.classList.remove('hidden');
+        }
+    });
+});
+
+closeInvestmentModal.addEventListener('click', () => {
+    investmentModal.classList.add('hidden');
+});
+
+investmentModal.addEventListener('click', (e) => {
+    if (e.target === investmentModal) {
+        investmentModal.classList.add('hidden');
     }
 });
 
