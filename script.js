@@ -393,34 +393,45 @@ const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 
-chatbotButton.addEventListener('click', () => {
-    chatbotModal.classList.remove('hidden');
-});
+// Verificar si los elementos existen antes de agregar event listeners
+if (chatbotButton && chatbotModal && closeChatbotModal) {
+    chatbotButton.addEventListener('click', () => {
+        console.log('Chatbot button clicked'); // Para depuración
+        chatbotModal.classList.remove('hidden');
+        chatbotModal.style.display = 'block'; // Asegurarse de que el modal sea visible
+    });
 
-closeChatbotModal.addEventListener('click', () => {
-    chatbotModal.classList.add('hidden');
-});
+    closeChatbotModal.addEventListener('click', () => {
+        console.log('Close chatbot button clicked'); // Para depuración
+        chatbotModal.classList.add('hidden');
+        chatbotModal.style.display = 'none'; // Asegurarse de que el modal esté oculto
+    });
+}
 
-chatForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const message = chatInput.value.trim();
-    if (message) {
-        addMessage('user', message);
-        chatInput.value = '';
-        // Simulate ARIA's response (replace with actual AI integration later)
-        setTimeout(() => {
-            addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
-        }, 1000);
-    }
-});
+if (chatForm && chatInput) {
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage('user', message);
+            chatInput.value = '';
+            // Simulate ARIA's response (replace with actual AI integration later)
+            setTimeout(() => {
+                addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
+            }, 1000);
+        }
+    });
+}
 
 function addMessage(sender, text) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
-    messageElement.style.maxWidth = '80%';
-    messageElement.textContent = text;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    if (chatMessages) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
+        messageElement.style.maxWidth = '80%';
+        messageElement.textContent = text;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 }
 
 // FAQ Accordion functionality
