@@ -1,12 +1,11 @@
 // Preloader
-window.addEventListener('load', () => {
+window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     preloader.style.opacity = '0';
     setTimeout(() => {
         preloader.style.display = 'none';
     }, 500);
 });
-
 
 // Fade-in effect
 const observer = new IntersectionObserver((entries) => {
@@ -97,6 +96,40 @@ const properties = [
             bathrooms: 3,
             area: "300 m²",
             parking: 2
+        },
+        whatsapp: "593987167782"
+    },
+    {
+        id: 4,
+        title: "Casa de Campo en Cuenca",
+        description: "Hermosa casa de campo con amplios jardines y vistas a las montañas. Ideal para quienes buscan tranquilidad y conexión con la naturaleza.",
+        images: [
+            "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=867&q=80",
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+        ],
+        details: {
+            bedrooms: 4,
+            bathrooms: 3,
+            area: "400 m²",
+            parking: 2
+        },
+        whatsapp: "593987167782"
+    },
+    {
+        id: 5,
+        title: "Apartamento Moderno en Quito",
+        description: "Apartamento de diseño contemporáneo en el corazón de Quito. Perfecto para profesionales jóvenes o parejas que buscan comodidad y estilo.",
+        images: [
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            "https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+            "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+        ],
+        details: {
+            bedrooms: 2,
+            bathrooms: 2,
+            area: "100 m²",
+            parking: 1
         },
         whatsapp: "593987167782"
     }
@@ -394,15 +427,18 @@ const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 
+// Verificar si los elementos existen antes de agregar event listeners
 if (chatbotButton && chatbotModal && closeChatbotModal) {
-    document.getElementById('chatbotButton').addEventListener('click', () => {
+    chatbotButton.addEventListener('click', () => {
+        console.log('Chatbot button clicked'); // Para depuración
         chatbotModal.classList.remove('hidden');
-        chatbotModal.style.display = 'block';
+        chatbotModal.style.display = 'block'; // Asegurarse de que el modal sea visible
     });
 
     closeChatbotModal.addEventListener('click', () => {
+        console.log('Close chatbot button clicked'); // Para depuración
         chatbotModal.classList.add('hidden');
-        chatbotModal.style.display = 'none';
+        chatbotModal.style.display = 'none'; // Asegurarse de que el modal esté oculto
     });
 }
 
@@ -446,97 +482,46 @@ faqItems.forEach(item => {
         icon.classList.toggle('fa-chevron-up');
     });
 });
- 
-// YouTube Videos
-const apiKey = 'YOUR_YOUTUBE_API_KEY';
-const channelId = 'YOUR_CHANNEL_ID';
-const maxResults = 10;
 
-fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`)
-    .then(response => response.json())
-    .then(data => {
-        const youtubeSlider = document.getElementById('youtubeSlider');
-        data.items.forEach(item => {
-            if (item.id.kind === 'youtube#video') {
-                const videoCard = createVideoCard(item);
-                youtubeSlider.appendChild(videoCard);
-            }
-        });
-    })
-    .catch(error => console.error('Error fetching YouTube videos:', error));
+// YouTube Videos Section
+const youtubeSlider = document.getElementById('youtubeSlider');
+const youtubeVideos = [
+    { id: 'VIDEO_ID_1', title: 'Título del Video 1' },
+    { id: 'VIDEO_ID_2', title: 'Título del Video 2' },
+    { id: 'VIDEO_ID_3', title: 'Título del Video 3' }
+];
 
-function createVideoCard(video) {
-    const card = document.createElement('div');
-    card.className = 'flex-shrink-0 w-80 mr-4';
-    card.innerHTML = `
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-            <img src="${video.snippet.thumbnails.medium.url}" alt="${video.snippet.title}" class="w-full h-48 object-cover">
-            <div class="p-4">
-                <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${video.snippet.title}</h3>
-                <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank" class="text-primary hover:underline">Ver Video</a>
+youtubeVideos.forEach(video => {
+    const videoElement = document.createElement('div');
+    videoElement.className = 'flex-shrink-0 w-80';
+    videoElement.innerHTML = `
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/${video.id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="mt-2 text-center">${video.title}</p>
+    `;
+    youtubeSlider.appendChild(videoElement);
+});
+
+// Google Reviews Section
+const reviewsSlider = document.getElementById('reviewsSlider');
+const googleReviews = [
+    { author: 'Juan Pérez', rating: 5, text: 'Excelente servicio, muy profesionales.' },
+    { author: 'María González', rating: 4, text: 'Buena atención, recomendado.' },
+    { author: 'Carlos Rodríguez', rating: 5, text: 'La mejor agencia inmobiliaria de la ciudad.' }
+];
+
+googleReviews.forEach(review => {
+    const reviewElement = document.createElement('div');
+    reviewElement.className = 'flex-shrink-0 w-64 bg-white p-4 rounded-lg shadow-md';
+    reviewElement.innerHTML = `
+        <div class="flex items-center mb-2">
+            <span class="text-xl font-bold mr-2">${review.author}</span>
+            <div class="text-yellow-400">
+                ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
             </div>
         </div>
+        <p class="text-gray-600">${review.text}</p>
     `;
-    return card;
-}
-
-// YouTube Slider Navigation
-document.getElementById('prevYoutubeVideo').addEventListener('click', () => {
-    document.getElementById('youtubeSlider').scrollBy({ left: -320, behavior: 'smooth' });
-});
-
-document.getElementById('nextYoutubeVideo').addEventListener('click', () => {
-    document.getElementById('youtubeSlider').scrollBy({ left: 320, behavior: 'smooth' });
-});
-
-// PWA installation prompt
-let deferredPrompt;
-const addToHomeScreenButton = document.getElementById('addToHomeScreen');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    addToHomeScreenButton.style.display = 'block';
-});
-
-addToHomeScreenButton.addEventListener('click', (e) => {
-    addToHomeScreenButton.style.display = 'none';
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-        } else {
-            console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null;
-    });
-});
-
-// Check if the app is installed
-window.addEventListener('appinstalled', (evt) => {
-    console.log('App was installed');
-});
-
-// Offline functionality
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
-                console.log('Service Worker registered with scope:', registration.scope);
-            })
-            .catch(error => {
-                console.log('Service Worker registration failed:', error);
-            });
-    });
-}
-
-// Offline message
-window.addEventListener('online', () => {
-    document.body.classList.remove('offline');
-});
-
-window.addEventListener('offline', () => {
-    document.body.classList.add('offline');
+    reviewsSlider.appendChild(reviewElement);
 });
 
 console.log('Script loaded successfully!');
