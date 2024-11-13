@@ -192,32 +192,32 @@ document.addEventListener('DOMContentLoaded', function() {
             featuredPropertiesContainer.appendChild(propertyCard);
         });
 
-        // Agregar event listeners a los botones de detalles
+        // Agregar event listeners a los botones de detalles de propiedad
         document.querySelectorAll('.property-details').forEach(button => {
-            button.addEventListener('click', function () {
+            button.addEventListener('click', function() {
                 const propertyId = parseInt(this.getAttribute('data-property-id'));
                 const property = properties.find(p => p.id === propertyId);
 
                 if (property) {
                     propertyTitle.textContent = property.title;
                     propertyDescription.textContent = property.description;
-                    propertySlider.innerHTML = property.images.map(img => `<img src="${img}" class="w-full h-64 object-cover">`).join('');
-                    propertyDetails.innerHTML = `
-                        <div><strong>Habitaciones:</strong> ${property.details.bedrooms}</div>
-                        <div><strong>Baños:</strong> ${property.details.bathrooms}</div>
-                        <div><strong>Área:</strong> ${property.details.area}</div>
-                        <div><strong>Parqueo:</strong> ${property.details.parking}</div>
-                    `;
-
+                    propertySlider.innerHTML = property.images.map(img => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`).join('');
+                    propertyDetails.innerHTML = Object.entries(property.details).map(([key, value]) => `
+                        <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+                    `).join('');
+                    
+                    // Actualizar el enlace de WhatsApp con el mensaje predefinido
                     const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
                     propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`;
+                    
                     propertyModal.classList.remove('hidden');
-
                     currentPropertyIndex = 0;
                     updateSlider();
                 }
             });
         });
+    } else {
+        console.error('Featured properties container not found');
     }
 
     if (closePropertyModal) {
@@ -226,15 +226,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (prevSlide && nextSlide) {
-        prevSlide.addEventListener('click', () => {
-            currentPropertyIndex = (currentPropertyIndex - 1 + properties[0].images.length) % properties[0].images.length;
-            updateSlider();
-        });
-
-        nextSlide.addEventListener('click', () => {
-            currentPropertyIndex = (currentPropertyIndex + 1) % properties[0].images.length;
-            updateSlider();
+    if (propertyModal) {
+        propertyModal.addEventListener('click', (e) => {
+            if (e.target === propertyModal) {
+                propertyModal.classList.add('hidden');
+            }
         });
     }
 
@@ -244,7 +240,20 @@ document.addEventListener('DOMContentLoaded', function() {
             img.style.display = index === currentPropertyIndex ? 'block' : 'none';
         });
     }
-});
+
+    if (prevSlide && nextSlide) {
+        prevSlide.addEventListener('click', () => {
+            const images = propertySlider.querySelectorAll('img');
+            currentPropertyIndex = (currentPropertyIndex - 1 + images.length) % images.length;
+            updateSlider();
+        });
+
+        nextSlide.addEventListener('click', () => {
+            const images = propertySlider.querySelectorAll('img');
+            currentPropertyIndex = (currentPropertyIndex + 1) % images.length;
+            updateSlider();
+        });
+    }
 
     // Investment Opportunities Modal
     const investmentModal = document.getElementById('investmentModal');
