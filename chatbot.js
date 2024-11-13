@@ -1,50 +1,57 @@
-const chatMessages = document.getElementById('chatMessages');
-const chatForm = document.getElementById('chatForm');
-const chatInput = document.getElementById('chatInput');
+// chatbot.js
 
-const botResponses = {
-    'hola': '¡Hola! ¿En qué puedo ayudarte hoy?',
-    'propiedades': 'Tenemos una amplia variedad de propiedades disponibles. ¿Estás buscando algo específico?',
-    'contacto': 'Puedes contactarnos al +593 98 716 7782 o por email a info@jannethaguirre.com',
-    'servicios': 'Ofrecemos servicios de compra, venta y alquiler de propiedades, así como asesoramiento en inversiones inmobiliarias.',
-    'default': 'Lo siento, no entiendo tu pregunta. ¿Podrías reformularla o preguntar algo más específico sobre nuestras propiedades o servicios?'
-};
+document.addEventListener('DOMContentLoaded', (event) => {
+    const chatbotButton = document.getElementById('chatbotButton');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const closeChatbotModal = document.getElementById('closeChatbotModal');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
 
-function addMessage(sender, message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = `mb-2 ${sender === 'user' ? 'text-right' : ''}`;
-    messageElement.innerHTML = `
-        <span class="inline-block bg-${sender === 'user' ? 'primary' : 'gray-200'} text-${sender === 'user' ? 'white' : 'gray-800'} rounded-lg py-2 px-4">
-            ${message}
-        </span>
-    `;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+    // Función para agregar un mensaje al chat
+    function addMessage(message, sender) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('mb-4', sender === 'user' ? 'text-right' : 'text-left');
+        messageElement.innerHTML = `
+            <div class="inline-block p-2 rounded-lg ${sender === 'user' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-800'}">
+                ${message}
+            </div>
+        `;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
-function getBotResponse(message) {
-    const lowercaseMessage = message.toLowerCase();
-    for (const [key, value] of Object.entries(botResponses)) {
-        if (lowercaseMessage.includes(key)) {
-            return value;
+    // Función para obtener respuesta del chatbot
+    async function getChatbotResponse(message) {
+        // Aquí puedes implementar la lógica para obtener una respuesta del chatbot
+        // Por ahora, simplemente devolveremos una respuesta predefinida
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simular delay de red
+        return "Gracias por tu mensaje. Un agente se pondrá en contacto contigo pronto.";
+    }
+
+    // Evento para abrir el modal del chatbot
+    chatbotButton.addEventListener('click', () => {
+        chatbotModal.classList.remove('hidden');
+    });
+
+    // Evento para cerrar el modal del chatbot
+    closeChatbotModal.addEventListener('click', () => {
+        chatbotModal.classList.add('hidden');
+    });
+
+    // Evento para enviar un mensaje
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage(message, 'user');
+            chatInput.value = '';
+
+            const response = await getChatbotResponse(message);
+            addMessage(response, 'bot');
         }
-    }
-    return botResponses.default;
-}
+    });
 
-chatForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const message = chatInput.value.trim();
-    if (message) {
-        addMessage('user', message);
-        chatInput.value = '';
-
-        setTimeout(() => {
-            const botResponse = getBotResponse(message);
-            addMessage('bot', botResponse);
-        }, 500);
-    }
+    // Mensaje inicial del chatbot
+    addMessage("¡Hola! Soy ARIA, tu asistente virtual. ¿En qué puedo ayudarte hoy?", 'bot');
 });
-
-// Initial bot message
-addMessage('bot', '¡Hola! Soy ARIA, tu asistente virtual. ¿En qué puedo ayudarte hoy?');
