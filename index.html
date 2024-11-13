@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Janneth Aguirre Bienes Raíces - Lo mejor en Ecuador y el Mundo</title>
     <meta name="description" content="Janneth Aguirre Bienes Raíces - Especializada en propiedades de lujo en Ecuador y el mundo. Encuentra tu hogar especial con nosotros.">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Janneth Aguirre Bienes Raíces">
-
-    <!-- SEO Meta Tags -->
     <link rel="canonical" href="https://jannethaguirre.com/">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Janneth Aguirre Bienes Raíces">
-    <meta name="keywords" content="bienes raíces, propiedades de lujo, Ecuador, Samborondón, inversión inmobiliaria">
+    <meta name="keywords" content="bienes raíces, propiedades de lujo, Ecuador, Samborondón, inversión inmobiliaria, Janneth Aguirre">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#FF0000">
+    <meta name="msapplication-TileColor" content="#FF0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Janneth Aguirre Bienes Raíces">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -25,6 +29,8 @@
     <meta property="og:title" content="Janneth Aguirre Bienes Raíces - Lo mejor en Ecuador y el Mundo">
     <meta property="og:description" content="Especializada en propiedades de lujo en Ecuador y el mundo. Encuentra tu hogar especial con nosotros.">
     <meta property="og:image" content="https://jannethaguirre.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Janneth Aguirre Bienes Raíces">
+    <meta property="og:locale" content="es_EC">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,6 +38,7 @@
     <meta property="twitter:title" content="Janneth Aguirre Bienes Raíces - Lo mejor en Ecuador y el Mundo">
     <meta property="twitter:description" content="Especializada en propiedades de lujo en Ecuador y el mundo. Encuentra tu hogar especial con nosotros.">
     <meta property="twitter:image" content="https://jannethaguirre.com/images/twitter-image.jpg">
+    <meta name="twitter:creator" content="@jannethaguirre">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -113,11 +120,15 @@
             height: 100%;
             background-color: white;
             z-index: 9999;
+            overflow: hidden;
         }
 
         #preloader img {
             max-width: 80%;
+            max-height: 80vh;
+            width: auto;
             height: auto;
+            object-fit: contain;
         }
 
         @media (min-width: 768px) {
@@ -628,6 +639,50 @@
                 });
             });
         }
+    </script>
+
+    <!-- Structured Data for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Janneth Aguirre Bienes Raíces",
+      "image": "https://jannethaguirre.com/images/logo.png",
+      "url": "https://jannethaguirre.com",
+      "telephone": "+593987167782",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Samborondón",
+        "addressLocality": "Guayaquil",
+        "addressRegion": "Guayas",
+        "postalCode": "XXXXX",
+        "addressCountry": "EC"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -2.1370145984683394,
+        "longitude": -79.88662868524858
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/jannethaguirre",
+        "https://www.instagram.com/janneth_aguirrem/",
+        "https://www.youtube.com/@jannethaguirrebienesraices5728",
+        "https://www.tiktok.com/@jannethaguirre",
+        "https://twitter.com/jannethaguirre"
+      ]
+    }
     </script>
 </body>
 </html>
