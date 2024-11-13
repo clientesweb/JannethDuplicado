@@ -222,16 +222,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
                     `).join('');
                     
-                    // Actualizar el enlace de WhatsApp con el mensaje predefinido
-                    const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
-                    propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`;
-                    
-                    propertyModal.classList.remove('hidden');
-                    currentPropertyIndex = 0;
-                    updateSlider();
-                }
-            });
-        });
+                    // Actualizar el enlace de WhatsApp con el formato correcto
+            const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
+            const whatsappLink = `https://api.whatsapp.com/send/?phone=${property.whatsapp}&text=${whatsappMessage}&type=phone_number&app_absent=0`;
+            
+            // Actualizar el href del botón de WhatsApp
+            propertyContact.href = whatsappLink;
+
+            propertyModal.classList.remove('hidden');
+        }
+    });
+});
     } else {
         console.error('Featured properties container not found');
     }
