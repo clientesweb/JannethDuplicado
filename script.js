@@ -224,10 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Actualizar el enlace de WhatsApp con el formato correcto
             const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
-            const whatsappLink = `https://api.whatsapp.com/send/?phone=${property.whatsapp}&text=${whatsappMessage}&type=phone_number&app_absent=0`;
-            
-            // Actualizar el href del botón de WhatsApp
-            propertyContact.href = whatsappLink;
+const whatsappLink = `https://api.whatsapp.com/send/?phone=${property.whatsapp}&text=${whatsappMessage}&type=phone_number&app_absent=0`;
+console.log("Enlace de WhatsApp generado:", whatsappLink);
+propertyContact.href = whatsappLink;
 
             propertyModal.classList.remove('hidden');
         }
