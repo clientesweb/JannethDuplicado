@@ -170,6 +170,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 focus: "Atención al detalle"
             },
             whatsapp: "593987167782"
+        },
+        {
+            id: 8,
+            title: "Departamentos en Cuenca",
+            description: "Oportunidad única de invertir en un departamento en Cuenca, ideal para Airbnb. Ofrecemos departamentos de 2 y 3 habitaciones amplias y bien iluminadas, con 2 y 3 baños completos, salón-comedor con cocina integrada, y vistas impresionantes a la ciudad. Incluye área de lavado y secado.",
+            images: [
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+            ],
+            details: {
+                bedrooms: "2 y 3",
+                bathrooms: "2 y 3",
+                views: "Vistas impresionantes a la ciudad",
+                amenities: "Seguridad 24/7, Gimnasio y spa, Piscina y área de descanso, Estacionamiento privado"
+            },
+            whatsapp: "593987167782"
         }
     ];
 
@@ -281,7 +297,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Contáctenos para conocer las mejores oportunidades de inversión en Samborondón.</p>
             `
         },
-        // ... (otros objetos de inversiones)
+        {
+            id: 2,
+            title: "Invertir en Estados Unidos",
+            content: `
+                <p class="mb-4">Invertir en el mercado inmobiliario de Estados Unidos ofrece grandes oportunidades para diversificar su portafolio y obtener rendimientos estables.</p>
+                <h3 class="text-xl font-bold mb-2">Beneficios de invertir en Estados Unidos:</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Mercado inmobiliario estable y maduro</li>
+                    <li>Diversidad de opciones de inversión</li>
+                    <li>Potencial de apreciación a largo plazo</li>
+                    <li>Protección legal para inversionistas extranjeros</li>
+                </ul>
+                <p>Nuestro equipo puede guiarlo en el proceso de inversión en Estados Unidos.</p>
+            `
+        },
+        {
+            id: 3,
+            title: "Invertir en Panamá",
+            content: `
+                <p class="mb-4">Panamá se ha convertido en un destino atractivo para inversiones inmobiliarias, ofreciendo un mercado en crecimiento y beneficios fiscales para inversionistas.</p>
+                <h3 class="text-xl font-bold mb-2">Ventajas de invertir en Panamá:</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Economía dolarizada y estable</li>
+                    <li>Incentivos fiscales para inversionistas extranjeros</li>
+                    <li>Ubicación estratégica para negocios internacionales</li>
+                    <li>Creciente demanda de propiedades residenciales y comerciales</li>
+                </ul>
+                <p>Descubra las oportunidades que Panamá tiene para ofrecer con nuestra asesoría especializada.</p>
+            `
+        }
     ];
 
     document.querySelectorAll('.investment-details').forEach(button => {
@@ -573,7 +618,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const googleReviews = [
             { author: 'Juan Pérez', rating: 5, text: 'Excelente servicio, muy profesionales.' },
             { author: 'María González', rating: 4, text: 'Buena atención, recomendado.' },
-            { author: 'Carlos Rodríguez', rating: 5, text: 'La mejor agencia inmobiliaria de la ciudad.' }
+            { author: 'Carlos Rodríguez', rating: 5, text: 'La mejor agencia inmobiliaria de la ciudad.' },
+            { author: 'Ana Torres', rating: 5, text: 'Janneth nos ayudó a encontrar nuestra casa ideal. Muy agradecidos.' },
+            { author: 'Luis Mendoza', rating: 4, text: 'Proceso de compra sencillo y transparente. Buen servicio.' }
         ];
 
         googleReviews.forEach(review => {
@@ -596,3 +643,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Script loaded successfully!');
 });
+
+console.log('JavaScript code executed successfully');
