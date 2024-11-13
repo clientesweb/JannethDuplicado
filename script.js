@@ -79,7 +79,98 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             whatsapp: "593987167782"
         },
-        // ... (otros objetos de propiedades)
+        {
+            id: 2,
+            title: "Terrenos en Venta o Alquiler",
+            description: "Con una ubicación estratégica cerca de nuevo Country Club, Todo Nuevo Samborondon, Zonas industriales, estos terrenos están rodeados de amenidades y servicios que harán que su inversión sea aún más valiosa. Ofrecemos terrenos de diferentes tamaños y formas, con fácil acceso a carreteras y autopistas, en un vecindario tranquilo y seguro.",
+            images: [
+                "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+                "https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+            ],
+            details: {
+                area: "Varía según el lote",
+                location: "Cerca de Country Club",
+                features: "Acceso a carreteras, Vecindario seguro"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 3,
+            title: "Departamentos en Venta - Nuevo Samborondon (Planos)",
+            description: "Hermoso departamento en la exclusiva zona de Nuevo Samborondón. Cuenta con 2 habitaciones, 2 baños modernos, cocina abierta, sala y comedor acogedores. Áreas sociales incluyen piscina, gimnasio y salón de eventos. Seguridad 24/7 con conserjería y vigilancia.",
+            images: [
+                "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                bedrooms: 2,
+                bathrooms: 2,
+                amenities: "Piscina, Gimnasio, Salón de eventos",
+                security: "24/7"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 4,
+            title: "Departamentos en Venta - Isla Mocoli (Planos)",
+            description: "Proyecto exclusivo de departamentos de 3 habitaciones en Isla Mocoli. Ubicados en una de las zonas más prestigiosas y exclusivas de la ciudad. Cada departamento cuenta con 3 habitaciones amplias, 3.5 baños completos, salón-comedor con cocina integrada, y vistas impresionantes.",
+            images: [
+                "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                bedrooms: 3,
+                bathrooms: 3.5,
+                amenities: "Gimnasio, Piscina, Área de descanso",
+                parking: "Privado y de visitas"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 5,
+            title: "Locales Comerciales en Nuevo Samborondon",
+            description: "Oportunidad única de invertir en locales comerciales en Nuevo Samborondon. Ubicación estratégica con alto tráfico peatonal y vehicular. Ofrecemos locales de diferentes tamaños y diseños, con amplias ventanas y fachadas para maximizar la visibilidad.",
+            images: [
+                "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80"
+            ],
+            details: {
+                location: "Nuevo Samborondon",
+                features: "Amplias ventanas, Fácil acceso",
+                visibility: "Alta exposición comercial"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 6,
+            title: "Consultorios Médicos en Nuevo Samborondon",
+            description: "Oportunidad única de invertir en consultorios médicos en Nuevo Samborondon. Ubicación estratégica rodeada de hospitales y clínicas. Ofrecemos espacios amplios y bien iluminados, con equipamiento médico de alta calidad y tecnología avanzada.",
+            images: [
+                "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=853&q=80",
+                "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                location: "Nuevo Samborondon",
+                features: "Equipamiento médico de alta calidad",
+                accessibility: "Fácil acceso para pacientes y personal"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 7,
+            title: "Casas Personalizadas",
+            description: "Hacemos realidad tu sueño de tener una casa perfecta. Nuestro equipo de expertos en construcción y diseño trabaja para crear casas personalizadas que se adaptan a las necesidades y gustos de cada cliente. Ofrecemos diseño personalizado, materiales de alta calidad, y construcción rápida y eficiente.",
+            images: [
+                "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                features: "Diseño personalizado, Materiales de alta calidad",
+                construction: "Rápida y eficiente",
+                focus: "Atención al detalle"
+            },
+            whatsapp: "593987167782"
+        }
     ];
 
     let currentPropertyIndex = 0;
@@ -111,12 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     propertyTitle.textContent = property.title;
                     propertyDescription.textContent = property.description;
                     propertySlider.innerHTML = property.images.map(img => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`).join('');
-                    propertyDetails.innerHTML = `
-                        <div><strong>Habitaciones:</strong> ${property.details.bedrooms}</div>
-                        <div><strong>Baños:</strong> ${property.details.bathrooms}</div>
-                        <div><strong>Área:</strong> ${property.details.area}</div>
-                        <div><strong>Estacionamientos:</strong> ${property.details.parking}</div>
-                    `;
+                    propertyDetails.innerHTML = Object.entries(property.details).map(([key, value]) => `
+                        <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+                    `).join('');
                     propertyContact.href = `https://wa.me/${property.whatsapp}?text=Hola, estoy interesado en la propiedad: ${property.title}`;
                     propertyModal.classList.remove('hidden');
                     currentPropertyIndex = 0;
@@ -225,26 +313,19 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
 
-            try {
-                const response = await fetch('https://formspree.io/f/your_formspree_id', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    alert('Mensaje enviado con éxito. Nos pondremos en contacto contigo pronto.');
-                    contactForm.reset();
-                } else {
-                    throw new Error('Error al enviar el mensaje');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo más tarde.');
-            }
+            // Construir el mensaje para WhatsApp
+            const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0AMensaje: ${message}`;
+            const whatsappUrl = `https://wa.me/593987167782?text=${whatsappMessage}`;
+
+            // Abrir WhatsApp en una nueva ventana
+            window.open(whatsappUrl, '_blank');
+
+            // Opcional: Limpiar el formulario después del envío
+            contactForm.reset();
         });
     } else {
         console.error('Contact form not found');
@@ -460,21 +541,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // YouTube Videos Section
     const youtubeSlider = document.getElementById('youtubeSlider');
     if (youtubeSlider) {
-        const youtubeVideos = [
-            { id: 'VIDEO_ID_1', title: 'Título del Video 1' },
-            { id: 'VIDEO_ID_2', title: 'Título del Video 2' },
-            { id: 'VIDEO_ID_3', title: 'Título del Video 3' }
-        ];
+        const channelId = 'YOUR_YOUTUBE_CHANNEL_ID';
+        const apiKey = 'YOUR_YOUTUBE_API_KEY';
+        const maxResults = 5; // Número de videos a mostrar
 
-        youtubeVideos.forEach(video => {
-            const videoElement = document.createElement('div');
-            videoElement.className = 'flex-shrink-0 w-80';
-            videoElement.innerHTML = `
-                <iframe width="320" height="180" src="https://www.youtube.com/embed/${video.id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p class="mt-2 text-center">${video.title}</p>
-            `;
-            youtubeSlider.appendChild(videoElement);
-        });
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`)
+            .then(response => response.json())
+            .then(data => {
+                data.items.forEach(item => {
+                    const videoElement = document.createElement('div');
+                    videoElement.className = 'flex-shrink-0 w-80';
+                    videoElement.innerHTML = `
+                        <iframe width="320" height="180" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p class="mt-2 text-center">${item.snippet.title}</p>
+                    `;
+                    youtubeSlider.appendChild(videoElement);
+                });
+            })
+            .catch(error => console.error('Error fetching YouTube videos:', error));
     } else {
         console.error('YouTube slider container not found');
     }
