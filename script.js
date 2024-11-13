@@ -79,7 +79,114 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             whatsapp: "593987167782"
         },
-        // ... (other properties)
+        {
+            id: 2,
+            title: "Terrenos en Venta o Alquiler",
+            description: "Con una ubicación estratégica cerca de nuevo Country Club, Todo Nuevo Samborondon, Zonas industriales, estos terrenos están rodeados de amenidades y servicios que harán que su inversión sea aún más valiosa. Ofrecemos terrenos de diferentes tamaños y formas, con fácil acceso a carreteras y autopistas, en un vecindario tranquilo y seguro.",
+            images: [
+                "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+                "https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+            ],
+            details: {
+                area: "Varía según el lote",
+                location: "Cerca de Country Club",
+                features: "Acceso a carreteras, Vecindario seguro"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 3,
+            title: "Departamentos en Venta - Nuevo Samborondon (Planos)",
+            description: "Hermoso departamento en la exclusiva zona de Nuevo Samborondón. Cuenta con 2 habitaciones, 2 baños modernos, cocina abierta, sala y comedor acogedores. Áreas sociales incluyen piscina, gimnasio y salón de eventos. Seguridad 24/7 con conserjería y vigilancia.",
+            images: [
+                "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                bedrooms: 2,
+                bathrooms: 2,
+                amenities: "Piscina, Gimnasio, Salón de eventos",
+                security: "24/7"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 4,
+            title: "Departamentos en Venta - Isla Mocoli (Planos)",
+            description: "Proyecto exclusivo de departamentos de 3 habitaciones en Isla Mocoli. Ubicados en una de las zonas más prestigiosas y exclusivas de la ciudad. Cada departamento cuenta con 3 habitaciones amplias, 3.5 baños completos, salón-comedor con cocina integrada, y vistas impresionantes.",
+            images: [
+                "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                bedrooms: 3,
+                bathrooms: 3.5,
+                amenities: "Gimnasio, Piscina, Área de descanso",
+                parking: "Privado y de visitas"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 5,
+            title: "Locales Comerciales en Nuevo Samborondon",
+            description: "Oportunidad única de invertir en locales comerciales en Nuevo Samborondon. Ubicación estratégica con alto tráfico peatonal y vehicular. Ofrecemos locales de diferentes tamaños y diseños, con amplias ventanas y fachadas para maximizar la visibilidad.",
+            images: [
+                "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80"
+            ],
+            details: {
+                location: "Nuevo Samborondon",
+                features: "Amplias ventanas, Fácil acceso",
+                visibility: "Alta exposición comercial"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 6,
+            title: "Consultorios Médicos en Nuevo Samborondon",
+            description: "Oportunidad única de invertir en consultorios médicos en Nuevo Samborondon. Ubicación estratégica rodeada de hospitales y clínicas. Ofrecemos espacios amplios y bien iluminados, con equipamiento médico de alta calidad y tecnología avanzada.",
+            images: [
+                "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=853&q=80",
+                "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                location: "Nuevo Samborondon",
+                features: "Equipamiento médico de alta calidad",
+                accessibility: "Fácil acceso para pacientes y personal"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 7,
+            title: "Casas Personalizadas",
+            description: "Hacemos realidad tu sueño de tener una casa perfecta. Nuestro equipo de expertos en construcción y diseño trabaja para crear casas personalizadas que se adaptan a las necesidades y gustos de cada cliente. Ofrecemos diseño personalizado, materiales de alta calidad, y construcción rápida y eficiente.",
+            images: [
+                "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            ],
+            details: {
+                features: "Diseño personalizado, Materiales de alta calidad",
+                construction: "Rápida y eficiente",
+                focus: "Atención al detalle"
+            },
+            whatsapp: "593987167782"
+        },
+        {
+            id: 8,
+            title: "Departamentos en Cuenca",
+            description: "Oportunidad única de invertir en un departamento en Cuenca, ideal para Airbnb. Ofrecemos departamentos de 2 y 3 habitaciones amplias y bien iluminadas, con 2 y 3 baños completos, salón-comedor con cocina integrada, y vistas impresionantes a la ciudad. Incluye área de lavado y secado.",
+            images: [
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+            ],
+            details: {
+                bedrooms: "2 y 3",
+                bathrooms: "2 y 3",
+                views: "Vistas impresionantes a la ciudad",
+                amenities: "Seguridad 24/7, Gimnasio y spa, Piscina y área de descanso, Estacionamiento privado"
+            },
+            whatsapp: "593987167782"
+        }
     ];
 
     let currentPropertyIndex = 0;
@@ -190,7 +297,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Contáctenos para conocer las mejores oportunidades de inversión en Samborondón.</p>
             `
         },
-        // ... (other investments)
+        {
+            id: 2,
+            title: "Invertir en Estados Unidos",
+            content: `
+                <p class="mb-4">Invertir en el mercado inmobiliario de Estados Unidos ofrece grandes oportunidades para diversificar su portafolio y obtener rendimientos estables.</p>
+                <h3 class="text-xl font-bold mb-2">Beneficios de invertir en Estados Unidos:</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Mercado inmobiliario estable y maduro</li>
+                    <li>Diversidad de opciones de inversión</li>
+                    <li>Potencial de apreciación a largo plazo</li>
+                    <li>Protección legal para inversionistas extranjeros</li>
+                </ul>
+                <p>Nuestro equipo puede guiarlo en el proceso de inversión en Estados Unidos.</p>
+            `
+        },
+        {
+            id: 3,
+            title: "Invertir en Panamá",
+            content: `
+                <p class="mb-4">Panamá se ha convertido en un destino atractivo para inversiones inmobiliarias, ofreciendo un mercado en crecimiento y beneficios fiscales para inversionistas.</p>
+                <h3 class="text-xl font-bold mb-2">Ventajas de invertir en Panamá:</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Economía dolarizada y estable</li>
+                    <li>Incentivos fiscales para inversionistas extranjeros</li>
+                    <li>Ubicación estratégica para negocios internacionales</li>
+                    <li>Creciente demanda de propiedades residenciales y comerciales</li>
+                </ul>
+                <p>Descubra las oportunidades que Panamá tiene para ofrecer con nuestra asesoría especializada.</p>
+            `
+        }
     ];
 
     document.querySelectorAll('.investment-details').forEach(button => {
@@ -458,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const apiKey = 'AIzaSyBf5wzygVChOBD-3pPb4BR2v5NA4uE9J5c';
         const maxResults = 10; // Número de videos a mostrar
 
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}&type=video`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`)
             .then(response => response.json())
             .then(data => {
                 data.items.forEach(item => {
