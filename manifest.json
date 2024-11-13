@@ -1,9 +1,9 @@
 {
   "name": "Janneth Aguirre Bienes Raíces",
-  "short_name": "JA Bienes Raíces",
+  "short_name": "JABienesRaíces",
   "description": "Encuentra las mejores propiedades en Ecuador y el mundo",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#FF0000",
   "icons": [
@@ -17,5 +17,16 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "categories": [
+    "business",
+    "finance",
+    "lifestyle",
+    "news"
+  ],
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay",
+    "standalone"
   ]
 }
