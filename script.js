@@ -205,7 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     propertyDetails.innerHTML = Object.entries(property.details).map(([key, value]) => `
                         <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
                     `).join('');
-                    propertyContact.href = `https://wa.me/${property.whatsapp}?text=Hola, estoy interesado en la propiedad: ${property.title}`;
+                    const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
+propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`;
                     propertyModal.classList.remove('hidden');
                     currentPropertyIndex = 0;
                     updateSlider();
