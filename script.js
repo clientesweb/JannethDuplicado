@@ -590,9 +590,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // YouTube Videos Section
     const youtubeSlider = document.getElementById('youtubeSlider');
     if (youtubeSlider) {
-        const channelId = 'YOUR_YOUTUBE_CHANNEL_ID';
-        const apiKey = 'YOUR_YOUTUBE_API_KEY';
-        const maxResults = 5; // Número de videos a mostrar
+        const channelId = 'UCiahlQJxCgPY-tEfjvkab8g';
+        const apiKey = 'AIzaSyBf5wzygVChOBD-3pPb4BR2v5NA4uE9J5c';
+        const maxResults = 10; // Número de videos a mostrar
 
         fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`)
             .then(response => response.json())
