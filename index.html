@@ -104,10 +104,13 @@
 </head>
 <body class="font-sans bg-white text-gray-800">
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
-        <img src="images/logo.png" alt="Janneth Aguirre Bienes Raíces Logo" class="w-32 h-32 pulse">
-        <p class="mt-4 text-primary font-semibold">Powered By Duality Domain</p>
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <div class="text-center">
+            <img src="images/logo.png" alt="Janneth Aguirre Bienes Raíces Logo" class="w-32 h-32 mx-auto mb-4 pulse">
+            <p class="mt-4 text-primary font-semibold">Powered By Duality Domain</p>
+        </div>
     </div>
+
 
     <!-- Top Banner -->
     <div class="bg-gradient-primary text-white py-2 px-4 overflow-hidden">
@@ -578,5 +581,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script async src="//www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script>
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((reg) => console.log('Service worker registered.', reg))
+                    .catch((err) => console.log('Service worker registration failed.', err));
+            });
+        }
+    </script>
 </body>
 </html>
