@@ -222,16 +222,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
                     `).join('');
                     
-                    // Actualizar el enlace de WhatsApp con el formato correcto
-            const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
-const whatsappLink = `https://api.whatsapp.com/send/?phone=${property.whatsapp}&text=${whatsappMessage}&type=phone_number&app_absent=0`;
-console.log("Enlace de WhatsApp generado:", whatsappLink);
-propertyContact.href = whatsappLink;
-
-            propertyModal.classList.remove('hidden');
-        }
-    });
-});
+                    // Actualizar el enlace de WhatsApp con el mensaje predefinido
+                    const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
+                    propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`;
+                    
+                    propertyModal.classList.remove('hidden');
+                    currentPropertyIndex = 0;
+                    updateSlider();
+                }
+            });
+        });
     } else {
         console.error('Featured properties container not found');
     }
@@ -514,62 +514,59 @@ propertyContact.href = whatsappLink;
         console.error('Filter properties button not found');
     }
 
-    // Comentado para evitar duplicidad con chatbot.js
-/*
-// Chatbot functionality
-const chatbotButton = document.getElementById('chatbotButton');
-const chatbotModal = document.getElementById('chatbotModal');
-const closeChatbotModal = document.getElementById('closeChatbotModal');
-const chatMessages = document.getElementById('chatMessages');
-const chatForm = document.getElementById('chatForm');
-const chatInput = document.getElementById('chatInput');
+    // Chatbot functionality
+    const chatbotButton = document.getElementById('chatbotButton');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const closeChatbotModal = document.getElementById('closeChatbotModal');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
 
-if (chatbotButton && chatbotModal && closeChatbotModal) {
-    chatbotButton.addEventListener('click', () => {
-        console.log('Chatbot button clicked');
-        chatbotModal.classList.remove('hidden');
-        chatbotModal.style.display = 'block';
-    });
+    if (chatbotButton && chatbotModal && closeChatbotModal) {
+        chatbotButton.addEventListener('click', () => {
+            console.log('Chatbot button clicked');
+            chatbotModal.classList.remove('hidden');
+            chatbotModal.style.display = 'block';
+        });
 
-    closeChatbotModal.addEventListener('click', () => {
-        console.log('Close chatbot button clicked');
-        chatbotModal.classList.add('hidden');
-        chatbotModal.style.display = 'none';
-    });
-} else {
-    console.error('One or more chatbot elements not found');
-}
-
-if (chatForm && chatInput) {
-    chatForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const message = chatInput.value.trim();
-        if (message) {
-            addMessage('user', message);
-            chatInput.value = '';
-            // Simulate ARIA's response
-            setTimeout(() => {
-                addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
-            }, 1000);
-        }
-    });
-} else {
-    console.error('Chat form or input not found');
-}
-
-function addMessage(sender, text) {
-    if (chatMessages) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
-        messageElement.style.maxWidth = '80%';
-        messageElement.textContent = text;
-        chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        closeChatbotModal.addEventListener('click', () => {
+            console.log('Close chatbot button clicked');
+            chatbotModal.classList.add('hidden');
+            chatbotModal.style.display = 'none';
+        });
     } else {
-        console.error('Chat messages container not found');
+        console.error('One or more chatbot elements not found');
     }
-}
-*/
+
+    if (chatForm && chatInput) {
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage('user', message);
+                chatInput.value = '';
+                // Simulate ARIA's response (replace with actual AI integration later)
+                setTimeout(() => {
+                    addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
+                }, 1000);
+            }
+        });
+    } else {
+        console.error('Chat form or input not found');
+    }
+
+    function addMessage(sender, text) {
+        if (chatMessages) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
+            messageElement.style.maxWidth = '80%';
+            messageElement.textContent = text;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        } else {
+            console.error('Chat messages container not found');
+        }
+    }
 
     // FAQ Accordion functionality
     const faqItems = document.querySelectorAll('#faq .bg-white');
