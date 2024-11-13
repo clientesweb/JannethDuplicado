@@ -1,11 +1,12 @@
 // Preloader
-window.addEventListener('load', function() {
+window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     preloader.style.opacity = '0';
     setTimeout(() => {
         preloader.style.display = 'none';
     }, 500);
 });
+
 
 // Fade-in effect
 const observer = new IntersectionObserver((entries) => {
@@ -394,7 +395,7 @@ const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 
 if (chatbotButton && chatbotModal && closeChatbotModal) {
-    chatbotButton.addEventListener('click', () => {
+    document.getElementById('chatbotButton').addEventListener('click', () => {
         chatbotModal.classList.remove('hidden');
         chatbotModal.style.display = 'block';
     });
@@ -444,6 +445,48 @@ faqItems.forEach(item => {
         icon.classList.toggle('fa-chevron-down');
         icon.classList.toggle('fa-chevron-up');
     });
+});
+ 
+// YouTube Videos
+const apiKey = 'YOUR_YOUTUBE_API_KEY';
+const channelId = 'YOUR_CHANNEL_ID';
+const maxResults = 10;
+
+fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`)
+    .then(response => response.json())
+    .then(data => {
+        const youtubeSlider = document.getElementById('youtubeSlider');
+        data.items.forEach(item => {
+            if (item.id.kind === 'youtube#video') {
+                const videoCard = createVideoCard(item);
+                youtubeSlider.appendChild(videoCard);
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching YouTube videos:', error));
+
+function createVideoCard(video) {
+    const card = document.createElement('div');
+    card.className = 'flex-shrink-0 w-80 mr-4';
+    card.innerHTML = `
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+            <img src="${video.snippet.thumbnails.medium.url}" alt="${video.snippet.title}" class="w-full h-48 object-cover">
+            <div class="p-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${video.snippet.title}</h3>
+                <a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank" class="text-primary hover:underline">Ver Video</a>
+            </div>
+        </div>
+    `;
+    return card;
+}
+
+// YouTube Slider Navigation
+document.getElementById('prevYoutubeVideo').addEventListener('click', () => {
+    document.getElementById('youtubeSlider').scrollBy({ left: -320, behavior: 'smooth' });
+});
+
+document.getElementById('nextYoutubeVideo').addEventListener('click', () => {
+    document.getElementById('youtubeSlider').scrollBy({ left: 320, behavior: 'smooth' });
 });
 
 // PWA installation prompt
