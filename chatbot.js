@@ -99,19 +99,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         // Add click event listeners to suggestion buttons
-        function addSuggestionButtons(suggestions) {
-    const suggestionContainer = document.getElementById('suggestionButtons');
-    suggestionContainer.innerHTML = '';
-    suggestions.forEach(suggestion => {
-        const button = document.createElement('button');
-        button.textContent = suggestion;
-        button.addEventListener('click', () => {
-            document.getElementById('chatInput').value = suggestion;
-            document.getElementById('chatForm').dispatchEvent(new Event('submit'));
+        suggestionElement.querySelectorAll('.suggestion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const message = btn.textContent;
+                addMessage(message, 'user');
+                handleUserInput(message);
+            });
         });
-        suggestionContainer.appendChild(button);
-    });
-}
+    }
+
     async function getChatbotResponse(message) {
         const lowerMessage = message.toLowerCase();
         
