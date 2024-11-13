@@ -514,59 +514,62 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Filter properties button not found');
     }
 
-    // Chatbot functionality
-    const chatbotButton = document.getElementById('chatbotButton');
-    const chatbotModal = document.getElementById('chatbotModal');
-    const closeChatbotModal = document.getElementById('closeChatbotModal');
-    const chatMessages = document.getElementById('chatMessages');
-    const chatForm = document.getElementById('chatForm');
-    const chatInput = document.getElementById('chatInput');
+    // Comentado para evitar duplicidad con chatbot.js
+/*
+// Chatbot functionality
+const chatbotButton = document.getElementById('chatbotButton');
+const chatbotModal = document.getElementById('chatbotModal');
+const closeChatbotModal = document.getElementById('closeChatbotModal');
+const chatMessages = document.getElementById('chatMessages');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
 
-    if (chatbotButton && chatbotModal && closeChatbotModal) {
-        chatbotButton.addEventListener('click', () => {
-            console.log('Chatbot button clicked');
-            chatbotModal.classList.remove('hidden');
-            chatbotModal.style.display = 'block';
-        });
+if (chatbotButton && chatbotModal && closeChatbotModal) {
+    chatbotButton.addEventListener('click', () => {
+        console.log('Chatbot button clicked');
+        chatbotModal.classList.remove('hidden');
+        chatbotModal.style.display = 'block';
+    });
 
-        closeChatbotModal.addEventListener('click', () => {
-            console.log('Close chatbot button clicked');
-            chatbotModal.classList.add('hidden');
-            chatbotModal.style.display = 'none';
-        });
-    } else {
-        console.error('One or more chatbot elements not found');
-    }
+    closeChatbotModal.addEventListener('click', () => {
+        console.log('Close chatbot button clicked');
+        chatbotModal.classList.add('hidden');
+        chatbotModal.style.display = 'none';
+    });
+} else {
+    console.error('One or more chatbot elements not found');
+}
 
-    if (chatForm && chatInput) {
-        chatForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const message = chatInput.value.trim();
-            if (message) {
-                addMessage('user', message);
-                chatInput.value = '';
-                // Simulate ARIA's response (replace with actual AI integration later)
-                setTimeout(() => {
-                    addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
-                }, 1000);
-            }
-        });
-    } else {
-        console.error('Chat form or input not found');
-    }
-
-    function addMessage(sender, text) {
-        if (chatMessages) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
-            messageElement.style.maxWidth = '80%';
-            messageElement.textContent = text;
-            chatMessages.appendChild(messageElement);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        } else {
-            console.error('Chat messages container not found');
+if (chatForm && chatInput) {
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage('user', message);
+            chatInput.value = '';
+            // Simulate ARIA's response
+            setTimeout(() => {
+                addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
+            }, 1000);
         }
+    });
+} else {
+    console.error('Chat form or input not found');
+}
+
+function addMessage(sender, text) {
+    if (chatMessages) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
+        messageElement.style.maxWidth = '80%';
+        messageElement.textContent = text;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    } else {
+        console.error('Chat messages container not found');
     }
+}
+*/
 
     // FAQ Accordion functionality
     const faqItems = document.querySelectorAll('#faq .bg-white');
