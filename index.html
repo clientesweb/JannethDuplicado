@@ -103,7 +103,7 @@
     </style>
 </head>
 <body class="font-sans bg-white text-gray-800">
-    <!-- Preloader -->
+
     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
         <div class="text-center">
             <img src="images/logo.png" alt="Janneth Aguirre Bienes Raíces Logo" class="w-32 h-32 mx-auto mb-4 pulse">
@@ -421,6 +421,24 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Client Reviews Section -->
+    <section id="client-reviews" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Lo que dicen nuestros clientes</h2>
+            <div class="relative">
+                <div id="reviewsSlider" class="flex overflow-x-scroll pb-6 hide-scroll-bar">
+                    <!-- Client reviews will be dynamically inserted here -->
+                </div>
+                <button id="prevReview" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextReview" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
         <!-- App Download Section -->
         <section id="descargar" class="py-16">
