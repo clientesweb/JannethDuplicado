@@ -46,9 +46,9 @@ const properties = [
         title: "Lujosa Villa en Samborondón",
         description: "Espectacular villa con vistas panorámicas y acabados de lujo. Esta propiedad cuenta con 5 habitaciones, 6 baños, piscina infinita, y un hermoso jardín.",
         images: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
         ],
         whatsapp: "593987167782"
     },
@@ -57,9 +57,9 @@ const properties = [
         title: "Apartamento de Lujo en Cuenca",
         description: "Moderno apartamento en el corazón del centro histórico. Con 3 habitaciones, 2 baños, y una terraza con vista a la catedral.",
         images: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+            "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80"
         ],
         whatsapp: "593987167782"
     },
@@ -68,9 +68,9 @@ const properties = [
         title: "Penthouse en Guayaquil",
         description: "Espectacular penthouse con vistas al río Guayas. Cuenta con 4 habitaciones, 3 baños, una amplia sala de estar y una terraza privada.",
         images: [
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600",
-            "/placeholder.svg?height=400&width=600"
+            "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80"
         ],
         whatsapp: "593987167782"
     }
@@ -217,6 +217,94 @@ window.addEventListener('scroll', () => {
         if (link.getAttribute('href').slice(1) === current) {
             link.classList.add('text-primary');
         }
+    });
+});
+
+// Property filter functionality
+const filterPropertiesBtn = document.getElementById('filterProperties');
+const propertyCards = document.querySelectorAll('#propiedades .bg-white');
+
+filterPropertiesBtn.addEventListener('click', () => {
+    const filters = prompt('Ingrese filtros (ejemplo: "habitaciones:3,baños:2,precio:200000-500000"):');
+    if (filters) {
+        const filterObj = filters.split(',').reduce((acc, filter) => {
+            const [key, value] = filter.split(':');
+            acc[key.trim()] = value.trim();
+            return acc;
+        }, {});
+
+        propertyCards.forEach(card => {
+            const propertyData = JSON.parse(card.dataset.property);
+            let show = true;
+
+            for (const [key, value] of Object.entries(filterObj)) {
+                if (key === 'precio') {
+                    const [min, max] = value.split('-').map(Number);
+                    if (propertyData.precio < min || propertyData.precio > max) {
+                        show = false;
+                        break;
+                    }
+                } else if (propertyData[key] != value) {
+                    show = false;
+                    break;
+                }
+            }
+
+            card.style.display = show ? 'block' : 'none';
+        });
+    }
+});
+
+// Chatbot functionality
+const chatbotButton = document.getElementById('chatbotButton');
+const chatbotModal = document.getElementById('chatbotModal');
+const closeChatbotModal = document.getElementById('closeChatbotModal');
+const chatMessages = document.getElementById('chatMessages');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+
+chatbotButton.addEventListener('click', () => {
+    chatbotModal.classList.remove('hidden');
+});
+
+closeChatbotModal.addEventListener('click', () => {
+    chatbotModal.classList.add('hidden');
+});
+
+chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = chatInput.value.trim();
+    if (message) {
+        addMessage('user', message);
+        chatInput.value = '';
+        // Simulate ARIA's response (replace with actual AI integration later)
+        setTimeout(() => {
+            addMessage('bot', "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?");
+        }, 1000);
+    }
+});
+
+function addMessage(sender, text) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('mb-2', 'p-2', 'rounded', sender === 'user' ? 'bg-primary' : 'bg-gray-300', sender === 'user' ? 'text-white' : 'text-gray-800', sender === 'user' ? 'ml-auto' : 'mr-auto');
+    messageElement.style.maxWidth = '80%';
+    messageElement.textContent = text;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// FAQ Accordion functionality
+const faqItems = document.querySelectorAll('#faq .bg-white');
+
+faqItems.forEach(item => {
+    const button = item.querySelector('button');
+    const content = item.querySelector('div:last-child');
+    const icon = button.querySelector('i');
+
+    button.addEventListener('click', () => {
+        content.classList.toggle('hidden');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
     });
 });
 
