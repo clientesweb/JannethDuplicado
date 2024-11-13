@@ -393,18 +393,15 @@ const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 
-// Verificar si los elementos existen antes de agregar event listeners
 if (chatbotButton && chatbotModal && closeChatbotModal) {
     chatbotButton.addEventListener('click', () => {
-        console.log('Chatbot button clicked'); // Para depuración
         chatbotModal.classList.remove('hidden');
-        chatbotModal.style.display = 'block'; // Asegurarse de que el modal sea visible
+        chatbotModal.style.display = 'block';
     });
 
     closeChatbotModal.addEventListener('click', () => {
-        console.log('Close chatbot button clicked'); // Para depuración
         chatbotModal.classList.add('hidden');
-        chatbotModal.style.display = 'none'; // Asegurarse de que el modal esté oculto
+        chatbotModal.style.display = 'none';
     });
 }
 
@@ -447,6 +444,56 @@ faqItems.forEach(item => {
         icon.classList.toggle('fa-chevron-down');
         icon.classList.toggle('fa-chevron-up');
     });
+});
+
+// PWA installation prompt
+let deferredPrompt;
+const addToHomeScreenButton = document.getElementById('addToHomeScreen');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    addToHomeScreenButton.style.display = 'block';
+});
+
+addToHomeScreenButton.addEventListener('click', (e) => {
+    addToHomeScreenButton.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+        } else {
+            console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+    });
+});
+
+// Check if the app is installed
+window.addEventListener('appinstalled', (evt) => {
+    console.log('App was installed');
+});
+
+// Offline functionality
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+
+// Offline message
+window.addEventListener('online', () => {
+    document.body.classList.remove('offline');
+});
+
+window.addEventListener('offline', () => {
+    document.body.classList.add('offline');
 });
 
 console.log('Script loaded successfully!');
