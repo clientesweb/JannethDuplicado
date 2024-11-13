@@ -214,24 +214,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const propertyId = parseInt(this.getAttribute('data-property-id'));
                 const property = properties.find(p => p.id === propertyId);
 
-                if (property) {
-                    propertyTitle.textContent = property.title;
-                    propertyDescription.textContent = property.description;
-                    propertySlider.innerHTML = property.images.map(img => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`).join('');
-                    propertyDetails.innerHTML = Object.entries(property.details).map(([key, value]) => `
-                        <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
-                    `).join('');
-                    
-                    // Actualizar el enlace de WhatsApp con el mensaje predefinido
-                    const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
-                    propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`;
-                    
-                    propertyModal.classList.remove('hidden');
-                    currentPropertyIndex = 0;
-                    updateSlider();
-                }
-            });
-        });
+                    if (property) {
+        propertyTitle.textContent = property.title;
+        propertyDescription.textContent = property.description;
+        propertySlider.innerHTML = property.images.map(img => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`).join('');
+        propertyDetails.innerHTML = Object.entries(property.details).map(([key, value]) => `
+            <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+        `).join('');
+        
+        // Actualizar el enlace de WhatsApp con el mensaje predefinido
+        const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`);
+        propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`;
+        
+        propertyModal.classList.remove('hidden');
+        currentPropertyIndex = 0;
+        updateSlider();
+    }
+});
     } else {
         console.error('Featured properties container not found');
     }
