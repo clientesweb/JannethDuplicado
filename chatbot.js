@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const propertyInfo = {
         samborondon: {
-            title: "Lujosa Villa en Samborondón",
-            description: "Espectacular villa con vistas panorámicas y acabados de lujo. 5 habitaciones, 6 baños, piscina infinita, y hermoso jardín.",
-            price: "$1,500,000",
-            area: "500 m²"
+            title: "Terrenos en Venta o Alquiler en Samborondón",
+            description: "Con una ubicación estratégica cerca de nuevo Country Club, Todo Nuevo Samborondon, Zonas industriales. Ofrecemos terrenos de diferentes tamaños y formas, con fácil acceso a carreteras y autopistas, en un vecindario tranquilo y seguro.",
+            price: "A consultar",
+            area: "Varía según el lote"
         },
         cuenca: {
             title: "Departamentos en Cuenca",
@@ -50,13 +50,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
             description: "Hacemos realidad tu sueño de tener una casa perfecta. Diseño personalizado y materiales de alta calidad.",
             price: "A consultar",
             area: "Personalizable"
+        },
+        casole: {
+            title: "Casole - Una Experiencia de Vida Única",
+            description: "Proyecto que redefine la vida moderna con inspiración mediterránea, ofreciendo un estilo sofisticado y cercano a la naturaleza. Combina diseño innovador, comunidad, y proximidad estratégica para elevar tu calidad de vida.",
+            price: "A consultar",
+            area: "Varía según la unidad"
         }
     };
 
     const investmentInfo = {
         samborondon: "Samborondón es una zona exclusiva con excelente potencial de rentabilidad a largo plazo. Con un crecimiento constante y una demanda siempre en aumento, es ideal para inversiones inmobiliarias.",
-        eeuu: "Invertir en Estados Unidos ofrece un mercado inmobiliario estable y diverso. Con opciones en múltiples ciudades y estados, puedes diversificar tu portafolio y aprovechar la estabilidad económica del país.",
-        panama: "Panamá ofrece beneficios fiscales y una economía dolarizada para inversionistas. Su ubicación estratégica y el creciente mercado inmobiliario lo convierten en un destino atractivo para inversiones."
+        eeuu: "Tenemos opciones para inversión o para residencia en : Miami, Orlando y otras ciudades. Para mas información da click en Janneth Aguirre BIENES RAICES, https://wa.link/ez23er",
+        panama: "Panamá ofrece beneficios fiscales y una economía dolarizada para inversionistas. Su ubicación estratégica y el creciente mercado inmobiliario lo convierten en un destino atractivo para inversiones.",
+        ecuador: `Ecuador, con su diversidad geográfica y economía estable, se ha convertido en un destino ideal para la inversión en bienes raíces. Razones principales:
+        1. Crecimiento Económico Sostenible
+        2. Diversidad Geográfica
+        3. Costos Competitivos
+        4. Incentivos Gubernamentales
+        5. Turismo en Auge
+        6. Estabilidad Jurídica
+        7. Potencial de Valorización
+        Invertir en Ecuador combina estabilidad, rentabilidad y un entorno único, brindando tanto seguridad financiera como acceso a su riqueza natural y cultural.`
     };
 
     const services = [
@@ -125,24 +140,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
             conversationContext.propertyInterest = 'cuenca';
             const property = propertyInfo.cuenca;
             return `En Cuenca ofrecemos ${property.title}. ${property.description} Los precios comienzan en ${property.price} y las áreas van desde ${property.area}. ¿Quieres saber más sobre las opciones de inversión en Cuenca?`;
+        } else if (lowerMessage.includes('casole')) {
+            conversationContext.propertyInterest = 'casole';
+            const property = propertyInfo.casole;
+            return `${property.title}: ${property.description} ¿Te gustaría conocer más detalles sobre este proyecto único?`;
         } else if (lowerMessage.includes('inversion') || lowerMessage.includes('invertir')) {
             conversationContext.lastTopic = 'investment';
             return "Ofrecemos oportunidades de inversión en Ecuador, Estados Unidos y Panamá. ¿En qué país te interesaría invertir?";
         } else if (lowerMessage.includes('estados unidos') || lowerMessage.includes('eeuu')) {
             conversationContext.investmentInterest = 'eeuu';
-            return `${investmentInfo.eeuu} ¿Te gustaría conocer más sobre alguna ciudad en particular o sobre el proceso de inversión en Estados Unidos?`;
+            return investmentInfo.eeuu;
         } else if (lowerMessage.includes('panama')) {
             conversationContext.investmentInterest = 'panama';
             return `${investmentInfo.panama} ¿Quieres que te explique más sobre los beneficios fiscales o las áreas de mayor crecimiento en Panamá?`;
+        } else if (lowerMessage.includes('ecuador')) {
+            conversationContext.investmentInterest = 'ecuador';
+            return investmentInfo.ecuador;
         } else if (lowerMessage.includes('servicio')) {
             conversationContext.lastTopic = 'service';
             return `Ofrecemos varios servicios, incluyendo: ${services.join(', ')}. ¿En cuál estás interesado? Puedo darte más detalles sobre cualquiera de ellos.`;
-        } else if (lowerMessage.includes('contacto') || lowerMessage.includes('agente')) {
-            return "Para hablar directamente con un agente, puedes usar el botón de WhatsApp flotante en la esquina inferior derecha de la página. Estaremos encantados de atenderte personalmente. ¿Prefieres que te contactemos por WhatsApp o por correo electrónico?";
+        } else if (lowerMessage.includes('contacto') || lowerMessage.includes('agente') || lowerMessage.includes('asesora')) {
+            return "Para hablar directamente con una asesora, puedes hacer clic aquí: https://wa.link/ez23er. Estaremos encantados de atenderte personalmente.";
         } else if (lowerMessage.includes('gracias') || lowerMessage.includes('adios')) {
             return "Ha sido un placer ayudarte. Si tienes más preguntas en el futuro, no dudes en volver a contactarnos. ¡Que tengas un excelente día!";
         } else {
-            return "Lo siento, no tengo una respuesta específica para esa pregunta. ¿Te gustaría que te conecte con un agente a través de WhatsApp para obtener más información? O puedo contarte sobre nuestras propiedades, inversiones o servicios.";
+            return "Lo siento, no tengo una respuesta específica para esa pregunta. ¿Te gustaría que te conecte con una asesora a través de WhatsApp para obtener más información? O puedo contarte sobre nuestras propiedades, inversiones o servicios.";
         }
     }
 
@@ -153,13 +175,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Sugerir opciones después de la respuesta
         let suggestions = [];
         if (conversationContext.lastTopic === 'property') {
-            suggestions = ['Samborondón', 'Cuenca', 'Nuevo Samborondón', 'Isla Mocoli'];
+            suggestions = ['Samborondón', 'Cuenca', 'Nuevo Samborondón', 'Isla Mocoli', 'Casole'];
         } else if (conversationContext.lastTopic === 'investment') {
             suggestions = ['Ecuador', 'Estados Unidos', 'Panamá'];
         } else if (conversationContext.lastTopic === 'service') {
             suggestions = ['Asesoría inmobiliaria', 'Gestión de propiedades', 'Inversiones internacionales'];
         } else {
-            suggestions = ['Propiedades', 'Inversiones', 'Servicios', 'Contactar agente'];
+            suggestions = ['Propiedades', 'Inversiones', 'Servicios', 'Contactar asesora'];
         }
 
         setTimeout(() => {
@@ -190,7 +212,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Sugerir opciones iniciales
     setTimeout(() => {
-        addSuggestionButtons(['Propiedades', 'Inversiones', 'Servicios', 'Contactar agente']);
+        addSuggestionButtons(['Propiedades', 'Inversiones', 'Servicios', 'Contactar asesora']);
     }, 2000);
 });
 
