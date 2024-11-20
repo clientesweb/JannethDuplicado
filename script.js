@@ -63,23 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const properties = [
         {
-            id: 1,
-            title: "Lujosa Villa en Samborondón",
-            description: "Espectacular villa con vistas panorámicas y acabados de lujo. Esta propiedad cuenta con 5 habitaciones, 6 baños, piscina infinita, y un hermoso jardín.",
-            images: [
-                "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-                "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-                "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-            ],
-            details: {
-                bedrooms: 5,
-                bathrooms: 6,
-                area: "500 m²",
-                parking: 3
-            },
-            whatsapp: "593987167782"
-        },
-        {
             id: 2,
             title: "Terrenos en Venta o Alquiler",
             description: "Con una ubicación estratégica cerca de nuevo Country Club, Todo Nuevo Samborondon, Zonas industriales, estos terrenos están rodeados de amenidades y servicios que harán que su inversión sea aún más valiosa. Ofrecemos terrenos de diferentes tamaños y formas, con fácil acceso a carreteras y autopistas, en un vecindario tranquilo y seguro.",
