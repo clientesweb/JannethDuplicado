@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Oportunidad única de invertir en un departamento en Cuenca, ideal para Airbnb. Ofrecemos departamentos de 2 y 3 habitaciones amplias y bien iluminadas, con 2 y 3 baños completos, salón-comedor con cocina integrada, y vistas impresionantes a la ciudad. Incluye área de lavado y secado.",
             images: [
                 "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+
+"images/cuenca3.jpg",
                 "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
             ],
             details: {
