@@ -56,13 +56,100 @@ document.addEventListener('DOMContentLoaded', (event) => {
             description: "Proyecto que redefine la vida moderna con inspiración mediterránea, ofreciendo un estilo sofisticado y cercano a la naturaleza. Combina diseño innovador, comunidad, y proximidad estratégica para elevar tu calidad de vida.",
             price: "A consultar",
             area: "Varía según la unidad"
+        },
+        acquaShops: {
+            title: "ACQUA SHOPS - Desarrollo Comercial en Guayaquil",
+            description: `ACQUA SHOPS es parte del proyecto Acqua Gardens, una ciudad vibrante, segura, sostenible y conectada. Es una plaza comercial en el corazón del proyecto, diseñada para ser el centro de encuentro para familias, amigos, visitantes y negocios. Características destacadas:
+
+            - Ubicación estratégica en la Av. del Bombero, Guayaquil
+            - Parte de un complejo con 358 familias residentes, 120 habitaciones de hotel, y 45 empresas
+            - Más de 100,000 personas pasan diariamente frente al proyecto
+            - Diseño vibrante con imponentes fuentes que serán un ícono de Guayaquil
+            - Tecnología avanzada: cableado estructurado, internet de alta velocidad, y APP Acqua Gardens
+            - Respaldado por PRONOBIS, COLONCORP y MOBILSOL
+            - Ofrece excelente retorno de inversión y plusvalía
+            - Administración profesional que maximiza la rentabilidad del propietario`,
+            price: "Consultar para opciones de inversión",
+            area: "Varios tamaños de locales comerciales disponibles",
+            amenities: [
+                "Fuentes icónicas",
+                "APP para servicios del condominio",
+                "Cableado estructurado",
+                "Internet de alta velocidad",
+                "Administración profesional",
+                "Ubicación estratégica"
+            ],
+            investmentBenefits: [
+                "Mayor retorno y plusvalía que otras inversiones inmobiliarias",
+                "Renta neta (impuestos ya pagados)",
+                "Plusvalía anual del inmueble",
+                "Administración experta sin preocupaciones para el propietario"
+            ],
+            technicalSpecs: [
+                "Estructura de hormigón armado o metálica",
+                "Losa de hormigón armado",
+                "Instalaciones eléctricas empotradas (110V y 220V)",
+                "Sistema central de cisterna y bombas",
+                "Espacio para climatización y extracción de olores",
+                "Sistemas de seguridad y contra incendios"
+            ]
+        },
+        plazole: {
+            title: "PLAZOLE - Plaza Innovadora en Samborondón",
+            description: `PLAZOLE es una nueva plaza innovadora donde los espacios y la creatividad se fusionan para ofrecer una experiencia única. Ubicada estratégicamente en el kilómetro 10.5 vía Samborondón, Plazole va más allá del concepto comercial convencional.`,
+            features: [
+                "Oficinas modernas",
+                "Variada selección de restaurantes",
+                "Diversas tiendas",
+                "Ambiente divertido y seguro",
+                "Concepto innovador que fusiona espacios y creatividad"
+            ],
+            location: "Kilómetro 10.5 vía Samborondón",
+            uniqueSellingPoint: "Fusión de espacios comerciales y creatividad para una experiencia única",
+            contactLink: "https://wa.link/ez23er"
+        },
+        ciudadQuinceMinutos: {
+            title: "Ciudad de 15 Minutos en Nuevo Samborondón",
+            description: `La "Ciudad de 15 Minutos" es un concepto revolucionario que ha llegado para transformar la forma en que vivimos y nos relacionamos con nuestro entorno. Este nuevo proyecto urbano en Nuevo Samborondón busca crear una ciudad moderna y vibrante, diseñada para ofrecer una experiencia de vida conveniente y accesible para sus residentes.`,
+            features: [
+                "Todo lo necesario a 15 minutos de distancia",
+                "Torre de locales comerciales con variedad de tiendas, restaurantes y servicios",
+                "Torre médica con servicios de salud de alta calidad",
+                "Torre de departamentos de uno, dos y tres dormitorios",
+                "Mejor ubicación y precios del mercado",
+                "Diseño con altos estándares de calidad y comodidad"
+            ],
+            benefits: [
+                "Ahorro de tiempo en desplazamientos",
+                "Mayor comodidad en el día a día",
+                "Acceso a servicios de salud especializados",
+                "Variedad de opciones de vivienda",
+                "Entorno seguro y atractivo"
+            ],
+            location: "Nuevo Samborondón",
+            uniqueSellingPoint: "Concepto de ciudad moderna que integra vivienda, comercio y servicios en un radio de 15 minutos",
+            contactLink: "https://wa.link/ez23er"
         }
     };
 
     const investmentInfo = {
         samborondon: "Samborondón es una zona exclusiva con excelente potencial de rentabilidad a largo plazo. Con un crecimiento constante y una demanda siempre en aumento, es ideal para inversiones inmobiliarias.",
         eeuu: "Tenemos opciones para inversión o para residencia en : Miami, Orlando y otras ciudades. Para mas información da click en Janneth Aguirre BIENES RAICES, https://wa.link/ez23er",
-        panama: "Panamá ofrece beneficios fiscales y una economía dolarizada para inversionistas. Su ubicación estratégica y el creciente mercado inmobiliario lo convierten en un destino atractivo para inversiones.",
+        panama: `Panamá se perfila como un país con amplia oferta de oportunidades para nacionales y extranjeros, gracias a elementos de índices saludables como:
+        - Crecimiento de la economía en un 10.8% del Producto Interno Bruto (PIB) en 2022
+        - Inflación de 2.9%
+        - Según el último informe de la Cepal, Panamá (5,1%) liderará el crecimiento económico de la región en 2023
+        
+        Panamá ofrece beneficios fiscales y una economía dolarizada para inversionistas. Su ubicación estratégica y el creciente mercado inmobiliario lo convierten en un destino atractivo para inversiones.
+        
+        Algunas oportunidades de inversión en Panamá incluyen:
+        1. PANAMA VIEJO RESIDENCES: https://wa.link/47tcah
+        2. LIVING 73: https://www.jannethaguirrebienesraices.com/proyecto-living-73/
+        3. THE HUB: https://www.jannethaguirrebienesraices.com/proyecto-the-hub/
+        4. BE LIVING: https://www.jannethaguirrebienesraices.com/proyecto-be-living/
+           VISTA 3D BE LIVING: https://storage.googleapis.com/gbv/beliving/index.html
+        
+        ¿Te gustaría más información sobre alguno de estos proyectos en particular?`,
         ecuador: `Ecuador, con su diversidad geográfica y economía estable, se ha convertido en un destino ideal para la inversión en bienes raíces. Razones principales:
         1. Crecimiento Económico Sostenible
         2. Diversidad Geográfica
@@ -84,6 +171,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
         "Diseño y remodelación de interiores",
         "Asesoría en inversiones Airbnb"
     ];
+
+    const companyInfo = {
+        jannethAguirre: {
+            name: "Janneth Aguirre",
+            title: "Corredora de Bienes Raíces",
+            experience: "Líder en el ramo desde 2009",
+            description: `Janneth Aguirre es una representante inmobiliaria líder en su ramo desde 2009. Se ha consolidado como una reconocida Corredora de Bienes Raíces dentro del mercado ecuatoriano gracias a la satisfacción lograda entre sus clientes por los diversos servicios que presta.`,
+            recognition: "Reconocimiento internacional por sistema de calidad y trabajo",
+            values: ["Honradez", "Responsabilidad", "Profesionalismo"],
+            mission: "Ofrecer a nuestros clientes un servicio de asesoría inmobiliaria profesional, confiable y personalizada para satisfacer sus necesidades de venta, compra o arrendamiento.",
+            contact: "https://wa.link/ez23er"
+        }
+    };
 
     let conversationContext = {
         lastTopic: null,
@@ -131,7 +231,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (lowerMessage.includes('propiedad') || lowerMessage.includes('casa') || lowerMessage.includes('departamento') || lowerMessage.includes('terreno')) {
             conversationContext.lastTopic = 'property';
-            return "Tenemos varias propiedades disponibles. ¿Te interesa alguna zona en particular? Tenemos opciones en Samborondón, Cuenca, Nuevo Samborondón, Isla Mocoli, y más.";
+            return "Tenemos varias propiedades disponibles. ¿Te interesa alguna zona en particular? Tenemos opciones en Samborondón, Cuenca, Nuevo Samborondón, Isla Mocoli, ACQUA SHOPS, PLAZOLE, y más.";
         } else if (lowerMessage.includes('samborondon')) {
             conversationContext.propertyInterest = 'samborondon';
             const property = propertyInfo.samborondon;
@@ -144,6 +244,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
             conversationContext.propertyInterest = 'casole';
             const property = propertyInfo.casole;
             return `${property.title}: ${property.description} ¿Te gustaría conocer más detalles sobre este proyecto único?`;
+        } else if (lowerMessage.includes('acqua') || lowerMessage.includes('shops') || lowerMessage.includes('guayaquil')) {
+            conversationContext.propertyInterest = 'acquaShops';
+            const property = propertyInfo.acquaShops;
+            return `${property.title}: ${property.description} 
+            
+            Características principales:
+            - Precio: ${property.price}
+            - Área: ${property.area}
+            - Amenidades: ${property.amenities.join(', ')}
+            
+            Beneficios de inversión:
+            ${property.investmentBenefits.map(benefit => `- ${benefit}`).join('\n')}
+            
+            ¿Te gustaría más información sobre las especificaciones técnicas o los beneficios de inversión en ACQUA SHOPS?`;
+        } else if (lowerMessage.includes('plazole') || lowerMessage.includes('plaza innovadora') || lowerMessage.includes('samborondon')) {
+            const property = propertyInfo.plazole;
+            return `${property.title}: ${property.description}
+
+            Características principales de PLAZOLE:
+            ${property.features.map(feature => `- ${feature}`).join('\n')}
+
+            Ubicación: ${property.location}
+
+            Lo que hace único a PLAZOLE: ${property.uniqueSellingPoint}
+
+            ¿Te gustaría más información sobre las oportunidades de inversión en PLAZOLE o hablar con una asesora? Puedes contactar directamente a nuestra asesora haciendo clic aquí: ${property.contactLink}`;
+        } else if (lowerMessage.includes('ciudad de 15 minutos') || lowerMessage.includes('nuevo samborondon') || lowerMessage.includes('proyecto urbano')) {
+            const property = propertyInfo.ciudadQuinceMinutos;
+            return `${property.title}: ${property.description}
+
+            Características principales del proyecto "Ciudad de 15 Minutos":
+            ${property.features.map(feature => `- ${feature}`).join('\n')}
+
+            Beneficios para los residentes:
+            ${property.benefits.map(benefit => `- ${benefit}`).join('\n')}
+
+            Ubicación: ${property.location}
+
+            Lo que hace único a este proyecto: ${property.uniqueSellingPoint}
+
+            Samborondón es considerado por muchos como un lugar seguro y atractivo para vivir. Muchas personas buscan vivir en este cantón.
+
+            ¿Te gustaría más información sobre las oportunidades de inversión en este proyecto o hablar con una asesora? Puedes contactar directamente a nuestra asesora haciendo clic aquí: ${property.contactLink}`;
         } else if (lowerMessage.includes('inversion') || lowerMessage.includes('invertir')) {
             conversationContext.lastTopic = 'investment';
             return "Ofrecemos oportunidades de inversión en Ecuador, Estados Unidos y Panamá. ¿En qué país te interesaría invertir?";
@@ -152,15 +295,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return investmentInfo.eeuu;
         } else if (lowerMessage.includes('panama')) {
             conversationContext.investmentInterest = 'panama';
-            return `${investmentInfo.panama} ¿Quieres que te explique más sobre los beneficios fiscales o las áreas de mayor crecimiento en Panamá?`;
+            return investmentInfo.panama;
         } else if (lowerMessage.includes('ecuador')) {
             conversationContext.investmentInterest = 'ecuador';
             return investmentInfo.ecuador;
         } else if (lowerMessage.includes('servicio')) {
             conversationContext.lastTopic = 'service';
             return `Ofrecemos varios servicios, incluyendo: ${services.join(', ')}. ¿En cuál estás interesado? Puedo darte más detalles sobre cualquiera de ellos.`;
+        } else if (lowerMessage.includes('janneth') || lowerMessage.includes('aguirre') || lowerMessage.includes('empresa') || lowerMessage.includes('compañía')) {
+            const info = companyInfo.jannethAguirre;
+            return `${info.name} es una ${info.title} con amplia experiencia, ${info.experience}. 
+
+            ${info.description}
+
+            Nuestra empresa cuenta con ${info.recognition}. Nos basamos en los valores de ${info.values.join(', ')}, lo que nos ha permitido lograr un amplio reconocimiento por nuestro trabajo ético y confiable.
+
+            Nuestra misión es: ${info.mission}
+
+            Para más información o para contactar directamente con Janneth Aguirre BIENES RAICES, puedes usar este enlace: ${info.contact}
+
+            ¿Te gustaría saber más sobre nuestros servicios o propiedades disponibles?`;
         } else if (lowerMessage.includes('contacto') || lowerMessage.includes('agente') || lowerMessage.includes('asesora')) {
-            return "Para hablar directamente con una asesora, puedes hacer clic aquí: https://wa.link/ez23er. Estaremos encantados de atenderte personalmente.";
+            const contactInfo = companyInfo.jannethAguirre.contact;
+            return `Para hablar directamente con nuestra asesora principal, Janneth Aguirre, puedes hacer clic aquí: ${contactInfo}. Estaremos encantados de atenderte personalmente y ayudarte con cualquier consulta inmobiliaria que tengas.`;
         } else if (lowerMessage.includes('gracias') || lowerMessage.includes('adios')) {
             return "Ha sido un placer ayudarte. Si tienes más preguntas en el futuro, no dudes en volver a contactarnos. ¡Que tengas un excelente día!";
         } else {
@@ -175,13 +332,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Sugerir opciones después de la respuesta
         let suggestions = [];
         if (conversationContext.lastTopic === 'property') {
-            suggestions = ['Samborondón', 'Cuenca', 'Nuevo Samborondón', 'Isla Mocoli', 'Casole'];
+            suggestions = ['Samborondón', 'Cuenca', 'Nuevo Samborondón', 'Isla Mocoli', 'Casole', 'ACQUA SHOPS', 'PLAZOLE', 'Ciudad de 15 Minutos'];
         } else if (conversationContext.lastTopic === 'investment') {
             suggestions = ['Ecuador', 'Estados Unidos', 'Panamá'];
         } else if (conversationContext.lastTopic === 'service') {
             suggestions = ['Asesoría inmobiliaria', 'Gestión de propiedades', 'Inversiones internacionales'];
         } else {
-            suggestions = ['Propiedades', 'Inversiones', 'Servicios', 'Contactar asesora'];
+            suggestions = ['Propiedades', 'Inversiones', 'Servicios', 'Sobre Janneth Aguirre', 'Contactar asesora'];
         }
 
         setTimeout(() => {
@@ -208,12 +365,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     // Mensaje inicial del chatbot
-    addMessage("¡Hola! Soy ARIA, tu asistente virtual IA de bienes raíces. Estoy aquí para ayudarte con información sobre nuestras propiedades, oportunidades de inversión y servicios. ¿En qué puedo asistirte hoy?", 'bot');
+    addMessage("¡Hola! Soy ARIA, tu asistente virtual IA de Janneth Aguirre BIENES RAICES. Estoy aquí para ayudarte con información sobre nuestras propiedades, oportunidades de inversión y servicios. ¿En qué puedo asistirte hoy?", 'bot');
 
     // Sugerir opciones iniciales
     setTimeout(() => {
-        addSuggestionButtons(['Propiedades', 'Inversiones', 'Servicios', 'Contactar asesora']);
+        addSuggestionButtons(['Propiedades', 'Inversiones', 'Servicios', 'Sobre Janneth Aguirre', 'PLAZOLE', 'Ciudad de 15 Minutos', 'Contactar asesora']);
     }, 2000);
 });
 
 console.log('Chatbot script loaded successfully');
+
