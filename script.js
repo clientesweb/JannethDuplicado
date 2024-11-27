@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('ContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
 
     // Preloader
