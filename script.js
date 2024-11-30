@@ -1,4 +1,4 @@
-document.addEventListener('ContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
 
     // Fade-in effect
@@ -147,8 +147,7 @@ document.addEventListener('ContentLoaded', function() {
             description: "Oportunidad única de invertir en un departamento en Cuenca, ideal para Airbnb. Ofrecemos departamentos de 2 y 3 habitaciones amplias y bien iluminadas, con 2 y 3 baños completos, salón-comedor con cocina integrada, y vistas impresionantes a la ciudad. Incluye área de lavado y secado.",
             images: [
                 "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-
-"images/cuenca3.jpg",
+                "images/cuenca3.jpg",
                 "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
             ],
             details: {
@@ -168,7 +167,7 @@ document.addEventListener('ContentLoaded', function() {
     if (featuredPropertiesContainer) {
         properties.forEach(property => {
             const propertyCard = document.createElement('div');
-            propertyCard.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+            propertyCard.className = 'bg-white rounded-lg shadow-md overflow-hidden flex-shrink-0 w-80 mx-2';
             propertyCard.innerHTML = `
                 <img src="${property.images[0]}" alt="${property.title}" class="w-full h-48 object-cover">
                 <div class="p-4">
@@ -179,6 +178,20 @@ document.addEventListener('ContentLoaded', function() {
             `;
             featuredPropertiesContainer.appendChild(propertyCard);
         });
+
+        // Add horizontal scroll functionality
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+
+        if (scrollLeftBtn && scrollRightBtn) {
+            scrollLeftBtn.addEventListener('click', () => {
+                featuredPropertiesContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+
+            scrollRightBtn.addEventListener('click', () => {
+                featuredPropertiesContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        }
 
         // Agregar event listeners a los botones de detalles de propiedad
         document.querySelectorAll('.property-details').forEach(button => {
@@ -344,10 +357,11 @@ document.addEventListener('ContentLoaded', function() {
             const formData = new FormData(contactForm);
             const name = formData.get('name');
             const email = formData.get('email');
+            const phone = formData.get('phone');
             const message = formData.get('message');
 
             // Construir el mensaje para WhatsApp
-            const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0AMensaje: ${message}`;
+            const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0ATeléfono: ${phone}%0AMensaje: ${message}`;
             const whatsappUrl = `https://wa.me/593987167782?text=${whatsappMessage}`;
 
             // Abrir WhatsApp en una nueva ventana
@@ -574,17 +588,46 @@ document.addEventListener('ContentLoaded', function() {
         const apiKey = 'AIzaSyBf5wzygVChOBD-3pPb4BR2v5NA4uE9J5c';
         const maxResults = 10; // Número de videos a mostrar
 
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}&type=video`)
             .then(response => response.json())
             .then(data => {
                 data.items.forEach(item => {
-                    const videoElement = document.createElement('div');
-                    videoElement.className = 'flex-shrink-0 w-80';
-                    videoElement.innerHTML = `
-                        <iframe width="320" height="180" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p class="mt-2 text-center">${item.snippet.title}</p>
-                    `;
-                    youtubeSlider.appendChild(videoElement);
+                    if (item.id.kind === "youtube#video") {
+                        const videoElement = document.createElement('div');
+                        videoElement.className = 'flex-shrink-0 w-80 mx-2';
+                        videoElement.innerHTML = `
+                            <iframe width="320" height="180" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="mt-2 text-center">${item.snippet.title}</p>
+                        `;
+                        youtubeSlider.appendChild(videoElement);
+                    }
+                });
+
+                // Add horizontal scroll functionality to YouTube slider
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                youtubeSlider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - youtubeSlider.offsetLeft;
+                    scrollLeft = youtubeSlider.scrollLeft;
+                });
+
+                youtubeSlider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                });
+
+                youtubeSlider.addEventListener('mouseup', () => {
+                    isDown = false;
+                });
+
+                youtubeSlider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - youtubeSlider.offsetLeft;
+                    const walk = (x - startX) * 3;
+                    youtubeSlider.scrollLeft = scrollLeft - walk;
                 });
             })
             .catch(error => console.error('Error fetching YouTube videos:', error));
@@ -592,37 +635,56 @@ document.addEventListener('ContentLoaded', function() {
         console.error('YouTube slider container not found');
     }
 
-    // Google Reviews Section
-    const reviewsSlider = document.getElementById('reviewsSlider');
-    if (reviewsSlider) {
-        const googleReviews = [
-            { author: 'Juan Pérez', rating: 5, text: 'Excelente servicio, muy profesionales.' },
-            { author: 'María González', rating: 4, text: 'Buena atención, recomendado.' },
-            { author: 'Carlos Rodríguez', rating: 5, text: 'La mejor agencia inmobiliaria de la ciudad.' },
-            { author: 'Ana Torres', rating: 5, text: 'Janneth nos ayudó a encontrar nuestra casa ideal. Muy agradecidos.' },
-            { author: 'Luis Mendoza', rating: 4, text: 'Proceso de compra sencillo y transparente. Buen servicio.' }
-        ];
+    // Instagram Reels Section
+    const instagramSlider = document.getElementById('instagramSlider');
+    if (instagramSlider) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-        googleReviews.forEach(review => {
-            const reviewElement = document.createElement('div');
-            reviewElement.className = 'flex-shrink-0 w-64 bg-white p-4 rounded-lg shadow-md';
-            reviewElement.innerHTML = `
-                <div class="flex items-center mb-2">
-                    <span class="text-xl font-bold mr-2">${review.author}</span>
-                    <div class="text-yellow-400">
-                        ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
-                    </div>
-                </div>
-                <p class="text-gray-600">${review.text}</p>
-            `;
-            reviewsSlider.appendChild(reviewElement);
+        instagramSlider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - instagramSlider.offsetLeft;
+            scrollLeft = instagramSlider.scrollLeft;
         });
-    } else {
-        console.error('Google reviews slider container not found');
+
+        instagramSlider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        instagramSlider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        instagramSlider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - instagramSlider.offsetLeft;
+            const walk = (x - startX) * 3;
+            instagramSlider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile devices
+        instagramSlider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - instagramSlider.offsetLeft;
+            scrollLeft = instagramSlider.scrollLeft;
+        });
+
+        instagramSlider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        instagramSlider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.touches[0].pageX - instagramSlider.offsetLeft;
+            const walk = (x - startX) * 3;
+            instagramSlider.scrollLeft = scrollLeft - walk;
+        });
     }
 
     console.log('Script loaded successfully!');
 });
 
 console.log('JavaScript code executed successfully');
-
