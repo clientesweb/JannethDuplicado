@@ -686,5 +686,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Script loaded successfully!');
 });
-
-console.log('JavaScript code executed successfully');
