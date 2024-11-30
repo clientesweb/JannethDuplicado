@@ -8,6 +8,50 @@
     --color-accent: #CCCCCC;
 }
 
+/* Base Styles */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    position: relative;
+}
+
+/* Responsive Container */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
 /* Animations */
 @keyframes pulse {
     0% {
@@ -119,6 +163,9 @@
 #instagramSlider {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
 }
 
 #instagramSlider::-webkit-scrollbar {
@@ -126,16 +173,80 @@
 }
 
 .instagram-media {
-    min-width: 320px !important;
-    max-width: 320px !important;
-    width: 320px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    width: 280px !important;
+    scroll-snap-align: start;
 }
 
-#scrollLeft, #scrollRight {
-    transition: opacity 0.3s ease-in-out;
+@media (min-width: 640px) {
+    .instagram-media {
+        min-width: 320px !important;
+        max-width: 320px !important;
+        width: 320px !important;
+    }
 }
 
-#scrollLeft:hover, #scrollRight:hover {
-    opacity: 0.8;
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive iframes */
+.responsive-iframe {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Typography */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 640px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+/* Responsive Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Responsive Flexbox */
+.flex-responsive {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-responsive > * {
+    flex: 1 1 300px;
+    margin: 0.5rem;
+}
+
+/* Prevent Horizontal Scroll */
+.no-horizontal-scroll {
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
