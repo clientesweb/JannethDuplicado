@@ -1,18 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('ContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
-
-    // Preloader
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        window.addEventListener('load', function() {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        });
-    } else {
-        console.error('Preloader element not found');
-    }
 
     // Fade-in effect
     const observer = new IntersectionObserver((entries) => {
@@ -638,3 +625,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('JavaScript code executed successfully');
+
