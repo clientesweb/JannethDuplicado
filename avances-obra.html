@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avances de Obra - Janneth Aguirre Bienes Raíces</title>
     <meta name="description" content="Descubre los últimos avances en nuestros proyectos inmobiliarios en Ecuador. Mantente informado sobre el progreso de nuestras construcciones de lujo.">
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,6 +25,64 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            padding: 16px;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .nav-btn:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
 </head>
 <body class="font-sans bg-gray-100 text-gray-800">
     <header class="bg-white shadow-md sticky top-0 z-50">
@@ -48,78 +105,8 @@
                 <h1 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Avances de Obra</h1>
                 <p class="text-center text-xl mb-12 max-w-3xl mx-auto">Descubre el progreso de nuestros proyectos más exclusivos. Mantente informado sobre las últimas actualizaciones y ve cómo tus sueños inmobiliarios se hacen realidad.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Proyecto 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="images/avance-obra-1.jpg" alt="Residencial Las Palmas" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Residencial Las Palmas</h3>
-                            <p class="text-gray-600 mb-4">Avance: <span class="text-primary font-bold">60%</span></p>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                                <div class="bg-primary h-2.5 rounded-full" style="width: 60%"></div>
-                            </div>
-                            <p class="mb-4">Últimas actualizaciones en la construcción de nuestro proyecto estrella. Disfrute de amplios espacios y acabados de lujo en una ubicación privilegiada.</p>
-                            <ul class="mb-4 space-y-2">
-                                <li><i class="fas fa-check text-primary mr-2"></i>Estructura completada</li>
-                                <li><i class="fas fa-check text-primary mr-2"></i>Instalaciones eléctricas en proceso</li>
-                                <li><i class="fas fa-spinner text-yellow-500 mr-2"></i>Acabados interiores en progreso</li>
-                            </ul>
-                            <a href="#" class="text-primary hover:underline inline-flex items-center">
-                                Ver galería de fotos
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Proyecto 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="images/avance-obra-2.jpg" alt="Torre Empresarial Quito" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Torre Empresarial Quito</h3>
-                            <p class="text-gray-600 mb-4">Avance: <span class="text-primary font-bold">75%</span></p>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                                <div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
-                            </div>
-                            <p class="mb-4">Progreso significativo en nuestro proyecto de oficinas en el centro de Quito. Espacios modernos diseñados para el éxito de su empresa.</p>
-                            <ul class="mb-4 space-y-2">
-                                <li><i class="fas fa-check text-primary mr-2"></i>Estructura y fachada completadas</li>
-                                <li><i class="fas fa-check text-primary mr-2"></i>Instalaciones de red y comunicaciones</li>
-                                <li><i class="fas fa-spinner text-yellow-500 mr-2"></i>Acabados de áreas comunes en progreso</li>
-                            </ul>
-                            <a href="#" class="text-primary hover:underline inline-flex items-center">
-                                Ver detalles del proyecto
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Proyecto 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="images/avance-obra-3.jpg" alt="Condominio Vista al Mar" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Condominio Vista al Mar</h3>
-                            <p class="text-gray-600 mb-4">Avance: <span class="text-primary font-bold">40%</span></p>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                                <div class="bg-primary h-2.5 rounded-full" style="width: 40%"></div>
-                            </div>
-                            <p class="mb-4">Avances en la construcción de nuestro exclusivo condominio frente al mar. Viva el lujo con vistas impresionantes al océano y amenidades de primer nivel.</p>
-                            <ul class="mb-4 space-y-2">
-                                <li><i class="fas fa-check text-primary mr-2"></i>Cimentación completada</li>
-                                <li><i class="fas fa-spinner text-yellow-500 mr-2"></i>Estructura en progreso</li>
-                                <li><i class="fas fa-clock text-blue-500 mr-2"></i>Diseño de interiores en planificación</li>
-                            </ul>
-                            <a href="#" class="text-primary hover:underline inline-flex items-center">
-                                Ver renders del proyecto
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+                    <!-- Project cards will be dynamically inserted here -->
                 </div>
 
                 <div class="mt-12 text-center">
@@ -136,7 +123,7 @@
         </section>
     </main>
 
-    <footer class="bg-gradient-primary text-white py-12">
+    <footer class="bg-gradient-to-r from-primary to-secondary text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
@@ -180,9 +167,120 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Modal -->
+    <div id="galleryModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <video class="modal-content" id="modalVideo" controls style="display:none;"></video>
+    </div>
+
+    <script>
+        // Function to fetch JSON data
+        async function fetchProjectsData() {
+            try {
+                const response = await fetch('projects.json');
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching projects data:', error);
+                return [];
+            }
+        }
+
+        // Function to create project cards
+        function createProjectCards(projectsData) {
+            const container = document.getElementById('projectsContainer');
+            projectsData.forEach((project, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105';
+                card.innerHTML = `
+                    <img src="${project.images[0]}" alt="${project.name}" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">${project.name}</h3>
+                        <p class="mb-4">Descubre los últimos avances en nuestro proyecto ${project.name}. Disfruta de amplios espacios y acabados de lujo en una ubicación privilegiada.</p>
+                        <a href="#" class="text-primary hover:underline inline-flex items-center view-gallery" data-project="${index}">
+                            Ver galería de fotos y videos
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Modal functionality
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalVideo = document.getElementById("modalVideo");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Function to open modal and display media
+        function openModal(projectsData, projectIndex, mediaIndex = 0) {
+            const project = projectsData[projectIndex];
+            const allMedia = [...project.images, ...project.videos];
+            const mediaPath = allMedia[mediaIndex];
+
+            if (mediaPath.endsWith('.mp4')) {
+                modalImg.style.display = 'none';
+                modalVideo.style.display = 'block';
+                modalVideo.src = mediaPath;
+                modalVideo.play();
+            } else {
+                modalImg.style.display = 'block';
+                modalVideo.style.display = 'none';
+                modalVideo.pause();
+                modalImg.src = mediaPath;
+            }
+
+            modal.style.display = "block";
+
+            // Remove existing navigation buttons
+            const existingButtons = modal.querySelectorAll('.nav-btn');
+            existingButtons.forEach(button => button.remove());
+
+            // Navigation within the modal
+            const prevButton = document.createElement('button');
+            prevButton.innerHTML = '&#10094;';
+            prevButton.className = 'nav-btn prev';
+            const nextButton = document.createElement('button');
+            nextButton.innerHTML = '&#10095;';
+            nextButton.className = 'nav-btn next';
+
+            modal.appendChild(prevButton);
+            modal.appendChild(nextButton);
+
+            prevButton.onclick = () => openModal(projectsData, projectIndex, (mediaIndex - 1 + allMedia.length) % allMedia.length);
+            nextButton.onclick = () => openModal(projectsData, projectIndex, (mediaIndex + 1) % allMedia.length);
+        }
+
+        // Close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            modalVideo.pause();
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalVideo.pause();
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', async () => {
+            const projectsData = await fetchProjectsData();
+            createProjectCards(projectsData);
+
+            // Event listeners for gallery links
+            document.querySelectorAll('.view-gallery').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectIndex = e.currentTarget.getAttribute('data-project');
+                    openModal(projectsData, parseInt(projectIndex));
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
