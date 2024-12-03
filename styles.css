@@ -34,23 +34,24 @@ body {
 }
 
 /* Property Cards */
-#featuredProperties, #avances-obra .grid {
+#featuredProperties {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     width: 100%;
+    max-width: 1200px; /* Ajusta este valor según sea necesario */
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
-    #featuredProperties, #avances-obra .grid {
+    #featuredProperties {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-#featuredProperties > div, #avances-obra .grid > div {
+#featuredProperties > div {
     background-color: white;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -60,53 +61,47 @@ body {
     flex-direction: column;
 }
 
-#featuredProperties > div:hover, #avances-obra .grid > div:hover {
+#featuredProperties > div:hover {
     transform: scale(1.05);
 }
 
-#featuredProperties img, #avances-obra .grid img {
+#featuredProperties img {
     width: 100%;
     height: 12rem;
     object-fit: cover;
 }
 
-#featuredProperties .property-info, #avances-obra .grid > div > div {
+#featuredProperties .property-info {
     padding: 1.5rem;
 }
 
-#featuredProperties h3, #avances-obra .grid h3 {
+#featuredProperties h3 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-#featuredProperties p, #avances-obra .grid p {
+#featuredProperties p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 1rem;
 }
 
-#featuredProperties .line-clamp-3, #avances-obra .grid .line-clamp-3 {
+#featuredProperties .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* Mobile-specific styles */
+/* Mobile-specific styles for featured properties */
 @media (max-width: 640px) {
-    #featuredProperties, #avances-obra .grid {
-        margin-left: 0;
-        margin-right: 0;
+    #featuredProperties {
+        gap: 1rem;
     }
 
-    #featuredProperties > div, #avances-obra .grid > div {
-        border-radius: 0.5rem;
+    #featuredProperties > div {
         margin-bottom: 1rem;
-    }
-
-    #featuredProperties img, #avances-obra .grid img {
-        height: 12rem;
     }
 }
 
