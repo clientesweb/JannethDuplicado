@@ -34,77 +34,79 @@ body {
 }
 
 /* Property Cards */
-#featuredProperties {
+#featuredProperties, #avances-obra .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-    width: 100%; /* Ensures the grid occupies the full width */
-    margin: 0 auto; /* Centers the grid horizontally */
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
-    #featuredProperties {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    #featuredProperties {
+    #featuredProperties, #avances-obra .grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-#featuredProperties > div {
+#featuredProperties > div, #avances-obra .grid > div {
     background-color: white;
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    display: flex; /* Ensures the content is aligned properly */
-    flex-direction: column; /* Stacks content vertically */
+    display: flex;
+    flex-direction: column;
 }
 
-#featuredProperties > div:hover {
-    transform: translateY(-5px);
+#featuredProperties > div:hover, #avances-obra .grid > div:hover {
+    transform: scale(1.05);
 }
 
-#featuredProperties img {
+#featuredProperties img, #avances-obra .grid img {
     width: 100%;
-    height: 200px;
+    height: 12rem;
     object-fit: cover;
 }
 
-#featuredProperties .property-info {
-    padding: 1rem;
+#featuredProperties .property-info, #avances-obra .grid > div > div {
+    padding: 1.5rem;
 }
 
-#featuredProperties h3 {
+#featuredProperties h3, #avances-obra .grid h3 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-#featuredProperties p {
+#featuredProperties p, #avances-obra .grid p {
     font-size: 1rem;
     color: #666;
+    margin-bottom: 1rem;
+}
+
+#featuredProperties .line-clamp-3, #avances-obra .grid .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Mobile-specific styles */
 @media (max-width: 640px) {
-    #featuredProperties {
-        margin-left: 0; /* Remove negative margins */
+    #featuredProperties, #avances-obra .grid {
+        margin-left: 0;
         margin-right: 0;
     }
 
-    #featuredProperties > div {
-        border-radius: 0;
+    #featuredProperties > div, #avances-obra .grid > div {
+        border-radius: 0.5rem;
         margin-bottom: 1rem;
     }
 
-    #featuredProperties img {
-        height: 250px;
+    #featuredProperties img, #avances-obra .grid img {
+        height: 12rem;
     }
 }
 
