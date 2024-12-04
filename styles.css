@@ -37,10 +37,10 @@ body {
 #featuredProperties, #avances-obra .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
     padding: 0 1rem;
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -53,8 +53,6 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease-in-out;
-    height: 100%;
-    max-height: 400px; /* Ajuste para limitar la altura máxima */
 }
 
 #featuredProperties > div:hover, #avances-obra .grid > div:hover {
@@ -63,29 +61,28 @@ body {
 
 #featuredProperties img, #avances-obra .grid img {
     width: 100%;
-    height: 180px; /* Reducción de la altura de la imagen */
+    height: 200px;
     object-fit: cover;
 }
 
 #featuredProperties .property-info, #avances-obra .grid > div > div {
-    padding: 1rem; /* Reducción del padding */
+    padding: 1rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribuye el contenido verticalmente */
 }
 
 #featuredProperties h3, #avances-obra .grid h3 {
-    font-size: 1.125rem; /* Reducción del tamaño de fuente */
+    font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     color: #333;
 }
 
 #featuredProperties p, #avances-obra .grid p {
-    font-size: 0.875rem; /* Reducción del tamaño de fuente */
+    font-size: 1rem;
     color: #666;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #featuredProperties .line-clamp-3, #avances-obra .grid .line-clamp-3 {
@@ -101,11 +98,10 @@ body {
     background-color: var(--color-primary);
     color: white;
     font-weight: bold;
-    padding: 0.5rem 1rem; /* Reducción del padding del botón */
+    padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     text-align: center;
     transition: background-color 0.3s;
-    font-size: 0.875rem; /* Reducción del tamaño de fuente del botón */
     margin-top: auto;
 }
 
@@ -116,15 +112,13 @@ body {
 /* Responsive Styles */
 @media (min-width: 768px) {
     #featuredProperties, #avances-obra .grid {
-        grid-template-columns: repeat(3, 1fr);
+        max-width: 800px;
     }
+}
 
-    #featuredProperties > div, #avances-obra .grid > div {
-        max-height: 380px; /* Ajuste para pantallas más grandes */
-    }
-
-    #featuredProperties img, #avances-obra .grid img {
-        height: 160px; /* Ajuste para pantallas más grandes */
+@media (min-width: 1024px) {
+    #featuredProperties, #avances-obra .grid {
+        max-width: 1000px;
     }
 }
 
