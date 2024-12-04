@@ -12,8 +12,8 @@
       "images/vizcaya1_8.jpg"
     ],
     "videos": [
-      "videos/vizcaya1_video1.mp4",
-      "videos/vizcaya1_video2.mp4"
+      "video/vizcaya1_video1.mp4",
+      "video/vizcaya1_video2.mp4"
     ]
   },
   {
@@ -29,8 +29,8 @@
       "images/belice_8.jpg"
     ],
     "videos": [
-      "videos/belice_video1.mp4",
-      "videos/belice_video2.mp4"
+      "video/belice_video1.mp4",
+      "video/belice_video2.mp4"
     ]
   },
   {
@@ -46,8 +46,8 @@
       "images/alsol_8.jpg"
     ],
     "videos": [
-      "videos/alsol_video1.mp4",
-      "videos/alsol_video2.mp4"
+      "video/alsol_video1.mp4",
+      "video/alsol_video2.mp4"
     ]
   },
   {
@@ -63,8 +63,8 @@
       "images/vizcaya2_8.jpg"
     ],
     "videos": [
-      "videos/vizcaya2_video1.mp4",
-      "videos/vizcaya2_video2.mp4"
+      "video/vizcaya2_video1.mp4",
+      "video/vizcaya2_video2.mp4"
     ]
   },
   {
@@ -80,8 +80,8 @@
       "images/mocoly_8.jpg"
     ],
     "videos": [
-      "videos/mocoly_video1.mp4",
-      "videos/mocoly_video2.mp4"
+      "video/mocoly_video1.mp4",
+      "video/mocoly_video2.mp4"
     ]
   },
   {
@@ -97,8 +97,8 @@
       "images/casole_8.jpg"
     ],
     "videos": [
-      "videos/casole_video1.mp4",
-      "videos/casole_video2.mp4"
+      "video/casole_video1.mp4",
+      "video/casole_video2.mp4"
     ]
   },
   {
@@ -114,8 +114,8 @@
       "images/panama_8.jpg"
     ],
     "videos": [
-      "videos/panama_video1.mp4",
-      "videos/panama_video2.mp4"
+      "video/panama_video1.mp4",
+      "video/panama_video2.mp4"
     ]
   }
 ]
