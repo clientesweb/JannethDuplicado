@@ -87,23 +87,6 @@
   {
     "name": "CASOLE",
     "images": [
-      "images/casole_1.jpg",
-      "images/casole_2.jpg",
-      "images/casole_3.jpg",
-      "images/casole_4.jpg",
-      "images/casole_5.jpg",
-      "images/casole_6.jpg",
-      "images/casole_7.jpg",
-      "images/casole_8.jpg"
-    ],
-    "videos": [
-      "video/casole_video1.mp4",
-      "video/casole_video2.mp4"
-    ]
-  },
-  {
-    "name": "Panamá",
-    "images": [
       "images/panama_1.jpg",
       "images/panama_2.jpg",
       "images/panama_3.jpg",
@@ -116,6 +99,23 @@
     "videos": [
       "video/panama_video1.mp4",
       "video/panama_video2.mp4"
+    ]
+  },
+  {
+    "name": "Panamá",
+    "images": [
+      "images/casole_1.jpg",
+      "images/casole_2.jpg",
+      "images/casole_3.jpg",
+      "images/casole_4.jpg",
+      "images/casole_5.jpg",
+      "images/casole_6.jpg",
+      "images/casole_7.jpg",
+      "images/casole_8.jpg"
+    ],
+    "videos": [
+      "video/casole_video1.mp4",
+      "video/casole_video2.mp4"
     ]
   }
 ]
