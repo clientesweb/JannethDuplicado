@@ -98,7 +98,7 @@
     ],
     "videos": [
       "video/casole_video1.mp4",
-      "video/casole_video2.mp4"
+      "video/panama_video1.mp4"
     ]
   },
   {
@@ -114,7 +114,7 @@
       "images/panama_8.jpg"
     ],
     "videos": [
-      "video/panama_video1.mp4",
+      "video/panama_video.mp4",
       "video/panama_video2.mp4"
     ]
   }
