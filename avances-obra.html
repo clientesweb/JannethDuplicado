@@ -233,7 +233,9 @@
                 modalImg.src = mediaPath;
             }
 
-            modal.style.display = "block";
+            modal.style.display = "flex";
+            modal.style.alignItems = "center";
+            modal.style.justifyContent = "center";
 
             // Remove existing navigation buttons
             const existingButtons = modal.querySelectorAll('.nav-btn');
@@ -284,3 +286,4 @@
     </script>
 </body>
 </html>
+
