@@ -577,5 +577,80 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+    // Horizontal Slider and "Ver artículo completo" button
+    const articleSlider = document.getElementById('articleSlider');
+    const fullArticleButtons = document.querySelectorAll('.full-article-btn');
+
+    if (articleSlider) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        articleSlider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - articleSlider.offsetLeft;
+            scrollLeft = articleSlider.scrollLeft;
+        });
+
+        articleSlider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        articleSlider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        articleSlider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - articleSlider.offsetLeft;
+            const walk = (x - startX) * 3;
+            articleSlider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile devices
+        articleSlider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - articleSlider.offsetLeft;
+            scrollLeft = articleSlider.scrollLeft;
+        });
+
+        articleSlider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        articleSlider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.touches[0].pageX - articleSlider.offsetLeft;
+            const walk = (x - startX) * 3;
+            articleSlider.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    if (fullArticleButtons.length > 0) {
+        fullArticleButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const articleId = button.getAttribute('data-article-id');
+                // Here you can implement the logic to show the full article
+                // For example, you could open a modal or navigate to a new page
+                console.log(`Show full article with ID: ${articleId}`);
+                // Placeholder for actual implementation:
+                // showFullArticle(articleId);
+            });
+        });
+    }
+
+    // Add this function to handle showing the full article (implement as needed)
+    function showFullArticle(articleId) {
+        // Implement the logic to show the full article
+        // This could involve fetching the full content from a server
+        // and displaying it in a modal or navigating to a new page
+        console.log(`Showing full article with ID: ${articleId}`);
+    }
+
     console.log('Script loaded successfully!');
 });
+
