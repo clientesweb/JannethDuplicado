@@ -4,8 +4,14 @@
     "title": "Terrenos en Venta o Alquiler",
     "description": "Con una ubicación estratégica cerca de nuevo Country Club, Todo Nuevo Samborondon, Zonas industriales, estos terrenos están rodeados de amenidades y servicios que harán que su inversión sea aún más valiosa. Ofrecemos terrenos de diferentes tamaños y formas, con fácil acceso a carreteras y autopistas, en un vecindario tranquilo y seguro.",
     "images": [
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-      "https://images.unsplash.com/photo-1500076656116-558758c991c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
+      "images/terreno1.jpg",
+      "images/terreno2.jpg",
+      "images/terreno3.jpg",
+      "images/terreno4.jpg",
+      "images/terreno5.jpg",
+      "images/terreno6.jpg",
+      "images/terreno7.jpg",
+      "images/terreno8.jpg"
     ],
     "details": {
       "area": "Varía según el lote",
