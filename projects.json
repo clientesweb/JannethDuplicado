@@ -104,18 +104,29 @@
   {
     "name": "Panamá",
     "images": [
-      "images/panama_1.jpg",
-      "images/panama_2.jpg",
-      "images/panama_3.jpg",
-      "images/panama_4.jpg",
-      "images/panama_5.jpg",
-      "images/panama_6.jpg",
-      "images/panama_7.jpg",
-      "images/panama_8.jpg"
+      "images/panama1.jpg",
+      "images/panama2.jpg",
+      "images/panama3.jpg",
+      "images/panama4.jpg",
+      "images/panama5.jpg",
+      "images/panama6.jpg",
+      "images/panama7.jpg",
+      "images/panama8.jpg",
+      "images/panama9.jpg",
+      "images/panama10.jpg",
+      "images/panama11.jpg",
+      "images/panama12.jpg",
+      "images/panama13.jpg",
+      "images/panama14.jpg",
+      "images/panama15.jpg"
     ],
     "videos": [
-      "video/panama_video.mp4",
-      "video/panama_video2.mp4"
+      "video/panamavideo1.mp4",
+      "video/panamavideo2.mp4",
+      "video/panamavideo3.mp4",
+      "video/panamavideo4.mp4",
+      "video/panamavideo5.mp4",
+      "video/panamavideo6.mp4"
     ]
   }
 ]
