@@ -122,10 +122,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         const propertyId = parseInt(this.getAttribute('data-property-id'));
                         const property = properties.find(p => p.id === propertyId);
 
-                        if (property && property.render) {
+                        if (property && property.renderAttachment) {
                             renderTitle.textContent = `Render de ${property.title}`;
-                            renderVideo.src = property.render;
+                            renderVideo.src = property.renderAttachment;
                             renderModal.classList.remove('hidden');
+                            renderVideo.play(); // Reproducir el video automáticamente
+                        } else {
+                            console.error('Render video not found for property:', property);
                         }
                     });
                 });
@@ -145,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         closeRenderModal.addEventListener('click', () => {
             renderModal.classList.add('hidden');
             renderVideo.pause();
+            renderVideo.currentTime = 0; // Reiniciar el video
         });
     }
 
@@ -161,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === renderModal) {
                 renderModal.classList.add('hidden');
                 renderVideo.pause();
+                renderVideo.currentTime = 0; // Reiniciar el video
             }
         });
     }
