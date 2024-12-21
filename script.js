@@ -44,14 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevSlide = document.getElementById('prevSlide');
     const nextSlide = document.getElementById('nextSlide');
 
-    // Render Modal
-    const renderModal = document.getElementById('renderModal');
-    const renderTitle = document.getElementById('renderTitle');
-    const renderVideo = document.getElementById('renderVideo');
-    const closeRenderModal = document.getElementById('closeRenderModal');
-
-    if (!propertyModal || !propertyTitle || !propertySlider || !propertyDescription || !propertyDetails || !propertyContact || !closePropertyModal || !prevSlide || !nextSlide || !renderModal || !renderTitle || !renderVideo || !closeRenderModal) {
-        console.error('One or more modal elements not found');
+    if (!propertyModal || !propertyTitle || !propertySlider || !propertyDescription || !propertyDetails || !propertyContact || !closePropertyModal || !prevSlide || !nextSlide) {
+        console.error('One or more property modal elements not found');
     }
 
     let currentPropertyIndex = 0;
@@ -70,8 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="p-4">
                             <h3 class="text-xl font-bold mb-2">${property.title}</h3>
                             <p class="text-gray-600 mb-4">${property.description.substring(0, 100)}...</p>
-                            <button class="bg-primary text-white px-4 py-2 rounded property-details mr-2" data-property-id="${property.id}">Ver Detalles</button>
-                            <button class="bg-secondary text-white px-4 py-2 rounded property-render" data-property-id="${property.id}">Ver Render</button>
+                            <button class="bg-primary text-white px-4 py-2 rounded property-details" data-property-id="${property.id}">Ver Detalles</button>
                         </div>
                     `;
                     featuredPropertiesContainer.appendChild(propertyCard);
@@ -115,20 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                 });
-
-                // Agregar event listeners a los botones de render
-                document.querySelectorAll('.property-render').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const propertyId = parseInt(this.getAttribute('data-property-id'));
-                        const property = properties.find(p => p.id === propertyId);
-
-                        if (property && property.render) {
-                            renderTitle.textContent = `Render de ${property.title}`;
-                            renderVideo.src = property.render;
-                            renderModal.classList.remove('hidden');
-                        }
-                    });
-                });
             } else {
                 console.error('Featured properties container not found');
             }
@@ -141,26 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (closeRenderModal) {
-        closeRenderModal.addEventListener('click', () => {
-            renderModal.classList.add('hidden');
-            renderVideo.pause();
-        });
-    }
-
     if (propertyModal) {
         propertyModal.addEventListener('click', (e) => {
             if (e.target === propertyModal) {
                 propertyModal.classList.add('hidden');
-            }
-        });
-    }
-
-    if (renderModal) {
-        renderModal.addEventListener('click', (e) => {
-            if (e.target === renderModal) {
-                renderModal.classList.add('hidden');
-                renderVideo.pause();
             }
         });
     }
