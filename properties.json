@@ -18,7 +18,7 @@
       "features": "Vías Principales Centros comerciales Centros educativos Centros médicos Ciudades de 15 minutos"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-2.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   },
   {
     "id": 3,
@@ -35,7 +35,7 @@
       "security": "24/7"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-3.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   },
   {
     "id": 4,
@@ -52,7 +52,7 @@
       "parking": "Privado y de visitas"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-4.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   },
   {
     "id": 5,
@@ -68,7 +68,7 @@
       "visibility": "Alta exposición comercial"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-5.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   },
   {
     "id": 6,
@@ -84,7 +84,7 @@
       "accessibility": "Fácil acceso para pacientes y personal"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-6.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   },
   {
     "id": 7,
@@ -100,7 +100,7 @@
       "focus": "Atención al detalle"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-7.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   },
   {
     "id": 8,
@@ -118,7 +118,6 @@
       "amenities": "Seguridad 24/7, Gimnasio y spa, Piscina y área de descanso, Estacionamiento privado"
     },
     "whatsapp": "593987167782",
-    "render": "https://example.com/render-video-8.mp4"
+    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
   }
 ]
-
