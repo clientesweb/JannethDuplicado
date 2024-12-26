@@ -84,15 +84,21 @@
       "accessibility": "Fácil acceso para pacientes y personal"
     },
     "whatsapp": "593987167782",
-    "renderAttachment": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/script%20(4)-kS8TVoxzCxO2vzVBq1opXPRUeJwYUi.js"
+    "renderAttachment": "video/render_locsles.mp4"
   },
   {
     "id": 7,
     "title": "Casas Personalizadas",
     "description": "Hacemos realidad tu sueño de tener una casa perfecta. Nuestro equipo de expertos en construcción y diseño trabaja para crear casas personalizadas que se adaptan a las necesidades y gustos de cada cliente. Ofrecemos diseño personalizado, materiales de alta calidad, y construcción rápida y eficiente.",
     "images": [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+      "images/casa1.jpg",
+      "images/casa2.jpg",
+      "images/casa3.jpg",
+      "images/casa4.jpg",
+      "images/casa5.jpg",
+      "images/casa6.jpg",
+      "images/casa7.jpg",
+      "images/casa8.jpg"
     ],
     "details": {
       "features": "Diseño personalizado, Materiales de alta calidad",
