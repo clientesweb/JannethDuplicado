@@ -129,5 +129,26 @@
       "video/panamavideo5.mp4",
       "video/panamavideo6.mp4"
     ]
-  }
+  },
+  {
+  "name": "Estados Unidos",
+  "images": [
+    "images/eeuu1.jpg",
+    "images/eeuu2.jpg",
+    "images/eeuu3.jpg",
+    "images/eeuu4.jpg",
+    "images/eeuu5.jpg",
+    "images/eeuu6.jpg",
+    "images/eeuu7.jpg",
+    "images/eeuu8.jpg",
+    "images/eeuu9.jpg",
+    "images/eeuu10.jpg"
+  ],
+  "videos": [
+    "video/videoeeuu1.mp4",
+    "video/videoeeuu2.mp4",
+    "video/videoeeuu3.mp4"
+  ]
+}
 ]
+
