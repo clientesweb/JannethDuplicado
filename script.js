@@ -619,5 +619,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Logo Slider
+    const logoSlider = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 3,
+            },
+            768: {
+                slidesPerView: 4,
+            },
+            1024: {
+                slidesPerView: 5,
+            },
+        }
+    });
+
+    // Top Banner Fix
+    const topBanner = document.querySelector('.animate-marquee');
+    if (topBanner) {
+        const content = topBanner.innerHTML;
+        topBanner.innerHTML = content + content; // Duplicate content for seamless loop
+        
+        function animateMarquee() {
+            if (topBanner.scrollLeft >= topBanner.scrollWidth / 2) {
+                topBanner.scrollLeft = 0;
+            } else {
+                topBanner.scrollLeft += 1;
+            }
+            requestAnimationFrame(animateMarquee);
+        }
+        
+        animateMarquee();
+    }
+
     console.log('Script loaded successfully!');
 });
