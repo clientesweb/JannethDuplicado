@@ -188,15 +188,18 @@ html {
         font-size: 18px;
     }
 }
-/* Add this to your existing styles */
-        .swiper-container {
-            width: 100%;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 200px;
-            height: 100px;
-        }
+
+/* Swiper Styles */
+.swiper-container {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 100px;
+}
+
