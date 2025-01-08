@@ -428,13 +428,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // window.location.href = 'ruta/al/archivo.pdf';
     }
 
-    // Agregar evento de clic al botón de descarga
+    // Updated PDF download handler
+    function handleDownloadPDF(event) {
+        // We'll keep the click handler for analytics purposes
+        console.log('PDF download initiated');
+        // The actual download will happen through the anchor tag's href
+        // No need to prevent default behavior
+    }
+
+    // Add click event listener for analytics
     const downloadButton = document.getElementById('downloadPDF');
     if (downloadButton) {
         downloadButton.addEventListener('click', handleDownloadPDF);
     }
+
+    // Previous resize handling and chart creation code remains exactly the same
+    function resizeCharts() {
+        const mobile = isMobile();
+        [projectsChart, unitsChart, absorptionChart, projectsDistChart, unitsDistChart].forEach(chart => {
+            if (chart.config.type === 'pie') {
+                chart.options.plugins.legend.position = mobile ? 'bottom' : 'right';
+            }
+            chart.options.plugins.datalabels.font.size = mobile ? 0 : 12;
+            chart.update();
+        });
+    }
+
+    // Previous event listeners remain the same
+    window.addEventListener('load', resizeCharts);
+    window.addEventListener('resize', resizeCharts);
 });
 
-// Verificar que el script se ha cargado correctamente
+// Previous console log remains
 console.log('Script cargado correctamente');
 
