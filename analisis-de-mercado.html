@@ -116,6 +116,29 @@
         .stat-card:hover {
             background-color: rgba(255, 255, 255, 0.08);
         }
+        .download-button {
+            background: linear-gradient(to right, #dc2626, #991b1b);
+            color: white;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 20px -3px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(to right, #991b1b, #7f1d1d);
+        }
+
+        .download-button:active {
+            transform: translateY(1px);
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-red-600 via-red-800 to-black min-h-screen text-white">
@@ -234,7 +257,13 @@
 
             <!-- Download PDF Button -->
             <div class="flex justify-center mt-8 mb-8">
-                <a href="https://jannethaguirre.com/analisisdemercado.pdf" id="downloadPDF" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <a 
+                    href="https://jannethaguirre.com/analisisdemercado.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="download-button"
+                    id="downloadPDF"
+                >
                     Descargar Informe Completo (PDF)
                 </a>
             </div>
@@ -246,7 +275,7 @@
         </footer>
     </div>
 
-    <script src="script1.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
