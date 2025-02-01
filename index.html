@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>En Mantenimiento - Janneth Aguirre Bienes Raíces</title>
+    <meta name="description" content="Janneth Aguirre Bienes Raíces: Expertos en propiedades en Ecuador. Estamos en mantenimiento para mejorar nuestros servicios.">
+    <meta name="keywords" content="bienes raíces, propiedades, venta de casas, alquiler de apartamentos, Ecuador, Guayaquil, Quito, Janneth Aguirre">
+    <meta name="author" content="Janneth Aguirre">
+    <link rel="canonical" href="https://www.jannethaguirre.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF0000">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jannethaguirre.com/">
+    <meta property="og:title" content="En Mantenimiento - Janneth Aguirre Bienes Raíces">
+    <meta property="og:description" content="Estamos mejorando nuestros servicios. Vuelva pronto para encontrar las mejores propiedades en Ecuador.">
+    <meta property="og:image" content="https://www.jannethaguirre.com/images/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.jannethaguirre.com/">
+    <meta name="twitter:title" content="En Mantenimiento - Janneth Aguirre Bienes Raíces">
+    <meta name="twitter:description" content="Estamos mejorando nuestros servicios. Vuelva pronto para encontrar las mejores propiedades en Ecuador.">
+    <meta name="twitter:image" content="https://www.jannethaguirre.com/images/logo.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,13 +52,18 @@
     </script>
 </head>
 <body class="font-sans bg-gray-100 text-gray-800 flex flex-col min-h-screen">
-    <div class="flex-grow flex items-center justify-center px-4">
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4">
+            <img src="images/logo.png" alt="Janneth Aguirre Bienes Raíces Logo" class="h-16">
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
         <div class="max-w-md w-full text-center">
-            <img src="images/logo.png" alt="Janneth Aguirre Bienes Raíces Logo" class="mx-auto h-24 mb-8">
             <h1 class="text-4xl font-bold text-primary mb-4">En Mantenimiento</h1>
             <p class="text-xl mb-8">Estamos trabajando para ofrecerle un mejor servicio. Volveremos pronto.</p>
             <div class="mb-8">
-                <a href="https://www.jannethaguirre.com/revista" class="bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition-colors duration-300">
+                <a href="https://jannethaguirre.online/" class="bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition-colors duration-300">
                     Visita Nuestra Revista
                 </a>
             </div>
@@ -43,7 +74,8 @@
                 </svg>
             </div>
         </div>
-    </div>
+    </main>
+
     <footer class="bg-secondary text-white py-6 text-center">
         <div class="flex justify-center space-x-4 mb-4">
             <a href="https://www.facebook.com/@jannethaguirrebienesraices/?hr=1" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition-colors duration-300">
@@ -65,5 +97,17 @@
         <p class="mb-2">&copy; 2023 Janneth Aguirre Bienes Raíces. Todos los derechos reservados.</p>
         <p>Powered by <a href="https://dualitydomain.github.io/Dualitydomain/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Duality Domain</a></p>
     </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
