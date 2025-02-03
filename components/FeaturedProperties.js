@@ -13,7 +13,7 @@ function FeaturedProperties() {
       area: "60 - 90 m²",
       url: "https://www.jannethaguirre.com/property/departamentos-exclusivos-samborondon",
       description: "1 dormitorio 60 m²: Desde $99,900 
-2 dormitorios 90 m²: Desde $135,000",
+2 dormitorios 90 m²:Desde $135,000",
       reserve: "Reserva con $500",
     },
     {
