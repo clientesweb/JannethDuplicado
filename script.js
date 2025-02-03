@@ -1,8 +1,18 @@
-// Import GSAP
-import { gsap, ScrollTrigger } from "gsap/all"
-
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed")
+  const app = document.getElementById("app")
+  app.innerHTML = `
+        ${Header()}
+        <main>
+            ${Hero()}
+            ${About()}
+            ${Services()}
+            ${ConstructionProgress()}
+            ${Contact()}
+            ${AppDownload()}
+        </main>
+        ${Footer()}
+        ${BottomNavigation()}
+    `
 
   // Top Banner Animation
   const topBanner = document.querySelector(".animate-marquee")
@@ -22,38 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     animateMarquee()
   }
 
-  // Logo Slider
-  const logoSlider = document.querySelector(".logo-slider")
-  if (logoSlider) {
-    const logoWidth = logoSlider.querySelector("div").offsetWidth
-    const totalWidth = logoWidth * logoSlider.children.length
-
-    logoSlider.style.width = `${totalWidth * 2}px`
-    logoSlider.innerHTML += logoSlider.innerHTML
-
-    function slideLogos() {
-      if (logoSlider.scrollLeft >= totalWidth) {
-        logoSlider.scrollLeft = 0
-      } else {
-        logoSlider.scrollLeft += 1
-      }
-      requestAnimationFrame(slideLogos)
-    }
-
-    slideLogos()
-  }
-
-  // Fade-in effect
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible")
-      }
-    })
-  })
-
-  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el))
-
   // Scroll to top button
   const scrollToTopBtn = document.getElementById("scrollToTopBtn")
   if (scrollToTopBtn) {
@@ -71,12 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth",
       })
     })
-  } else {
-    console.error("Scroll to top button not found")
   }
 
   // GSAP animations
-  // Import GSAP -  This should be handled at the top of the script now.
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
     console.warn("GSAP or ScrollTrigger not loaded. Please include the GSAP library in your project.")
   } else {
@@ -140,43 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
-
-  // Property filter functionality
-  const filterPropertiesBtn = document.getElementById("filterProperties")
-  const propertyCards = document.querySelectorAll("#propiedades .bg-white")
-
-  if (filterPropertiesBtn) {
-    filterPropertiesBtn.addEventListener("click", () => {
-      const filters = prompt('Ingrese filtros (ejemplo: "habitaciones:3,baños:2,precio:200000-500000"):')
-      if (filters) {
-        const filterObj = filters.split(",").reduce((acc, filter) => {
-          const [key, value] = filter.split(":")
-          acc[key] = value
-          return acc
-        }, {})
-
-        propertyCards.forEach((card) => {
-          let matches = true
-          for (const key in filterObj) {
-            const cardValue = card.dataset[key]
-            const filterValue = filterObj[key]
-            if (key === "precio") {
-              const [min, max] = filterValue.split("-")
-              const cardPrice = Number.parseInt(cardValue)
-              if (!(cardPrice >= Number.parseInt(min) && cardPrice <= Number.parseInt(max))) {
-                matches = false
-                break
-              }
-            } else if (cardValue !== filterValue) {
-              matches = false
-              break
-            }
-          }
-          card.style.display = matches ? "block" : "none"
-        })
-      }
-    })
-  }
 
   // Contact form submission
   const contactForm = document.getElementById("contact-form")
