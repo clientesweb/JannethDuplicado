@@ -1,6 +1,6 @@
 function Footer() {
   return `
-    <footer class="bg-primary text-white py-8 md:py-12">
+    <footer class="bg-primary text-white py-8 md:py-12 pb-24 md:pb-12">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -40,7 +40,7 @@ function Footer() {
         </div>
         <div class="mt-8 pt-8 border-t border-white/20 text-center">
           <p class="text-sm md:text-base">&copy; ${new Date().getFullYear()} Janneth Aguirre Bienes Raíces. Todos los derechos reservados.</p>
-          <p class="mt-2 text-sm md:text-base">Desarrollado por <a href="https://dualitydomain.github.io/Dualitydomain/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Duality Domain</a></p>
+          <p class="mt-2 text-sm md:text-base text-accent">Desarrollado por <a href="https://dualitydomain.github.io/Dualitydomain/" target="_blank" rel="noopener noreferrer" class="hover:underline">Duality Domain</a></p>
         </div>
       </div>
     </footer>
