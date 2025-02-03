@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Propiedades - Janneth Aguirre Bienes Raíces</title>
-    <meta name="description" content="Explora nuestro catálogo de propiedades exclusivas ofrecidas por Janneth Aguirre Bienes Raíces en Ecuador.">
+    <meta name="description" content="Explore nuestro catálogo completo de propiedades exclusivas ofrecidas por Janneth Aguirre Bienes Raíces en Ecuador. Encuentre su hogar ideal hoy.">
+    <meta name="keywords" content="listado de propiedades, bienes raíces Ecuador, Janneth Aguirre, propiedades de lujo, casas en venta">
     <link rel="canonical" href="https://www.jannethaguirre.com/property-listing.html">
     
-    <!-- Incluir los mismos estilos y scripts que en index.html -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF0000">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jannethaguirre.com/property-listing.html">
+    <meta property="og:title" content="Listado de Propiedades - Janneth Aguirre Bienes Raíces">
+    <meta property="og:description" content="Explore nuestro catálogo completo de propiedades exclusivas ofrecidas por Janneth Aguirre Bienes Raíces en Ecuador.">
+    <meta property="og:image" content="https://www.jannethaguirre.com/images/property-listing-og.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.jannethaguirre.com/property-listing.html">
+    <meta name="twitter:title" content="Listado de Propiedades - Janneth Aguirre Bienes Raíces">
+    <meta name="twitter:description" content="Explore nuestro catálogo completo de propiedades exclusivas ofrecidas por Janneth Aguirre Bienes Raíces en Ecuador.">
+    <meta name="twitter:image" content="https://www.jannethaguirre.com/images/property-listing-og.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,14 +56,61 @@
         <!-- El contenido se insertará aquí -->
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="components/Header.js"></script>
     <script src="components/Footer.js"></script>
     <script src="components/PropertyListing.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const app = document.getElementById('app');
-            app.innerHTML = PropertyListing();
+            app.innerHTML = `
+                ${Header()}
+                ${PropertyListing()}
+                ${Footer()}
+            `;
         });
+    </script>
+
+    <!-- Structured Data for Property Listing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Lujoso Apartamento en el Centro",
+            "url": "https://www.jannethaguirre.com/property-details.html?id=1",
+            "image": "https://www.jannethaguirre.com/images/property1.jpg",
+            "description": "Hermoso apartamento de lujo ubicado en el corazón de Guayaquil.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "250000"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Casa Familiar con Jardín",
+            "url": "https://www.jannethaguirre.com/property-details.html?id=2",
+            "image": "https://www.jannethaguirre.com/images/property2.jpg",
+            "description": "Espaciosa casa familiar con amplio jardín en Samborondón.",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "320000"
+            }
+          }
+        }
+      ]
+    }
     </script>
 </body>
 </html>
