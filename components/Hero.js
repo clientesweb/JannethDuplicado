@@ -8,17 +8,17 @@ function Hero() {
         <div class="relative z-10 h-full flex items-center">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl">
-                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 font-serif leading-tight text-shadow">
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-4 font-serif leading-tight text-shadow">
                         Descubre Tu Hogar Ideal en Ecuador
                     </h1>
-                    <p class="text-xl md:text-2xl text-white mb-8 text-shadow">
+                    <p class="text-lg md:text-xl lg:text-2xl text-white mb-8 text-shadow">
                         Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#servicios" class="bg-primary hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-center">
+                        <a href="#servicios" class="bg-primary hover:bg-white hover:text-primary text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transition-colors duration-300 text-center">
                             Explorar Servicios
                         </a>
-                        <a href="#contacto" class="bg-white text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-center">
+                        <a href="#contacto" class="bg-white text-primary hover:bg-primary hover:text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transition-colors duration-300 text-center">
                             Contactar Ahora
                         </a>
                     </div>
