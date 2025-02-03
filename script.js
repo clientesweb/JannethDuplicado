@@ -52,12 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // GSAP animations
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-    console.warn("GSAP or ScrollTrigger not loaded. Please include the GSAP library in your project.")
-  } else {
-    gsap.registerPlugin(ScrollTrigger)
-
     // Animate services on scroll
     gsap.utils.toArray("#servicios .text-center").forEach((service, i) => {
       gsap.from(service, {
