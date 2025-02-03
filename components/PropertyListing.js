@@ -1,71 +1,82 @@
 function PropertyListing() {
-  // En una implementación real, estos datos vendrían de una API o base de datos
   const properties = [
     {
       id: 1,
-      title: "Lujoso Apartamento en el Centro",
-      price: "$250,000",
-      location: "Centro de Guayaquil",
+      title: "Departamentos Exclusivos en Samborondón",
+      price: "Desde $99,900",
+      location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
       image: "images/property1.jpg",
-      bedrooms: 3,
-      bathrooms: 2,
-      area: "150 m²",
-      url: "https://www.jannethaguirre.com/property/lujoso-apartamento-centro",
+      bedrooms: "1 - 2",
+      bathrooms: "1 - 2",
+      area: "Desde 60 m²",
+      url: "https://www.jannethaguirre.com/propiedades/departamentos-exclusivos-samborondon",
+      description: "Modernos y confortables departamentos disponibles de 1 y 2 dormitorios",
+      reserve: "Reserva con $500",
     },
     {
       id: 2,
-      title: "Casa Familiar con Jardín",
-      price: "$320,000",
-      location: "Samborondón",
+      title: "Casas Modernas - Proyecto Residencial",
+      price: "Desde $204,900",
+      location: "km 9.4 de la Vía Samborondón, Ciudad Celeste - Sector Batan",
       image: "images/property2.jpg",
-      bedrooms: 4,
-      bathrooms: 3,
-      area: "200 m²",
-      url: "https://www.jannethaguirre.com/property/casa-familiar-jardin",
+      bedrooms: "3 - 4",
+      bathrooms: "1 - 2",
+      area: "Desde 135 m²",
+      url: "https://www.jannethaguirre.com/propiedades/casas-modernas-proyecto-residencial",
+      description: "4 modelos disponibles de 3 y 4 dormitorios",
+      reserve: "Reserva con $500",
     },
     {
       id: 3,
-      title: "Penthouse con Vista al Mar",
-      price: "$450,000",
-      location: "Malecon 2000",
+      title: "Locales Comerciales y Consultorios en Centro Comercial",
+      price: "Desde $138,000",
+      location: "Km 9.5 Vía Samborondón, cerca del Parque Bicentenario",
       image: "images/property3.jpg",
-      bedrooms: 3,
-      bathrooms: 3,
-      area: "180 m²",
-      url: "https://www.jannethaguirre.com/property/penthouse-vista-mar",
+      bedrooms: "N/A",
+      bathrooms: "1",
+      area: "Desde 40 m²",
+      url: "https://www.jannethaguirre.com/propiedades/locales-comerciales-consultorios",
+      description: "Locales comerciales y consultorios a estrenar, importante ubicación",
+      reserve: "Reserva con $500",
     },
     {
       id: 4,
-      title: "Apartamento Moderno en Torre Exclusiva",
-      price: "$280,000",
-      location: "Puerto Santa Ana",
+      title: "Departamentos de lujo y ubicación privilegiada",
+      price: "Desde $223,000",
+      location: "Isla Mocolí",
       image: "images/property4.jpg",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "120 m²",
-      url: "https://www.jannethaguirre.com/property/apartamento-moderno-torre",
+      bedrooms: "3",
+      bathrooms: "2 - 3",
+      area: "Desde 118 m²",
+      url: "https://www.jannethaguirre.com/propiedades/departamentos-lujo-mocoli",
+      description: "Departamentos primer y segundo piso. Incluye 2 parqueos",
+      reserve: "Reserva con $500",
     },
     {
       id: 5,
-      title: "Villa de Lujo con Piscina",
-      price: "$580,000",
-      location: "Vía a la Costa",
+      title: "Preventa Exclusiva - Suites Modernas y de Alto Nivel",
+      price: "Desde $75,000",
+      location: "Cuenca",
       image: "images/property5.jpg",
-      bedrooms: 5,
-      bathrooms: 4,
-      area: "350 m²",
-      url: "https://www.jannethaguirre.com/property/villa-lujo-piscina",
+      bedrooms: "1",
+      bathrooms: "1 - 2",
+      area: "Desde 60 m²",
+      url: "https://www.jannethaguirre.com/propiedades/suites-modernas-cuenca",
+      description: "A pocos minutos del parque histórico, en una de las zonas más privilegiadas de Cuenca",
+      reserve: "Reserva con $500",
     },
     {
       id: 6,
-      title: "Oficina Comercial en Distrito Financiero",
-      price: "$420,000",
-      location: "Centro de Negocios",
+      title: "Terrenos En Venta Excelente Ubicación",
+      price: "Desde $1,300 × m²",
+      location: "Amador-Causeway, Panamá",
       image: "images/property6.jpg",
       bedrooms: "N/A",
-      bathrooms: 2,
-      area: "200 m²",
-      url: "https://www.jannethaguirre.com/property/oficina-comercial-distrito",
+      bathrooms: "N/A",
+      area: "Desde 1005 m²",
+      url: "https://www.jannethaguirre.com/propiedades/terrenos-amador-causeway-panama",
+      description: "Frente al Océano Pacífico, en la zona de mayor crecimiento de Panamá",
+      reserve: "Reserva con $1,000",
     },
   ]
 
@@ -86,11 +97,13 @@ function PropertyListing() {
                 <h3 class="text-xl font-bold mb-2">${property.title}</h3>
                 <p class="text-gray-600 mb-4">${property.location}</p>
                 <p class="text-primary text-2xl font-bold mb-4">${property.price}</p>
-                <div class="flex justify-between text-sm text-gray-600">
-                  <span><i class="fas fa-bed mr-2"></i>${property.bedrooms} Habitaciones</span>
-                  <span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>
+                <p class="text-gray-700 mb-4">${property.description}</p>
+                <div class="flex justify-between text-sm text-gray-600 mb-4">
+                  ${property.bedrooms !== "N/A" ? `<span><i class="fas fa-bed mr-2"></i>${property.bedrooms} Dormitorios</span>` : ""}
+                  ${property.bathrooms !== "N/A" ? `<span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>` : ""}
                   <span><i class="fas fa-vector-square mr-2"></i>${property.area}</span>
                 </div>
+                <p class="text-green-600 font-semibold mb-4">${property.reserve}</p>
                 <a href="${property.url}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
                   Ver Detalles
                 </a>
