@@ -125,7 +125,6 @@
                 <img src="images/logo.png" alt="Janneth Aguirre Bienes Raíces Logo" class="h-16 mr-4">
             </div>
             <nav class="hidden md:flex space-x-6">
-                <a href="#propiedades" class="text-gray-800 hover:text-primary transition-colors duration-300">Propiedades</a>
                 <a href="#servicios" class="text-gray-800 hover:text-primary transition-colors duration-300">Servicios</a>
                 <a href="#sobre-nosotros" class="text-gray-800 hover:text-primary transition-colors duration-300">Nosotros</a>
                 <a href="#contacto" class="text-gray-800 hover:text-primary transition-colors duration-300">Contacto</a>
@@ -168,8 +167,8 @@
                     Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#propiedades" class="bg-primary hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-center">
-                        Explorar Propiedades
+                    <a href="#servicios" class="bg-primary hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-center">
+                        Explorar Servicios
                     </a>
                     <a href="#contacto" class="bg-white text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-center">
                         Contactar Ahora
@@ -280,31 +279,44 @@
     </div>
 </section>
 
-        <!-- Featured Properties Section -->
-<section id="propiedades" class="py-16 bg-gradient-to-b from-gray-100 to-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Propiedades Destacadas</h2>
-        <div class="relative">
-            <div id="featuredProperties" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-                <!-- Property cards will be dynamically inserted here -->
+        <!-- Avances de Obra Section -->
+        <section id="avances-obra" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Avances de Obra</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                        <img src="images/vizcaya1_1.jpg" alt="VIZCAYA 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">VIZCAYA 1</h3>
+                            <p class="mb-4 line-clamp-3">Proyecto residencial de lujo en etapa avanzada. Disfrute de amplios espacios y acabados de primera calidad en una ubicación privilegiada.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                        <img src="images/belice_8.jpg" alt="BELICE" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">BELICE</h3>
+                            <p class="mb-4 line-clamp-3">Exclusivo desarrollo inmobiliario con un concepto moderno y sostenible. Avances significativos en la construcción de este proyecto único.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                        <img src="images/alsol_1.jpg" alt="AL SOL 1 & 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">AL SOL 1 & 2</h3>
+                            <p class="mb-4 line-clamp-3">Complejo residencial de dos fases en pleno desarrollo. Diseño contemporáneo y amenidades de primer nivel para un estilo de vida excepcional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="avances-obra.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center group">
+                        Ver Todos los Avances
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <button id="scrollLeft" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full shadow-md hover:bg-opacity-75 transition-all duration-300">
-                <i class="fas fa-chevron-left text-primary"></i>
-            </button>
-            <button id="scrollRight" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full shadow-md hover:bg-opacity-75 transition-all duration-300">
-                <i class="fas fa-chevron-right text-primary"></i>
-            </button>
-        </div>
-        <div class="text-center mt-8">
-            <a href="#" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center group">
-                Ver Todas las Propiedades
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-            </a>
-        </div>
-    </div>
-</section>
+        </section>
+
 
         <!-- Property Details Modal -->
         <div id="propertyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
@@ -349,119 +361,6 @@
             </div>
         </div>
 
-        <!-- Avances de Obra Section -->
-        <section id="avances-obra" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Avances de Obra</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="images/vizcaya1_1.jpg" alt="VIZCAYA 1" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">VIZCAYA 1</h3>
-                            <p class="mb-4 line-clamp-3">Proyecto residencial de lujo en etapa avanzada. Disfrute de amplios espacios y acabados de primera calidad en una ubicación privilegiada.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="images/belice_8.jpg" alt="BELICE" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">BELICE</h3>
-                            <p class="mb-4 line-clamp-3">Exclusivo desarrollo inmobiliario con un concepto moderno y sostenible. Avances significativos en la construcción de este proyecto único.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                        <img src="images/alsol_1.jpg" alt="AL SOL 1 & 2" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">AL SOL 1 & 2</h3>
-                            <p class="mb-4 line-clamp-3">Complejo residencial de dos fases en pleno desarrollo. Diseño contemporáneo y amenidades de primer nivel para un estilo de vida excepcional.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a href="avances-obra.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center group">
-                        Ver Todos los Avances
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Nuestra Revista Section -->
-        <section id="nuestra-revista" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestra Revista</h2>
-                <div>
-                    <div id="magazineSlider" class="flex overflow-x-scroll space-x-4 pb-4 scrollbar-hide">
-                        <div class="flex-shrink-0 w-64 mx-2">
-                            <img src="images/revista.jpg" alt="Revista 1" class="w-full h-80 object-cover rounded-lg">
-                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
-                        </div>
-                        <div class="flex-shrink-0 w-64 mx-2">
-                            <img src="images/revista1.jpg" alt="Revista 2" class="w-full h-80 object-cover rounded-lg">
-                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
-                        </div>
-                        <div class="flex-shrink-0 w-64 mx-2">
-                            <img src="images/revista2.jpg" alt="Revista 3" class="w-full h-80 object-cover rounded-lg">
-                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
-                        </div>
-                        <div class="flex-shrink-0 w-64 mx-2">
-                            <img src="images/revista3.jpg" alt="Revista 4" class="w-full h-80 object-cover rounded-lg">
-                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- YouTube Videos Section -->
-        <section id="youtube-videos" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestros Videos</h2>
-                <div class="overflow-x-auto">
-                    <div id="youtubeSlider" class="flex space-x-4 pb-4">
-                        <!-- YouTube videos will be dynamically inserted here -->
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- FAQ Section -->
-        <section id="faq" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Preguntas Frecuentes</h2>
-                <div class="space-y-4">
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="flex justify-between items-center w-full p-6 text-left">
-                            <span class="text-xl font-bold">¿Cómo puedo comenzar a buscar una propiedad?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="p-6 hidden">
-                            <p class="text-gray-600">Puede comenzar explorando nuestro catálogo en línea o contactarnos directamente para una consulta personalizada.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="flex justify-between items-center w-full p-6 text-left">
-                            <span class="text-xl font-bold">¿Qué documentos necesito para comprar una propiedad?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="p-6 hidden">
-                            <p class="text-gray-600">Los documentos varían según el tipo de propiedad, pero generalmente se requiere identificación, comprobante de ingresos y historial crediticio.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md">
-                        <button class="flex justify-between items-center w-full p-6 text-left">
-                            <span class="text-xl font-bold">¿Ofrecen servicios de asesoría para inversiones internacionales?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="p-6 hidden">
-                            <p class="text-gray-600">Sí, contamos con expertos en inversiones inmobiliarias internacionales que pueden guiarlo en todo el proceso.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Instagram Reels Section -->
         <section id="instagram-reels" class="py-16">
             <div class="container mx-auto px-4">
@@ -496,7 +395,6 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h3 class="text-2xl font-bold mb-4">Información de Contacto</h3>
-                        <p class="mb-2"><i class="Información de Contacto</h3>
                         <p class="mb-2"><i class="fas fa-phone mr-2 text-primary"></i> +593 98 716 7782</p>
                         <p class="mb-2"><i class="fas fa-envelope mr-2 text-primary"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7beb9b1b897bdb6b9b9b2a3bfb6b0a2bea5a5b2f9b4b8ba">[email&#160;protected]</ap></p>
                         <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> Guayaquil, Ecuador</p>
@@ -564,7 +462,6 @@
                 <div>
                     <h3 class="text-2xl font-bold mb-4">Enlaces Rápidos</h3>
                     <ul class="space-y-2">
-                        <li><a href="#propiedades" class="hover:text-accent transition-colors duration-300">Propiedades</a></li>
                         <li><a href="#servicios" class="hover:text-accent transition-colors duration-300">Servicios</a></li>
                         <li><a href="#sobre-nosotros" class="hover:text-accent transition-colors duration-300">Sobre Nosotros</a></li>
                         <li><a href="#contacto" class="hover:text-accent transition-colors duration-300">Contacto</a></li>
@@ -674,10 +571,6 @@
     <!-- Bottom Navigation -->
 <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50">
     <div class="flex justify-around items-center py-2">
-        <a href="#propiedades" class="flex flex-col items-center text-gray-600 hover:text-primary">
-            <i class="fas fa-home text-2xl"></i>
-            <span class="text-xs mt-1">Propiedades</span>
-        </a>
         <a href="#servicios" class="flex flex-col items-center text-gray-600 hover:text-primary">
             <i class="fas fa-concierge-bell text-2xl"></i>
             <span class="text-xs mt-1">Servicios</span>
