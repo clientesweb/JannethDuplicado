@@ -1,40 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed")
 
-  // Hero Carousel
-  const heroCarousel = document.getElementById("heroCarousel")
-  const heroSlides = heroCarousel.querySelectorAll(".absolute.inset-0")
-  const heroNavButtons = document.querySelectorAll("[data-slide]")
-  let currentHeroSlide = 0
-
-  function showHeroSlide(index) {
-    heroSlides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? "1" : "0"
-      slide.style.zIndex = i === index ? "10" : "0"
-    })
-    heroNavButtons.forEach((button, i) => {
-      button.classList.toggle("opacity-100", i === index)
-      button.classList.toggle("opacity-50", i !== index)
-    })
-  }
-
-  function nextHeroSlide() {
-    currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length
-    showHeroSlide(currentHeroSlide)
-  }
-
-  heroNavButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      currentHeroSlide = Number.parseInt(button.getAttribute("data-slide"))
-      showHeroSlide(currentHeroSlide)
-    })
+  // Parallax effect for hero section
+  window.addEventListener("scroll", () => {
+    const parallax = document.querySelector(".parallax")
+    const scrollPosition = window.pageYOffset
+    parallax.style.transform = "translateY(" + scrollPosition * 0.5 + "px)"
   })
 
-  showHeroSlide(currentHeroSlide)
-  setInterval(nextHeroSlide, 5000) // Change slide every 5 seconds
+  // Top Banner Animation
+  const topBanner = document.querySelector(".animate-marquee")
+  if (topBanner) {
+    const content = topBanner.innerHTML
+    topBanner.innerHTML = content + content // Duplicate content for seamless loop
+
+    function animateMarquee() {
+      if (topBanner.scrollLeft >= topBanner.scrollWidth / 2) {
+        topBanner.scrollLeft = 0
+      } else {
+        topBanner.scrollLeft += 1
+      }
+      requestAnimationFrame(animateMarquee)
+    }
+
+    animateMarquee()
+  }
 
   // Logo Slider
-  const logoSlider = document.querySelector(".animate-slide")
+  const logoSlider = document.querySelector(".logo-slider")
   if (logoSlider) {
     const logoWidth = logoSlider.querySelector("div").offsetWidth
     const totalWidth = logoWidth * logoSlider.children.length
@@ -691,23 +684,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //     },
   // })
 
-  // Top Banner Fix
-  const topBanner = document.querySelector(".animate-marquee")
-  if (topBanner) {
-    const content = topBanner.innerHTML
-    topBanner.innerHTML = content + content // Duplicate content for seamless loop
-
-    function animateMarquee() {
-      if (topBanner.scrollLeft >= topBanner.scrollWidth / 2) {
-        topBanner.scrollLeft = 0
-      } else {
-        topBanner.scrollLeft += 1
-      }
-      requestAnimationFrame(animateMarquee)
-    }
-
-    animateMarquee()
-  }
+  // Top Banner Fix - This is now handled in the Top Banner Animation section above.
 
   console.log("Script loaded successfully!")
 })
