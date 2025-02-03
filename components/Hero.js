@@ -1,32 +1,49 @@
 function Hero() {
   return `
-    <section class="relative h-screen overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="images/magazine-janneth-aguirre.png" alt="Hero Background" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-        </div>
-        <div class="relative z-10 h-full flex items-center">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl">
-                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-4 font-serif leading-tight text-shadow">
-                        Descubre Tu Hogar Ideal en Ecuador
-                    </h1>
-                    <p class="text-lg md:text-xl lg:text-2xl text-white mb-8 text-shadow">
-                        Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#servicios" class="bg-primary hover:bg-white hover:text-primary text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transition-colors duration-300 text-center">
-                            Explorar Servicios
-                        </a>
-                        <a href="#contacto" class="bg-white text-primary hover:bg-primary hover:text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transition-colors duration-300 text-center">
-                            Contactar Ahora
-                        </a>
-                    </div>
-                </div>
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary to-secondary">
+      <div class="absolute inset-0 z-0">
+        <img src="/placeholder.svg?height=1080&width=1920" alt="Luxury Real Estate Background" class="w-full h-full object-cover opacity-20">
+      </div>
+      <div class="container mx-auto px-4 z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
+              Descubre Tu Hogar Ideal en Ecuador
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fade-in-up delay-300">
+              Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
+              <a href="#servicios" class="bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300 font-bold py-3 px-8 rounded-full text-center">
+                Explorar Servicios
+              </a>
+              <a href="#contacto" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary transition-colors duration-300 font-bold py-3 px-8 rounded-full text-center">
+                Contactar Ahora
+              </a>
             </div>
+          </div>
+          <div class="w-full lg:w-1/2 relative">
+            <img src="/placeholder.svg?height=600&width=600" alt="Luxury Property Showcase" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl animate-float">
+            <div class="absolute top-4 -left-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
+              <p class="text-primary font-bold">Propiedades Destacadas</p>
+              <p class="text-gray-600">+100 listados exclusivos</p>
+            </div>
+            <div class="absolute bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-600">
+              <p class="text-primary font-bold">Satisfacción del Cliente</p>
+              <p class="text-gray-600">98% de clientes satisfechos</p>
+            </div>
+          </div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <svg class="w-full h-16 text-gray-100" viewBox="0 0 1440 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 48h1440V0c-192 22.4-384 34.133-576 35.2C672 36.267 480 24.533 288 2.133 192-6.933 96-12.533 0-14.667V48z"></path>
+        </svg>
+      </div>
     </section>
-    `
+  `
 }
+
+// Export the Hero function
+window.Hero = Hero
 
