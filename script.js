@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPropertyIndex = 0
 
   // Cargar propiedades desde el archivo JSON
-  fetch("properties.json")
+  fetch("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/properties-SwfbFgEDNi0PEGWAbCeRsrgolJXUIR.json")
     .then((response) => response.json())
     .then((properties) => {
       const featuredPropertiesContainer = document.getElementById("featuredProperties")
@@ -166,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
               propertyDetails.innerHTML = Object.entries(property.details)
                 .map(
                   ([key, value]) => `
-                                    <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
-                                `,
+                  <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+                `,
                 )
                 .join("")
 
