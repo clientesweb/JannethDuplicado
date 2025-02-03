@@ -90,8 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault()
-      // Aquí iría la lógica para enviar el formulario
-      alert("Mensaje enviado. El agente se pondrá en contacto con usted pronto.")
+      const formData = new FormData(form)
+      const name = formData.get("name")
+      const email = formData.get("email")
+      const phone = formData.get("phone")
+      const message = formData.get("message")
+
+      // Construir el mensaje para WhatsApp
+      const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0ATeléfono: ${phone}%0AMensaje: ${message}`
+      const whatsappUrl = `https://wa.me/593987167782?text=${whatsappMessage}`
+
+      // Abrir WhatsApp en una nueva ventana
+      window.open(whatsappUrl, "_blank")
+
+      // Limpiar el formulario después del envío
       form.reset()
     })
   }
