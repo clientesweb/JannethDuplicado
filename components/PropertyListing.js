@@ -66,13 +66,16 @@ function PropertyListing() {
   return `
     <main class="bg-gray-100 min-h-screen py-12">
       <div class="container mx-auto px-4">
+        <button onclick="history.back()" class="mb-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors duration-300">
+          <i class="fas fa-arrow-left mr-2"></i> Volver
+        </button>
         <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Nuestras Propiedades</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           ${properties
             .map(
               (property) => `
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="${property.image}" alt="${property.title}" class="w-full h-48 object-cover">
+              <img src="${property.image}" alt="${property.title}" class="w-full h-48 object-cover cursor-pointer" onclick="openImageModal(this.src)">
               <div class="p-6">
                 <h3 class="text-xl font-bold mb-2">${property.title}</h3>
                 <p class="text-gray-600 mb-4">${property.location}</p>
@@ -98,6 +101,14 @@ function PropertyListing() {
         </div>
       </div>
     </main>
+
+    <!-- Modal para ver imágenes en tamaño completo -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+      <div class="max-w-4xl w-full">
+        <img id="modalImage" src="/placeholder.svg" alt="Imagen en tamaño completo" class="w-full h-auto">
+        <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+      </div>
+    </div>
   `
 }
 
@@ -111,6 +122,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+// Funciones para el modal de imágenes
+function openImageModal(src) {
+  const modal = document.getElementById("imageModal")
+  const modalImage = document.getElementById("modalImage")
+  modalImage.src = src
+  modal.classList.remove("hidden")
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("imageModal")
+  modal.classList.add("hidden")
+}
 
 // Exportar la función PropertyListing
 window.PropertyListing = PropertyListing
