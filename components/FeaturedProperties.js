@@ -10,7 +10,7 @@ function FeaturedProperties() {
       image: "images/property1.jpg",
       bedrooms: "1 - 2",
       bathrooms: "1 - 2",
-      area: "60 m²",
+      area: "Desde 60 m²",
       url: "https://www.jannethaguirre.com/property/departamentos-exclusivos-samborondon",
       description: "Modernos y confortables departamentos disponibles de 1 y 2 dormitorios",
       reserve: "Reserva con $500",
