@@ -1,6 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed")
 
+  // Hero Carousel
+  const heroCarousel = document.getElementById("heroCarousel")
+  const heroSlides = heroCarousel.querySelectorAll(".absolute.inset-0")
+  const heroNavButtons = document.querySelectorAll("[data-slide]")
+  let currentHeroSlide = 0
+
+  function showHeroSlide(index) {
+    heroSlides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? "1" : "0"
+      slide.style.zIndex = i === index ? "10" : "0"
+    })
+    heroNavButtons.forEach((button, i) => {
+      button.classList.toggle("opacity-100", i === index)
+      button.classList.toggle("opacity-50", i !== index)
+    })
+  }
+
+  function nextHeroSlide() {
+    currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length
+    showHeroSlide(currentHeroSlide)
+  }
+
+  heroNavButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      currentHeroSlide = Number.parseInt(button.getAttribute("data-slide"))
+      showHeroSlide(currentHeroSlide)
+    })
+  })
+
+  showHeroSlide(currentHeroSlide)
+  setInterval(nextHeroSlide, 5000) // Change slide every 5 seconds
+
+  // Logo Slider
+  const logoSlider = document.querySelector(".animate-slide")
+  if (logoSlider) {
+    const logoWidth = logoSlider.querySelector("div").offsetWidth
+    const totalWidth = logoWidth * logoSlider.children.length
+
+    logoSlider.style.width = `${totalWidth * 2}px`
+    logoSlider.innerHTML += logoSlider.innerHTML
+
+    function slideLogos() {
+      if (logoSlider.scrollLeft >= totalWidth) {
+        logoSlider.scrollLeft = 0
+      } else {
+        logoSlider.scrollLeft += 1
+      }
+      requestAnimationFrame(slideLogos)
+    }
+
+    slideLogos()
+  }
+
   // Fade-in effect
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -120,8 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
               propertyDetails.innerHTML = Object.entries(property.details)
                 .map(
                   ([key, value]) => `
-                                <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
-                            `,
+                                    <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+                                `,
                 )
                 .join("")
 
@@ -245,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // GSAP animations
-  // Import GSAP
+  // Import GSAP -  This should be handled at the top of the script now.
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
     console.warn("GSAP or ScrollTrigger not loaded. Please include the GSAP library in your project.")
   } else {
@@ -567,27 +620,76 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Logo Slider
-  const logoSlider = new Swiper(".swiper-container", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 4,
-      },
-      1024: {
-        slidesPerView: 5,
-      },
-    },
-  })
+  // Magazine Slider
+  const magazineSlider = document.getElementById("magazineSlider")
+  if (magazineSlider) {
+    let isDown = false
+    let startX
+    let scrollLeft
+
+    magazineSlider.addEventListener("mousedown", (e) => {
+      isDown = true
+      startX = e.pageX - magazineSlider.offsetLeft
+      scrollLeft = magazineSlider.scrollLeft
+    })
+
+    magazineSlider.addEventListener("mouseleave", () => {
+      isDown = false
+    })
+
+    magazineSlider.addEventListener("mouseup", () => {
+      isDown = false
+    })
+
+    magazineSlider.addEventListener("mousemove", (e) => {
+      if (!isDown) return
+      e.preventDefault()
+      const x = e.pageX - magazineSlider.offsetLeft
+      const walk = (x - startX) * 3
+      magazineSlider.scrollLeft = scrollLeft - walk
+    })
+
+    // Touch events for mobile devices
+    magazineSlider.addEventListener("touchstart", (e) => {
+      isDown = true
+      startX = e.touches[0].pageX - magazineSlider.offsetLeft
+      scrollLeft = magazineSlider.scrollLeft
+    })
+
+    magazineSlider.addEventListener("touchend", () => {
+      isDown = false
+    })
+
+    magazineSlider.addEventListener("touchmove", (e) => {
+      if (!isDown) return
+      e.preventDefault()
+      const x = e.touches[0].pageX - magazineSlider.offsetLeft
+      const walk = (x - startX) * 3
+      magazineSlider.scrollLeft = scrollLeft - walk
+    })
+  }
+
+  // Logo Slider (Swiper) - This section is now removed as it's replaced by the new logo slider implementation above.
+  // const logoSlider = new Swiper(".swiper-container", {
+  //     slidesPerView: 3,
+  //     spaceBetween: 30,
+  //     loop: true,
+  //     autoplay: {
+  //         delay: 3000,
+  //         disableOnInteraction: false,
+  //     },
+  //     breakpoints: {
+  //         640: {
+  //             slidesPerView: 3,
+  //         },
+  //         768: {
+  //             slidesPerView: 4,
+  //         },
+  //         1024: {
+  //             slidesPerView: 5,
+  //         },
+  //     },
+  // })
 
   // Top Banner Fix
   const topBanner = document.querySelector(".animate-marquee")
