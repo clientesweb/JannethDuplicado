@@ -53,7 +53,7 @@ function FeaturedProperties() {
                   <span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>
                   <span><i class="fas fa-vector-square mr-2"></i>${property.area}</span>
                 </div>
-                <a href="#" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
+                <a href="property-details.html?id=${property.id}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
                   Ver Detalles
                 </a>
               </div>
@@ -63,7 +63,7 @@ function FeaturedProperties() {
             .join("")}
         </div>
         <div class="text-center mt-8">
-          <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition duration-300">
+          <a href="property-listing.html" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition duration-300">
             Ver Todas las Propiedades
           </a>
         </div>
