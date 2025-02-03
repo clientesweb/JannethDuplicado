@@ -50,6 +50,7 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   
   <style>
       body {
@@ -110,36 +111,39 @@
       }
   </style>
   <script src="components/TopBanner.js"></script>
+  <script src="components/Hero.js"></script>
 </head>
 <body class="bg-white text-gray-800">
   <div id="app">
       <!-- Los componentes se insertarán aquí -->
   </div>
   <script>
-    document.getElementById('app').innerHTML = `
-      ${TopBanner()}
-      ${Header()}
-      <main>
-          ${Hero()}
-          ${About()}
-          ${FeaturedProperties()}
-          ${Services()}
-          ${ConstructionProgress()}
-          ${OnlineMagazine()}
-          ${Playlists()}
-          ${Contact()}
-          ${AppDownload()}
-      </main>
-      ${Footer()}
-      ${BottomNavigation()}
-      ${WhatsAppButton()}
-    `;
+    document.addEventListener('DOMContentLoaded', () => {
+      const app = document.getElementById('app');
+      app.innerHTML = `
+        ${TopBanner()}
+        ${Header()}
+        <main>
+            ${Hero()}
+            ${About()}
+            ${FeaturedProperties()}
+            ${Services()}
+            ${ConstructionProgress()}
+            ${OnlineMagazine()}
+            ${Playlists()}
+            ${Contact()}
+            ${AppDownload()}
+        </main>
+        ${Footer()}
+        ${BottomNavigation()}
+        ${WhatsAppButton()}
+      `;
+    });
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script async src="//www.instagram.com/embed.js"></script>
   <script src="components/Header.js"></script>
-  <script src="components/Hero.js"></script>
   <script src="components/About.js"></script>
   <script src="components/Services.js"></script>
   <script src="components/ConstructionProgress.js"></script>
@@ -154,6 +158,13 @@
   <script src="components/WhatsAppButton.js"></script>
   <script src="script.js"></script>
   <script src="components/OnlineMagazine.js"></script>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!--<script type="text/babel">
+  ReactDOM.render(<Hero />, document.getElementById('hero-root'));
+  </script>-->
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   
