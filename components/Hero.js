@@ -3,15 +3,16 @@ function Hero() {
     <section class="relative h-screen overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="images/magazine-janneth-aguirre.png" alt="Hero Background" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/40"></div>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div class="relative z-10 h-full flex items-center">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl">
-                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold text-primary mb-4 font-serif leading-tight text-shadow-lg">
-                        Descubre Tu Hogar Ideal en Ecuador
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 font-serif leading-tight text-shadow">
+                        <span class="text-primary">Descubre Tu Hogar Ideal</span>
+                        <span class="text-white"> en Ecuador</span>
                     </h1>
-                    <p class="text-lg md:text-xl lg:text-2xl text-white mb-8 text-shadow-lg">
+                    <p class="text-lg md:text-xl lg:text-2xl text-white mb-8 text-shadow">
                         Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
