@@ -24,34 +24,20 @@ function PropertyDetails() {
     },
   }
 
-  // Importar Header y Footer (asumiendo que son componentes funcionales)
-  const Header = () => (
-    <header>
-      <h1>Este es un header</h1>
-    </header>
-  )
-  const Footer = () => (
-    <footer>
-      <h1>Este es un footer</h1>
-    </footer>
-  )
-
   return `
-    <div class="bg-gray-100 min-h-screen">
-      ${Header()}
-      <main class="container mx-auto px-4 py-8">
+    <main class="bg-gray-100 min-h-screen py-12">
+      <div class="container mx-auto px-4">
         <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">${property.title}</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-              <img src="${property.images[0]}" alt="${property.title}" class="w-full h-64 object-cover">
+              <img src="${property.images[0]}" alt="${property.title}" class="w-full h-64 object-cover" id="mainImage">
             </div>
             <div class="grid grid-cols-4 gap-2">
               ${property.images
-                .slice(1)
                 .map(
-                  (img) => `
-                <img src="${img}" alt="${property.title}" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-75 transition duration-300">
+                  (img, index) => `
+                <img src="${img}" alt="${property.title}" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-75 transition duration-300 thumbnail" data-index="${index}">
               `,
                 )
                 .join("")}
@@ -93,9 +79,8 @@ function PropertyDetails() {
             </div>
           </div>
         </div>
-      </main>
-      ${Footer()}
-    </div>
+      </div>
+    </main>
   `
 }
 
@@ -112,11 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Lógica para cambiar la imagen principal al hacer clic en las miniaturas
-  const thumbnails = document.querySelectorAll(".grid-cols-4 img")
-  const mainImage = document.querySelector(".h-64")
+  const thumbnails = document.querySelectorAll(".thumbnail")
+  const mainImage = document.getElementById("mainImage")
   thumbnails.forEach((thumb) => {
     thumb.addEventListener("click", () => {
       mainImage.src = thumb.src
+      mainImage.alt = thumb.alt
     })
   })
 })
