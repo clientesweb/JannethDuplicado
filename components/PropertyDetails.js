@@ -23,6 +23,28 @@ function PropertyDetails() {
       email: "janneth@jannethaguirre.com",
     },
   }
+  id: 2,
+    title: "Lujoso Apartamento o",
+    price: "$250,000",
+    location: "Centro de Guayaquil",
+    description:
+      "Hermoso apartamento de lujo ubicado en el corazón de Guayaquil. Disfrute de vistas panorámicas de la ciudad desde este espacioso piso 15. Acabados de primera calidad, cocina gourmet y amplias áreas sociales hacen de este apartamento el hogar perfecto para aquellos que buscan comodidad y elegancia en el centro de la ciudad.",
+    features: [
+      "3 habitaciones",
+      "2 baños",
+      "150 m²",
+      "Estacionamiento para 2 vehículos",
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7",
+    ],
+    images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    agent: {
+      name: "Janneth Aguirre",
+      phone: "+593 98 716 7782",
+      email: "janneth@jannethaguirre.com",
+    },
+  }
 
   return `
     <main class="bg-gray-100 min-h-screen py-12">
