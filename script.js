@@ -137,6 +137,28 @@ document.addEventListener("DOMContentLoaded", () => {
           featuredPropertiesContainer.appendChild(propertyCard)
         })
 
+        // Agregar event listeners a los botones de detalles de propiedad
+        document.querySelectorAll(".property-details").forEach((button) => {
+          button.addEventListener("click", function () {
+            const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
+            const property = properties.find((p) => p.id === propertyId)
+            if (property) {
+              showPropertyDetails(property)
+            }
+          })
+        })
+
+        // Agregar event listeners a los botones de render
+        document.querySelectorAll(".property-render").forEach((button) => {
+          button.addEventListener("click", function () {
+            const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
+            const property = properties.find((p) => p.id === propertyId)
+            if (property && property.renderAttachment) {
+              showRenderModal(property)
+            }
+          })
+        })
+
         // Add horizontal scroll functionality
         const scrollLeftBtn = document.getElementById("scrollLeft")
         const scrollRightBtn = document.getElementById("scrollRight")
@@ -150,59 +172,49 @@ document.addEventListener("DOMContentLoaded", () => {
             featuredPropertiesContainer.scrollBy({ left: 300, behavior: "smooth" })
           })
         }
-
-        // Agregar event listeners a los botones de detalles de propiedad
-        document.querySelectorAll(".property-details").forEach((button) => {
-          button.addEventListener("click", function () {
-            const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
-            const property = properties.find((p) => p.id === propertyId)
-
-            if (property) {
-              propertyTitle.textContent = property.title
-              propertyDescription.textContent = property.description
-              propertySlider.innerHTML = property.images
-                .map((img) => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`)
-                .join("")
-              propertyDetails.innerHTML = Object.entries(property.details)
-                .map(
-                  ([key, value]) => `
-                  <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
-                `,
-                )
-                .join("")
-
-              // Actualizar el enlace de WhatsApp con el mensaje predefinido
-              const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`)
-              propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`
-
-              propertyModal.classList.remove("hidden")
-              currentPropertyIndex = 0
-              updateSlider()
-            }
-          })
-        })
-
-        // Agregar event listeners a los botones de render
-        document.querySelectorAll(".property-render").forEach((button) => {
-          button.addEventListener("click", function () {
-            const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
-            const property = properties.find((p) => p.id === propertyId)
-
-            if (property && property.renderAttachment) {
-              renderTitle.textContent = `Render de ${property.title}`
-              renderVideo.src = property.renderAttachment
-              renderModal.classList.remove("hidden")
-              renderVideo.play() // Reproducir el video automáticamente
-            } else {
-              console.error("Render video not found for property:", property)
-            }
-          })
-        })
       } else {
         console.error("Featured properties container not found")
       }
     })
     .catch((error) => console.error("Error loading properties:", error))
+
+  function showPropertyDetails(property) {
+    const propertyModal = document.getElementById("propertyModal")
+    const propertyTitle = document.getElementById("propertyTitle")
+    const propertySlider = document.getElementById("propertySlider")
+    const propertyDescription = document.getElementById("propertyDescription")
+    const propertyDetails = document.getElementById("propertyDetails")
+    const propertyContact = document.getElementById("propertyContact")
+
+    propertyTitle.textContent = property.title
+    propertyDescription.textContent = property.description
+    propertySlider.innerHTML = property.images
+      .map((img) => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`)
+      .join("")
+    propertyDetails.innerHTML = Object.entries(property.details)
+      .map(
+        ([key, value]) => `
+          <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+        `,
+      )
+      .join("")
+
+    const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`)
+    propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`
+
+    propertyModal.classList.remove("hidden")
+  }
+
+  function showRenderModal(property) {
+    const renderModal = document.getElementById("renderModal")
+    const renderTitle = document.getElementById("renderTitle")
+    const renderVideo = document.getElementById("renderVideo")
+
+    renderTitle.textContent = `Render de ${property.title}`
+    renderVideo.src = property.renderAttachment
+    renderModal.classList.remove("hidden")
+    renderVideo.play()
+  }
 
   if (closePropertyModal) {
     closePropertyModal.addEventListener("click", () => {
@@ -422,5 +434,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   }
+
+  // FAQ functionality
+  document.querySelectorAll("#faq button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling
+      content.classList.toggle("hidden")
+      const icon = button.querySelector("i")
+      icon.classList.toggle("fa-chevron-down")
+      icon.classList.toggle("fa-chevron-up")
+    })
+  })
+
+  // Load YouTube videos
+  function loadYouTubeVideos() {
+    const youtubeSlider = document.getElementById("youtubeSlider")
+    if (youtubeSlider) {
+      // Replace these with your actual YouTube video IDs
+      const videoIds = ["VIDEO_ID_1", "VIDEO_ID_2", "VIDEO_ID_3", "VIDEO_ID_4"]
+
+      videoIds.forEach((videoId) => {
+        const videoContainer = document.createElement("div")
+        videoContainer.className = "flex-shrink-0 w-80 mx-2"
+        videoContainer.innerHTML = `
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `
+        youtubeSlider.appendChild(videoContainer)
+      })
+    }
+  }
+
+  loadYouTubeVideos()
 })
 
