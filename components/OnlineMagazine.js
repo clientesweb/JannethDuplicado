@@ -1,19 +1,25 @@
 function OnlineMagazine() {
   const articles = [
     {
-      title: "La Domotización en Bienes Raíces por Juan Carlos Solano Aguirre",
+      title: "La Domotización en Bienes Raíces: Transformando Espacios para el Futuro",
+      subtitle:
+        "La domotización revoluciona el mercado inmobiliario, mejorando eficiencia, seguridad y confort. Descubre su impacto y las oportunidades que ofrece.",
       url: "https://jannethaguirre.online/articulo/la-domotizacion-en-bienes-raices-por-juan-carlos-solano-aguirre",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://jannethaguirre.online/juan-solano-aguirre.jpg",
     },
     {
-      title: "José Solines Aguayo: Construyendo Sueños",
+      title: "José Solines Aguayo: Construyendo Sueños y Transformando Ecuador",
+      subtitle:
+        "Descubre la historia de uno de los constructores más emblemáticos e influyentes de Ecuador y su impacto en el desarrollo de Samborondón y Vía a la Costa.",
       url: "https://jannethaguirre.online/articulo/jose-solines-aguayo-construyendo-suenos",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://jannethaguirre.online/portada-jose-solines.jpg",
     },
     {
-      title: "Boquete Pino Alto Country Club",
+      title: "Boquete Pino Alto Country Club: Lujo y Naturaleza en Panamá",
+      subtitle:
+        "Descubre el exclusivo desarrollo residencial en las montañas de Boquete, que combina lujo, golf y una impresionante belleza natural.",
       url: "https://jannethaguirre.online/articulo/boquete-pino-alto-country-club",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://jannethaguirre.online/boquete-pino-alto-country-club.jpg",
     },
   ]
 
@@ -29,11 +35,12 @@ function OnlineMagazine() {
             .map(
               (article) => `
             <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-              <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+              <img src="${article.image}" alt="${article.title}" class="w-full h-auto object-cover">
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-4 line-clamp-2">${article.title}</h3>
-                <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
-                  Leer Artículo
+                <h3 class="text-xl font-bold mb-2">${article.title}</h3>
+                <p class="text-gray-600 mb-4">${article.subtitle}</p>
+                <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="inline-block text-primary hover:text-secondary font-bold transition duration-300">
+                  Leer más →
                 </a>
               </div>
             </div>
