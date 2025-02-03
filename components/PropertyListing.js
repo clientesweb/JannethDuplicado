@@ -1,0 +1,123 @@
+function PropertyListing() {
+  // En una implementación real, estos datos vendrían de una API o base de datos
+  const properties = [
+    {
+      id: 1,
+      title: "Lujoso Apartamento en el Centro",
+      price: "$250,000",
+      location: "Centro de Guayaquil",
+      image: "images/property1.jpg",
+      bedrooms: 3,
+      bathrooms: 2,
+      area: "150 m²",
+    },
+    {
+      id: 2,
+      title: "Casa Familiar con Jardín",
+      price: "$320,000",
+      location: "Samborondón",
+      image: "images/property2.jpg",
+      bedrooms: 4,
+      bathrooms: 3,
+      area: "200 m²",
+    },
+    {
+      id: 3,
+      title: "Penthouse con Vista al Mar",
+      price: "$450,000",
+      location: "Malecon 2000",
+      image: "images/property3.jpg",
+      bedrooms: 3,
+      bathrooms: 3,
+      area: "180 m²",
+    },
+    {
+      id: 4,
+      title: "Apartamento Moderno en Torre Exclusiva",
+      price: "$280,000",
+      location: "Puerto Santa Ana",
+      image: "images/property4.jpg",
+      bedrooms: 2,
+      bathrooms: 2,
+      area: "120 m²",
+    },
+    {
+      id: 5,
+      title: "Villa de Lujo con Piscina",
+      price: "$580,000",
+      location: "Vía a la Costa",
+      image: "images/property5.jpg",
+      bedrooms: 5,
+      bathrooms: 4,
+      area: "350 m²",
+    },
+    {
+      id: 6,
+      title: "Oficina Comercial en Distrito Financiero",
+      price: "$420,000",
+      location: "Centro de Negocios",
+      image: "images/property6.jpg",
+      bedrooms: "N/A",
+      bathrooms: 2,
+      area: "200 m²",
+    },
+  ]
+
+  // Importar Header y Footer (asumiendo que están en otros archivos)
+  const Header = () => `<h1>Este es el Header</h1>`
+  const Footer = () => `<footer>Este es el Footer</footer>`
+
+  return `
+    <div class="bg-gray-100 min-h-screen">
+      ${Header()}
+      <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Nuestras Propiedades</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          ${properties
+            .map(
+              (property) => `
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img src="${property.image}" alt="${property.title}" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">${property.title}</h3>
+                <p class="text-gray-600 mb-4">${property.location}</p>
+                <p class="text-primary text-2xl font-bold mb-4">${property.price}</p>
+                <div class="flex justify-between text-sm text-gray-600">
+                  <span><i class="fas fa-bed mr-2"></i>${property.bedrooms} Habitaciones</span>
+                  <span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>
+                  <span><i class="fas fa-vector-square mr-2"></i>${property.area}</span>
+                </div>
+                <a href="property-details.html?id=${property.id}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
+                  Ver Detalles
+                </a>
+              </div>
+            </div>
+          `,
+            )
+            .join("")}
+        </div>
+        <div class="mt-12 flex justify-center">
+          <button id="load-more" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
+            Cargar Más Propiedades
+          </button>
+        </div>
+      </main>
+      ${Footer()}
+    </div>
+  `
+}
+
+// Event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  const loadMoreBtn = document.getElementById("load-more")
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      // Aquí iría la lógica para cargar más propiedades
+      alert("Cargando más propiedades...")
+    })
+  }
+})
+
+// Exportar la función PropertyListing
+window.PropertyListing = PropertyListing
+
