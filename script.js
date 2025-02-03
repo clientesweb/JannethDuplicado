@@ -126,21 +126,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load playlist videos
   loadPlaylistVideos()
-
-  // Inicializar el carrusel del hero
-  initHeroCarousel()
 })
-
-function initHeroCarousel() {
-  const carouselItems = document.querySelectorAll("#heroCarousel .carousel-item")
-  let currentIndex = 0
-
-  function showNextSlide() {
-    carouselItems[currentIndex].classList.remove("active")
-    currentIndex = (currentIndex + 1) % carouselItems.length
-    carouselItems[currentIndex].classList.add("active")
-  }
-
-  setInterval(showNextSlide, 5000) // Cambia la imagen cada 5 segundos
-}
 
