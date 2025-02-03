@@ -33,6 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Scroll to top button not found")
   }
 
+  // Top Banner Animation
+  const topBanner = document.querySelector(".animate-marquee")
+  if (topBanner) {
+    const content = topBanner.innerHTML
+    topBanner.innerHTML = content + content // Duplicate content for seamless loop
+
+    function animateMarquee() {
+      if (topBanner.scrollLeft >= topBanner.scrollWidth / 2) {
+        topBanner.scrollLeft = 0
+      } else {
+        topBanner.scrollLeft += 1
+      }
+      requestAnimationFrame(animateMarquee)
+    }
+
+    animateMarquee()
+  } else {
+    console.error("Top banner not found")
+  }
+
   // Carrusel de propiedades en el héroe
   const propertyCarousel = document.getElementById("propertyCarousel")
   const nextPropertyBtn = document.getElementById("nextProperty")
@@ -60,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       propertyCarousel.appendChild(slide)
 
       const indicator = document.createElement("button")
-      indicator.className = `w-3 h-3 rounded-full ${index === 0 ? "bg-primary" : "bg-white"}`
+      indicator.className = `w-4 h-4 rounded-full ${index === 0 ? "bg-primary" : "bg-white"}`
       indicator.addEventListener("click", () => goToSlide(index))
       carouselIndicators.appendChild(indicator)
     })
@@ -100,14 +120,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (featuredPropertiesContainer) {
       properties.forEach((property) => {
         const propertyCard = document.createElement("div")
-        propertyCard.className = "bg-white rounded-lg shadow-md overflow-hidden flex-shrink-0 w-80 mx-2"
+        propertyCard.className =
+          "bg-white rounded-lg shadow-lg overflow-hidden flex-shrink-0 w-80 mx-2 transform transition-all duration-300 hover:scale-105"
         propertyCard.innerHTML = `
                     <img src="${property.images[0]}" alt="${property.title}" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-bold mb-2">${property.title}</h3>
                         <p class="text-gray-600 mb-4">${property.description.substring(0, 100)}...</p>
-                        <button class="bg-primary text-white px-4 py-2 rounded property-details mr-2" data-property-id="${property.id}">Ver Detalles</button>
-                        <button class="bg-secondary text-white px-4 py-2 rounded property-render" data-property-id="${property.id}">Ver Render</button>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$${property.price.toLocaleString()}</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-full property-details" data-property-id="${property.id}">Ver Detalles</button>
+                        </div>
                     </div>
                 `
         featuredPropertiesContainer.appendChild(propertyCard)
@@ -138,12 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const prevSlide = document.getElementById("prevSlide")
       const nextSlide = document.getElementById("nextSlide")
 
-      // Render Modal
-      const renderModal = document.getElementById("renderModal")
-      const renderTitle = document.getElementById("renderTitle")
-      const renderVideo = document.getElementById("renderVideo")
-      const closeRenderModal = document.getElementById("closeRenderModal")
-
       if (
         !propertyModal ||
         !propertyTitle ||
@@ -153,11 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !propertyContact ||
         !closePropertyModal ||
         !prevSlide ||
-        !nextSlide ||
-        !renderModal ||
-        !renderTitle ||
-        !renderVideo ||
-        !closeRenderModal
+        !nextSlide
       ) {
         console.error("One or more modal elements not found")
       }
@@ -179,8 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
             propertyDetails.innerHTML = Object.entries(property.details)
               .map(
                 ([key, value]) => `
-                            <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
-                        `,
+                                <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
+                            `,
               )
               .join("")
 
@@ -195,78 +208,43 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       })
 
-      // Agregar event listeners a los botones de render
-      document.querySelectorAll(".property-render").forEach((button) => {
-        button.addEventListener("click", function () {
-          const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
-          const property = properties.find((p) => p.id === propertyId)
+      if (closePropertyModal) {
+        closePropertyModal.addEventListener("click", () => {
+          propertyModal.classList.add("hidden")
+        })
+      }
 
-          if (property && property.renderAttachment) {
-            renderTitle.textContent = `Render de ${property.title}`
-            renderVideo.src = property.renderAttachment
-            renderModal.classList.remove("hidden")
-            renderVideo.play() // Reproducir el video automáticamente
-          } else {
-            console.error("Render video not found for property:", property)
+      if (propertyModal) {
+        propertyModal.addEventListener("click", (e) => {
+          if (e.target === propertyModal) {
+            propertyModal.classList.add("hidden")
           }
         })
-      })
+      }
+
+      function updateSlider() {
+        const images = propertySlider.querySelectorAll("img")
+        images.forEach((img, index) => {
+          img.style.display = index === currentPropertyIndex ? "block" : "none"
+        })
+      }
+
+      if (prevSlide && nextSlide) {
+        prevSlide.addEventListener("click", () => {
+          const images = propertySlider.querySelectorAll("img")
+          currentPropertyIndex = (currentPropertyIndex - 1 + images.length) % images.length
+          updateSlider()
+        })
+
+        nextSlide.addEventListener("click", () => {
+          const images = propertySlider.querySelectorAll("img")
+          currentPropertyIndex = (currentPropertyIndex + 1) % images.length
+          updateSlider()
+        })
+      }
     } else {
       console.error("Featured properties container not found")
     }
-  }
-
-  if (closePropertyModal) {
-    closePropertyModal.addEventListener("click", () => {
-      propertyModal.classList.add("hidden")
-    })
-  }
-
-  if (closeRenderModal) {
-    closeRenderModal.addEventListener("click", () => {
-      renderModal.classList.add("hidden")
-      renderVideo.pause()
-      renderVideo.currentTime = 0 // Reiniciar el video
-    })
-  }
-
-  if (propertyModal) {
-    propertyModal.addEventListener("click", (e) => {
-      if (e.target === propertyModal) {
-        propertyModal.classList.add("hidden")
-      }
-    })
-  }
-
-  if (renderModal) {
-    renderModal.addEventListener("click", (e) => {
-      if (e.target === renderModal) {
-        renderModal.classList.add("hidden")
-        renderVideo.pause()
-        renderVideo.currentTime = 0 // Reiniciar el video
-      }
-    })
-  }
-
-  function updateSlider() {
-    const images = propertySlider.querySelectorAll("img")
-    images.forEach((img, index) => {
-      img.style.display = index === currentPropertyIndex ? "block" : "none"
-    })
-  }
-
-  if (prevSlide && nextSlide) {
-    prevSlide.addEventListener("click", () => {
-      const images = propertySlider.querySelectorAll("img")
-      currentPropertyIndex = (currentPropertyIndex - 1 + images.length) % images.length
-      updateSlider()
-    })
-
-    nextSlide.addEventListener("click", () => {
-      const images = propertySlider.querySelectorAll("img")
-      currentPropertyIndex = (currentPropertyIndex + 1) % images.length
-      updateSlider()
-    })
   }
 
   // Fix for WhatsApp button
@@ -731,23 +709,27 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   })
 
-  // Top Banner Fix
-  const topBanner = document.querySelector(".animate-marquee")
-  if (topBanner) {
-    const content = topBanner.innerHTML
-    topBanner.innerHTML = content + content // Duplicate content for seamless loop
+  // Cargar logos dinámicamente
+  const logos = [
+    "logo1.png",
+    "logo2.png",
+    "logo3.png",
+    "logo4.png",
+    "logo5.png",
+    "logo6.png",
+    "logo7.png",
+    "logo8.png",
+    "logo9.png",
+    "logo10.png",
+  ]
 
-    function animateMarquee() {
-      if (topBanner.scrollLeft >= topBanner.scrollWidth / 2) {
-        topBanner.scrollLeft = 0
-      } else {
-        topBanner.scrollLeft += 1
-      }
-      requestAnimationFrame(animateMarquee)
-    }
-
-    animateMarquee()
-  }
+  const swiperWrapper = document.querySelector(".swiper-wrapper")
+  logos.forEach((logo) => {
+    const slide = document.createElement("div")
+    slide.className = "swiper-slide"
+    slide.innerHTML = `<img src="images/logos/${logo}" alt="Logo" class="mx-auto h-16 object-contain">`
+    swiperWrapper.appendChild(slide)
+  })
 
   console.log("Script loaded successfully!")
 })
