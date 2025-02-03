@@ -10,33 +10,38 @@ function Playlists() {
         </div>
       </div>
     </section>
-  `;
+  `
 
-  return playlistsHtml;
+  return playlistsHtml
 }
 
 // Función para cargar los videos de la playlist
 function loadPlaylistVideos() {
-  const API_KEY = 'AIzaSyB4HGg2WVC-Sq3Qyj9T9Z9aBBGbET1oGs0'; // Sustituye por tu clave API
-  const PLAYLIST_ID = 'PLZ_v3bWMqpjEYZDAFLI-0GuAH4BpA5PiL'; // Sustituye por tu ID de playlist
+  const API_KEY = "AIzaSyB4HGg2WVC-Sq3Qyj9T9Z9aBBGbET1oGs0" // Sustituye por tu clave API
+  const PLAYLIST_ID = "PLZ_v3bWMqpjEYZDAFLI-0GuAH4BpA5PiL" // Sustituye por tu ID de playlist
 
-  fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=5&key=${API_KEY}`)
-    .then(response => {
+  fetch(
+    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=5&key=${API_KEY}`,
+  )
+    .then((response) => {
       if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.statusText}`);
+        throw new Error(`Network response was not ok: ${response.statusText}`)
       }
-      return response.json();
+      return response.json()
     })
-    .then(data => {
-      const playlistContainer = document.getElementById('playlist-container');
-      const videosData = data.items;
+    .then((data) => {
+      const playlistContainer = document.getElementById("playlist-container")
+      const videosData = data.items
 
       if (videosData.length === 0) {
-        playlistContainer.innerHTML = '<p class="text-center text-gray-600">No se encontraron videos en esta playlist.</p>';
-        return;
+        playlistContainer.innerHTML =
+          '<p class="text-center text-gray-600">No se encontraron videos en esta playlist.</p>'
+        return
       }
 
-      playlistContainer.innerHTML = videosData.map(video => `
+      playlistContainer.innerHTML = videosData
+        .map(
+          (video) => `
         <div class="flex-none w-96 aspect-video rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl duration-300">
           <iframe
             src="https://www.youtube.com/embed/${video.snippet.resourceId.videoId}"
@@ -48,14 +53,18 @@ function loadPlaylistVideos() {
             allowfullscreen
           ></iframe>
         </div>
-      `).join('');
+      `,
+        )
+        .join("")
     })
-    .catch(error => {
-      console.error('Error fetching the playlist:', error);
-      const playlistContainer = document.getElementById('playlist-container');
-      playlistContainer.innerHTML = '<p class="text-center text-red-600">Error al cargar los videos. Por favor, inténtalo de nuevo más tarde.</p>';
-    });
+    .catch((error) => {
+      console.error("Error fetching the playlist:", error)
+      const playlistContainer = document.getElementById("playlist-container")
+      playlistContainer.innerHTML =
+        '<p class="text-center text-red-600">Error al cargar los videos. Por favor, inténtalo de nuevo más tarde.</p>'
+    })
 }
 
 // Exportar la función Playlists
-window.Playlists = Playlists;
+window.Playlists = Playlists
+
