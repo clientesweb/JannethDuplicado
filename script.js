@@ -1,3 +1,6 @@
+// Import GSAP
+import { gsap, ScrollTrigger } from "gsap/all"
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed")
 
@@ -396,296 +399,31 @@ document.addEventListener("DOMContentLoaded", () => {
       if (filters) {
         const filterObj = filters.split(",").reduce((acc, filter) => {
           const [key, value] = filter.split(":")
-          acc[key.trim()] = value.trim()
+          acc[key] = value
           return acc
         }, {})
 
         propertyCards.forEach((card) => {
-          const propertyData = JSON.parse(card.dataset.property)
-          let show = true
-
-          for (const [key, value] of Object.entries(filterObj)) {
+          let matches = true
+          for (const key in filterObj) {
+            const cardValue = card.dataset[key]
+            const filterValue = filterObj[key]
             if (key === "precio") {
-              const [min, max] = value.split("-").map(Number)
-              if (propertyData.precio < min || propertyData.precio > max) {
-                show = false
+              const [min, max] = filterValue.split("-")
+              const cardPrice = Number.parseInt(cardValue)
+              if (!(cardPrice >= Number.parseInt(min) && cardPrice <= Number.parseInt(max))) {
+                matches = false
                 break
               }
-            } else if (propertyData[key] != value) {
-              show = false
+            } else if (cardValue !== filterValue) {
+              matches = false
               break
             }
           }
-
-          card.style.display = show ? "block" : "none"
+          card.style.display = matches ? "block" : "none"
         })
       }
     })
-  } else {
-    console.error("Filter properties button not found")
   }
-
-  // Chatbot functionality
-  const chatbotButton = document.getElementById("chatbotButton")
-  const chatbotModal = document.getElementById("chatbotModal")
-  const closeChatbotModal = document.getElementById("closeChatbotModal")
-  const chatMessages = document.getElementById("chatMessages")
-  const chatForm = document.getElementById("chatForm")
-  const chatInput = document.getElementById("chatInput")
-
-  if (chatbotButton && chatbotModal && closeChatbotModal) {
-    chatbotButton.addEventListener("click", () => {
-      console.log("Chatbot button clicked")
-      chatbotModal.classList.remove("hidden")
-      chatbotModal.style.display = "block"
-    })
-
-    closeChatbotModal.addEventListener("click", () => {
-      console.log("Close chatbot button clicked")
-      chatbotModal.classList.add("hidden")
-      chatbotModal.style.display = "none"
-    })
-  } else {
-    console.error("One or more chatbot elements not found")
-  }
-
-  if (chatForm && chatInput) {
-    chatForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-      const message = chatInput.value.trim()
-      if (message) {
-        addMessage("user", message)
-        chatInput.value = ""
-        // Simulate ARIA's response (replace with actual AI integration later)
-        setTimeout(() => {
-          addMessage(
-            "bot",
-            "Gracias por tu mensaje. Soy ARIA, la asistente virtual de Janneth Aguirre Bienes Raíces. ¿En qué puedo ayudarte hoy?",
-          )
-        }, 1000)
-      }
-    })
-  } else {
-    console.error("Chat form or input not found")
-  }
-
-  function addMessage(sender, text) {
-    if (chatMessages) {
-      const messageElement = document.createElement("div")
-      messageElement.classList.add(
-        "mb-2",
-        "p-2",
-        "rounded",
-        sender === "user" ? "bg-primary" : "bg-gray-300",
-        sender === "user" ? "text-white" : "text-gray-800",
-        sender === "user" ? "ml-auto" : "mr-auto",
-      )
-      messageElement.style.maxWidth = "80%"
-      messageElement.textContent = text
-      chatMessages.appendChild(messageElement)
-      chatMessages.scrollTop = chatMessages.scrollHeight
-    } else {
-      console.error("Chat messages container not found")
-    }
-  }
-
-  // FAQ Accordion functionality
-  const faqItems = document.querySelectorAll("#faq .bg-white")
-
-  faqItems.forEach((item) => {
-    const button = item.querySelector("button")
-    const content = item.querySelector("div:last-child")
-    const icon = button.querySelector("i")
-
-    if (button && content && icon) {
-      button.addEventListener("click", () => {
-        content.classList.toggle("hidden")
-        icon.classList.toggle("fa-chevron-down")
-        icon.classList.toggle("fa-chevron-up")
-      })
-    } else {
-      console.error("FAQ item elements not found")
-    }
-  })
-
-  // YouTube Videos Section
-  const youtubeSlider = document.getElementById("youtubeSlider")
-  if (youtubeSlider) {
-    const channelId = "UCiahlQJxCgPY-tEfjvkab8g"
-    const apiKey = "AIzaSyBf5wzygVChOBD-3pPb4BR2v5NA4uE9J5c"
-    const maxResults = 10 // Número de videos a mostrar
-
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}&type=video`,
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        data.items.forEach((item) => {
-          if (item.id.kind === "youtube#video") {
-            const videoElement = document.createElement("div")
-            videoElement.className = "flex-shrink-0 w-80 mx-2"
-            videoElement.innerHTML = `
-                            <iframe width="320" height="180" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <p class="mt-2 text-center">${item.snippet.title}</p>
-                        `
-            youtubeSlider.appendChild(videoElement)
-          }
-        })
-
-        // Add horizontal scroll functionality to YouTube slider
-        let isDown = false
-        let startX
-        let scrollLeft
-
-        youtubeSlider.addEventListener("mousedown", (e) => {
-          isDown = true
-          startX = e.pageX - youtubeSlider.offsetLeft
-          scrollLeft = youtubeSlider.scrollLeft
-        })
-
-        youtubeSlider.addEventListener("mouseleave", () => {
-          isDown = false
-        })
-
-        youtubeSlider.addEventListener("mouseup", () => {
-          isDown = false
-        })
-
-        youtubeSlider.addEventListener("mousemove", (e) => {
-          if (!isDown) return
-          e.preventDefault()
-          const x = e.pageX - youtubeSlider.offsetLeft
-          const walk = (x - startX) * 3
-          youtubeSlider.scrollLeft = scrollLeft - walk
-        })
-      })
-      .catch((error) => console.error("Error fetching YouTube videos:", error))
-  } else {
-    console.error("YouTube slider container not found")
-  }
-
-  // Instagram Reels Section
-  const instagramSlider = document.getElementById("instagramSlider")
-  if (instagramSlider) {
-    let isDown = false
-    let startX
-    let scrollLeft
-
-    instagramSlider.addEventListener("mousedown", (e) => {
-      isDown = true
-      startX = e.pageX - instagramSlider.offsetLeft
-      scrollLeft = instagramSlider.scrollLeft
-    })
-
-    instagramSlider.addEventListener("mouseleave", () => {
-      isDown = false
-    })
-
-    instagramSlider.addEventListener("mouseup", () => {
-      isDown = false
-    })
-
-    instagramSlider.addEventListener("mousemove", (e) => {
-      if (!isDown) return
-      e.preventDefault()
-      const x = e.pageX - instagramSlider.offsetLeft
-      const walk = (x - startX) * 3
-      instagramSlider.scrollLeft = scrollLeft - walk
-    })
-
-    // Touch events for mobile devices
-    instagramSlider.addEventListener("touchstart", (e) => {
-      isDown = true
-      startX = e.touches[0].pageX - instagramSlider.offsetLeft
-      scrollLeft = instagramSlider.scrollLeft
-    })
-
-    instagramSlider.addEventListener("touchend", () => {
-      isDown = false
-    })
-
-    instagramSlider.addEventListener("touchmove", (e) => {
-      if (!isDown) return
-      e.preventDefault()
-      const x = e.touches[0].pageX - instagramSlider.offsetLeft
-      const walk = (x - startX) * 3
-      instagramSlider.scrollLeft = scrollLeft - walk
-    })
-  }
-
-  // Magazine Slider
-  const magazineSlider = document.getElementById("magazineSlider")
-  if (magazineSlider) {
-    let isDown = false
-    let startX
-    let scrollLeft
-
-    magazineSlider.addEventListener("mousedown", (e) => {
-      isDown = true
-      startX = e.pageX - magazineSlider.offsetLeft
-      scrollLeft = magazineSlider.scrollLeft
-    })
-
-    magazineSlider.addEventListener("mouseleave", () => {
-      isDown = false
-    })
-
-    magazineSlider.addEventListener("mouseup", () => {
-      isDown = false
-    })
-
-    magazineSlider.addEventListener("mousemove", (e) => {
-      if (!isDown) return
-      e.preventDefault()
-      const x = e.pageX - magazineSlider.offsetLeft
-      const walk = (x - startX) * 3
-      magazineSlider.scrollLeft = scrollLeft - walk
-    })
-
-    // Touch events for mobile devices
-    magazineSlider.addEventListener("touchstart", (e) => {
-      isDown = true
-      startX = e.touches[0].pageX - magazineSlider.offsetLeft
-      scrollLeft = magazineSlider.scrollLeft
-    })
-
-    magazineSlider.addEventListener("touchend", () => {
-      isDown = false
-    })
-
-    magazineSlider.addEventListener("touchmove", (e) => {
-      if (!isDown) return
-      e.preventDefault()
-      const x = e.touches[0].pageX - magazineSlider.offsetLeft
-      const walk = (x - startX) * 3
-      magazineSlider.scrollLeft = scrollLeft - walk
-    })
-  }
-
-  // Logo Slider (Swiper) - This section is now removed as it's replaced by the new logo slider implementation above.
-  // const logoSlider = new Swiper(".swiper-container", {
-  //     slidesPerView: 3,
-  //     spaceBetween: 30,
-  //     loop: true,
-  //     autoplay: {
-  //         delay: 3000,
-  //         disableOnInteraction: false,
-  //     },
-  //     breakpoints: {
-  //         640: {
-  //             slidesPerView: 3,
-  //         },
-  //         768: {
-  //             slidesPerView: 4,
-  //         },
-  //         1024: {
-  //             slidesPerView: 5,
-  //         },
-  //     },
-  // })
-
-  // Top Banner Fix - This is now handled in the Top Banner Animation section above.
-
-  console.log("Script loaded successfully!")
 })
 
