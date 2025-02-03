@@ -109,11 +109,32 @@
           animation: float 3s ease-in-out infinite;
       }
   </style>
+  <script src="components/TopBanner.js"></script>
 </head>
 <body class="bg-white text-gray-800">
   <div id="app">
       <!-- Los componentes se insertarán aquí -->
   </div>
+  <script>
+    document.getElementById('app').innerHTML = `
+      ${TopBanner()}
+      ${Header()}
+      <main>
+          ${Hero()}
+          ${About()}
+          ${FeaturedProperties()}
+          ${Services()}
+          ${ConstructionProgress()}
+          ${OnlineMagazine()}
+          ${Playlists()}
+          ${Contact()}
+          ${AppDownload()}
+      </main>
+      ${Footer()}
+      ${BottomNavigation()}
+      ${WhatsAppButton()}
+    `;
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script async src="//www.instagram.com/embed.js"></script>
