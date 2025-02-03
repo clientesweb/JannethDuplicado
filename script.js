@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${Hero()}
             ${About()}
             ${Services()}
+            ${Properties()}
             ${ConstructionProgress()}
             ${Playlists()}
             ${Contact()}
