@@ -4,13 +4,6 @@ import { gsap, ScrollTrigger } from "gsap/all"
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed")
 
-  // Parallax effect for hero section
-  window.addEventListener("scroll", () => {
-    const parallax = document.querySelector(".parallax")
-    const scrollPosition = window.pageYOffset
-    parallax.style.transform = "translateY(" + scrollPosition * 0.5 + "px)"
-  })
-
   // Top Banner Animation
   const topBanner = document.querySelector(".animate-marquee")
   if (topBanner) {
@@ -367,8 +360,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("Instagram embed script not loaded")
   }
 
-  // Bottom App Bar active state
-  const bottomNavLinks = document.querySelectorAll(".fixed.bottom-0 a")
+  // Bottom Navigation active state
+  const bottomNavLinks = document.querySelectorAll("nav.fixed.bottom-0 a")
   const sections = document.querySelectorAll("section[id]")
 
   window.addEventListener("scroll", () => {
