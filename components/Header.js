@@ -7,6 +7,7 @@ function Header() {
             </div>
             <nav class="hidden md:flex space-x-4 lg:space-x-6">
                 <a href="#servicios" class="text-gray-800 hover:text-primary transition-colors duration-300">Servicios</a>
+                <a href="property-listing.html" class="text-gray-800 hover:text-primary transition-colors duration-300">Propiedades</a>
                 <a href="#sobre-nosotros" class="text-gray-800 hover:text-primary transition-colors duration-300">Nosotros</a>
                 <a href="#contacto" class="text-gray-800 hover:text-primary transition-colors duration-300">Contacto</a>
                 <a href="#descargar" class="text-gray-800 hover:text-primary transition-colors duration-300">Instalar</a>
