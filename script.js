@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app")
   app.innerHTML = `
+        ${TopBanner()}
         ${Header()}
         <main>
             ${Hero()}
