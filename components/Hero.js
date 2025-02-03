@@ -2,11 +2,11 @@ function Hero() {
   return `
     <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary to-secondary">
       <div class="absolute inset-0 z-0">
-        <img src="/placeholder.svg?height=1080&width=1920" alt="Luxury Real Estate Background" class="w-full h-full object-cover opacity-20">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Luxury Real Estate Background" class="w-full h-full object-cover opacity-30">
       </div>
       <div class="container mx-auto px-4 z-10">
-        <div class="flex flex-col lg:flex-row items-center justify-between">
-          <div class="w-full lg:w-1/2 text-white mb-12 lg:mb-0">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div class="w-full lg:w-1/2 text-white">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
               Descubre Tu Hogar Ideal en Ecuador
             </h1>
@@ -23,12 +23,12 @@ function Hero() {
             </div>
           </div>
           <div class="w-full lg:w-1/2 relative">
-            <img src="/placeholder.svg?height=600&width=600" alt="Luxury Property Showcase" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl animate-float">
-            <div class="absolute top-4 -left-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Luxury Property Showcase" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl animate-float">
+            <div class="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
               <p class="text-primary font-bold">Propiedades Destacadas</p>
               <p class="text-gray-600">+100 listados exclusivos</p>
             </div>
-            <div class="absolute bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-600">
+            <div class="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-600">
               <p class="text-primary font-bold">Satisfacción del Cliente</p>
               <p class="text-gray-600">98% de clientes satisfechos</p>
             </div>
