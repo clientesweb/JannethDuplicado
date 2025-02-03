@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${FeaturedProperties()}
             ${Services()}
             ${ConstructionProgress()}
+            ${OnlineMagazine()}
             ${Playlists()}
             ${Contact()}
             ${AppDownload()}
