@@ -10,6 +10,7 @@ function PropertyListing() {
       bedrooms: 3,
       bathrooms: 2,
       area: "150 m²",
+      url: "https://www.jannethaguirre.com/property/lujoso-apartamento-centro",
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ function PropertyListing() {
       bedrooms: 4,
       bathrooms: 3,
       area: "200 m²",
+      url: "https://www.jannethaguirre.com/property/casa-familiar-jardin",
     },
     {
       id: 3,
@@ -30,6 +32,7 @@ function PropertyListing() {
       bedrooms: 3,
       bathrooms: 3,
       area: "180 m²",
+      url: "https://www.jannethaguirre.com/property/penthouse-vista-mar",
     },
     {
       id: 4,
@@ -40,6 +43,7 @@ function PropertyListing() {
       bedrooms: 2,
       bathrooms: 2,
       area: "120 m²",
+      url: "https://www.jannethaguirre.com/property/apartamento-moderno-torre",
     },
     {
       id: 5,
@@ -50,6 +54,7 @@ function PropertyListing() {
       bedrooms: 5,
       bathrooms: 4,
       area: "350 m²",
+      url: "https://www.jannethaguirre.com/property/villa-lujo-piscina",
     },
     {
       id: 6,
@@ -60,6 +65,7 @@ function PropertyListing() {
       bedrooms: "N/A",
       bathrooms: 2,
       area: "200 m²",
+      url: "https://www.jannethaguirre.com/property/oficina-comercial-distrito",
     },
   ]
 
@@ -85,7 +91,7 @@ function PropertyListing() {
                   <span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>
                   <span><i class="fas fa-vector-square mr-2"></i>${property.area}</span>
                 </div>
-                <a href="property-details.html?id=${property.id}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
+                <a href="${property.url}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
                   Ver Detalles
                 </a>
               </div>
