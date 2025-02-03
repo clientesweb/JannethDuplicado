@@ -1,21 +1,29 @@
 function Hero() {
   return `
-    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-secondary overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Luxury Real Estate Background" class="w-full h-full object-cover opacity-30">
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary to-secondary">
+      <div id="heroCarousel" class="absolute inset-0 z-0">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Luxury Real Estate Background 1" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Luxury Real Estate Background 2" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Luxury Real Estate Background 3" class="w-full h-full object-cover opacity-30">
+        </div>
       </div>
       <div class="container mx-auto px-4 z-10">
         <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div class="w-full lg:w-1/2 text-white">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
-              Tu Hogar Ideal<br>
-              <span class="text-accent">Te Espera en Ecuador</span>
+              <span class="text-primary">Tu hogar ideal</span><br>
+              <span class="text-white">te espera en Ecuador</span>
             </h1>
             <p class="text-xl md:text-2xl mb-8 animate-fade-in-up delay-300">
-              Janneth Aguirre: Más de 14 años de experiencia transformando sueños en hogares
+              Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
             </p>
             <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-600">
-              <a href="#servicios" class="bg-white text-primary hover:bg-accent hover:text-white transition-colors duration-300 font-bold py-3 px-8 rounded-full text-center">
+              <a href="#servicios" class="bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300 font-bold py-3 px-8 rounded-full text-center">
                 Explorar Servicios
               </a>
               <a href="#contacto" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary transition-colors duration-300 font-bold py-3 px-8 rounded-full text-center">
@@ -24,18 +32,14 @@ function Hero() {
             </div>
           </div>
           <div class="w-full lg:w-1/2 relative">
-            <div class="relative z-10 animate-float">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Luxury Property Showcase" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl">
-              <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
-                <p class="text-primary font-bold">Propiedades Destacadas</p>
-                <p class="text-gray-600">+100 listados exclusivos</p>
-              </div>
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Luxury Property Showcase" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl animate-float">
+            <div class="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
+              <p class="text-primary font-bold">Propiedades Destacadas</p>
+              <p class="text-gray-600">+100 listados exclusivos</p>
             </div>
-            <div class="absolute top-1/4 -right-4 bg-white p-4 rounded-full shadow-lg w-24 h-24 flex items-center justify-center animate-fade-in-up delay-600">
-              <div class="text-center">
-                <p class="text-primary font-bold text-2xl">98%</p>
-                <p class="text-gray-600 text-xs">Clientes Satisfechos</p>
-              </div>
+            <div class="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-600">
+              <p class="text-primary font-bold">Satisfacción del Cliente</p>
+              <p class="text-gray-600">98% de clientes satisfechos</p>
             </div>
           </div>
         </div>
