@@ -52,22 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-    // Animate services on scroll
-    gsap.utils.toArray("#servicios .text-center").forEach((service, i) => {
-      gsap.from(service, {
-        scrollTrigger: {
-          trigger: service,
-          start: "top bottom-=100",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 0.6,
-        delay: i * 0.2,
-      })
-    })
-  }
-
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -136,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Contact form not found")
   }
 
-  // Cargar los videos de la playlist después de que el DOM esté listo
-  loadPlaylistVideos();
+  // Load playlist videos
+  loadPlaylistVideos()
 })
+
