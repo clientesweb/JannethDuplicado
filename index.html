@@ -98,46 +98,66 @@
     </header>
 
     <main>
-        <!-- Hero Section (Renovado) -->
-        <section class="relative h-screen bg-gradient-to-r from-primary to-secondary overflow-hidden">
-            <div class="absolute inset-0">
-                <video class="object-cover w-full h-full opacity-50" autoplay loop muted playsinline>
-                    <source src="video/hero-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-white text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
-                    Descubre Tu Hogar Ideal
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-2xl animate-fade-in-up animation-delay-300">
-                    Janneth Aguirre Bienes Raíces: Tu puerta a las mejores propiedades en Ecuador y el mundo.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-600">
-                    <a href="#propiedades" class="bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300 font-bold py-3 px-6 rounded-full shadow-lg">
-                        Explorar Propiedades
-                    </a>
-                    <a href="#contacto" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary transition-colors duration-300 font-bold py-3 px-6 rounded-full">
-                        Contactar Ahora
-                    </a>
+        <!-- Hero Section (Carrusel) -->
+        <section class="relative h-screen overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div id="heroCarousel" class="relative w-full h-full">
+                    <!-- Slide 1 -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero-1.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-white text-center">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Descubre Tu Hogar Ideal</h1>
+                            <p class="text-xl md:text-2xl mb-8 max-w-2xl animate-fade-in-up animation-delay-300">Janneth Aguirre Bienes Raíces: Tu puerta a las mejores propiedades en Ecuador</p>
+                            <a href="#propiedades" class="bg-primary hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 animate-fade-in-up animation-delay-600">
+                                Explorar Propiedades
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero-2.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-white text-center">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Inversiones Inteligentes</h1>
+                            <p class="text-xl md:text-2xl mb-8 max-w-2xl animate-fade-in-up animation-delay-300">Maximiza tu capital con nuestras oportunidades de inversión inmobiliaria</p>
+                            <a href="#contacto" class="bg-secondary hover:bg-white hover:text-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 animate-fade-in-up animation-delay-600">
+                                Consulta Personalizada
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero-3.jpg');">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-white text-center">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Experiencia y Confianza</h1>
+                            <p class="text-xl md:text-2xl mb-8 max-w-2xl animate-fade-in-up animation-delay-300">Más de 14 años liderando el mercado inmobiliario ecuatoriano</p>
+                            <a href="#sobre-nosotros" class="bg-white text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 animate-fade-in-up animation-delay-600">
+                                Conoce Nuestra Historia
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+            <!-- Carousel Navigation -->
+            <div class="absolute bottom-5 left-0 right-0 flex justify-center space-x-2">
+                <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity duration-300" data-slide="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity duration-300" data-slide="1"></button>
+                <button class="w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition-opacity duration-300" data-slide="2"></button>
+            </div>
         </section>
         
         <!-- About Us Section (Renovado) -->
         <section id="sobre-nosotros" class="py-16 bg-gray-100">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Sobre Nosotros</h2>
-                <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-                    <div class="md:w-1/2 relative">
-                        <img src="images/premio-janneth.png" alt="Janneth Aguirre" class="rounded-lg shadow-2xl w-full md:w-4/5 mx-auto">
+                <div class="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12">
+                    <div class="lg:w-1/2 relative">
+                        <img src="images/premio-janneth.png" alt="Janneth Aguirre" class="rounded-lg shadow-2xl w-full lg:w-4/5 mx-auto">
                         <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg">
                             <p class="font-bold text-2xl">14+ Años</p>
                             <p>de Experiencia</p>
                         </div>
                     </div>
-                    <div class="md:w-1/2 space-y-6">
+                    <div class="lg:w-1/2 space-y-6">
                         <h3 class="text-3xl font-bold text-gray-800">Janneth Aguirre</h3>
                         <p class="text-lg text-gray-600 leading-relaxed">
                             Líder en el mercado inmobiliario ecuatoriano desde 2009, Janneth Aguirre se ha consolidado como una asesora inmobiliaria de renombre. Su éxito se basa en la satisfacción de sus clientes y en la prestación de servicios inmobiliarios de alta calidad.
@@ -158,19 +178,35 @@
                 <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
                         <img src="images/equipo-aguirrem.png" alt="Equipo de Janneth Aguirre" class="w-full h-40 object-cover rounded-lg mb-4">
-                        <p class="font-semibold text-gray-800">Equipo Profesional</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
                         <img src="images/ventas-janneth.png" alt="Oficina de Janneth Aguirre" class="w-full h-40 object-cover rounded-lg mb-4">
-                        <p class="font-semibold text-gray-800">Oficina Central</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
                         <img src="images/promotores.png" alt="Promotores Panamá" class="w-full h-40 object-cover rounded-lg mb-4">
-                        <p class="font-semibold text-gray-800">Presencia Internacional</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
                         <img src="images/sponsor.png" alt="Evento" class="w-full h-40 object-cover rounded-lg mb-4">
-                        <p class="font-semibold text-gray-800">Eventos Exclusivos</p>
+                    </div>
+                </div>
+                <!-- Logo Slider -->
+                <div class="mt-16 overflow-hidden">
+                    <div class="flex space-x-8 animate-slide">
+                        <div class="flex-shrink-0">
+                            <img src="images/logo-c1.png" alt="Logo C1" class="w-40 h-40 object-contain">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="images/logo-c2.png" alt="Logo C2" class="w-40 h-40 object-contain">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="images/logo-c3.png" alt="Logo C3" class="w-40 h-40 object-contain">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="images/logo-c4.png" alt="Logo C4" class="w-40 h-40 object-contain">
+                        </div>
+                        <div class="flex-shrink-0">
+                            <img src="images/logo-c5.png" alt="Logo C5" class="w-40 h-40 object-contain">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -516,7 +552,14 @@
     </a>
 
     <!-- Chatbot Button -->
-    <button id="chatbotButton" class="fixed bottom-36 right-4 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-colors duration-300 z-50 chatbot-pulse" aria-label="Abrir chat con ARIA">
+    <button id="chatbotButton" class="<cut_off_point>
+a>
+
+    <!-- Chatbot Button -->
+    <button id="chatbotButton" class="
+</cut_off_point>
+
+fixed bottom-36 right-4 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-colors duration-300 z-50 chatbot-pulse" aria-label="Abrir chat con ARIA">
         <img src="images/logo-icon.png" alt="Janneth Aguirre Logo" class="w-8 h-8">
     </button>
 
@@ -541,7 +584,7 @@
                 <button id="prevSlide" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button id="nextSlide" class="absolute right-button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+                <button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
