@@ -120,16 +120,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if (featuredPropertiesContainer) {
         properties.forEach((property) => {
           const propertyCard = document.createElement("div")
-          propertyCard.className = "bg-white rounded-lg shadow-md overflow-hidden flex-shrink-0 w-80 mx-2"
+          propertyCard.className = "flex-shrink-0 w-80 mx-2 snap-center"
           propertyCard.innerHTML = `
-                        <img src="${property.images[0]}" alt="${property.title}" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">${property.title}</h3>
-                            <p class="text-gray-600 mb-4">${property.description.substring(0, 100)}...</p>
-                            <button class="bg-primary text-white px-4 py-2 rounded property-details mr-2" data-property-id="${property.id}">Ver Detalles</button>
-                            <button class="bg-secondary text-white px-4 py-2 rounded property-render" data-property-id="${property.id}">Ver Render</button>
-                        </div>
-                    `
+          <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+            <img src="${property.images[0]}" alt="${property.title}" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold mb-2">${property.title}</h3>
+              <p class="text-gray-600 mb-4">${property.description.substring(0, 100)}...</p>
+              <div class="flex justify-between items-center">
+                <button class="bg-primary text-white px-4 py-2 rounded property-details" data-property-id="${property.id}">Ver Detalles</button>
+                <button class="bg-secondary text-white px-4 py-2 rounded property-render" data-property-id="${property.id}">Ver Render</button>
+              </div>
+            </div>
+          </div>
+        `
           featuredPropertiesContainer.appendChild(propertyCard)
         })
 
