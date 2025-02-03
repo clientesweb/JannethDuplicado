@@ -11,6 +11,7 @@ function FeaturedProperties() {
       bedrooms: 3,
       bathrooms: 2,
       area: "150 m²",
+      url: "https://www.jannethaguirre.com/property/lujoso-apartamento-centro",
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ function FeaturedProperties() {
       bedrooms: 4,
       bathrooms: 3,
       area: "200 m²",
+      url: "https://www.jannethaguirre.com/property/casa-familiar-jardin",
     },
     {
       id: 3,
@@ -31,6 +33,18 @@ function FeaturedProperties() {
       bedrooms: 3,
       bathrooms: 3,
       area: "180 m²",
+      url: "https://www.jannethaguirre.com/property/penthouse-vista-mar",
+    },
+    {
+      id: 4,
+      title: "Villa de Lujo en Urbanización Privada",
+      price: "$580,000",
+      location: "Vía a la Costa",
+      image: "images/property4.jpg",
+      bedrooms: 5,
+      bathrooms: 4,
+      area: "350 m²",
+      url: "https://www.jannethaguirre.com/property/villa-lujo-urbanizacion",
     },
   ]
 
@@ -38,7 +52,7 @@ function FeaturedProperties() {
     <section id="propiedades-destacadas" class="py-12 md:py-16 bg-gray-100">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 md:mb-12 text-primary">Propiedades Destacadas</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           ${properties
             .map(
               (property) => `
@@ -53,7 +67,7 @@ function FeaturedProperties() {
                   <span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>
                   <span><i class="fas fa-vector-square mr-2"></i>${property.area}</span>
                 </div>
-                <a href="property-details.html?id=${property.id}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
+                <a href="${property.url}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
                   Ver Detalles
                 </a>
               </div>
