@@ -75,233 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Scroll to top button not found")
   }
 
-  // Property Details Modal
-  const propertyModal = document.getElementById("propertyModal")
-  const propertyTitle = document.getElementById("propertyTitle")
-  const propertySlider = document.getElementById("propertySlider")
-  const propertyDescription = document.getElementById("propertyDescription")
-  const propertyDetails = document.getElementById("propertyDetails")
-  const propertyContact = document.getElementById("propertyContact")
-  const closePropertyModal = document.getElementById("closePropertyModal")
-  const prevSlide = document.getElementById("prevSlide")
-  const nextSlide = document.getElementById("nextSlide")
-
-  // Render Modal
-  const renderModal = document.getElementById("renderModal")
-  const renderTitle = document.getElementById("renderTitle")
-  const renderVideo = document.getElementById("renderVideo")
-  const closeRenderModal = document.getElementById("closeRenderModal")
-
-  if (
-    !propertyModal ||
-    !propertyTitle ||
-    !propertySlider ||
-    !propertyDescription ||
-    !propertyDetails ||
-    !propertyContact ||
-    !closePropertyModal ||
-    !prevSlide ||
-    !nextSlide ||
-    !renderModal ||
-    !renderTitle ||
-    !renderVideo ||
-    !closeRenderModal
-  ) {
-    console.error("One or more modal elements not found")
-  }
-
-  let currentPropertyIndex = 0
-
-  // Cargar propiedades desde el archivo JSON
-  fetch("properties.json")
-    .then((response) => response.json())
-    .then((properties) => {
-      const featuredPropertiesContainer = document.getElementById("featuredProperties")
-      if (featuredPropertiesContainer) {
-        properties.forEach((property) => {
-          const propertyCard = document.createElement("div")
-          propertyCard.className = "flex-shrink-0 w-80 mx-2 snap-center"
-          propertyCard.innerHTML = `
-          <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
-            <img src="${property.images[0]}" alt="${property.title}" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold mb-2">${property.title}</h3>
-              <p class="text-gray-600 mb-4">${property.description.substring(0, 100)}...</p>
-              <div class="flex justify-between items-center">
-                <button class="bg-primary text-white px-4 py-2 rounded property-details" data-property-id="${property.id}">Ver Detalles</button>
-                <button class="bg-secondary text-white px-4 py-2 rounded property-render" data-property-id="${property.id}">Ver Render</button>
-              </div>
-            </div>
-          </div>
-        `
-          featuredPropertiesContainer.appendChild(propertyCard)
-        })
-
-        // Agregar event listeners a los botones de detalles de propiedad
-        document.querySelectorAll(".property-details").forEach((button) => {
-          button.addEventListener("click", function () {
-            const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
-            const property = properties.find((p) => p.id === propertyId)
-            if (property) {
-              showPropertyDetails(property)
-            }
-          })
-        })
-
-        // Agregar event listeners a los botones de render
-        document.querySelectorAll(".property-render").forEach((button) => {
-          button.addEventListener("click", function () {
-            const propertyId = Number.parseInt(this.getAttribute("data-property-id"))
-            const property = properties.find((p) => p.id === propertyId)
-            if (property && property.renderAttachment) {
-              showRenderModal(property)
-            }
-          })
-        })
-
-        // Add horizontal scroll functionality
-        const scrollLeftBtn = document.getElementById("scrollLeft")
-        const scrollRightBtn = document.getElementById("scrollRight")
-
-        if (scrollLeftBtn && scrollRightBtn) {
-          scrollLeftBtn.addEventListener("click", () => {
-            featuredPropertiesContainer.scrollBy({ left: -300, behavior: "smooth" })
-          })
-
-          scrollRightBtn.addEventListener("click", () => {
-            featuredPropertiesContainer.scrollBy({ left: 300, behavior: "smooth" })
-          })
-        }
-      } else {
-        console.error("Featured properties container not found")
-      }
-    })
-    .catch((error) => console.error("Error loading properties:", error))
-
-  function showPropertyDetails(property) {
-    const propertyModal = document.getElementById("propertyModal")
-    const propertyTitle = document.getElementById("propertyTitle")
-    const propertySlider = document.getElementById("propertySlider")
-    const propertyDescription = document.getElementById("propertyDescription")
-    const propertyDetails = document.getElementById("propertyDetails")
-    const propertyContact = document.getElementById("propertyContact")
-
-    propertyTitle.textContent = property.title
-    propertyDescription.textContent = property.description
-    propertySlider.innerHTML = property.images
-      .map((img) => `<img src="${img}" alt="${property.title}" class="w-full h-64 object-cover">`)
-      .join("")
-    propertyDetails.innerHTML = Object.entries(property.details)
-      .map(
-        ([key, value]) => `
-          <div><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}</div>
-        `,
-      )
-      .join("")
-
-    const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en la propiedad: ${property.title}`)
-    propertyContact.href = `https://wa.me/${property.whatsapp}?text=${whatsappMessage}`
-
-    propertyModal.classList.remove("hidden")
-  }
-
-  function showRenderModal(property) {
-    const renderModal = document.getElementById("renderModal")
-    const renderTitle = document.getElementById("renderTitle")
-    const renderVideo = document.getElementById("renderVideo")
-
-    renderTitle.textContent = `Render de ${property.title}`
-    renderVideo.src = property.renderAttachment
-    renderModal.classList.remove("hidden")
-    renderVideo.play()
-  }
-
-  if (closePropertyModal) {
-    closePropertyModal.addEventListener("click", () => {
-      propertyModal.classList.add("hidden")
-    })
-  }
-
-  if (closeRenderModal) {
-    closeRenderModal.addEventListener("click", () => {
-      renderModal.classList.add("hidden")
-      renderVideo.pause()
-      renderVideo.currentTime = 0 // Reiniciar el video
-    })
-  }
-
-  if (propertyModal) {
-    propertyModal.addEventListener("click", (e) => {
-      if (e.target === propertyModal) {
-        propertyModal.classList.add("hidden")
-      }
-    })
-  }
-
-  if (renderModal) {
-    renderModal.addEventListener("click", (e) => {
-      if (e.target === renderModal) {
-        renderModal.classList.add("hidden")
-        renderVideo.pause()
-        renderVideo.currentTime = 0 // Reiniciar el video
-      }
-    })
-  }
-
-  function updateSlider() {
-    const images = propertySlider.querySelectorAll("img")
-    images.forEach((img, index) => {
-      img.style.display = index === currentPropertyIndex ? "block" : "none"
-    })
-  }
-
-  if (prevSlide && nextSlide) {
-    prevSlide.addEventListener("click", () => {
-      const images = propertySlider.querySelectorAll("img")
-      currentPropertyIndex = (currentPropertyIndex - 1 + images.length) % images.length
-      updateSlider()
-    })
-
-    nextSlide.addEventListener("click", () => {
-      const images = propertySlider.querySelectorAll("img")
-      currentPropertyIndex = (currentPropertyIndex + 1) % images.length
-      updateSlider()
-    })
-  }
-
-  // Fix for WhatsApp button
-  if (propertyContact) {
-    propertyContact.addEventListener("click", function (e) {
-      e.preventDefault()
-      window.open(this.href, "_blank")
-    })
-  }
-
-  // Contact form submission
-  const contactForm = document.getElementById("contact-form")
-  if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault()
-      const formData = new FormData(contactForm)
-      const name = formData.get("name")
-      const email = formData.get("email")
-      const phone = formData.get("phone")
-      const message = formData.get("message")
-
-      // Construir el mensaje para WhatsApp
-      const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0ATeléfono: ${phone}%0AMensaje: ${message}`
-      const whatsappUrl = `https://wa.me/593987167782?text=${whatsappMessage}`
-
-      // Abrir WhatsApp en una nueva ventana
-      window.open(whatsappUrl, "_blank")
-
-      // Opcional: Limpiar el formulario después del envío
-      contactForm.reset()
-    })
-  } else {
-    console.error("Contact form not found")
-  }
-
   // GSAP animations
   // Import GSAP -  This should be handled at the top of the script now.
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
@@ -320,36 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0,
         y: 50,
         duration: 0.6,
-        delay: i * 0.2,
-      })
-    })
-
-    // Animate property cards on scroll
-    gsap.utils.toArray("#propiedades .bg-white").forEach((card, i) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom-=50",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.5,
-        delay: i * 0.1,
-      })
-    })
-
-    // Animate FAQ items
-    gsap.utils.toArray("#faq .bg-white").forEach((faq, i) => {
-      gsap.from(faq, {
-        scrollTrigger: {
-          trigger: faq,
-          start: "top bottom-=50",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        x: -50,
-        duration: 0.5,
         delay: i * 0.2,
       })
     })
@@ -435,35 +178,29 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // FAQ functionality
-  document.querySelectorAll("#faq button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const content = button.nextElementSibling
-      content.classList.toggle("hidden")
-      const icon = button.querySelector("i")
-      icon.classList.toggle("fa-chevron-down")
-      icon.classList.toggle("fa-chevron-up")
+  // Contact form submission
+  const contactForm = document.getElementById("contact-form")
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      const formData = new FormData(contactForm)
+      const name = formData.get("name")
+      const email = formData.get("email")
+      const phone = formData.get("phone")
+      const message = formData.get("message")
+
+      // Construir el mensaje para WhatsApp
+      const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0ATeléfono: ${phone}%0AMensaje: ${message}`
+      const whatsappUrl = `https://wa.me/593987167782?text=${whatsappMessage}`
+
+      // Abrir WhatsApp en una nueva ventana
+      window.open(whatsappUrl, "_blank")
+
+      // Opcional: Limpiar el formulario después del envío
+      contactForm.reset()
     })
-  })
-
-  // Load YouTube videos
-  function loadYouTubeVideos() {
-    const youtubeSlider = document.getElementById("youtubeSlider")
-    if (youtubeSlider) {
-      // Replace these with your actual YouTube video IDs
-      const videoIds = ["VIDEO_ID_1", "VIDEO_ID_2", "VIDEO_ID_3", "VIDEO_ID_4"]
-
-      videoIds.forEach((videoId) => {
-        const videoContainer = document.createElement("div")
-        videoContainer.className = "flex-shrink-0 w-80 mx-2"
-        videoContainer.innerHTML = `
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        `
-        youtubeSlider.appendChild(videoContainer)
-      })
-    }
+  } else {
+    console.error("Contact form not found")
   }
-
-  loadYouTubeVideos()
 })
 
