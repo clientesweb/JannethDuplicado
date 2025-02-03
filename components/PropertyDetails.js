@@ -27,17 +27,20 @@ function PropertyDetails() {
   return `
     <main class="bg-gray-100 min-h-screen py-12">
       <div class="container mx-auto px-4">
+        <button onclick="history.back()" class="mb-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors duration-300">
+          <i class="fas fa-arrow-left mr-2"></i> Volver
+        </button>
         <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">${property.title}</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-              <img src="${property.images[0]}" alt="${property.title}" class="w-full h-64 object-cover" id="mainImage">
+              <img src="${property.images[0]}" alt="${property.title}" class="w-full h-64 object-cover cursor-pointer" id="mainImage" onclick="openImageModal(this.src)">
             </div>
             <div class="grid grid-cols-4 gap-2">
               ${property.images
                 .map(
                   (img, index) => `
-                <img src="${img}" alt="${property.title}" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-75 transition duration-300 thumbnail" data-index="${index}">
+                <img src="${img}" alt="${property.title}" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-75 transition duration-300 thumbnail" data-index="${index}" onclick="openImageModal(this.src)">
               `,
                 )
                 .join("")}
@@ -70,10 +73,10 @@ function PropertyDetails() {
                 </div>
               </div>
               <form id="contact-agent-form" class="space-y-4">
-                <input type="text" placeholder="Nombre" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
-                <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
-                <input type="tel" placeholder="Teléfono" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
-                <textarea placeholder="Mensaje" rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                <input type="text" name="name" placeholder="Nombre" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
+                <input type="email" name="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
+                <input type="tel" name="phone" placeholder="Teléfono" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
+                <textarea name="message" placeholder="Mensaje" rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
                 <button type="submit" class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300">Enviar mensaje</button>
               </form>
             </div>
@@ -81,6 +84,14 @@ function PropertyDetails() {
         </div>
       </div>
     </main>
+
+    <!-- Modal para ver imágenes en tamaño completo -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+      <div class="max-w-4xl w-full">
+        <img id="modalImage" src="/placeholder.svg" alt="Imagen en tamaño completo" class="w-full h-auto">
+        <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+      </div>
+    </div>
   `
 }
 
@@ -118,6 +129,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
+
+// Funciones para el modal de imágenes
+function openImageModal(src) {
+  const modal = document.getElementById("imageModal")
+  const modalImage = document.getElementById("modalImage")
+  modalImage.src = src
+  modal.classList.remove("hidden")
+}
+
+function closeImageModal() {
+  const modal = document.getElementById("imageModal")
+  modal.classList.add("hidden")
+}
 
 // Exportar la función PropertyDetails
 window.PropertyDetails = PropertyDetails
