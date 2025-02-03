@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${About()}
             ${Services()}
             ${ConstructionProgress()}
+            ${Playlists()}
             ${Contact()}
             ${AppDownload()}
         </main>
@@ -140,5 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Contact form not found")
   }
-})
 
+  // Cargar los videos de la playlist después de que el DOM esté listo
+  loadPlaylistVideos();
+})
