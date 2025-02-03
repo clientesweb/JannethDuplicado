@@ -50,14 +50,13 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="font-sans bg-white text-gray-800">
     <!-- Top Banner -->
-    <div class="bg-gradient-to-r from-primary to-secondary text-white py-2 px-4 overflow-hidden">
+    <div class="bg-gradient-primary text-white py-2 px-4 overflow-hidden">
         <div class="animate-marquee whitespace-nowrap">
             <span class="mx-4">¡Bienvenidos a Janneth Aguirre Bienes Raíces!</span>
             <span class="mx-4">Descubre las mejores propiedades en Ecuador y el mundo</span>
@@ -100,416 +99,612 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="relative h-[1350px] overflow-hidden">
-            <div id="propertyCarousel" class="absolute inset-0">
-                <!-- Las diapositivas del carrusel se insertarán aquí dinámicamente -->
-            </div>
-            <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-            <div class="container mx-auto px-4 relative z-20 h-full flex items-center">
-                <div class="text-center w-full">
-                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">Descubre Tu Propiedad Ideal</h1>
-                    <p class="text-2xl md:text-3xl text-white mb-10 animate-fade-in">Lo mejor en Bienes Raíces en Ecuador y el Mundo</p>
-                    <div class="flex justify-center space-x-6">
-                        <a href="#propiedades" class="bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-full transition-colors duration-300 animate-fade-in text-xl">Ver Propiedades</a>
-                        <button id="nextProperty" class="bg-white hover:bg-gray-200 text-primary font-bold py-4 px-8 rounded-full transition-colors duration-300 animate-fade-in text-xl">Siguiente Propiedad</button>
-                    </div>
+        <section class="relative h-screen">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+                <source src="video/hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="container mx-auto px-4 relative z-10 h-full flex items-center">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Encuentra Tu Hogar Especial</h1>
+                    <p class="text-xl md:text-2xl text-white mb-8">Lo mejor de Bienes Raices en Ecuador y en el Mundo.</p>
+                    <a href="#propiedades" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition-colors duration-300">Ver Propiedades</a>
                 </div>
             </div>
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
-                <div id="carouselIndicators" class="flex space-x-3">
-                    <!-- Los indicadores del carrusel se insertarán aquí dinámicamente -->
+        </section>        
+        <!-- About Us Section -->
+<section id="sobre-nosotros" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Sobre Nosotros</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <img src="images/premio-janneth.png" alt="Janneth Aguirre" class="rounded-lg shadow-lg">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <p class="text-lg mb-6">Janneth Aguirre es una representante inmobiliaria líder en su ramo desde 2009, consolidada como una reconocida Asesora Inmobiliaria dentro del mercado ecuatoriano gracias a la satisfacción lograda entre sus clientes por los diversos servicios que presta.</p>
+                <p class="text-lg">Nuestro compromiso es brindar un servicio personalizado y de alta calidad, asegurando que cada cliente encuentre la propiedad perfecta o logre la mejor inversión posible.</p>
+            </div>
+        </div>
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="images/equipo-aguirrem.png" alt="Equipo de Janneth Aguirre" class="rounded-lg shadow-md">
+            <img src="images/ventas-janneth.png" alt="Oficina de Janneth Aguirre" class="rounded-lg shadow-md">
+            <img src="images/promotores.png" alt="Promotores Panamá" class="rounded-lg shadow-md">
+            <img src="images/sponsor.png" alt="Evento" class="rounded-lg shadow-md">
+        </div>
+        
+        <!-- Logo Slider -->
+        <div class="mt-16 overflow-x-auto">
+            <div class="flex space-x-8 pb-4" style="width: max-content;">
+                <div class="flex-shrink-0">
+                    <img src="images/logo-c1.png" alt="Logo C1" class="w-40 h-40 object-contain">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="images/logo-c2.png" alt="Logo C2" class="w-40 h-40 object-contain">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="images/logo-c3.png" alt="Logo C3" class="w-40 h-40 object-contain">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="images/logo-c4.png" alt="Logo C4" class="w-40 h-40 object-contain">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="images/logo-c5.png" alt="Logo C5" class="w-40 h-40 object-contain">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <section id="servicios" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestros Servicios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="text-center">
+                <i class="fas fa-home text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Compra y Venta de Propiedades</h3>
+                <p class="text-gray-600">Asesoramiento experto en la compra y venta de propiedades residenciales y comerciales.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-chart-line text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Análisis de Mercado</h3>
+                <p class="text-gray-600">Estudios detallados del mercado inmobiliario para tomar decisiones informadas.</p>
+                <a <a href="https://jannethaguirre.com/analisis-de-mercado.html" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded hover:bg-secondary transition-colors duration-300">
+    Ver Análisis
+                </a>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-handshake text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Gestión de Ventas</h3>
+                <p class="text-gray-600">Estrategias personalizadas para maximizar el valor de su propiedad en el mercado.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-building text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Venta de Proyectos en Planos</h3>
+                <p class="text-gray-600">Comercialización de proyectos inmobiliarios desde su fase inicial.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-key text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Gestión de Alquileres</h3>
+                <p class="text-gray-600">Administración integral de propiedades en alquiler para propietarios e inquilinos.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-globe text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Inversiones Internacionales</h3>
+                <p class="text-gray-600">Asesoramiento en inversiones inmobiliarias en mercados internacionales.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-gavel text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Asesoría Legal</h3>
+                <p class="text-gray-600">Orientación legal especializada en transacciones inmobiliarias y contratos.</p>
+                <a href="path/to/your/legal-advisory.pdf" download class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded hover:bg-secondary transition-colors duration-300">
+                    Descargar Asesoría
+                </a>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-paint-roller text-4xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Decoración de Interiores</h3>
+                <p class="text-gray-600">Servicios profesionales de diseño y decoración para transformar espacios.</p>
+                <a href="/trabajos-decoracion" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded hover:bg-secondary transition-colors duration-300">
+                    Ver Trabajos
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Featured Properties Section -->
+        <section id="propiedades" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Propiedades Destacadas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12" id="featuredProperties">
+                    <!-- Property cards will be dynamically inserted here -->
+                </div>
+                <div class="text-center">
+                    <a href="#" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center group">
+                        Ver Todas las Propiedades
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div id="renderModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 max-w-3xl w-full">
+        <h2 id="renderTitle" class="text-2xl font-bold mb-4"></h2>
+        <video id="renderVideo" controls class="w-full">
+            Your browser does not support the video tag.
+        </video>
+        <button id="closeRenderModal" class="mt-4 bg-primary text-white px-4 py-2 rounded">
+            Cerrar
+        </button>
+    </div>
+</div>
+        <!-- Sección de Avances de Obra -->
+        <section id="avances-obra" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Avances de Obra</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                        <img src="images/vizcaya1_1.jpg" alt="VIZCAYA 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">VIZCAYA 1</h3>
+                            <p class="mb-4 line-clamp-3">Proyecto residencial de lujo en etapa avanzada. Disfrute de amplios espacios y acabados de primera calidad en una ubicación privilegiada.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                        <img src="images/belice_8.jpg" alt="BELICE" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">BELICE</h3>
+                            <p class="mb-4 line-clamp-3">Exclusivo desarrollo inmobiliario con un concepto moderno y sostenible. Avances significativos en la construcción de este proyecto único.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                        <img src="images/alsol_1.jpg" alt="AL SOL 1 & 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">AL SOL 1 & 2</h3>
+                            <p class="mb-4 line-clamp-3">Complejo residencial de dos fases en pleno desarrollo. Diseño contemporáneo y amenidades de primer nivel para un estilo de vida excepcional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="avances-obra.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 inline-flex items-center group">
+                        Ver Todos los Avances
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Propiedades Destacadas -->
-        <section id="propiedades" class="py-20 bg-gray-100">
+        <!-- Nuestra Revista Section -->
+        <section id="nuestra-revista" class="py-16 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Propiedades Destacadas</h2>
-                <div class="relative">
-                    <button id="scrollLeft" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10">
-                        <i class="fas fa-chevron-left text-primary"></i>
-                    </button>
-                    <div id="featuredProperties" class="flex overflow-x-auto space-x-6 pb-6 snap-x snap-mandatory">
-                        <!-- Las tarjetas de propiedades se insertarán aquí dinámicamente -->
-                    </div>
-                    <button id="scrollRight" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10">
-                        <i class="fas fa-chevron-right text-primary"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sobre Mí Section -->
-        <section id="sobre-nosotros" class="py-20 bg-gradient-to-r from-primary to-secondary text-white overflow-hidden">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="md:w-1/2 mb-10 md:mb-0">
-                        <img src="images/janneth-aguirre.jpg" alt="Janneth Aguirre" class="rounded-full w-64 h-64 object-cover mx-auto md:mx-0 shadow-2xl border-4 border-white">
-                    </div>
-                    <div class="md:w-1/2 text-center md:text-left">
-                        <h2 class="text-4xl font-bold mb-6 animate-fade-in">Janneth Aguirre</h2>
-                        <p class="text-xl mb-8 animate-fade-in">Con más de 15 años de experiencia en el mercado inmobiliario, me dedico a hacer realidad los sueños de mis clientes. Mi pasión por los bienes raíces y mi compromiso con la excelencia me han permitido construir una carrera exitosa y ayudar a cientos de familias a encontrar su hogar ideal.</p>
-                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                            <div class="bg-white text-primary rounded-lg p-4 shadow-lg animate-fade-in">
-                                <span class="block text-3xl font-bold">500+</span>
-                                <span class="text-sm">Propiedades Vendidas</span>
-                            </div>
-                            <div class="bg-white text-primary rounded-lg p-4 shadow-lg animate-fade-in">
-                                <span class="block text-3xl font-bold">98%</span>
-                                <span class="text-sm">Clientes Satisfechos</span>
-                            </div>
-                            <div class="bg-white text-primary rounded-lg p-4 shadow-lg animate-fade-in">
-                                <span class="block text-3xl font-bold">15+</span>
-                                <span class="text-sm">Años de Experiencia</span>
-                            </div>
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestra Revista</h2>
+                <div>
+                    <div id="magazineSlider" class="flex overflow-x-scroll space-x-4 pb-4 scrollbar-hide">
+                        <div class="flex-shrink-0 w-64 mx-2">
+                            <img src="images/revista.jpg" alt="Revista 1" class="w-full h-80 object-cover rounded-lg">
+                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
+                        </div>
+                        <div class="flex-shrink-0 w-64 mx-2">
+                            <img src="images/revista1.jpg" alt="Revista 2" class="w-full h-80 object-cover rounded-lg">
+                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
+                        </div>
+                        <div class="flex-shrink-0 w-64 mx-2">
+                            <img src="images/revista2.jpg" alt="Revista 3" class="w-full h-80 object-cover rounded-lg">
+                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
+                        </div>
+                        <div class="flex-shrink-0 w-64 mx-2">
+                            <img src="images/revista3.jpg" alt="Revista 4" class="w-full h-80 object-cover rounded-lg">
+                            <a href="#" class="block mt-2 text-center bg-primary text-white py-1 px-3 rounded text-sm hover:bg-secondary transition-colors duration-300">Leer Artículo</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Servicios Section -->
-        <section id="servicios" class="py-20 bg-white">
+        <!-- Investment Opportunities Section -->
+        <section id="investment-opportunities" class="py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Nuestros Servicios</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                        <i class="fas fa-home text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Venta de Propiedades</h3>
-                        <p>Encontramos el comprador perfecto para tu propiedad al mejor precio del mercado.</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                        <i class="fas fa-key text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Alquiler de Propiedades</h3>
-                        <p>Gestionamos el alquiler de tu propiedad, asegurando inquilinos confiables y pagos puntuales.</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                        <i class="fas fa-search text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Búsqueda Personalizada</h3>
-                        <p>Encontramos la propiedad que se ajusta perfectamente a tus necesidades y presupuesto.</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                        <i class="fas fa-chart-line text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Asesoría en Inversiones</h3>
-                        <p>Ofrecemos orientación experta para maximizar el retorno de tus inversiones inmobiliarias.</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                        <i class="fas fa-handshake text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Gestión de Propiedades</h3>
-                        <p>Nos encargamos de la administración completa de tus propiedades, desde el mantenimiento hasta la gestión de inquilinos.</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                        <i class="fas fa-globe-americas text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Propiedades Internacionales</h3>
-                        <p>Conectamos a nuestros clientes con oportunidades inmobiliarias en todo el mundo.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Oportunidades de Inversión -->
-        <section id="inversiones" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Oportunidades de Inversión</h2>
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Oportunidades de Inversión</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="images/invertir-ecuador.png" alt="inversiones Samborondón" class="w-full h-40 object-cover rounded-t-lg mb-4">
                         <h3 class="text-2xl font-bold mb-4">Invertir en Samborondón</h3>
-                        <p class="mb-4">Descubre las oportunidades de inversión en una de las zonas más exclusivas de Ecuador.</p>
-                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors duration-300 investment-details" data-investment-id="1">Más Información</button>
+                        <p class="text-gray-600 mb-4">Descubre las oportunidades de inversión en una de las zonas más exclusivas de Ecuador.</p>
+                        <button class="text-primary hover:text-secondary investment-details" data-investment-id="1">Saber más &rarr;</button>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="images/invertir-eeuu.png" alt="Inversiones Estados Unidos" class="w-full h-40 object-cover rounded-t-lg mb-4">
                         <h3 class="text-2xl font-bold mb-4">Invertir en Estados Unidos</h3>
-                        <p class="mb-4">Explora el mercado inmobiliario estadounidense y diversifica tu portafolio de inversiones.</p>
-                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors duration-300 investment-details" data-investment-id="2">Más Información</button>
+                        <p class="text-gray-600 mb-4">Explora las posibilidades de inversión en el mercado inmobiliario estadounidense.</p>
+                        <button class="text-primary hover:text-secondary investment-details" data-investment-id="2">Saber más &rarr;</button>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="images/invertir-panama.png" alt="Inversiones de Panamá" class="w-full h-40 object-cover rounded-t-lg mb-4">
                         <h3 class="text-2xl font-bold mb-4">Invertir en Panamá</h3>
-                        <p class="mb-4">Aprovecha las oportunidades de crecimiento en el mercado inmobiliario panameño.</p>
-                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors duration-300 investment-details" data-investment-id="3">Más Información</button>
+                        <p class="text-gray-600 mb-4">Conoce las ventajas de invertir en el creciente mercado inmobiliario panameño.</p>
+                        <button class="text-primary hover:text-secondary investment-details" data-investment-id="3">Saber más &rarr;</button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Testimonios -->
-        <section id="testimonios" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Lo que dicen nuestros clientes</h2>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                                <p class="mb-4">"Janneth hizo que el proceso de compra de mi primera casa fuera increíblemente fácil. Su conocimiento y dedicación son incomparables."</p>
-                                <p class="font-bold">- María González</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                                <p class="mb-4">"Gracias a Janneth, pudimos vender nuestra propiedad en tiempo récord y al mejor precio. ¡Altamente recomendada!"</p>
-                                <p class="font-bold">- Carlos Mendoza</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                                <p class="mb-4">"La asesoría de Janneth en inversiones inmobiliarias ha sido fundamental para diversificar nuestro portafolio. Es una experta en su campo."</p>
-                                <p class="font-bold">- Ana Martínez</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacto -->
-        <section id="contacto" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Contáctanos</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="name" class="block mb-2">Nombre</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div>
-                                <label for="email" class="block mb-2">Correo Electrónico</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div>
-                                <label for="phone" class="block mb-2">Teléfono</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                            </div>
-                            <div>
-                                <label for="message" class="block mb-2">Mensaje</label>
-                                <textarea id="message" name="message" required class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary" rows="4"></textarea>
-                            </div>
-                            <button type="submit" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors duration-300">Enviar Mensaje</button>
-                        </form>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Información de Contacto</h3>
-                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> Dirección: Av. Principal 123, Guayaquil, Ecuador</p>
-                        <p class="mb-2"><i class="fas fa-phone mr-2 text-primary"></i> Teléfono: +593 987 654 321</p>
-                        <p class="mb-2"><i class="fas fa-envelope mr-2 text-primary"></i> Email: info@jannethaguirre.com</p>
-                        <div class="mt-6">
-                            <h4 class="text-xl font-bold mb-2">Síguenos en redes sociales</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://www.facebook.com/@jannethaguirrebienesraices/?hr=1" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                                    <i class="fab fa-facebook-f fa-2x"></i>
-                                </a>
-                                <a href="https://www.instagram.com/janneth_aguirrem/profilecard/?igsh=anQ1c2sxcXFsaG85" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                                    <i class="fab fa-instagram fa-2x"></i>
-                                </a>
-                                <a href="https://youtube.com/@jannethaguirrebienesraices5728?si=15ukjHDXRUQyr0pV" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                                    <i class="fab fa-youtube fa-2x"></i>
-                                </a>
-                                <a href="https://vm.tiktok.com/ZMhnEwCHp/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                                    <i class="fab fa-tiktok fa-2x"></i>
-                                </a>
-                                <a href="https://x.com/cbrjam" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary transition-colors duration-300">
-                                    <i class="fab fa-twitter fa-2x"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-                <div class="space-y-4">
-                    <div class="bg-gray-100 rounded-lg">
-                        <button class="flex justify-between items-center w-full px-4 py-2 text-left">
-                            <span class="font-bold">¿Cómo puedo comenzar a buscar una propiedad?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="px-4 py-2 hidden">
-                            <p>Puede comenzar explorando nuestro catálogo de propiedades en línea o contactarnos directamente para una búsqueda personalizada según sus necesidades y preferencias.</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-100 rounded-lg">
-                        <button class="flex justify-between items-center w-full px-4 py-2 text-left">
-                            <span class="font-bold">¿Qué documentos necesito para comprar una propiedad?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="px-4 py-2 hidden">
-                            <p>Los documentos necesarios pueden variar, pero generalmente incluyen identificación válida, comprobantes de ingresos, declaraciones bancarias y, en algunos casos, un historial crediticio. Nuestro equipo le guiará a través del proceso y los requisitos específicos.</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-100 rounded-lg">
-                        <button class="flex justify-between items-center w-full px-4 py-2 text-left">
-                            <span class="font-bold">¿Ofrecen financiamiento para la compra de propiedades?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="px-4 py-2 hidden">
-                            <p>Aunque no ofrecemos financiamiento directo, trabajamos con varias instituciones financieras y podemos ayudarle a encontrar las mejores opciones de financiamiento que se adapten a su situación.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        
         <!-- YouTube Videos Section -->
-        <section id="youtube-videos" class="py-20 bg-gray-100">
+        <section id="youtube-videos" class="py-16 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Nuestros Videos</h2>
-                <div id="youtubeSlider" class="flex overflow-x-auto space-x-6 pb-6">
-                    <!-- Los videos de YouTube se insertarán aquí dinámicamente -->
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestros Videos</h2>
+                <div class="overflow-x-auto">
+                    <div id="youtubeSlider" class="flex space-x-4 pb-4">
+                        <!-- YouTube videos will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Preguntas Frecuentes</h2>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="flex justify-between items-center w-full p-6 text-left">
+                            <span class="text-xl font-bold">¿Cómo puedo comenzar a buscar una propiedad?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="p-6 hidden">
+                            <p class="text-gray-600">Puede comenzar explorando nuestro catálogo en línea o contactarnos directamente para una consulta personalizada.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="flex justify-between items-center w-full p-6 text-left">
+                            <span class="text-xl font-bold">¿Qué documentos necesito para comprar una propiedad?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="p-6 hidden">
+                            <p class="text-gray-600">Los documentos varían según el tipo de propiedad, pero generalmente se requiere identificación, comprobante de ingresos y historial crediticio.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="flex justify-between items-center w-full p-6 text-left">
+                            <span class="text-xl font-bold">¿Ofrecen servicios de asesoría para inversiones internacionales?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="p-6 hidden">
+                            <p class="text-gray-600">Sí, contamos con expertos en inversiones inmobiliarias internacionales que pueden guiarlo en todo el proceso.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Instagram Reels Section -->
-        <section id="instagram-reels" class="py-20 bg-white">
+        <section id="instagram-reels" class="py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12">Instagram Reels</h2>
-                <div id="instagramSlider" class="flex overflow-x-auto space-x-6 pb-6">
-                    <!-- Los Instagram Reels se insertarán aquí dinámicamente -->
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestros Últimos Reels</h2>
+                <div>
+                    <div id="instagramSlider" class="flex overflow-x-scroll space-x-4 pb-4 scrollbar-hide">
+                        <!-- Instagram Reel Embed 1 -->
+                        <div class="instagram-media flex-shrink-0 w-80">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DCryCJaxSzU/" data-instgrm-version="14"></blockquote>
+                        </div>
+                        <!-- Instagram Reel Embed 2 -->
+                        <div class="instagram-media flex-shrink-0 w-80">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DCmsC3sIX-1/" data-instgrm-version="14"></blockquote>
+                        </div>
+                        <!-- Instagram Reel Embed 3 -->
+                        <div class="instagram-media flex-shrink-0 w-80">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DCpQFY7o6FB/" data-instgrm-version="14"></blockquote>
+                        </div>
+                        <!-- Instagram Reel Embed 4 -->
+                        <div class="instagram-media flex-shrink-0 w-80">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DCkEWZYRwy2/" data-instgrm-version="14"></blockquote>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Logo Slider Section -->
-        <section class="py-12 bg-gray-100">
+        <!-- Map Section -->
+        <section id="mapa" class="py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">Nuestros Socios</h2>
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <!-- Los logos se insertarán aquí dinámicamente -->
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Nuestra Ubicación</h2>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.0258811838364!2d-79.88662868524858!3d-2.1370145984683394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dbde716db73%3A0x5d2e4bf5f5a08d3a!2sSamborond%C3%B3n%2C%20Ecuador!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Contáctanos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Información de Contacto</h3>
+                        <p class="mb-2"><i class="fas fa-phone mr-2 text-primary"></i> +593 98 716 7782</p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2 text-primary"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7beb9b1b897bdb6b9b9b2a3bfb6b0a2bea5a5b2f9b4b8ba">[email&#160;protected]</a></p>
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> Guayaquil, Ecuador</p>
+                        <p class="mb-4"><i class="fas fa-globe mr-2 text-primary"></i> <a href="https://jannethaguirrebienesraices.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Visita nuestra página web</a></p>
+                        <p class="text-gray-600">Expertos en bienes raíces con años de experiencia en el mercado ecuatoriano.</p>
+                    </div>
+                    <div>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300">Enviar Mensaje</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Download Section -->
+        <section id="descargar" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12 text-primary">Descarga Nuestra App</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <img src="images/app-jannethaguirre.png" alt="AppMockup" class="mx-auto">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <p class="text-lg mb-6">Descarga nuestra aplicación para acceder a las mejores propiedades en cualquier momento y lugar.</p>
+                        <div class="flex justify-center md:justify-start space-x-4">
+                            <a href="#" class="inline-block">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Descargar en App Store" class="h-14">
+                            </a>
+                            <a href="App/JABienesRaíces.apk" class="inline-block">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play" class="h-14">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-white py-10">
+    <footer class="bg-gradient-primary text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Janneth Aguirre Bienes Raíces</h3>
-                    <p>Expertos en propiedades en Ecuador y el mundo.</p>
+                    <img src="images/logo-white.png" alt="Janneth Aguirre Bienes Raíces" class="h-24 mb-4">
+                    <p>Descubre el mundo de los bienes raíces de lujo con Janneth Aguirre, tu experta en propiedades en Ecuador y el mundo.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Enlaces Rápidos</h3>
+                    <h3 class="text-2xl font-bold mb-4">Enlaces Rápidos</h3>
                     <ul class="space-y-2">
-                        <li><a href="#propiedades" class="hover:text-primary transition-colors duration-300">Propiedades</a></li>
-                        <li><a href="#servicios" class="hover:text-primary transition-colors duration-300">Servicios</a></li>
-                        <li><a href="#sobre-nosotros" class="hover:text-primary transition-colors duration-300">Sobre Nosotros</a></li>
-                        <li><a href="#contacto" class="hover:text-primary transition-colors duration-300">Contacto</a></li>
+                        <li><a href="#propiedades" class="hover:text-accent transition-colors duration-300">Propiedades</a></li>
+                        <li><a href="#servicios" class="hover:text-accent transition-colors duration-300">Servicios</a></li>
+                        <li><a href="#sobre-nosotros" class="hover:text-accent transition-colors duration-300">Sobre Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-accent transition-colors duration-300">Contacto</a></li>
+                        <li><a href="#descargar" class="hover:text-accent transition-colors duration-300">Descargar App</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contacto</h3>
-                    <p>Av. Principal 123, Guayaquil, Ecuador</p>
-                    <p>Teléfono: +593 987 654 321</p>
-                    <p>Email: info@jannethaguirre.com</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Síguenos</h3>
+                    <h3 class="text-2xl font-bold mb-4">Síguenos</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/@jannethaguirrebienesraices/?hr=1" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/@jannethaguirrebienesraices/?hr=1" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-facebook-f fa-2x"></i>
                         </a>
-                        <a href="https://www.instagram.com/janneth_aguirrem/profilecard/?igsh=anQ1c2sxcXFsaG85" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://instagram.com/janneth_aguirrem" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <a href="https://youtube.com/@jannethaguirrebienesraices5728?si=15ukjHDXRUQyr0pV" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://www.youtube.com/@jannethaguirrebienesraices5728" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-youtube fa-2x"></i>
                         </a>
-                        <a href="https://vm.tiktok.com/ZMhnEwCHp/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">
-                            <i class="fab fa-tiktok"></i>
+                        <a href="https://vm.tiktok.com/ZMhnEwCHp/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-tiktok fa-2x"></i>
                         </a>
-                        <a href="https://x.com/cbrjam" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors duration-300">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://x.com/cbrjam" target="_blank" rel="noopener noreferrer" class="text-white hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-twitter fa-2x"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <p>&copy; 2025 Janneth Aguirre Bienes Raíces. Todos los derechos reservados.</p>
+            <div class="mt-8 pt-8 border-t border-white/20 text-center pb-20">
+                <p>&copy; 2023 Janneth Aguirre Bienes Raíces. Todos los derechos reservados.</p>
+                <p class="mt-2">Desarrollado por <a href="https://dualitydomain.github.io/Dualitydomain/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Duality Domain</a></p>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/593987167782" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+
+    <!-- Chatbot Button -->
+    <button id="chatbotButton" class="fixed bottom-36 right-4 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-colors duration-300 z-50 chatbot-pulse" aria-label="Abrir chat con ARIA">
+        <img src="images/logo-icon.png" alt="Janneth Aguirre Logo" class="w-8 h-8">
+    </button>
+
     <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-4 right-4 bg-primary text-white p-2 rounded-full shadow-lg hidden">
+    <button id="scrollToTopBtn" class="fixed bottom-20 left-4 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-colors duration-300 z-50 hidden">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Property Modal -->
+    <!-- Property Details Modal -->
     <div id="propertyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white p-8 rounded-lg max-w-3xl w-full max-h-90vh overflow-y-auto">
-            <h2 id="propertyTitle" class="text-2xl font-bold mb-4"></h2>
-            <div id="propertySlider" class="mb-4 relative">
-                <!-- Property images will be inserted here -->
-                <button id="prevSlide" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <p id="propertyDescription" class="mb-4"></p>
-            <div id="propertyDetails" class="mb-4"></div>
-            <a id="propertyContact" href="#" class="bg-primary text-white px-4 py-2 rounded-full inline-block hover:bg-secondary transition-colors duration-300">Contactar por WhatsApp</a>
-            <button id="closePropertyModal" class="mt-4 text-gray-500 hover:text-gray-700">Cerrar</button>
-        </div>
-    </div>
-
-    <!-- Render Modal -->
-    <div id="renderModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white p-8 rounded-lg max-w-3xl w-full">
-            <h2 id="renderTitle" class="text-2xl font-bold mb-4"></h2>
-            <video id="renderVideo" class="w-full" controls>
-                Tu navegador no soporta el elemento de video.
-            </video>
-            <button id="closeRenderModal" class="mt-4 text-gray-500 hover:text-gray-700">Cerrar</button>
-        </div>
-    </div>
-
-    <!-- Investment Modal -->
-    <div id="investmentModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white p-8 rounded-lg max-w-3xl w-full max-h-90vh overflow-y-auto">
-            <h2 id="investmentTitle" class="text-2xl font-bold mb-4"></h2>
-            <div id="investmentContent"></div>
-            <button id="closeInvestmentModal" class="mt-4 text-gray-500 hover:text-gray-700">Cerrar</button>
-        </div>
-    </div>
-
-    <!-- Chatbot Button -->
-    <button id="chatbotButton" class="fixed bottom-4 right-4 bg-primary text-white p-4 rounded-full shadow-lg z-40">
-        <i class="fas fa-comments"></i>
-    </button>
-
-    <!-- Chatbot Modal -->
-    <div id="chatbotModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white p-6 rounded-lg max-w-md w-full">
+        <div class="bg-white rounded-lg p-8 max-w-3xl w-full mx-4 max-h-90vh overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">Chat con ARIA</h2>
-                <button id="closeChatbotModal" class="text-gray-500 hover:text-gray-700">
+                <h2 id="propertyTitle" class="text-2xl font-bold"></h2>
+                <button id="closePropertyModal" class="text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div id="chatMessages" class="h-64 overflow-y-auto mb-4 p-2 bg-gray-100 rounded"></div>
-            <form id="chatForm">
-                <div class="flex">
-                    <input type="text" id="chatInput" class="flex-grow px-3 py-2 border rounded-l" placeholder="Escribe tu mensaje...">
-                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded-r">Enviar</button>
+            <div class="mb-6 relative">
+                <div id="propertySlider" class="overflow-hidden">
+                    <!-- Images will be dynamically inserted here -->
                 </div>
-            </form>
+                <button id="prevSlide" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextSlide" class="absolute right-button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <p id="propertyDescription" class="text-gray-600 mb-4"></p>
+            <div id="propertyDetails" class="grid grid-cols-2 gap-4 mb-4">
+                <!-- Property details will be dynamically inserted here -->
+            </div>
+            <a id="propertyContact" href="#" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center">
+                <i class="fab fa-whatsapp mr-2"></i> Contactar por WhatsApp
+            </a>
         </div>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <!-- Investment Details Modal -->
+    <div id="investmentModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-3xl w-full mx-4 max-h-90vh overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h2 id="investmentTitle" class="text-2xl font-bold"></h2>
+                <button id="closeInvestmentModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="investmentContent">
+                <!-- Investment details will be dynamically inserted here -->
+            </div>
+            <div class="mt-6">
+                <div id="youtubeVideo" class="aspect-w-16 aspect-h-9 mb-4">
+                    <!-- YouTube video will be dynamically inserted here -->
+                </div>
+                <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Solicitar más información</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbotModal" class="fixed bottom-20 right-4 bg-white rounded-lg shadow-lg z-50 hidden" style="width: 350px; max-height: 600px;">
+        <div class="flex justify-between items-center bg-primary text-white p-4 rounded-t-lg">
+            <div class="flex items-center space-x-2">
+                <img src="images/logo-icon.png" alt="ARIA Avatar" class="w-8 h-8 rounded-full">
+                <h3 class="text-lg font-semibold">Chat con ARIA</h3>
+            </div>
+            <button id="closeChatbotModal" class="text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-1" aria-label="Cerrar chat">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div id="chatMessages" class="p-4 overflow-y-auto space-y-4" style="height: 400px;">
+            <!-- Chat messages will be dynamically inserted here -->
+        </div>
+        <div id="suggestionButtons" class="px-4 py-2 border-t border-gray-200 flex flex-wrap gap-2">
+            <!-- Suggestion buttons will be dynamically inserted here -->
+        </div>
+        <form id="chatForm" class="p-4 border-t border-gray-200">
+            <div class="flex items-center space-x-2">
+                <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." class="flex-grow px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Mensaje para ARIA">
+                <button type="submit" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Enviar mensaje">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bottom App Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-2 px-4 flex justify-around items-center z-40">
+        <a href="#propiedades" class="text-gray-600 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1">Propiedades</span>
+        </a>
+        <a href="#servicios" class="text-gray-600 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-concierge-bell text-xl"></i>
+            <span class="text-xs mt-1">Servicios</span>
+        </a>
+        <a href="#contacto" class="text-gray-600 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-envelope text-xl"></i>
+            <span class="text-xs mt-1">Contacto</span>
+        </a>
+        <a href="#descargar" class="text-gray-600 hover:text-primary flex flex-col items-center">
+            <i class="fas fa-download text-xl"></i>
+            <span class="text-xs mt-1">Descargar</span>
+        </a>
+    </nav>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+
+    <!-- Structured Data for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Janneth Aguirre Bienes Raíces",
+      "image": "https://jannethaguirre.com/images/logo.png",
+      "url": "https://jannethaguirre.com",
+      "telephone": "+593987167782",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Samborondón",
+        "addressLocality": "Guayaquil",
+        "addressRegion": "Guayas",
+        "postalCode": "XXXXX",
+        "addressCountry": "EC"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -2.1370145984683394,
+        "longitude": -79.88662868524858
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/1422611144634092",
+        "https://www.instagram.com/janneth_aguirrem/",
+        "https://www.youtube.com/@jannethaguirrebienesraices5728",
+        "https://vm.tiktok.com/ZMhnEwCHp/",
+        "https://x.com/cbrjam"
+      ]
+    }
+    </script>
 </body>
 </html>
-
