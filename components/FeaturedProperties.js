@@ -4,14 +4,16 @@ function FeaturedProperties() {
   const properties = [
     {
       id: 1,
-      title: "Lujoso Apartamento en el Centro",
-      price: "$250,000",
-      location: "Centro de Guayaquil",
+      title: "Departamentos exclusivos en Samborondón",
+      price: "Desde $99,900",
+      location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
       image: "images/property1.jpg",
-      bedrooms: 3,
-      bathrooms: 2,
-      area: "150 m²",
-      url: "https://www.jannethaguirre.com/property/lujoso-apartamento-centro",
+      bedrooms: "1 o 2",
+      bathrooms: "1 o 2",
+      area: "60 - 90 m²",
+      url: "https://www.jannethaguirre.com/propiedades/departamentos-exclusivos-samborondon",
+      description: "1 dormitorio (60 m²): Desde $99,900 | 2 dormitorios (90 m²): Desde $135,000",
+      reserve: "Reserva con $500",
     },
     {
       id: 2,
@@ -62,11 +64,13 @@ function FeaturedProperties() {
                 <h3 class="text-xl font-bold mb-2">${property.title}</h3>
                 <p class="text-gray-600 mb-4">${property.location}</p>
                 <p class="text-primary text-2xl font-bold mb-4">${property.price}</p>
-                <div class="flex justify-between text-sm text-gray-600">
-                  <span><i class="fas fa-bed mr-2"></i>${property.bedrooms} Habitaciones</span>
+                <p class="text-gray-700 mb-4">${property.description}</p>
+                <div class="flex justify-between text-sm text-gray-600 mb-4">
+                  <span><i class="fas fa-bed mr-2"></i>${property.bedrooms} Dormitorios</span>
                   <span><i class="fas fa-bath mr-2"></i>${property.bathrooms} Baños</span>
                   <span><i class="fas fa-vector-square mr-2"></i>${property.area}</span>
                 </div>
+                <p class="text-green-600 font-semibold mb-4">${property.reserve}</p>
                 <a href="${property.url}" class="mt-4 inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
                   Ver Detalles
                 </a>
