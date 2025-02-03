@@ -4,21 +4,21 @@ function ConstructionProgress() {
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 md:mb-12 text-primary">Avances de Obra</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src="images/vizcaya1_1.jpg" alt="VIZCAYA 1" class="w-full h-48 object-cover">
                     <div class="p-4 md:p-6">
                         <h3 class="text-lg md:text-xl font-bold mb-2">VIZCAYA 1</h3>
                         <p class="text-sm md:text-base mb-4 line-clamp-3">Proyecto residencial de lujo en etapa avanzada. Disfrute de amplios espacios y acabados de primera calidad en una ubicación privilegiada.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src="images/belice_8.jpg" alt="BELICE" class="w-full h-48 object-cover">
                     <div class="p-4 md:p-6">
                         <h3 class="text-lg md:text-xl font-bold mb-2">BELICE</h3>
                         <p class="text-sm md:text-base mb-4 line-clamp-3">Exclusivo desarrollo inmobiliario con un concepto moderno y sostenible. Avances significativos en la construcción de este proyecto único.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src="images/alsol_1.jpg" alt="AL SOL 1 & 2" class="w-full h-48 object-cover">
                     <div class="p-4 md:p-6">
                         <h3 class="text-lg md:text-xl font-bold mb-2">AL SOL 1 & 2</h3>
