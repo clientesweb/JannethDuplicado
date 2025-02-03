@@ -1,3 +1,15 @@
+import { Header } from "./components/Header.js"
+import { Hero } from "./components/Hero.js"
+import { About } from "./components/About.js"
+import { Services } from "./components/Services.js"
+import { ConstructionProgress } from "./components/ConstructionProgress.js"
+import { Contact } from "./components/Contact.js"
+import { AppDownload } from "./components/AppDownload.js"
+import { Playlists, loadPlaylists } from "./components/Playlists.js"
+import { Footer } from "./components/Footer.js"
+import { BottomNavigation } from "./components/BottomNavigation.js"
+import { gsap, ScrollTrigger } from "gsap/all"
+
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app")
   app.innerHTML = `
@@ -9,10 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
             ${ConstructionProgress()}
             ${Contact()}
             ${AppDownload()}
+            ${Playlists()}
         </main>
         ${Footer()}
         ${BottomNavigation()}
     `
+
+  // Cargar las playlists después de que el DOM esté listo
+  loadPlaylists()
 
   // Top Banner Animation
   const topBanner = document.querySelector(".animate-marquee")
