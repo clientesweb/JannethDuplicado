@@ -1,41 +1,118 @@
 function ConstructionProgress() {
   return `
-    <section id="avances-obra" class="py-12 md:py-16 bg-gray-100">
+    <section id="avances-obra" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-8 md:mb-12 text-primary">Avances de Obra</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/vizcaya1_1.jpg" alt="VIZCAYA 1" class="w-full h-48 object-cover">
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">VIZCAYA 1</h3>
-                        <p class="text-sm md:text-base mb-4 line-clamp-3">Proyecto residencial de lujo en etapa avanzada. Disfrute de amplios espacios y acabados de primera calidad en una ubicación privilegiada.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
+                    Seguimiento de Proyectos
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
+                    <span class="text-primary">Avances</span>
+                    <span class="text-gray-800"> de Obra</span>
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Mantente al día con el progreso de nuestros proyectos más exclusivos en desarrollo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="images/vizcaya1_1.jpg" alt="VIZCAYA 1" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm">90% Completado</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">VIZCAYA 1</h3>
+                            <span class="text-primary"><i class="fas fa-building"></i></span>
+                        </div>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            Proyecto residencial de lujo en etapa avanzada. Disfrute de amplios espacios y acabados de primera calidad en una ubicación privilegiada.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Avance</span>
+                                <span>90%</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/belice_8.jpg" alt="BELICE" class="w-full h-48 object-cover">
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">BELICE</h3>
-                        <p class="text-sm md:text-base mb-4 line-clamp-3">Exclusivo desarrollo inmobiliario con un concepto moderno y sostenible. Avances significativos en la construcción de este proyecto único.</p>
+
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="images/belice_8.jpg" alt="BELICE" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm">75% Completado</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">BELICE</h3>
+                            <span class="text-primary"><i class="fas fa-building"></i></span>
+                        </div>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            Exclusivo desarrollo inmobiliario con un concepto moderno y sostenible. Avances significativos en la construcción de este proyecto único.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Avance</span>
+                                <span>75%</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/alsol_1.jpg" alt="AL SOL 1 & 2" class="w-full h-48 object-cover">
-                    <div class="p-4 md:p-6">
-                        <h3 class="text-lg md:text-xl font-bold mb-2">AL SOL 1 & 2</h3>
-                        <p class="text-sm md:text-base mb-4 line-clamp-3">Complejo residencial de dos fases en pleno desarrollo. Diseño contemporáneo y amenidades de primer nivel para un estilo de vida excepcional.</p>
+
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="images/alsol_1.jpg" alt="AL SOL 1 & 2" 
+                             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm">60% Completado</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">AL SOL 1 & 2</h3>
+                            <span class="text-primary"><i class="fas fa-building"></i></span>
+                        </div>
+                        <p class="text-gray-600 mb-4 line-clamp-2">
+                            Complejo residencial de dos fases en pleno desarrollo. Diseño contemporáneo y amenidades de primer nivel para un estilo de vida excepcional.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600">
+                                <span>Avance</span>
+                                <span>60%</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="text-center">
-                <a href="avances-obra.html" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-full transition-colors duration-300 inline-flex items-center group text-sm md:text-base">
+                <a href="avances-obra.html" 
+                   class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 group">
                     Ver Todos los Avances
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
                 </a>
             </div>
         </div>
     </section>
-    `
+  `
 }
 
