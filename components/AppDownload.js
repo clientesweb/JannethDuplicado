@@ -2,7 +2,7 @@ function AppDownload() {
   return `
     <section id="descargar" class="py-20 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
       <div class="container mx-auto px-4 relative z-10">
-        <div class="flex flex-col lg:flex-row items-center justify-between">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div class="lg:w-1/2 mb-12 lg:mb-0">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Descarga Nuestra App</h2>
             <p class="text-xl text-gray-700 mb-8">
@@ -31,13 +31,13 @@ function AppDownload() {
               </a>
             </div>
           </div>
-          <div class="lg:w-1/2 relative">
-            <img src="/placeholder.svg?height=600&width=300" alt="App Mockup" class="mx-auto max-w-sm animate-float">
-            <div class="absolute top-1/4 -left-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up">
+          <div class="lg:w-1/2 relative mt-12 lg:mt-0">
+            <img src="images/app-jannethaguirre.png" alt="App Mockup" class="mx-auto max-w-sm animate-float">
+            <div class="absolute top-1/4 left-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up">
               <p class="text-primary font-bold">Fácil de Usar</p>
               <p class="text-gray-600">Interfaz intuitiva</p>
             </div>
-            <div class="absolute bottom-1/4 -right-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
+            <div class="absolute bottom-1/4 right-4 bg-white p-4 rounded-lg shadow-lg animate-fade-in-up delay-300">
               <p class="text-primary font-bold">Siempre Actualizada</p>
               <p class="text-gray-600">Listados en tiempo real</p>
             </div>
