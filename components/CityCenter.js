@@ -19,14 +19,14 @@ function CityCenter() {
       "Guardianía 24/7",
       "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/casas-modernas-modelo-urbanizacion-residencial.jpg", "images/casas-modernas-urbanizacion-residencial.jpg"],
+    images: ["images/locales-comerciales-consultorios-samborodon-city-center-janneth-aguirre.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/locales-comerciales-samborodon-city-center-janneth-aguirre.jpg", "images/consultorios-samborodon-city-center-janneth-aguirre.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
-    status: "Pre Venta",
-    type: "Casas",
+    status: "Venta",
+    type: "Locales y Consultorios",
   }
 
   const template = `
