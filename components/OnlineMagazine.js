@@ -8,7 +8,7 @@ function OnlineMagazine() {
       author: "Juan Carlos Solano Aguirre",
       date: "24 Feb 2024",
       url: "https://jannethaguirre.online/articulo/la-domotizacion-en-bienes-raices-por-juan-carlos-solano-aguirre",
-      image: "/placeholder.svg?height=743&width=988",
+      image: "https://jannethaguirre.online/juan-solano-aguirre.jpg",
       readTime: "5 min",
     },
     {
