@@ -2,7 +2,7 @@ function PropertyDetails() {
   // Mantenemos los datos existentes
   const property = {
     id: 1,
-    title: "Lujoso Apartamento en el Samborondón",
+    title: "Lujoso Apartamento en el Centro",
     price: "$250,000",
     location: "Centro de Guayaquil",
     description:
@@ -16,7 +16,7 @@ function PropertyDetails() {
       "Gimnasio",
       "Seguridad 24/7",
     ],
-    images: ["images/departamentos-exclusivos-en-samborondon.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
@@ -234,39 +234,52 @@ function closeImageModal() {
 
 function sendWhatsAppMessage(form) {
   const formData = new FormData(form)
-  const propertyInfo = {
-    title: property.title,
-    price: property.price,
-    location: property.location,
-  }
+  const propertyTitle = document.querySelector("h1").textContent
+  const propertyPrice = document.querySelector(".text-3xl.font-bold.text-primary").textContent
+  const propertyLocation = document.querySelector(".fa-map-marker-alt").parentElement.textContent.trim()
 
-  const message = `*Consulta sobre propiedad*%0A%0A*Propiedad:* ${propertyInfo.title}%0A*Precio:* ${propertyInfo.price}%0A*Ubicación:* ${propertyInfo.location}%0A%0A*Datos del interesado:*%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
+  const message = `*Consulta sobre propiedad*%0A%0A*Propiedad:* ${propertyTitle}%0A*Precio:* ${propertyPrice}%0A*Ubicación:* ${propertyLocation}%0A%0A*Datos del interesado:*%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
 
   window.open(`https://wa.me/593987167782?text=${message}`, "_blank")
   form.reset()
 }
 
 function shareProperty() {
+  const propertyTitle = document.querySelector("h1").textContent
+  const propertyPrice = document.querySelector(".text-3xl.font-bold.text-primary").textContent
+  const propertyLocation = document.querySelector(".fa-map-marker-alt").parentElement.textContent.trim()
+
   if (navigator.share) {
     navigator
       .share({
-        title: property.title,
-        text: `${property.title} - ${property.price} - ${property.location}`,
+        title: propertyTitle,
+        text: `${propertyTitle} - ${propertyPrice} - ${propertyLocation}`,
         url: window.location.href,
       })
-      .catch((error) => console.log("Error sharing", error))
+      .then(() => console.log("Contenido compartido exitosamente"))
+      .catch((error) => console.log("Error compartiendo", error))
   } else {
-    // Fallback for browsers that don't support Web Share API
+    // Fallback para navegadores que no soportan Web Share API
     const tempInput = document.createElement("input")
-    document.body.appendChild(tempInput)
     tempInput.value = window.location.href
+    document.body.appendChild(tempInput)
     tempInput.select()
     document.execCommand("copy")
     document.body.removeChild(tempInput)
-    alert("¡Enlace copiado al portapapeles!")
+
+    // Mostrar mensaje de confirmación
+    const toast = document.createElement("div")
+    toast.className =
+      "fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+    toast.textContent = "¡Enlace copiado al portapapeles!"
+    document.body.appendChild(toast)
+
+    // Remover el mensaje después de 3 segundos
+    setTimeout(() => {
+      toast.remove()
+    }, 3000)
   }
 }
 
 window.PropertyDetails = PropertyDetails
-
 
