@@ -19,7 +19,7 @@ function CityCenter() {
       "Guardianía 24/7",
       "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/locales-comerciales-consultorios-samborodon-city-center-janneth-aguirre.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/locales-comerciales-samborodon-city-center-janneth-aguirre.jpg", "images/consultorios-samborodon-city-center-janneth-aguirre.jpg"],
+    images: ["images/locales-comerciales-consultorios-samborodon-city-center-janneth-aguirre.jpg", "images/locales-comerciales-consultorios-samborodon-city-center-disponibles.jpg", "images/locales-comerciales-samborodon-city-center-janneth-aguirre.jpg", "images/consultorios-samborodon-city-center-janneth-aguirre.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
