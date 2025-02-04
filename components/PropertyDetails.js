@@ -7,9 +7,7 @@ function PropertyDetails() {
     location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
     description:
       "Departamentos modernos y funcionales en un desarrollo residencial que combina confort, seguridad y excelente ubicación.
-Disponibles: 1 dormitorio - 60m² $99.900,00 
-2 dormitorios - 90m² 129.900,00. 
-El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago",
+Disponibles: 1 dormitorio - 60m² $99.900,00 | 2 dormitorios - 90m² 129.900,00. El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago",
     features: [
       "1 y 2 habitaciones disponibles",
       "2 baños",
