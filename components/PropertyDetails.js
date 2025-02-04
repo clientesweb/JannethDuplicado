@@ -1,25 +1,20 @@
 function PropertyDetails() {
   // Property data remains the same
   const property = {
-    {
-  id: 1,
-    title: "Exclusivos Departamentos en Zona de Alta Plusvalía",
-    price: "Desde $104,900",
-    location: "Vía Samborondón – Ciudad Celeste",
+    id: 1,
+    title: "Lujoso Apartamento en el Centro",
+    price: "$250,000",
+    location: "Centro de Guayaquil",
     description:
-      "Departamentos modernos y funcionales en un desarrollo residencial que combina confort, seguridad y excelente ubicación. Disponibles:\n\n" +
-      "🏡 1 dormitorio – 72 m² desde $104,900\n" +
-      "🏡 2 dormitorios – 90 m² desde $129,900\n\n" +
-      "El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago.",
+      "Hermoso apartamento de lujo ubicado en el corazón de Guayaquil. Disfrute de vistas panorámicas de la ciudad desde este espacioso piso 15. Acabados de primera calidad, cocina gourmet y amplias áreas sociales hacen de este apartamento el hogar perfecto para aquellos que buscan comodidad y elegancia en el centro de la ciudad.",
     features: [
-      "1 y 2 habitaciones disponibles",
+      "3 habitaciones",
       "2 baños",
-      "Desde 72 m²",
-      "Estacionamiento privado",
-      "Piscina y jacuzzi",
-      "Gimnasio equipado",
-      "Guardianía 24/7",
-      "Áreas verdes y juegos infantiles"
+      "150 m²",
+      "Estacionamiento para 2 vehículos",
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7",
     ],
     images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
     agent: {
@@ -29,7 +24,8 @@ function PropertyDetails() {
     },
     status: "En Venta",
     type: "Departamento",
-   }
+  }
+
   const template = `
     <main class="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div class="container mx-auto px-4">
