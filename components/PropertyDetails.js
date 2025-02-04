@@ -114,7 +114,7 @@ function PropertyDetails() {
                 .map(
                   (img, index) => `
                 <div class="relative rounded-lg overflow-hidden cursor-pointer group" 
-                     onclick="changeMainImage('${img}')">
+                     onclick="openImageModal('${img}')">
                   <img src="${img}" 
                        alt="Imagen ${index + 1}" 
                        class="w-full h-24 object-cover">
@@ -154,7 +154,7 @@ function PropertyDetails() {
                   </div>
                 </div>
 
-                <form id="contact-agent-form" class="space-y-4">
+                <form id="contact-agent-form" class="space-y-4" onsubmit="event.preventDefault(); sendWhatsAppMessage(this);">
                   <input type="text" 
                          name="name"
                          placeholder="Nombre" 
@@ -214,27 +214,6 @@ function PropertyDetails() {
 }
 
 // Mantener los event listeners y funciones existentes
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-agent-form")
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault()
-      const formData = new FormData(form)
-      const whatsappMessage = `Nombre: ${formData.get("name")}%0AEmail: ${formData.get("email")}%0ATeléfono: ${formData.get("phone")}%0AMensaje: ${formData.get("message")}`
-      window.open(`https://wa.me/593987167782?text=${whatsappMessage}`, "_blank")
-      form.reset()
-    })
-  }
-
-  const thumbnails = document.querySelectorAll(".thumbnail")
-  const mainImage = document.getElementById("mainImage")
-  thumbnails.forEach((thumb) => {
-    thumb.addEventListener("click", () => {
-      mainImage.src = thumb.src
-      mainImage.alt = thumb.alt
-    })
-  })
-})
 
 function changeMainImage(src) {
   document.getElementById("mainImage").src = src
@@ -250,6 +229,13 @@ function openImageModal(src) {
 function closeImageModal() {
   const modal = document.getElementById("imageModal")
   modal.classList.add("hidden")
+}
+
+function sendWhatsAppMessage(form) {
+  const formData = new FormData(form)
+  const message = `*Consulta sobre:* ${property.title}%0A%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
+  window.open(`https://wa.me/593987167782?text=${message}`, "_blank")
+  form.reset()
 }
 
 window.PropertyDetails = PropertyDetails
