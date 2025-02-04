@@ -17,7 +17,7 @@ function PropertyDetails() {
       "Guardianía 24/7",
       "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/departamentos-exclusivos-en-samborondon.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    images: ["images/departamentos-exclusivos-en-samborondon.jpg", "images/habitacion-departamento-exlusivo-samborodon.jpg", "images/sala-departamento-exlusivo-samborodon.jpg", "images/baño-departamento-exlusivo-samborodon.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
