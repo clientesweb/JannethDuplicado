@@ -17,7 +17,7 @@ function MocoliBay() {
   "Áreas verdes y senderos",
   "Seguridad 24/7",
     ],
-    images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/casas-modernas-modelo-urbanizacion-residencial.jpg", "images/casas-modernas-urbanizacion-residencial.jpg"],
+    images: ["images/mocoli-bay-exterior.jpg", "images/mocoli-bay-interior", "images/mocoli-bay-sala.jpg", "images/mocoli-bay-baño.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
