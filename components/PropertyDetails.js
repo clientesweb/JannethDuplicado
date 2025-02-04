@@ -188,7 +188,8 @@ function PropertyDetails() {
                     <i class="fab fa-whatsapp"></i>
                     WhatsApp
                   </button>
-                  <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2">
+                  <button onclick="shareProperty()"
+                          class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2">
                     <i class="fas fa-share-alt"></i>
                     Compartir
                   </button>
@@ -233,10 +234,39 @@ function closeImageModal() {
 
 function sendWhatsAppMessage(form) {
   const formData = new FormData(form)
-  const message = `*Consulta sobre:* ${property.title}%0A%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
+  const propertyInfo = {
+    title: property.title,
+    price: property.price,
+    location: property.location,
+  }
+
+  const message = `*Consulta sobre propiedad*%0A%0A*Propiedad:* ${propertyInfo.title}%0A*Precio:* ${propertyInfo.price}%0A*Ubicación:* ${propertyInfo.location}%0A%0A*Datos del interesado:*%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
+
   window.open(`https://wa.me/593987167782?text=${message}`, "_blank")
   form.reset()
 }
 
+function shareProperty() {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: property.title,
+        text: `${property.title} - ${property.price} - ${property.location}`,
+        url: window.location.href,
+      })
+      .catch((error) => console.log("Error sharing", error))
+  } else {
+    // Fallback for browsers that don't support Web Share API
+    const tempInput = document.createElement("input")
+    document.body.appendChild(tempInput)
+    tempInput.value = window.location.href
+    tempInput.select()
+    document.execCommand("copy")
+    document.body.removeChild(tempInput)
+    alert("¡Enlace copiado al portapapeles!")
+  }
+}
+
 window.PropertyDetails = PropertyDetails
+
 
