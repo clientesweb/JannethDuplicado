@@ -47,10 +47,10 @@ function FeaturedProperties() {
     },
     {
       id: 4,
-      title: "Departamentos de lujo y ubicación privilegiada",
+      title: "Departamentos de Lujo - Ubicación Privilegiada",
       price: "Desde $223,000",
       location: "Isla Mocolí",
-      image: "images/departamento-de-lujo-mocoli-bay.jpg",
+      image: "images/mocoli-bay-exterior.jpg",
       bedrooms: "3",
       bathrooms: "2 - 3",
       area: "Desde 118 m²",
