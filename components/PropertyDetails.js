@@ -78,15 +78,15 @@ Disponibles: 1 dormitorio - 60m² $99.900,00 | 2 dormitorios - 90m² 129.900,00.
                 <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-100">
                   <div class="text-center">
                     <i class="fas fa-bed text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">1 y 2 Dormitorios</p>
+                    <p class="text-sm text-gray-600">1 Dormitorio</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-bath text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">1 y 2 Baños</p>
+                    <p class="text-sm text-gray-600">1 Baño</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">Desde 60 m²</p>
+                    <p class="text-sm text-gray-600">60 m²</p>
                   </div>
                 </div>
 
