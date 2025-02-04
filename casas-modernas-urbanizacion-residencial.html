@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departamentos Exclusivos en Samborondón - Janneth Aguirre Bienes Raíces</title>
-    <meta name="description" content="Descubre departamentos exclusivos en Samborondón con diseño moderno, seguridad 24/7 y financiamiento flexible. Reserva con $500 y personaliza tu plan de pago.">
-    <meta name="keywords" content="departamentos en Samborondón, bienes raíces Ecuador, inversión inmobiliaria, lujo, financiamiento flexible">
-    <link rel="canonical" href="https://jannethaguirre.com/departamentos-exclusivos-samborondon.html">
-    
+    <title>Casas modernas en urbanización residencial - Janneth Aguirre Bienes Raíces</title>
+    <meta name="description" content="Descubre casas modernas en una urbanización exclusiva en Samborondón. Diseño vanguardista, seguridad 24/7, club social y financiamiento flexible. ¡Agenda una visita!">
+    <meta name="keywords" content="casas modernas en Samborondón, urbanización con seguridad, viviendas de estreno, residencias exclusivas, bienes raíces Ecuador, inversión inmobiliaria">
+    <link rel="canonical" href="https://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -17,17 +17,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jannethaguirre.com/departamentos-exclusivos-samborondon.html">
-    <meta property="og:title" content="Departamentos Exclusivos en Samborondón - Janneth Aguirre Bienes Raíces">
-    <meta property="og:description" content="Vive en el corazón de Samborondón con departamentos de 1 y 2 dormitorios, amenidades premium y financiamiento flexible. ¡Reserva con solo $500!">
-    <meta property="og:image" content="https://jannethaguirre.com/images/departamentos-exclusivos-en-samborondon.jpg">
+    <meta property="og:url" content="https://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html">
+    <meta property="og:title" content="Casas modernas en urbanización residencial - Janneth Aguirre Bienes Raíces">
+    <meta property="og:description" content="Vive en una urbanización privada con casas de diseño contemporáneo, club social, piscina y financiamiento flexible. ¡Reserva hoy!">
+    <meta property="og:image" content="https://jannethaguirre.com/images/casas-modernas-proyecto-residencial-al-sol.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://jannethaguirre.com/departamentos-exclusivos-samborondon.html">
-    <meta name="twitter:title" content="Departamentos Exclusivos en Samborondón - Janneth Aguirre Bienes Raíces">
-    <meta name="twitter:description" content="Vive en un entorno de lujo en Samborondón con diseño moderno, seguridad y financiamiento accesible. Reserva con $500.">
-    <meta name="twitter:image" content="https://jannethaguirre.com/images/departamentos-exclusivos-en-samborondon.jpg">
+    <meta name="twitter:url" content="https://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html">
+    <meta name="twitter:title" content="Casas modernas en urbanización residencial - Janneth Aguirre Bienes Raíces">
+    <meta name="twitter:description" content="Descubre la comodidad y exclusividad de nuestras casas modernas en una urbanización segura. Reserva con facilidad y financia tu hogar.">
+    <meta name="twitter:image" content="https://jannethaguirre.com/images/casas-modernas-proyecto-residencial-al-sol.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -59,7 +59,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="components/Header.js"></script>
     <script src="components/Footer.js"></script>
-    <script src="components/PropertyDetails.js"></script>
+    <script src="components/AlSol.js"></script>
     <script src="components/BottomNavigation.js"></script>
     <script src="components/WhatsAppButton.js"></script>
     <script>
@@ -69,7 +69,7 @@
             const app = document.getElementById('app');
             app.innerHTML = `
                 ${Header()}
-                ${PropertyDetails()}
+                ${AlSol()}
                 ${Footer()}
                 ${BottomNavigation()}
                 ${WhatsAppButton()}
@@ -77,7 +77,7 @@
             // Initialize after content is inserted
             setTimeout(() => {
                 console.log('Initializing after content insertion');
-                window.initializePropertyDetails();
+                window.initializeAlSol();
             }, 100);
         });
     </script>
