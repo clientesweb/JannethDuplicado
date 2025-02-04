@@ -1,4 +1,4 @@
-function AlSol() {
+function CityCenter() {
   // Property data remains the same
   const property = {
     id: 1,
@@ -256,7 +256,7 @@ function fallbackShare() {
 }
 
 // Initialize all functionality
-function initializeAlSol() {
+function initializeCityCenter() {
   console.log("Initializing property details...")
 
   // Form submission handler
