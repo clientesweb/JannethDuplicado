@@ -63,7 +63,7 @@
     <script src="components/BottomNavigation.js"></script>
     <script src="components/WhatsAppButton.js"></script>
     <script>
-        // Esperar a que se carguen todos los scripts
+        // Esperar a que todos los scripts se carguen
         window.addEventListener('load', function() {
             console.log('Todos los recursos cargados');
             const app = document.getElementById('app');
@@ -76,8 +76,8 @@
             `;
             // Inicializar después de insertar el contenido
             setTimeout(() => {
-                console.log('Inicializando después de la inserción de contenido');
-                window.MocoliBay();
+                console.log('Inicializando después de la inserción del contenido');
+                window.initializeMocoliBay();
             }, 100);
         });
     </script>
