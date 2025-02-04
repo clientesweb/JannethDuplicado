@@ -2,21 +2,22 @@ function PropertyDetails() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Lujoso Apartamento en el Centro",
-    price: "$250,000",
-    location: "Centro de Guayaquil",
+    title: "Departamentos Exclusivos En Samborondón",
+    price: "$99,900",
+    location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
     description:
-      "Hermoso apartamento de lujo ubicado en el corazón de Guayaquil. Disfrute de vistas panorámicas de la ciudad desde este espacioso piso 15. Acabados de primera calidad, cocina gourmet y amplias áreas sociales hacen de este apartamento el hogar perfecto para aquellos que buscan comodidad y elegancia en el centro de la ciudad.",
+      "Departamentos modernos y funcionales en un desarrollo residencial que combina confort, seguridad y excelente ubicación. Disponibles: 1 dormitorio - 60m² $99.900,00 | 2 dormitorios - 90m² 129.900,00. El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago",
     features: [
-      "3 habitaciones",
+      "1 y 2 habitaciones disponibles",
       "2 baños",
-      "150 m²",
-      "Estacionamiento para 2 vehículos",
-      "Piscina",
-      "Gimnasio",
-      "Seguridad 24/7",
+      "Desde 60 m²",
+      "Estacionamiento privado",
+      "Piscina y jacuzzi",
+      "Gimnasio equipado",
+      "Guardianía 24/7",
+      "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    images: ["images/departamentos-exclusivos-en-samborondon.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
