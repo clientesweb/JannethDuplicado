@@ -1,4 +1,4 @@
-function AlSol() {
+function MocoliBay() {
   // Property data remains the same
   const property = {
     id: 1,
@@ -256,7 +256,7 @@ function fallbackShare() {
 }
 
 // Initialize all functionality
-function initializeAlSol() {
+function initializeMocoliBay() {
   console.log("Initializing property details...")
 
   // Form submission handler
@@ -334,6 +334,6 @@ window.closeImageModal = closeImageModal
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded, checking for property details...")
   if (document.getElementById("contact-agent-form")) {
-    initializeAlSol()
+    initializeMocoliBay()
   }
 })
