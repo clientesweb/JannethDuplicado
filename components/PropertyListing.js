@@ -49,7 +49,7 @@ function PropertyListing() {
       bedrooms: "3",
       bathrooms: "2 - 3",
       area: "Desde 118 m²",
-      url: "https://www.jannethaguirre.com/propiedades/departamentos-lujo-mocoli",
+      url: "https://www.jannethaguirre.com/departamentos-lujo-isla-mocoli.html",
       description: "Departamentos primer y segundo piso. Incluye 2 parqueos",
       reserve: "Reserva con $500",
     },
