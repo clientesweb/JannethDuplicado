@@ -3,45 +3,33 @@ function PropertyDetails() {
   const property = {
     {
   id: 1,
-  title: "Moderno Departamento en Zona Exclusiva",
-  price: "Desde $104,900",
-  location: "Vía Samborondón – Ciudad Celeste",
-  description:
-    "Exclusivos departamentos en un desarrollo residencial de alta plusvalía. Diseñados para brindar comodidad y elegancia, con acabados de primera y acceso a increíbles amenidades. Disponibles:\n\n" +
-    "🏡 1 dormitorio – 72 m² desde $104,900\n" +
-    "🏡 2 dormitorios – 90 m² desde $129,900\n\n" +
-    "Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago.",
-  features: [
-    "1 y 2 habitaciones disponibles",
-    "2 baños",
-    "Desde 72 m²",
-    "Parqueo privado",
-    "Piscina y jacuzzi",
-    "Gimnasio equipado",
-    "Guardianía 24/7",
-    "Áreas verdes y juegos infantiles"
-  ],
-  images: [
-    "images/property2-1.jpg",
-    "images/property2-2.jpg",
-    "images/property2-3.jpg",
-    "images/property2-4.jpg"
-  ],
-  agent: {
-    name: "Janneth Aguirre",
-    phone: "+593 98 716 7782",
-    email: "janneth@jannethaguirre.com"
-  },
-  status: "En Venta",
-  type: "Departamento",
-  financing: {
-    reservation: "$500",
-    options: [
-      "Financiamiento bancario con cuotas accesibles",
-      "Plan de pagos directo con entrada y cuotas flexibles"
-    ]
-  }
-
+    title: "Exclusivos Departamentos en Zona de Alta Plusvalía",
+    price: "Desde $104,900",
+    location: "Vía Samborondón – Ciudad Celeste",
+    description:
+      "Departamentos modernos y funcionales en un desarrollo residencial que combina confort, seguridad y excelente ubicación. Disponibles:\n\n" +
+      "🏡 1 dormitorio – 72 m² desde $104,900\n" +
+      "🏡 2 dormitorios – 90 m² desde $129,900\n\n" +
+      "El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago.",
+    features: [
+      "1 y 2 habitaciones disponibles",
+      "2 baños",
+      "Desde 72 m²",
+      "Estacionamiento privado",
+      "Piscina y jacuzzi",
+      "Gimnasio equipado",
+      "Guardianía 24/7",
+      "Áreas verdes y juegos infantiles"
+    ],
+    images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    agent: {
+      name: "Janneth Aguirre",
+      phone: "+593 98 716 7782",
+      email: "janneth@jannethaguirre.com",
+    },
+    status: "En Venta",
+    type: "Departamento",
+   }
   const template = `
     <main class="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div class="container mx-auto px-4">
