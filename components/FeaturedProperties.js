@@ -24,7 +24,7 @@ function FeaturedProperties() {
       bedrooms: "3 - 4",
       bathrooms: "1 - 2",
       area: "Desde 135 m²",
-      url: "https://www.jannethaguirre.com/casas-modernas-urbanizacion-residencial.html",
+      url: "hhttps://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html",
       description: "4 modelos disponibles de 3 y 4 dormitorios",
       reserve: "Reserva con $500",
       status: "Pre-venta",
