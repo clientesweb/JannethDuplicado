@@ -6,7 +6,7 @@ function PropertyListing() {
       title: "Departamentos Exclusivos en Samborondón",
       price: "Desde $99,900",
       location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
-      image: "images/property1.jpg",
+      image: "images/departamentos-exclusivos-en-samborondon.jpg",
       bedrooms: "1 - 2",
       bathrooms: "1 - 2",
       area: "Desde 60 m²",
