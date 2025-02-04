@@ -19,7 +19,7 @@ function AlSol() {
       "Guardianía 24/7",
       "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/casas-modernas-modelo-urbanizacion-residencial.jpg", "images/casas-modernas-urbanizacion-residencial.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
@@ -133,7 +133,7 @@ function AlSol() {
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden sticky top-24">
               <div class="p-6">
                 <div class="flex items-center gap-4 mb-6">
-                  <img src="images/agent-photo.jpg" 
+                  <img src="images/premio-janneth.png" 
                        alt="${property.agent.name}" 
                        class="w-16 h-16 rounded-full object-cover">
                   <div>
