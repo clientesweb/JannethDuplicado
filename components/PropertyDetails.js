@@ -1,29 +1,45 @@
 function PropertyDetails() {
   // Property data remains the same
   const property = {
-    id: 1,
-    title: "Lujoso Apartamento en el Centro",
-    price: "$250,000",
-    location: "Centro de Guayaquil",
-    description:
-      "Hermoso apartamento de lujo ubicado en el corazón de Guayaquil. Disfrute de vistas panorámicas de la ciudad desde este espacioso piso 15. Acabados de primera calidad, cocina gourmet y amplias áreas sociales hacen de este apartamento el hogar perfecto para aquellos que buscan comodidad y elegancia en el centro de la ciudad.",
-    features: [
-      "3 habitaciones",
-      "2 baños",
-      "150 m²",
-      "Estacionamiento para 2 vehículos",
-      "Piscina",
-      "Gimnasio",
-      "Seguridad 24/7",
-    ],
-    images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
-    agent: {
-      name: "Janneth Aguirre",
-      phone: "+593 98 716 7782",
-      email: "janneth@jannethaguirre.com",
-    },
-    status: "En Venta",
-    type: "Departamento",
+    {
+  id: 1,
+  title: "Moderno Departamento en Zona Exclusiva",
+  price: "Desde $104,900",
+  location: "Vía Samborondón – Ciudad Celeste",
+  description:
+    "Exclusivos departamentos en un desarrollo residencial de alta plusvalía. Diseñados para brindar comodidad y elegancia, con acabados de primera y acceso a increíbles amenidades. Disponibles:\n\n" +
+    "🏡 1 dormitorio – 72 m² desde $104,900\n" +
+    "🏡 2 dormitorios – 90 m² desde $129,900\n\n" +
+    "Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago.",
+  features: [
+    "1 y 2 habitaciones disponibles",
+    "2 baños",
+    "Desde 72 m²",
+    "Parqueo privado",
+    "Piscina y jacuzzi",
+    "Gimnasio equipado",
+    "Guardianía 24/7",
+    "Áreas verdes y juegos infantiles"
+  ],
+  images: [
+    "images/property2-1.jpg",
+    "images/property2-2.jpg",
+    "images/property2-3.jpg",
+    "images/property2-4.jpg"
+  ],
+  agent: {
+    name: "Janneth Aguirre",
+    phone: "+593 98 716 7782",
+    email: "janneth@jannethaguirre.com"
+  },
+  status: "En Venta",
+  type: "Departamento",
+  financing: {
+    reservation: "$500",
+    options: [
+      "Financiamiento bancario con cuotas accesibles",
+      "Plan de pagos directo con entrada y cuotas flexibles"
+    ]
   }
 
   const template = `
