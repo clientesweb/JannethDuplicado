@@ -77,15 +77,15 @@ function CityCenter() {
                 <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-100">
                   <div class="text-center">
                     <i class="fas fa-bed text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Dormitorios</p>
+                    <p class="text-sm text-gray-600">N/A</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-bath text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Baños</p>
+                    <p class="text-sm text-gray-600">1 Baño</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">135 m²</p>
+                    <p class="text-sm text-gray-600">40 m²</p>
                   </div>
                 </div>
 
