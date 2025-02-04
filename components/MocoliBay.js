@@ -2,22 +2,20 @@ function MocoliBay() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Casas Modernas en Urbanización Residencial",
-    price: "$204,900",
-    location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
+    title: "Departamentos de lujo - ubicación privilegiada",
+    price: "$223.000",
+    location: "Isla Mocolí, Samborondón",
     description:
-      "Vive en una urbanización privada con casas de diseño contemporáneo, amplios espacios y acceso a exclusivas amenidades. Seguridad 24/7, club social y financiamiento flexible. 4 Modelos disponibles: 3 dormitorios - 135m² desde $204.900,00 | 3 dormitorios - 154m² desde $206.900,00 | 4 dormitorios - 174m² desde 224.000 | 3 dormitorios - 186m² desde 234.900. Todos los modelos incluyen 2 Parqueos. Reserva con solo $500 y personaliza tu plan de pago",
+      "Departamentos en un exclusivo proyecto residencial ubicado en la Isla Mocolí, en el sector de Samborondón. Este desarrollo ofrece departamentos de 3 dormitorios, cada uno con su propio baño, con áreas de 118m². Cada unidad incluye dos parqueos privados. Seguridad 24/7, casa club, gimnasio, zonas BBQ y áreas verdes. Un entorno natural con proximidad a servicios y comodidades urbanas. Reservas desde 500. Contáctenos, puede personalizar su pago.",
     features: [
-      "3 y 4 habitaciones disponibles",
-      "3 y 4 baños",
-      "2 parqueos",
-      "1 y 2 plantas",
-      "Desde 135 m²",
-      "Estacionamiento privado",
-      "Piscina y jacuzzi",
-      "Gimnasio equipado",
-      "Guardianía 24/7",
-      "Áreas verdes y juegos infantiles"
+  "Departamentos de 3 dormitorios",
+  "Cada dormitorio con su propio baño",
+  "Desde 118²",
+  "2 parqueos privados",
+  "Casa club y gimnasio equipado",
+  "Zonas BBQ y juegos infantiles",
+  "Áreas verdes y senderos",
+  "Seguridad 24/7",
     ],
     images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/casas-modernas-modelo-urbanizacion-residencial.jpg", "images/casas-modernas-urbanizacion-residencial.jpg"],
     agent: {
@@ -25,8 +23,8 @@ function MocoliBay() {
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
-    status: "Pre Venta",
-    type: "Casas",
+    status: "Disponible",
+    type: "Departamentos",
   }
 
   const template = `
@@ -87,7 +85,7 @@ function MocoliBay() {
                   </div>
                   <div class="text-center">
                     <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">135 m²</p>
+                    <p class="text-sm text-gray-600">118 m²</p>
                   </div>
                 </div>
 
