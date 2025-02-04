@@ -6,7 +6,10 @@ function PropertyDetails() {
     price: "$99,900",
     location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
     description:
-      "Departamentos modernos y funcionales en un desarrollo residencial que combina confort, seguridad y excelente ubicación. Disponibles: 1 dormitorio - 60m² $99.900,00 | 2 dormitorios - 90m² 129.900,00. El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago",
+      "Departamentos modernos y funcionales en un desarrollo residencial que combina confort, seguridad y excelente ubicación.
+Disponibles: 1 dormitorio - 60m² $99.900,00 
+2 dormitorios - 90m² 129.900,00. 
+El desarrollo consta de 80 locales comerciales, oficinas y residencias con acceso a exclusivas amenidades. Plan de pago flexible con financiamiento bancario o directo. Reserva con solo $500 y personaliza tu plan de pago",
     features: [
       "1 y 2 habitaciones disponibles",
       "2 baños",
@@ -77,15 +80,15 @@ function PropertyDetails() {
                 <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-100">
                   <div class="text-center">
                     <i class="fas fa-bed text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Dormitorios</p>
+                    <p class="text-sm text-gray-600">1 y 2 Dormitorios</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-bath text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">2 Baños</p>
+                    <p class="text-sm text-gray-600">1 y 2 Baños</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">150 m²</p>
+                    <p class="text-sm text-gray-600">Desde 60 m²</p>
                   </div>
                 </div>
 
