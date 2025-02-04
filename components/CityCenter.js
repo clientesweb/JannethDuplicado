@@ -25,8 +25,8 @@ function CityCenter() {
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
-    status: "Venta",
-    type: "Locales y Consultorios",
+    status: "Disponible",
+    type: "Comercial",
   }
 
   const template = `
