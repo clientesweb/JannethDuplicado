@@ -2,7 +2,7 @@ function MocoliBay() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Departamentos de lujo - ubicación privilegiada",
+    title: "Departamentos de lujo - Ubicación Privilegiada",
     price: "$223.000",
     location: "Isla Mocolí, Samborondón",
     description:
