@@ -2,29 +2,28 @@ function AlSol() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Casas Modernas en Urbanización Residencial",
-    price: "$204.000",
-    location: "Vía Samborondón, Ciudad Celeste – Sector Residencial Batán",
-    description:"Vive en una urbanización privada con casas de diseño contemporáneo, amplios espacios y acceso a exclusivas amenidades. Seguridad 24/7, club social y financiamiento flexible. 4 Modelos disponibles: 3 dormitorios - 135m² desde $204.900,00 | 3 dormitorios - 154m² desde $206.900,00 | 4 dormitorios - 174m² desde 224.000 | 3 dormitorios - 186m² desde 234.900. Todos los modelos incluyen 2 Parqueos. Reserva con solo $500 y personaliza tu plan de pago",
-   features: [
+    title: "Departamentos",
+    price: "$99,900",
+    location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
+    description:
+      "Vive en una urbanización privada con casas de diseño contemporáneo, amplios espacios y acceso a exclusivas amenidades. Seguridad 24/7, club social y financiamiento flexible. 4 Modelos disponibles: 3 dormitorios - 135m² desde $204.900,00 | 3 dormitorios - 154m² desde $206.900,00 | 4 dormitorios - 174m² desde 224.000 | 3 dormitorios - 186m² desde 234.900. Todos los modelos incluyen 2 Parqueos. Reserva con solo $500 y personaliza tu plan de pago",
+    features: [
       "1 y 2 habitaciones disponibles",
-      "3 y 4 baños",
-      "2 parqueos",
-      "1 y 2 plantas",
-      "Desde 135 m²",
+      "2 baños",
+      "Desde 60 m²",
       "Estacionamiento privado",
       "Piscina y jacuzzi",
       "Gimnasio equipado",
       "Guardianía 24/7",
       "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    images: ["images/departamentos-exclusivos-en-samborondon.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
- "   status: "En Venta",
+    status: "En Venta",
     type: "Departamento",
   }
 
@@ -78,15 +77,15 @@ function AlSol() {
                 <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-100">
                   <div class="text-center">
                     <i class="fas fa-bed text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Dormitorio</p>
+                    <p class="text-sm text-gray-600">1 Dormitorio</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-bath text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Baños</p>
+                    <p class="text-sm text-gray-600">1 Baño</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">135 m²</p>
+                    <p class="text-sm text-gray-600">60 m²</p>
                   </div>
                 </div>
 
