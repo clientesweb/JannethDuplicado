@@ -11,7 +11,7 @@ function PropertyListing() {
       bathrooms: "1 - 2",
       area: "Desde 60 m²",
       url: "https://www.jannethaguirre.com/departamentos-exclusivos-samborondon",
-      description: "Modernos y confortables departamentos disponibles de 1 y 2 dormitorios",
+      description: "Descubre la combinación perfecta de confort y exclusividad. Departamentos modernos con amplios espacios, seguridad 24/7 y amenidades premium. Ubicación estratégica y opciones de financiamiento disponibles. ¡Tu nuevo hogar te espera!",
       reserve: "Reserva con $500",
     },
     {
@@ -24,7 +24,7 @@ function PropertyListing() {
       bathrooms: "3 - 4",
       area: "Desde 135 m²",
       url: "https://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html",
-      description: "4 modelos disponibles de 3 y 4 dormitorios",
+      description: "Vive en una urbanización privada con casas y departamentos de diseño contemporáneo. Disfruta de exclusivas amenidades, áreas verdes y un entorno seguro para tu familia. ¡Reserva con facilidad y financia tu nuevo hogar!",
       reserve: "Reserva con $500",
     },
     {
