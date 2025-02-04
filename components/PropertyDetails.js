@@ -1,5 +1,5 @@
 function PropertyDetails() {
-  // En una implementación real, estos datos vendrían de una API o base de datos
+  // Mantenemos los datos existentes
   const property = {
     id: 1,
     title: "Lujoso Apartamento en el Centro",
@@ -22,104 +22,210 @@ function PropertyDetails() {
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
+    status: "En Venta",
+    type: "Departamento",
   }
 
   return `
-    <main class="bg-gray-100 min-h-screen py-12">
+    <main class="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div class="container mx-auto px-4">
-        <button onclick="history.back()" class="mb-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors duration-300">
-          <i class="fas fa-arrow-left mr-2"></i> Volver
-        </button>
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">${property.title}</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-              <img src="${property.images[0]}" alt="${property.title}" class="w-full h-64 object-cover cursor-pointer" id="mainImage" onclick="openImageModal(this.src)">
+        <nav class="flex items-center space-x-2 text-sm mb-8">
+          <a href="index.html" class="text-gray-600 hover:text-primary transition-colors duration-300">Inicio</a>
+          <span class="text-gray-400">/</span>
+          <a href="property-listing.html" class="text-gray-600 hover:text-primary transition-colors duration-300">Propiedades</a>
+          <span class="text-gray-400">/</span>
+          <span class="text-primary">${property.title}</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+              <div class="relative">
+                <div class="aspect-w-16 aspect-h-9">
+                  <img src="${property.images[0]}" 
+                       alt="${property.title}" 
+                       id="mainImage"
+                       class="w-full h-full object-cover cursor-pointer"
+                       onclick="openImageModal(this.src)">
+                </div>
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span class="bg-primary/90 text-white px-3 py-1 rounded-full text-sm">
+                    ${property.status}
+                  </span>
+                  <span class="bg-white/90 text-primary px-3 py-1 rounded-full text-sm">
+                    ${property.type}
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-6">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                  <div>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2">${property.title}</h1>
+                    <p class="flex items-center text-gray-600">
+                      <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                      ${property.location}
+                    </p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-3xl font-bold text-primary mb-2">${property.price}</div>
+                    <div class="text-sm text-gray-600">Precio de Venta</div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-100">
+                  <div class="text-center">
+                    <i class="fas fa-bed text-primary text-2xl mb-2"></i>
+                    <p class="text-sm text-gray-600">3 Dormitorios</p>
+                  </div>
+                  <div class="text-center">
+                    <i class="fas fa-bath text-primary text-2xl mb-2"></i>
+                    <p class="text-sm text-gray-600">2 Baños</p>
+                  </div>
+                  <div class="text-center">
+                    <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
+                    <p class="text-sm text-gray-600">150 m²</p>
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <h2 class="text-xl font-bold mb-4">Descripción</h2>
+                  <p class="text-gray-600 leading-relaxed mb-6">${property.description}</p>
+                  
+                  <h2 class="text-xl font-bold mb-4">Características</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    ${property.features
+                      .map(
+                        (feature) => `
+                      <div class="flex items-center">
+                        <i class="fas fa-check-circle text-primary mr-2"></i>
+                        <span class="text-gray-600">${feature}</span>
+                      </div>
+                    `,
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="grid grid-cols-4 gap-2">
+
+            <div class="grid grid-cols-4 gap-4">
               ${property.images
                 .map(
                   (img, index) => `
-                <img src="${img}" alt="${property.title}" class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-75 transition duration-300 thumbnail" data-index="${index}" onclick="openImageModal(this.src)">
+                <div class="relative rounded-lg overflow-hidden cursor-pointer group" 
+                     onclick="changeMainImage('${img}')">
+                  <img src="${img}" 
+                       alt="Imagen ${index + 1}" 
+                       class="w-full h-24 object-cover">
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                </div>
               `,
                 )
                 .join("")}
             </div>
           </div>
-          <div>
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-              <h2 class="text-2xl font-bold mb-4 text-primary">${property.price}</h2>
-              <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>${property.location}</p>
-              <p class="text-gray-700 mb-6">${property.description}</p>
-              <h3 class="text-xl font-bold mb-4">Características:</h3>
-              <ul class="grid grid-cols-2 gap-2">
-                ${property.features
-                  .map(
-                    (feature) => `
-                  <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>${feature}</li>
-                `,
-                  )
-                  .join("")}
-              </ul>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6">
-              <h3 class="text-xl font-bold mb-4">Contactar al agente</h3>
-              <div class="flex items-center mb-4">
-                <img src="images/agent-photo.jpg" alt="${property.agent.name}" class="w-16 h-16 rounded-full mr-4">
-                <div>
-                  <p class="font-bold">${property.agent.name}</p>
-                  <p class="text-gray-600">${property.agent.phone}</p>
-                  <p class="text-gray-600">${property.agent.email}</p>
+
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden sticky top-24">
+              <div class="p-6">
+                <div class="flex items-center gap-4 mb-6">
+                  <img src="images/agent-photo.jpg" 
+                       alt="${property.agent.name}" 
+                       class="w-16 h-16 rounded-full object-cover">
+                  <div>
+                    <h3 class="font-bold text-lg">${property.agent.name}</h3>
+                    <p class="text-gray-600 text-sm">14+ años de experiencia</p>
+                  </div>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-award text-primary"></i>
+                    <span>500+ propiedades vendidas</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-phone text-primary"></i>
+                    <span>${property.agent.phone}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-600">
+                    <i class="fas fa-envelope text-primary"></i>
+                    <span>${property.agent.email}</span>
+                  </div>
+                </div>
+
+                <form id="contact-agent-form" class="space-y-4">
+                  <input type="text" 
+                         name="name"
+                         placeholder="Nombre" 
+                         class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                         required>
+                  <input type="email" 
+                         name="email"
+                         placeholder="Email" 
+                         class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                         required>
+                  <input type="tel" 
+                         name="phone"
+                         placeholder="Teléfono" 
+                         class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                         required>
+                  <textarea name="message"
+                          placeholder="Mensaje" 
+                          rows="4" 
+                          class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                          required></textarea>
+                  <button type="submit" 
+                          class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar Mensaje
+                  </button>
+                </form>
+
+                <div class="flex justify-center space-x-4 mt-6">
+                  <button onclick="window.open('https://wa.me/593987167782', '_blank')"
+                          class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                  </button>
+                  <button class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-share-alt"></i>
+                    Compartir
+                  </button>
                 </div>
               </div>
-              <form id="contact-agent-form" class="space-y-4">
-                <input type="text" name="name" placeholder="Nombre" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
-                <input type="email" name="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
-                <input type="tel" name="phone" placeholder="Teléfono" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required>
-                <textarea name="message" placeholder="Mensaje" rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
-                <button type="submit" class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300">Enviar mensaje</button>
-              </form>
             </div>
           </div>
         </div>
       </div>
-    </main>
 
-    <!-- Modal para ver imágenes en tamaño completo -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
-      <div class="max-w-4xl w-full">
-        <img id="modalImage" src="/placeholder.svg" alt="Imagen en tamaño completo" class="w-full h-auto">
-        <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+      <!-- Modal para ver imágenes en tamaño completo -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+        <div class="max-w-4xl w-full mx-4">
+          <img id="modalImage" src="/placeholder.svg" alt="Imagen en tamaño completo" class="w-full h-auto rounded-lg">
+          <button onclick="closeImageModal()" 
+                  class="absolute top-4 right-4 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-300">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
       </div>
-    </div>
+    </main>
   `
 }
 
-// Event listeners
+// Mantener los event listeners y funciones existentes
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-agent-form")
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault()
       const formData = new FormData(form)
-      const name = formData.get("name")
-      const email = formData.get("email")
-      const phone = formData.get("phone")
-      const message = formData.get("message")
-
-      // Construir el mensaje para WhatsApp
-      const whatsappMessage = `Nombre: ${name}%0AEmail: ${email}%0ATeléfono: ${phone}%0AMensaje: ${message}`
-      const whatsappUrl = `https://wa.me/593987167782?text=${whatsappMessage}`
-
-      // Abrir WhatsApp en una nueva ventana
-      window.open(whatsappUrl, "_blank")
-
-      // Limpiar el formulario después del envío
+      const whatsappMessage = `Nombre: ${formData.get("name")}%0AEmail: ${formData.get("email")}%0ATeléfono: ${formData.get("phone")}%0AMensaje: ${formData.get("message")}`
+      window.open(`https://wa.me/593987167782?text=${whatsappMessage}`, "_blank")
       form.reset()
     })
   }
 
-  // Lógica para cambiar la imagen principal al hacer clic en las miniaturas
   const thumbnails = document.querySelectorAll(".thumbnail")
   const mainImage = document.getElementById("mainImage")
   thumbnails.forEach((thumb) => {
@@ -130,7 +236,10 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Funciones para el modal de imágenes
+function changeMainImage(src) {
+  document.getElementById("mainImage").src = src
+}
+
 function openImageModal(src) {
   const modal = document.getElementById("imageModal")
   const modalImage = document.getElementById("modalImage")
@@ -143,6 +252,5 @@ function closeImageModal() {
   modal.classList.add("hidden")
 }
 
-// Exportar la función PropertyDetails
 window.PropertyDetails = PropertyDetails
 
