@@ -39,7 +39,7 @@ function FeaturedProperties() {
       bedrooms: "N/A",
       bathrooms: "1",
       area: "Desde 40 m²",
-      url: "https://www.jannethaguirre.com/property/locales-comerciales-consultorios",
+      url: "https://www.jannethaguirre.com/locales-comerciales-consultorios-samborondon.html",
       description: "Locales comerciales y consultorios a estrenar, importante ubicación",
       reserve: "Reserva con $500",
       status: "Disponible",
