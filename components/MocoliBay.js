@@ -17,7 +17,7 @@ function MocoliBay() {
   "Áreas verdes y senderos",
   "Seguridad 24/7",
     ],
-    images: ["images/mocoli-bay-exterior.jpg", "images/mocoli-bay-interior", "images/mocoli-bay-sala.jpg", "images/mocoli-bay-baño.jpg"],
+    images: ["images/mocoli-bay-exterior.jpg", "images/mocoli-bay-interior.jpg", "images/mocoli-bay-sala.jpg", "images/mocoli-bay-baño.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
