@@ -10,7 +10,7 @@ function MocoliBay() {
     features: [
   "Departamentos de 3 dormitorios",
   "Cada dormitorio con su propio baño",
-  "Desde 118²",
+  "Desde 118m²",
   "2 parqueos privados",
   "Casa club y gimnasio equipado",
   "Zonas BBQ y juegos infantiles",
