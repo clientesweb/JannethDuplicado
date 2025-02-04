@@ -8,7 +8,7 @@ function FeaturedProperties() {
       image: "images/departamentos-exclusivos-en-samborondon.jpg",
       bedrooms: "1 - 2",
       bathrooms: "1 - 2",
-      area: "60 m²",
+      area: "Desde 60 m²",
       url: "https://www.jannethaguirre.com/departamentos-exclusivos-samborondon.html",
       description: "Descubre la combinación perfecta de confort y exclusividad. Departamentos modernos con amplios espacios, seguridad 24/7 y amenidades premium. Ubicación estratégica y opciones de financiamiento disponibles. ¡Tu nuevo hogar te espera!",
       reserve: "Reserva con $500",
