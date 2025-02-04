@@ -1,4 +1,4 @@
-function PropertyDetails() {
+function AlSol() {
   // Property data remains the same
   const property = {
     id: 1,
@@ -254,7 +254,7 @@ function fallbackShare() {
 }
 
 // Initialize all functionality
-function initializePropertyDetails() {
+function initializeAlSol() {
   console.log("Initializing property details...")
 
   // Form submission handler
@@ -332,6 +332,6 @@ window.closeImageModal = closeImageModal
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded, checking for property details...")
   if (document.getElementById("contact-agent-form")) {
-    initializePropertyDetails()
+    initializeAlSol()
   }
 })
