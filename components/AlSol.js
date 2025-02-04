@@ -25,8 +25,8 @@ function AlSol() {
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
-    status: "En Venta",
-    type: "Departamento",
+    status: "Pre Venta",
+    type: "Casas",
   }
 
   const template = `
