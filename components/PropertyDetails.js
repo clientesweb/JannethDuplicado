@@ -2,7 +2,7 @@ function PropertyDetails() {
   // Mantenemos los datos existentes
   const property = {
     id: 1,
-    title: "Lujoso Apartamento en el Centro",
+    title: "Lujoso Apartamento en el Samborondón",
     price: "$250,000",
     location: "Centro de Guayaquil",
     description:
