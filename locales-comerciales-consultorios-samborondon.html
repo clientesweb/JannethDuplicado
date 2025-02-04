@@ -59,7 +59,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="components/Header.js"></script>
     <script src="components/Footer.js"></script>
-    <script src="components/AlSol.js"></script>
+    <script src="components/CityCenter.js"></script>
     <script src="components/BottomNavigation.js"></script>
     <script src="components/WhatsAppButton.js"></script>
     <script>
@@ -69,7 +69,7 @@
             const app = document.getElementById('app');
             app.innerHTML = `
                 ${Header()}
-                ${AlSol()}
+                ${CityCenter()}
                 ${Footer()}
                 ${BottomNavigation()}
                 ${WhatsAppButton()}
@@ -77,7 +77,7 @@
             // Initialize after content is inserted
             setTimeout(() => {
                 console.log('Initializing after content insertion');
-                window.initializeAlSol();
+                window.initializeCityCenter();
             }, 100);
         });
     </script>
