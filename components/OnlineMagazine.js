@@ -6,9 +6,9 @@ function OnlineMagazine() {
       description:
         "La domotización revoluciona el mercado inmobiliario, mejorando eficiencia, seguridad y confort. Descubre su impacto y las oportunidades que ofrece.",
       author: "Juan Carlos Solano Aguirre",
-      date: "24 Feb 2024",
+      date: "02 Feb 2025",
       url: "https://jannethaguirre.online/articulo/la-domotizacion-en-bienes-raices-por-juan-carlos-solano-aguirre",
-      image: "/placeholder.svg?height=743&width=988",
+      image: "https://jannethaguirre.online/juan-solano-aguirre.jpg",
       readTime: "5 min",
     },
     {
@@ -17,9 +17,9 @@ function OnlineMagazine() {
       description:
         "Descubre la historia de uno de los constructores más emblemáticos e influyentes de Ecuador y su impacto en el desarrollo de Samborondón y Vía a la Costa.",
       author: "Janneth Aguirre",
-      date: "22 Feb 2024",
+      date: "01 Feb 2025",
       url: "https://jannethaguirre.online/articulo/jose-solines-aguayo-construyendo-suenos",
-      image: "/placeholder.svg?height=743&width=988",
+      image: "https://jannethaguirre.online/portada-jose-solines.jpg",
       readTime: "4 min",
     },
     {
@@ -28,9 +28,9 @@ function OnlineMagazine() {
       description:
         "Descubre el exclusivo desarrollo residencial en las montañas de Boquete, que combina lujo, golf y una impresionante belleza natural.",
       author: "Janneth Aguirre",
-      date: "20 Feb 2024",
+      date: "28 Ene 2025",
       url: "https://jannethaguirre.online/articulo/boquete-pino-alto-country-club",
-      image: "/placeholder.svg?height=743&width=988",
+      image: "https://jannethaguirre.online/boquete-pino-alto-country-club.jpg,
       readTime: "6 min",
     },
   ]
