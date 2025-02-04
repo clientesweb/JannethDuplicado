@@ -8,16 +8,14 @@ function CityCenter() {
     description:
       "Este desarrollo consta de cuatro torres que incluyen áreas residenciales, comerciales, oficinas y un centro médico. Ofrece locales comerciales premium adecuados para diversos tipos de negocios, así como consultorios médicos equipados para profesionales de la salud. Además, contará con quirófanos para cirugías ambulatorias, farmacia y laboratorio. Disponibles: Locales Comerciales de 40m² desde $128.000 | Consultorios de 50m² desde $130.000",
     features: [
-      "3 y 4 habitaciones disponibles",
-      "3 y 4 baños",
-      "2 parqueos",
-      "1 y 2 plantas",
-      "Desde 135 m²",
-      "Estacionamiento privado",
-      "Piscina y jacuzzi",
-      "Gimnasio equipado",
-      "Guardianía 24/7",
-      "Áreas verdes y juegos infantiles"
+  "Locales comerciales y consultorios médicos disponibles",
+  "Desde 40 m² hasta 150 m²",
+  "Parqueaderos privados y para visitantes",
+  "Seguridad 24/7 con acceso controlado",
+  "Centro médico con quirófanos, farmacia y laboratorio",
+  "Espacios modernos y funcionales",
+  "Áreas comunes con acabados de lujo",
+  "Ubicación estratégica en Samborondón",
     ],
     images: ["images/locales-comerciales-consultorios-samborodon-city-center-janneth-aguirre.jpg", "images/locales-comerciales-consultorios-samborodon-city-center-disponibles.jpg", "images/locales-comerciales-samborodon-city-center-janneth-aguirre.jpg", "images/consultorios-samborodon-city-center-janneth-aguirre.jpg"],
     agent: {
