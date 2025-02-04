@@ -17,7 +17,7 @@ function FeaturedProperties() {
     },
     {
       id: 2,
-      title: "Casas Modernas - Proyecto Residencial",
+      title: "Casas Modernas en Urbanización Residencial",
       price: "Desde $204,900",
       location: "km 9.4 de la Vía Samborondón, Ciudad Celeste - Sector Batan",
       image: "images/casas-modernas-proyecto-residencial-al-sol.jpg",
