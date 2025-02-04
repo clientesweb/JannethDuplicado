@@ -22,7 +22,7 @@ function FeaturedProperties() {
       location: "km 9.4 de la Vía Samborondón, Ciudad Celeste - Sector Batan",
       image: "images/casas-modernas-proyecto-residencial-al-sol.jpg",
       bedrooms: "3 - 4",
-      bathrooms: "1 - 2",
+      bathrooms: "3 - 4",
       area: "Desde 135 m²",
       url: "hhttps://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html",
       description: "4 modelos disponibles de 3 y 4 dormitorios",
