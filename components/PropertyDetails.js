@@ -16,7 +16,7 @@ function PropertyDetails() {
       "Gimnasio",
       "Seguridad 24/7",
     ],
-    images: ["images/property1-1.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
+    images: ["images/departamentos-exclusivos-en-samborondon.jpg", "images/property1-2.jpg", "images/property1-3.jpg", "images/property1-4.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
