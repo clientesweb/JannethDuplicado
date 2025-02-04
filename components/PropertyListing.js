@@ -29,15 +29,15 @@ function PropertyListing() {
     },
     {
       id: 3,
-      title: "Locales Comerciales y Consultorios en Centro Comercial",
-      price: "Desde $138,000",
+      title: "Locales Comerciales y Consultorios en Samborondón",
+      price: "Desde $128,000",
       location: "Km 9.5 Vía Samborondón, cerca del Parque Bicentenario",
       image: "images/locales-comerciales-consultorios-samborodon-city-center.jpg",
       bedrooms: "N/A",
       bathrooms: "1",
       area: "Desde 40 m²",
       url: "https://www.jannethaguirre.com/locales-comerciales-consultorios-samborondon.html",
-      description: "Locales comerciales y consultorios a estrenar, importante ubicación",
+      description: "Invierte en un proyecto exclusivo con locales comerciales y consultorios médicos en la mejor ubicación de Samborondón. Seguridad 24/7, parqueaderos privados y diseño moderno para tu negocio. ¡Consulta disponibilidad y asegura tu espacio hoy mismo!",
       reserve: "Reserva con $500",
     },
     {
