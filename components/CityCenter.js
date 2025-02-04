@@ -6,8 +6,7 @@ function CityCenter() {
     price: "$128,000",
     location: "Vía Samborondón, Cerca del Parque Bicentenario",
     description:
-       "Samborondón City Center es un desarrollo de cuatro torres que incluyen áreas residenciales, comerciales, oficinas y un centro médico. Ofrece locales comerciales premium ideales para diversos tipos de negocios y consultorios médicos completamente equipados. Además, contará con quirófanos para cirugías ambulatorias, farmacia y laboratorio. 
-  Disponibles: Locales Comerciales desde 40m² ($128,000) | Consultorios desde 50m² ($130,000).",
+       "Samborondón City Center es un desarrollo de cuatro torres que incluyen áreas residenciales, comerciales, oficinas y un centro médico. Ofrece locales comerciales premium ideales para diversos tipos de negocios y consultorios médicos completamente equipados. Además, contará con quirófanos para cirugías ambulatorias, farmacia y laboratorio. Disponibles: Locales Comerciales desde 40m² ($128,000) | Consultorios desde 50m² ($130,000).",
     features: [
   "Locales comerciales y consultorios médicos disponibles",
   "Desde 40 m² hasta 150 m²",
