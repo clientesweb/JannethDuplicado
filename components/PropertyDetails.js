@@ -1,5 +1,5 @@
 function PropertyDetails() {
-  // Mantenemos los datos existentes
+  // Property data remains the same
   const property = {
     id: 1,
     title: "Lujoso Apartamento en el Centro",
@@ -26,90 +26,7 @@ function PropertyDetails() {
     type: "Departamento",
   }
 
-  // IMPORTANT: Add these functions to the window object immediately
-  window.changeMainImage = (src) => {
-    document.getElementById("mainImage").src = src
-  }
-
-  window.openImageModal = (src) => {
-    const modal = document.getElementById("imageModal")
-    const modalImage = document.getElementById("modalImage")
-    modalImage.src = src
-    modal.classList.remove("hidden")
-  }
-
-  window.closeImageModal = () => {
-    const modal = document.getElementById("imageModal")
-    modal.classList.add("hidden")
-  }
-
-  window.sendWhatsAppMessage = (form) => {
-    const formData = new FormData(form)
-    const propertyTitle = document.querySelector("h1").textContent
-    const propertyPrice = document.querySelector(".text-3xl.font-bold.text-primary").textContent
-    const propertyLocation = document.querySelector(".fa-map-marker-alt").parentElement.textContent.trim()
-
-    const message = `*Consulta sobre propiedad*%0A%0A*Propiedad:* ${propertyTitle}%0A*Precio:* ${propertyPrice}%0A*Ubicación:* ${propertyLocation}%0A%0A*Datos del interesado:*%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
-
-    window.open(`https://wa.me/593987167782?text=${message}`, "_blank")
-    form.reset()
-  }
-
-  window.shareProperty = () => {
-    const propertyTitle = document.querySelector("h1").textContent
-    const propertyPrice = document.querySelector(".text-3xl.font-bold.text-primary").textContent
-    const propertyLocation = document.querySelector(".fa-map-marker-alt").parentElement.textContent.trim()
-
-    if (navigator.share) {
-      navigator
-        .share({
-          title: propertyTitle,
-          text: `${propertyTitle} - ${propertyPrice} - ${propertyLocation}`,
-          url: window.location.href,
-        })
-        .then(() => console.log("Contenido compartido exitosamente"))
-        .catch((error) => console.log("Error compartiendo", error))
-    } else {
-      // Fallback para navegadores que no soportan Web Share API
-      const tempInput = document.createElement("input")
-      tempInput.value = window.location.href
-      document.body.appendChild(tempInput)
-      tempInput.select()
-      document.execCommand("copy")
-      document.body.removeChild(tempInput)
-
-      // Mostrar mensaje de confirmación
-      const toast = document.createElement("div")
-      toast.className =
-        "fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50"
-      toast.textContent = "¡Enlace copiado al portapapeles!"
-      document.body.appendChild(toast)
-
-      setTimeout(() => {
-        toast.remove()
-      }, 3000)
-    }
-  }
-
-  // Add initialization code
-  window.initializePropertyDetails = () => {
-    // Initialize form submission
-    const form = document.getElementById("contact-agent-form")
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault()
-        window.sendWhatsAppMessage(this)
-      })
-    }
-
-    // Initialize share button
-    const shareButton = document.querySelector('button[onclick="shareProperty()"]')
-    if (shareButton) {
-      shareButton.addEventListener("click", window.shareProperty)
-    }
-  }
-
-  return `
+  const template = `
     <main class="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div class="container mx-auto px-4">
         <nav class="flex items-center space-x-2 text-sm mb-8">
@@ -237,7 +154,7 @@ function PropertyDetails() {
                   </div>
                 </div>
 
-                <form id="contact-agent-form" class="space-y-4">
+                <form id="contact-agent-form" class="space-y-4" data-property-title="${property.title}" data-property-price="${property.price}" data-property-location="${property.location}">
                   <input type="text" 
                          name="name"
                          placeholder="Nombre" 
@@ -271,7 +188,7 @@ function PropertyDetails() {
                     <i class="fab fa-whatsapp"></i>
                     WhatsApp
                   </button>
-                  <button onclick="shareProperty()"
+                  <button id="shareButton"
                           class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2">
                     <i class="fas fa-share-alt"></i>
                     Compartir
@@ -295,15 +212,126 @@ function PropertyDetails() {
       </div>
     </main>
   `
+
+  return template
 }
 
-// Export the function
-window.PropertyDetails = PropertyDetails
+// Helper functions
+function openImageModal(src) {
+  const modal = document.getElementById("imageModal")
+  const modalImage = document.getElementById("modalImage")
+  if (modal && modalImage) {
+    modalImage.src = src
+    modal.classList.remove("hidden")
+  }
+}
 
-// Add initialization call to the script
+function closeImageModal() {
+  const modal = document.getElementById("imageModal")
+  if (modal) {
+    modal.classList.add("hidden")
+  }
+}
+
+function fallbackShare() {
+  const tempInput = document.createElement("input")
+  tempInput.value = window.location.href
+  document.body.appendChild(tempInput)
+  tempInput.select()
+  document.execCommand("copy")
+  document.body.removeChild(tempInput)
+
+  const toast = document.createElement("div")
+  toast.className =
+    "fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+  toast.textContent = "¡Enlace copiado al portapapeles!"
+  document.body.appendChild(toast)
+
+  setTimeout(() => {
+    toast.remove()
+  }, 3000)
+}
+
+// Initialize all functionality
+function initializePropertyDetails() {
+  console.log("Initializing property details...")
+
+  // Form submission handler
+  const form = document.getElementById("contact-agent-form")
+  if (form) {
+    console.log("Form found, attaching submit handler...")
+    form.addEventListener("submit", function (e) {
+      e.preventDefault()
+      console.log("Form submitted")
+
+      const formData = new FormData(this)
+      const propertyTitle = this.dataset.propertyTitle
+      const propertyPrice = this.dataset.propertyPrice
+      const propertyLocation = this.dataset.propertyLocation
+
+      const message = `*Consulta sobre propiedad*%0A%0A*Propiedad:* ${propertyTitle}%0A*Precio:* ${propertyPrice}%0A*Ubicación:* ${propertyLocation}%0A%0A*Datos del interesado:*%0A*Nombre:* ${formData.get("name")}%0A*Email:* ${formData.get("email")}%0A*Teléfono:* ${formData.get("phone")}%0A*Mensaje:* ${formData.get("message")}`
+
+      window.open(`https://wa.me/593987167782?text=${message}`, "_blank")
+      form.reset()
+    })
+  }
+
+  // Share button handler
+  const shareButton = document.getElementById("shareButton")
+  if (shareButton) {
+    console.log("Share button found, attaching click handler...")
+    shareButton.addEventListener("click", () => {
+      console.log("Share button clicked")
+
+      if (navigator.share) {
+        navigator
+          .share({
+            title: document.title,
+            text: document.querySelector("h1").textContent,
+            url: window.location.href,
+          })
+          .then(() => console.log("Contenido compartido exitosamente"))
+          .catch((error) => {
+            console.log("Error compartiendo:", error)
+            fallbackShare()
+          })
+      } else {
+        fallbackShare()
+      }
+    })
+  }
+
+  // Image modal handlers
+  const images = document.querySelectorAll('[onclick*="openImageModal"]')
+  images.forEach((img) => {
+    img.addEventListener("click", function (e) {
+      e.preventDefault()
+      const src = this.src || this.querySelector("img").src
+      openImageModal(src)
+    })
+  })
+
+  // Close modal button
+  const closeModalBtn = document.querySelector('[onclick*="closeImageModal"]')
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      closeImageModal()
+    })
+  }
+}
+
+// Export functions to window object
+window.PropertyDetails = PropertyDetails
+window.initializePropertyDetails = initializePropertyDetails
+window.openImageModal = openImageModal
+window.closeImageModal = closeImageModal
+
+// Auto-initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded, checking for property details...")
   if (document.getElementById("contact-agent-form")) {
-    window.initializePropertyDetails()
+    initializePropertyDetails()
   }
 })
 
