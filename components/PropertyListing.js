@@ -84,6 +84,11 @@ function PropertyListing() {
   return `
     <main class="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 md:py-24">
       <div class="container mx-auto px-4">
+        <button onclick="window.history.back()" 
+            class="mb-8 inline-flex items-center justify-center bg-white border border-gray-200 hover:bg-gray-50 text-gray-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+          <i class="fas fa-arrow-left mr-2"></i>
+          Volver
+        </button>
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4">
