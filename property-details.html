@@ -57,45 +57,25 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="components/Header.js"></script>
-    <script src="components/Footer.js"></script>
-    <script src="components/PropertyDetails.js"></script>
-    <script src="components/BottomNavigation.js"></script>
-    <script src="components/WhatsAppButton.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const app = document.getElementById('app');
-            app.innerHTML = `
-                ${Header()}
-                ${PropertyDetails()}
-                ${Footer()}
-                ${BottomNavigation()}
-                ${WhatsAppButton()}
-            `;
-        });
-    </script>
-
-    <!-- Structured Data for Property -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Lujoso Apartamento en el Centro",
-      "image": "https://www.jannethaguirre.com/images/property1-1.jpg",
-      "description": "Hermoso apartamento de lujo ubicado en el corazón de Guayaquil. Disfrute de vistas panorámicas de la ciudad desde este espacioso piso 15.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Janneth Aguirre Bienes Raíces"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.jannethaguirre.com/property-details.html?id=1",
-        "priceCurrency": "USD",
-        "price": "250000",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
+  <script src="components/Header.js"></script>
+  <script src="components/Footer.js"></script>
+  <script src="components/PropertyDetails.js"></script>
+  <script src="components/BottomNavigation.js"></script>
+  <script src="components/WhatsAppButton.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const app = document.getElementById('app');
+          app.innerHTML = `
+              ${Header()}
+              ${PropertyDetails()}
+              ${Footer()}
+              ${BottomNavigation()}
+              ${WhatsAppButton()}
+          `;
+          // Initialize property details functionality after content is loaded
+          window.initializePropertyDetails();
+      });
+  </script>
 </body>
 </html>
 
