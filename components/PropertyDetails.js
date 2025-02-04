@@ -131,7 +131,7 @@ function PropertyDetails() {
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden sticky top-24">
               <div class="p-6">
                 <div class="flex items-center gap-4 mb-6">
-                  <img src="images/agent-photo.jpg" 
+                  <img src="images/premio-janneth.png" 
                        alt="${property.agent.name}" 
                        class="w-16 h-16 rounded-full object-cover">
                   <div>
