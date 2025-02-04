@@ -2,7 +2,7 @@ function PropertyDetails() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Departamentos Exclusivos En Samborondón",
+    title: "Departamentos",
     price: "$99,900",
     location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
     description:
