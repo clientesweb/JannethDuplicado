@@ -57,25 +57,31 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  <script src="components/Header.js"></script>
-  <script src="components/Footer.js"></script>
-  <script src="components/PropertyDetails.js"></script>
-  <script src="components/BottomNavigation.js"></script>
-  <script src="components/WhatsAppButton.js"></script>
-  <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          const app = document.getElementById('app');
-          app.innerHTML = `
-              ${Header()}
-              ${PropertyDetails()}
-              ${Footer()}
-              ${BottomNavigation()}
-              ${WhatsAppButton()}
-          `;
-          // Initialize property details functionality after content is loaded
-          window.initializePropertyDetails();
-      });
-  </script>
+    <script src="components/Header.js"></script>
+    <script src="components/Footer.js"></script>
+    <script src="components/PropertyDetails.js"></script>
+    <script src="components/BottomNavigation.js"></script>
+    <script src="components/WhatsAppButton.js"></script>
+    <script>
+        // Wait for all scripts to load
+        window.addEventListener('load', function() {
+            console.log('All resources loaded');
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                ${Header()}
+                ${PropertyDetails()}
+                ${Footer()}
+                ${BottomNavigation()}
+                ${WhatsAppButton()}
+            `;
+            // Initialize after content is inserted
+            setTimeout(() => {
+                console.log('Initializing after content insertion');
+                window.initializePropertyDetails();
+            }, 100);
+        });
+    </script>
 </body>
 </html>
+
 
