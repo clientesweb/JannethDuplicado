@@ -2,11 +2,11 @@ function CityCenter() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Casas Modernas en Urbanización Residencial",
-    price: "$204,900",
-    location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
+    title: "Locales Comerciales y Consultorios en Samborondón",
+    price: "$128,000",
+    location: "Vía Samborondón, Cerca del Parque Bicentenario",
     description:
-      "Vive en una urbanización privada con casas de diseño contemporáneo, amplios espacios y acceso a exclusivas amenidades. Seguridad 24/7, club social y financiamiento flexible. 4 Modelos disponibles: 3 dormitorios - 135m² desde $204.900,00 | 3 dormitorios - 154m² desde $206.900,00 | 4 dormitorios - 174m² desde 224.000 | 3 dormitorios - 186m² desde 234.900. Todos los modelos incluyen 2 Parqueos. Reserva con solo $500 y personaliza tu plan de pago",
+      "Este desarrollo consta de cuatro torres que incluyen áreas residenciales, comerciales, oficinas y un centro médico. Ofrece locales comerciales premium adecuados para diversos tipos de negocios, así como consultorios médicos equipados para profesionales de la salud. Además, contará con quirófanos para cirugías ambulatorias, farmacia y laboratorio. Disponibles: Locales Comerciales de 40m² desde $128.000 | Consultorios de 50m² desde $130.000",
     features: [
       "3 y 4 habitaciones disponibles",
       "3 y 4 baños",
