@@ -102,7 +102,7 @@ function Playlists() {
 // Función para cargar los videos de la playlist
 function loadPlaylistVideos() {
   const API_KEY = "AIzaSyB4HGg2WVC-Sq3Qyj9T9Z9aBBGbET1oGs0"
-  const PLAYLIST_ID = "PLZ_v3bWMqpjEYZDAFLI-0GuAH4BpA5PiL"
+  const PLAYLIST_ID = ""
 
   fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=5&key=${API_KEY}`,
