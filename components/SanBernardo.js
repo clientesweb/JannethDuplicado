@@ -1,32 +1,29 @@
-function AlSol() {
+function SanBernardo() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Casas Modernas en Urbanización Residencial",
-    price: "$204,900",
-    location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
+    title: "Departamentos con Vistas al Río",
+    price: "$79,900",
+    location: "Samborondón",
     description:
-      "Vive en una urbanización privada con casas de diseño contemporáneo, amplios espacios y acceso a exclusivas amenidades. Seguridad 24/7, club social y financiamiento flexible. 4 Modelos disponibles: 3 dormitorios - 135m² desde $204.900,00 | 3 dormitorios - 154m² desde $206.900,00 | 4 dormitorios - 174m² desde 224.000 | 3 dormitorios - 186m² desde 234.900. Todos los modelos incluyen 2 Parqueos. Reserva con solo $500 y personaliza tu plan de pago",
+      "Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas. Disponibles apartamentos desde 60m²-($79.800) y 80m²-(99.000), ¡adaptados a tu estilo de vida!",
     features: [
-      "3 y 4 habitaciones disponibles",
-      "3 y 4 baños",
-      "2 parqueos",
-      "1 y 2 plantas",
-      "Desde 135 m²",
-      "Estacionamiento privado",
+      "1 y 2 dormitorios",
+      "1 y 2 baños",
+      "1 parqueo",
+      "Desde 60 m²",
       "Piscina y jacuzzi",
       "Gimnasio equipado",
       "Guardianía 24/7",
-      "Áreas verdes y juegos infantiles"
     ],
-    images: ["images/casas-modernas-proyecto-residencial-al-sol.jpg", "images/casas-modernas-modelo-3-urbanizacion-residencial.jpg", "images/casas-modernas-modelo-urbanizacion-residencial.jpg", "images/casas-modernas-urbanizacion-residencial.jpg"],
+    images: ["images/departamentos-preventa-exclusiva.jpg", images/departamentos-preventa-exclusiva-1.jpg", "images/departamentos-preventa-exclusiva-2.jpg", "images/departamentos-preventa-exclusiva-3.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
       email: "janneth@jannethaguirre.com",
     },
-    status: "Pre Venta",
-    type: "Casas",
+    status: "Pre-Venta Exclusiva",
+    type: "Departamentos",
   }
 
   const template = `
@@ -79,15 +76,15 @@ function AlSol() {
                 <div class="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-100">
                   <div class="text-center">
                     <i class="fas fa-bed text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Dormitorios</p>
+                    <p class="text-sm text-gray-600">1 Dormitorio</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-bath text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">3 Baños</p>
+                    <p class="text-sm text-gray-600">1 Baño</p>
                   </div>
                   <div class="text-center">
                     <i class="fas fa-vector-square text-primary text-2xl mb-2"></i>
-                    <p class="text-sm text-gray-600">135 m²</p>
+                    <p class="text-sm text-gray-600">60 m²</p>
                   </div>
                 </div>
 
@@ -256,7 +253,7 @@ function fallbackShare() {
 }
 
 // Initialize all functionality
-function initializeAlSol() {
+function initializeSanBernardo() {
   console.log("Initializing property details...")
 
   // Form submission handler
@@ -334,6 +331,6 @@ window.closeImageModal = closeImageModal
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded, checking for property details...")
   if (document.getElementById("contact-agent-form")) {
-    initializeAlSol()
+    initializeSanBernardo()
   }
 })
