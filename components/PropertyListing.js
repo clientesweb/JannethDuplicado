@@ -1,7 +1,7 @@
 function PropertyListing() {
   // Mantenemos los datos existentes y añadimos nuevos
   const properties = [
-     {
+    {
       id: 1,
       title: "Departamentos Exclusivos en Samborondón",
       price: "Desde $99,900",
@@ -11,7 +11,8 @@ function PropertyListing() {
       bathrooms: "1 - 2",
       area: "Desde 60 m²",
       url: "https://www.jannethaguirre.com/departamentos-exclusivos-samborondon",
-      description: "Descubre la combinación perfecta de confort y exclusividad. Departamentos modernos con amplios espacios, seguridad 24/7 y amenidades premium. Ubicación estratégica y opciones de financiamiento disponibles. ¡Tu nuevo hogar te espera!",
+      description:
+        "Descubre la combinación perfecta de confort y exclusividad. Departamentos modernos con amplios espacios, seguridad 24/7 y amenidades premium. Ubicación estratégica y opciones de financiamiento disponibles. ¡Tu nuevo hogar te espera!",
       reserve: "Reserva con $500",
     },
     {
@@ -24,7 +25,8 @@ function PropertyListing() {
       bathrooms: "3 - 4",
       area: "Desde 135 m²",
       url: "https://jannethaguirre.com/casas-modernas-urbanizacion-residencial.html",
-      description: "Vive en una urbanización privada con casas y departamentos de diseño contemporáneo. Disfruta de exclusivas amenidades, áreas verdes y un entorno seguro para tu familia. ¡Reserva con facilidad y financia tu nuevo hogar!",
+      description:
+        "Vive en una urbanización privada con casas y departamentos de diseño contemporáneo. Disfruta de exclusivas amenidades, áreas verdes y un entorno seguro para tu familia. ¡Reserva con facilidad y financia tu nuevo hogar!",
       reserve: "Reserva con $500",
     },
     {
@@ -37,7 +39,8 @@ function PropertyListing() {
       bathrooms: "1",
       area: "Desde 40 m²",
       url: "https://www.jannethaguirre.com/locales-comerciales-consultorios-samborondon.html",
-      description: "Invierte en un proyecto exclusivo con locales comerciales y consultorios médicos en la mejor ubicación de Samborondón. Seguridad 24/7, parqueaderos privados y diseño moderno para tu negocio. ¡Consulta disponibilidad y asegura tu espacio hoy mismo!",
+      description:
+        "Invierte en un proyecto exclusivo con locales comerciales y consultorios médicos en la mejor ubicación de Samborondón. Seguridad 24/7, parqueaderos privados y diseño moderno para tu negocio. ¡Consulta disponibilidad y asegura tu espacio hoy mismo!",
       reserve: "Reserva con $500",
     },
     {
@@ -50,7 +53,8 @@ function PropertyListing() {
       bathrooms: "2 - 3",
       area: "Desde 118 m²",
       url: "https://www.jannethaguirre.com/departamentos-lujo-isla-mocoli.html",
-      description: "Vive en un entorno exclusivo en Isla Mocolí, Samborondón. Departamentos de 3 dormitorios desde 118m², cada uno con su propio baño y 2 parqueos privados. Disfruta de seguridad 24/7, casa club, gimnasio, zonas BBQ, áreas verdes y senderos. ¡Un estilo de vida único en la mejor ubicación!",
+      description:
+        "Vive en un entorno exclusivo en Isla Mocolí, Samborondón. Departamentos de 3 dormitorios desde 118m², cada uno con su propio baño y 2 parqueos privados. Disfruta de seguridad 24/7, casa club, gimnasio, zonas BBQ, áreas verdes y senderos. ¡Un estilo de vida único en la mejor ubicación!",
       reserve: "Reserva con $500",
     },
     {
@@ -89,8 +93,8 @@ function PropertyListing() {
       bathrooms: "1 - 2",
       area: "Desde 60 m²",
       url: "https://jannethaguirre.com/departamentos-vistas-al-rio-samborondon.html",
-      description: "¡Oportunidad Única en Samborondón!Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas.
-Disponibles apartamentos desde 60m² y 80m², ¡adaptados a tu estilo de vida!",
+      description:
+        "¡Oportunidad Única en Samborondón! Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas. Disponibles apartamentos desde 60m² y 80m², ¡adaptados a tu estilo de vida!",
       reserve: "Reserva con $500",
     },
   ]
@@ -266,4 +270,3 @@ function closeImageModal() {
 }
 
 window.PropertyListing = PropertyListing
-
