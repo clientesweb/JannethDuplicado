@@ -6,7 +6,7 @@ function SanBernardo() {
     price: "$79,900",
     location: "Primeros Km de Samborondón",
     description:
-      "Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas. Disponibles apartamentos desde 60m²-($79.800) y 80m²-(99.000), ¡adaptados a tu estilo de vida! Reserva hoy con $500 y contáctanos para las información. ¡Oportunidad Única en Samborondón! La mejor ubicación, la mejor inversión.",
+      "Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas. Disponibles apartamentos desde 60m²-($79.800) y 80m²-($99.000), ¡adaptados a tu estilo de vida! Reserva hoy con $500 y contáctanos para las información. ¡Oportunidad Única en Samborondón! La mejor ubicación, la mejor inversión.",
     features: [
       "1 y 2 dormitorios",
       "1 y 2 baños",
