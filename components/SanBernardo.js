@@ -16,7 +16,7 @@ function SanBernardo() {
       "Gimnasio equipado",
       "Guardianía 24/7",
     ],
-    images: ["images/departamentos-preventa-exclusiva.jpg", "images/departamentos-preventa-exclusiva-1.jpg", "images/departamentos-preventa-exclusiva-2.jpg", "images/departamentos-preventa-exclusiva-3.jpg"],
+    images: ["images/departamentos-vista-al-rio-samborondon.jpg", "images/departamentos-preventa-exclusiva-1.jpg", "images/departamentos-preventa-exclusiva-2.jpg", "images/departamentos-preventa-exclusiva-3.jpg"],
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
