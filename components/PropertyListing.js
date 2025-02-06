@@ -10,7 +10,7 @@ function PropertyListing() {
       bedrooms: "1 - 2",
       bathrooms: "1 - 2",
       area: "Desde 60 m²",
-      url: "https://www.jannethaguirre.com/departamentos-exclusivos-samborondon",
+      url: "https://jannethaguirre.com/departamentos-vistas-al-rio-samborondon.html",
       description: "¡Oportunidad Única en Samborondón!Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas.
 Disponibles apartamentos desde 60m² y 80m², ¡adaptados a tu estilo de vida!",
       reserve: "Reserva con $500",
