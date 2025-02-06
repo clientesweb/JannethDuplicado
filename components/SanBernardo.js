@@ -2,9 +2,9 @@ function SanBernardo() {
   // Property data remains the same
   const property = {
     id: 1,
-    title: "Departamentos con Vistas al Río",
+    title: "Preventa Exclusiva - Departamentos con vistas al Río",
     price: "$79,900",
-    location: "Samborondón",
+    location: "Primeros Km de Samborondón",
     description:
       "Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas. Disponibles apartamentos desde 60m²-($79.800) y 80m²-(99.000), ¡adaptados a tu estilo de vida! Reserva hoy con $500 y contáctanos para las información. ¡Oportunidad Única en Samborondón! La mejor ubicación, la mejor inversión.",
     features: [
