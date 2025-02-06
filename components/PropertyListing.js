@@ -5,7 +5,7 @@ function PropertyListing() {
       id: 1,
       title: "Preventa Exclusiva - Departamentos con vistas al Río",
       price: "Desde $79,900",
-      location: "Samborondón",
+      location: "Primeros Km de Samborondón",
       image: "images/departamentos-vista-al-rio-samborondon.jpg",
       bedrooms: "1 - 2",
       bathrooms: "1 - 2",
