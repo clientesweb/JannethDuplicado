@@ -56,6 +56,26 @@
         <!-- El contenido se insertará aquí -->
     </div>
 
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-800">
+    <div id="app">
+        <!-- El contenido se insertará aquí -->
+    </div>
+
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-800">
+    <div id="app">
+        <!-- El contenido se insertará aquí -->
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="components/Header.js"></script>
     <script src="components/Footer.js"></script>
@@ -63,9 +83,9 @@
     <script src="components/BottomNavigation.js"></script>
     <script src="components/WhatsAppButton.js"></script>
     <script>
-        // Wait for all scripts to load
+        // Esperar a que todos los scripts se carguen
         window.addEventListener('load', function() {
-            console.log('All resources loaded');
+            console.log('Todos los recursos cargados');
             const app = document.getElementById('app');
             app.innerHTML = `
                 ${Header()}
@@ -74,9 +94,9 @@
                 ${BottomNavigation()}
                 ${WhatsAppButton()}
             `;
-            // Initialize after content is inserted
+            // Inicializar después de insertar el contenido
             setTimeout(() => {
-                console.log('Initializing after content insertion');
+                console.log('Inicializando después de la inserción del contenido');
                 window.initializeSanBernardo();
             }, 100);
         });
