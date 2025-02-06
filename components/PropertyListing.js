@@ -1,8 +1,23 @@
 function PropertyListing() {
   // Mantenemos los datos existentes y añadimos nuevos
   const properties = [
-    {
+     {
       id: 1,
+      title: "Preventa Exclusiva - Departamentos con vistas al Río",
+      price: "Desde $79,900",
+      location: "Samborondón",
+      image: "images/departamentos-vista-al-rio-samborondon.jpg",
+      bedrooms: "1 - 2",
+      bathrooms: "1 - 2",
+      area: "Desde 60 m²",
+      url: "https://www.jannethaguirre.com/departamentos-exclusivos-samborondon",
+      description: "¡Oportunidad Única en Samborondón!Pre-venta exclusiva de apartamentos ubicados en los primeros km de Samborondón. Zona céntrica, cerca de centros comerciales y universidades, con acceso rápido a todo lo que necesitas.
+Disponibles apartamentos desde 60m² y 80m², ¡adaptados a tu estilo de vida!",
+      reserve: "Reserva con $500",
+    },
+    {
+    {
+      id: 2,
       title: "Departamentos Exclusivos en Samborondón",
       price: "Desde $99,900",
       location: "Vía Samborondón, Ciudad Celeste – Sector Batán",
@@ -15,7 +30,7 @@ function PropertyListing() {
       reserve: "Reserva con $500",
     },
     {
-      id: 2,
+      id: 3,
       title: "Casas Modernas en Urbanización Residencial",
       price: "Desde $204,900",
       location: "km 9.4 de la Vía Samborondón, Ciudad Celeste - Sector Batan",
@@ -28,7 +43,7 @@ function PropertyListing() {
       reserve: "Reserva con $500",
     },
     {
-      id: 3,
+      id: 4,
       title: "Locales Comerciales y Consultorios en Samborondón",
       price: "Desde $128,000",
       location: "Km 9.5 Vía Samborondón, cerca del Parque Bicentenario",
@@ -41,7 +56,7 @@ function PropertyListing() {
       reserve: "Reserva con $500",
     },
     {
-      id: 4,
+      id: 5,
       title: "Departamentos de Lujo - Ubicación Privilegiada",
       price: "Desde $223,000",
       location: "Isla Mocolí, Samborondón",
@@ -54,7 +69,7 @@ function PropertyListing() {
       reserve: "Reserva con $500",
     },
     {
-      id: 5,
+      id: 6,
       title: "Preventa Exclusiva - Suites Modernas y de Alto Nivel",
       price: "Desde $75,000",
       location: "Cuenca",
@@ -67,7 +82,7 @@ function PropertyListing() {
       reserve: "Reserva con $500",
     },
     {
-      id: 6,
+      id: 7,
       title: "Terrenos En Venta Excelente Ubicación",
       price: "Desde $1,300 × m²",
       location: "Amador-Causeway, Panamá",
