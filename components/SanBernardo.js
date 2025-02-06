@@ -20,7 +20,7 @@ function SanBernardo() {
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
-      email: "janneth@jannethaguirre.com",
+      email: "info@jannethaguirrebienesraices.com",
     },
     status: "Pre-Venta Exclusiva",
     type: "Departamentos",
