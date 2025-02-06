@@ -16,7 +16,6 @@ Disponibles apartamentos desde 60m² y 80m², ¡adaptados a tu estilo de vida!",
       reserve: "Reserva con $500",
     },
     {
-    {
       id: 2,
       title: "Departamentos Exclusivos en Samborondón",
       price: "Desde $99,900",
