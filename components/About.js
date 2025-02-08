@@ -16,13 +16,13 @@ function About() {
                         </h2>
                         <div class="space-y-4">
                             <p class="text-lg text-gray-700 leading-relaxed">
-                                Con más de <span class="text-primary font-semibold">14 años de experiencia</span> en el mercado inmobiliario ecuatoriano, Janneth Aguirre se ha consolidado como una líder indiscutible en el sector. Su éxito se basa en la satisfacción de sus clientes y en la prestación de servicios inmobiliarios de alta calidad.
+                                Janneth Aguirre se ha consolidado como una líder indiscutible en el sector inmobiliario ecuatoriano. Su éxito se basa en la satisfacción de sus clientes y en la prestación de servicios inmobiliarios de alta calidad.
                             </p>
                             <p class="text-lg text-gray-700 leading-relaxed">
                                 Nuestro compromiso es brindar un servicio personalizado y de excelencia, asegurando que cada cliente encuentre la propiedad perfecta o logre la mejor inversión posible en el mercado inmobiliario.
                             </p>
                         </div>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
                             <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <div class="text-primary text-2xl font-bold">500+</div>
                                 <div class="text-gray-600">Propiedades Vendidas</div>
@@ -34,6 +34,10 @@ function About() {
                             <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                                 <div class="text-primary text-2xl font-bold">14+</div>
                                 <div class="text-gray-600">Años de Experiencia</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="text-primary text-2xl font-bold">95%</div>
+                                <div class="text-gray-600">Tasa de Satisfacción</div>
                             </div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4 pt-6">
@@ -72,7 +76,7 @@ function About() {
                 <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center">
                     <span class="text-primary">Nuestros</span> Colaboradores y Aliados
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
                     <img src="images/logo-c1.png" alt="Logo Colaborador 1" 
                          class="h-16 md:h-20 w-auto object-contain filter hover:brightness-75 transition-all duration-300 transform hover:scale-105">
                     <img src="images/logo-c2.png" alt="Logo Colaborador 2" 
