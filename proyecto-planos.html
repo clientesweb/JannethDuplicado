@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos en Planos | Janneth Aguirre Bienes Raíces</title>
+    <meta name="description" content="Descubre oportunidades de inversión en proyectos inmobiliarios en planos. Asegura tu futuro hogar o inversión con las mejores condiciones y precios.">
+    <meta name="keywords" content="proyectos en planos, pre-venta, inversión inmobiliaria, bienes raíces, Ecuador, Guayaquil, Samborondón">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Proyectos en Planos | Janneth Aguirre Bienes Raíces">
+    <meta property="og:description" content="Descubre oportunidades de inversión en proyectos inmobiliarios en planos. Asegura tu futuro hogar o inversión.">
+    <meta property="og:image" content="https://www.jannethaguirre.com/images/services/proyectos-planos.jpg">
+    <meta property="og:url" content="https://www.jannethaguirre.com/services/proyectos-planos.html">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF0000',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- Scripts -->
+    <script src="../components/Header.js"></script>
+    <script src="../components/Footer.js"></script>
+    <script src="../components/WhatsAppButton.js"></script>
+    <script src="../components/BottomNavigation.js"></script>
+
+    <script>
+        document.getElementById('app').innerHTML = `
+            ${Header()}
+            <main>
+                <!-- Hero Section -->
+                <section class="relative h-[60vh] min-h-[400px] overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <img src="../images/services/proyectos-planos-hero.jpg" 
+                             alt="Proyectos en Planos" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                    </div>
+                    <div class="relative z-10 h-full flex items-center">
+                        <div class="container mx-auto px-4">
+                            <div class="max-w-3xl">
+                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                                    Proyectos en Planos
+                                </h1>
+                                <p class="text-xl text-white/90 mb-8">
+                                    Invierte en el futuro: Descubre oportunidades únicas en proyectos pre-construcción
+                                </p>
+                                <a href="#proyectos" 
+                                   class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Ver Proyectos
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Section -->
+                <section class="py-16 md:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Ventajas de Invertir en Planos
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Descubre por qué invertir en proyectos pre-construcción es una decisión inteligente.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-piggy-bank text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Precios Más Bajos</h3>
+                                <p class="text-gray-600">
+                                    Aprovecha precios de lanzamiento y planes de pago flexibles durante la construcción.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-paint-brush text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Personalización</h3>
+                                <p class="text-gray-600">
+                                    Posibilidad de personalizar acabados y diseños según tus preferencias.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-chart-line text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Potencial de Valorización</h3>
+                                <p class="text-gray-600">
+                                    Mayor potencial de apreciación del valor de la propiedad durante la construcción.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                
+<section id="proyectos" class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Proyectos Destacados en Planos
+            </h2>
+            <p class="text-gray-600 text-lg">
+                Explora nuestras oportunidades de inversión en pre-construcción más exclusivas.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="../images/projects/project-1.jpg" alt="Proyecto Residencial Élite" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Proyecto Residencial Élite</h3>
+                    <p class="text-gray-600 mb-4">Lujosos apartamentos con vista al mar en Samborondón.</p>
+                    <ul class="mb-4">
+                        <li class="flex items-center mb-2">
+                            <i class="fas fa-bed text-primary mr-2"></i>
+                            <span>2 - 3 Habitaciones</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i class="fas fa-ruler-combined text-primary mr-2"></i>
+                            <span>100 - 150 m²</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-calendar-alt text-primary mr-2"></i>
+                            <span>Entrega: Diciembre 2024</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                        Más Información
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="../images/projects/project-2.jpg" alt="Torres del Bosque" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Torres del Bosque</h3>
+                    <p class="text-gray-600 mb-4">Moderno complejo residencial rodeado de naturaleza.</p>
+                    <ul class="mb-4">
+                        <li class="flex items-center mb-2">
+                            <i class="fas fa-bed text-primary mr-2"></i>
+                            <span>1 - 3 Habitaciones</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i class="fas fa-ruler-combined text-primary mr-2"></i>
+                            <span>60 - 120 m²</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-calendar-alt text-primary mr-2"></i>
+                            <span>Entrega: Junio 2025</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                        Más Información
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="../images/projects/project-3.jpg" alt="Edificio Corporativo Zenith" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Edificio Corporativo Zenith</h3>
+                    <p class="text-gray-600 mb-4">Oficinas de última generación en el corazón financiero.</p>
+                    <ul class="mb-4">
+                        <li class="flex items-center mb-2">
+                            <i class="fas fa-building text-primary mr-2"></i>
+                            <span>Oficinas desde 50 m²</span>
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i class="fas fa-car text-primary mr-2"></i>
+                            <span>Estacionamiento Privado</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-calendar-alt text-primary mr-2"></i>
+                            <span>Entrega: Marzo 2025</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                        Más Información
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+                Ver Todos los Proyectos
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+                <!-- Investment Process Section -->
+                <section class="py-16 md:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Proceso de Inversión
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Te guiamos en cada paso para asegurar tu inversión en proyectos pre-construcción.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">1</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Selección del Proyecto</h3>
+                                <p class="text-gray-600">
+                                    Te asesoramos en la elección del proyecto que mejor se adapte a tus necesidades.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">2</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Reserva</h3>
+                                <p class="text-gray-600">
+                                    Asegura tu unidad con un depósito inicial y firma de promesa de compraventa.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">3</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Financiamiento</h3>
+                                <p class="text-gray-600">
+                                    Te ayudamos a estructurar el plan de pagos y opciones de financiamiento.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">4</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Entrega</h3>
+                                <p class="text-gray-600">
+                                    Coordinamos la entrega de tu propiedad y todos los detalles legales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-16 md:py-24 bg-primary">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                                ¿Listo para invertir en tu futuro?
+                            </h2>
+                            <p class="text-white/90 text-lg mb-8">
+                                Contáctanos hoy mismo y descubre cómo puedes asegurar tu inversión en los mejores proyectos pre-construcción.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="#contacto" 
+                                   class="inline-flex items-center justify-center bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Solicitar Información
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                                <a href="tel:+593987167782" 
+                                   class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Llamar Ahora
+                                    <i class="fas fa-phone ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Form Section -->
+                <section id="contacto" class="py-16 md:py-24">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-5xl mx-auto">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                <div>
+                                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                        Solicita Información
+                                    </h2>
+                                    <p class="text-gray-600 mb-8">
+                                        Completa el formulario y nos pondremos en contacto contigo para brindarte toda la información sobre nuestros proyectos en planos.
+                                    </p>
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-phone text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Teléfono</h3>
+                                                <p class="text-gray-600">+593 98 716 7782</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-envelope text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Email</h3>
+                                                <p class="text-gray-600">janneth@jannethaguirre.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Ubicación</h3>
+                                                <p class="text-gray-600">Samborondón, Guayaquil, Ecuador</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-8 rounded-xl shadow-lg">
+                                    <form id="contact-form" class="space-y-6">
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+                                                <input type="text" 
+                                                       id="name" 
+                                                       name="name" 
+                                                       required 
+                                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                            </div>
+                                            <div>
+                                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                                <input type="email" 
+                                                       id="email" 
+                                                       name="email" 
+                                                       required 
+                                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                            <input type="tel" 
+                                                   id="phone" 
+                                                   name="phone" 
+                                                   required 
+                                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                        </div>
+                                        <div>
+                                            <label for="project" class="block text-sm font-medium text-gray-700 mb-2">Proyecto de Interés</label>
+                                            <select id="project" 
+                                                    name="project" 
+                                                    required 
+                                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                                <option value="">Selecciona un proyecto</option>
+                                                <option value="Proyecto Residencial Élite">Proyecto Residencial Élite</option>
+                                                <option value="Torres del Bosque">Torres del Bosque</option>
+                                                <option value="Edificio Corporativo Zenith">Edificio Corporativo Zenith</option>
+                                                <option value="Otro">Otro</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                                            <textarea id="message" 
+                                                      name="message" 
+                                                      rows="4" 
+                                                      required 
+                                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                                        </div>
+                                        <button type="submit" 
+                                                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                                            Enviar Mensaje
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            ${Footer()}
+            ${BottomNavigation()}
+            ${WhatsAppButton()}
+        `;
+
+        // Initialize contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const whatsappMessage = `Nombre: ${formData.get('name')}%0AEmail: ${formData.get('email')}%0ATeléfono: ${formData.get('phone')}%0AProyecto de Interés: ${formData.get('project')}%0AMensaje: ${formData.get('message')}`;
+                window.open(`https://wa.me/593987167782?text=${whatsappMessage}`, '_blank');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
