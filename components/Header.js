@@ -164,22 +164,22 @@ function Header() {
                               <i class="fas fa-chevron-down"></i>
                           </a>
                           <div class="pl-10 space-y-2">
-                              <a href="services/compra-venta.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                              <a href="services/compra-venta.html" class="block text-gray-600 hover:text-primary transition-colors duration-300 mobile-link">
                                   Compra y Venta de Propiedades
                               </a>
-                              <a href="services/analisis-mercado.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                              <a href="services/analisis-mercado.html" class="block text-gray-600 hover:text-primary transition-colors duration-300 mobile-link">
                                   Análisis de Mercado
                               </a>
-                              <a href="services/gestion-ventas.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                              <a href="services/gestion-ventas.html" class="block text-gray-600 hover:text-primary transition-colors duration-300 mobile-link">
                                   Gestión de Ventas
                               </a>
-                              <a href="services/proyectos-planos.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                              <a href="services/proyectos-planos.html" class="block text-gray-600 hover:text-primary transition-colors duration-300 mobile-link">
                                   Venta de Proyectos en Planos
                               </a>
-                              <a href="services/gestion-alquileres.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                              <a href="services/gestion-alquileres.html" class="block text-gray-600 hover:text-primary transition-colors duration-300 mobile-link">
                                   Gestión de Alquileres
                               </a>
-                              <a href="services/inversiones-internacionales.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                              <a href="services/inversiones-internacionales.html" class="block text-gray-600 hover:text-primary transition-colors duration-300 mobile-link">
                                   Inversiones Internacionales
                               </a>
                           </div>
@@ -267,53 +267,50 @@ function Header() {
   </header>
 
   <script>
+// Espera a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-  const menuButton = document.getElementById('menuButton');
-  const closeButton = document.getElementById('closeButton');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  // Función para manejar la funcionalidad del menú móvil
+  function initMobileMenu() {
+    const menuButton = document.getElementById('menuButton');
+    const closeButton = document.getElementById('closeButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  if (!menuButton || !closeButton || !mobileMenu) {
-    console.error('Mobile menu elements not found');
-    return;
+    if (!menuButton || !closeButton || !mobileMenu) {
+      console.error('Elementos del menú móvil no encontrados');
+      return;
+    }
+
+    function toggleMenu() {
+      const isOpen = mobileMenu.classList.contains('hidden');
+      
+      mobileMenu.classList.toggle('hidden');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    menuButton.addEventListener('click', toggleMenu);
+    closeButton.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', toggleMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
   }
 
-  function toggleMenu() {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    
-    if (isOpen) {
-      mobileMenu.classList.add('hidden');
-      document.body.style.overflow = '';
-      menuButton.setAttribute('aria-expanded', 'false');
-    } else {
-      mobileMenu.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      menuButton.setAttribute('aria-expanded', 'true');
-    }
-  }
-
-  // Toggle menu when clicking menu button or close button
-  menuButton.addEventListener('click', toggleMenu);
-  closeButton.addEventListener('click', toggleMenu);
-
-  // Close menu when clicking links
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', toggleMenu);
-  });
-
-  // Close menu on window resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-      toggleMenu();
-    }
-  });
-
-  // Close menu on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-      toggleMenu();
-    }
-  });
+  // Inicializar el menú móvil
+  initMobileMenu();
 });
 </script>
 `
