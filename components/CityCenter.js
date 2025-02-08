@@ -143,7 +143,7 @@ function CityCenter() {
                 <div class="space-y-4 mb-6">
                   <div class="flex items-center gap-2 text-gray-600">
                     <i class="fas fa-award text-primary"></i>
-                    <span>500+ propiedades vendidas</span>
+                    <span>Asesora Inmobiliaria Certificada</span>
                   </div>
                   <div class="flex items-center gap-2 text-gray-600">
                     <i class="fas fa-phone text-primary"></i>
