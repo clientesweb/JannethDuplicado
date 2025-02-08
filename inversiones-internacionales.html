@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversiones Internacionales | Janneth Aguirre Bienes Raíces</title>
+    <meta name="description" content="Descubre oportunidades de inversión inmobiliaria internacional en Ecuador, Panamá y Estados Unidos. Asesoramiento experto para diversificar tu portafolio.">
+    <meta name="keywords" content="inversiones internacionales, bienes raíces internacionales, Ecuador, Panamá, Estados Unidos, inversión inmobiliaria">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Inversiones Internacionales | Janneth Aguirre Bienes Raíces">
+    <meta property="og:description" content="Oportunidades de inversión inmobiliaria internacional en Ecuador, Panamá y Estados Unidos.">
+    <meta property="og:image" content="https://www.jannethaguirre.com/images/services/inversiones-internacionales.jpg">
+    <meta property="og:url" content="https://www.jannethaguirre.com/services/inversiones-internacionales.html">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF0000',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- Scripts -->
+    <script src="../components/Header.js"></script>
+    <script src="../components/Footer.js"></script>
+    <script src="../components/WhatsAppButton.js"></script>
+    <script src="../components/BottomNavigation.js"></script>
+
+    <script>
+        document.getElementById('app').innerHTML = `
+            ${Header()}
+            <main>
+                <!-- Hero Section -->
+                <section class="relative h-[60vh] min-h-[400px] overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <img src="../images/services/inversiones-internacionales-hero.jpg" 
+                             alt="Inversiones Internacionales" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                    </div>
+                    <div class="relative z-10 h-full flex items-center">
+                        <div class="container mx-auto px-4">
+                            <div class="max-w-3xl">
+                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                                    Inversiones Internacionales
+                                </h1>
+                                <p class="text-xl text-white/90 mb-8">
+                                    Diversifica tu portafolio con oportunidades inmobiliarias en Ecuador, Panamá y Estados Unidos
+                                </p>
+                                <a href="#contacto" 
+                                   class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Explorar Oportunidades
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Section -->
+                <section class="py-16 md:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Ventajas de la Inversión Internacional
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Descubre por qué invertir internacionalmente es una estrategia inteligente para tu portafolio.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-globe text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Diversificación</h3>
+                                <p class="text-gray-600">
+                                    Reduce el riesgo al invertir en diferentes mercados y economías.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-chart-line text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Potencial de Crecimiento</h3>
+                                <p class="text-gray-600">
+                                    Accede a mercados emergentes con alto potencial de apreciación.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-dollar-sign text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Flujo de Efectivo</h3>
+                                <p class="text-gray-600">
+                                    Genera ingresos en diferentes monedas para mayor estabilidad financiera.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Featured Properties Section -->
+                <section class="py-16 md:py-24">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Oportunidades Destacadas
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Explora nuestras selecciones de propiedades y proyectos en Ecuador, Panamá y Estados Unidos.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Ecuador Property -->
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                <img src="../images/properties/ecuador-property.jpg" alt="Propiedad en Ecuador" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Luxury Condo en Guayaquil</h3>
+                                    <p class="text-gray-600 mb-4">Apartamento de lujo con vista al río en el corazón de Guayaquil.</p>
+                                    <ul class="mb-4">
+                                        <li class="flex items-center mb-2">
+                                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                            <span>Guayaquil, Ecuador</span>
+                                        </li>
+                                        <li class="flex items-center mb-2">
+                                            <i class="fas fa-home text-primary mr-2"></i>
+                                            <span>200 m²</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-dollar-sign text-primary mr-2"></i>
+                                            <span>Desde $350,000</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                                        Más Información
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Panama Property -->
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                <img src="../images/properties/panama-property.jpg" alt="Propiedad en Panamá" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Ocean View Residences</h3>
+                                    <p class="text-gray-600 mb-4">Exclusivo desarrollo frente al mar en la Ciudad de Panamá.</p>
+                                    <ul class="mb-4">
+                                        <li class="flex items-center mb-2">
+                                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                            <span>Ciudad de Panamá, Panamá</span>
+                                        </li>
+                                        <li class="flex items-center mb-2">
+                                            <i class="fas fa-home text-primary mr-2"></i>
+                                            <span>150 - 300 m²</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-dollar-sign text-primary mr-2"></i>
+                                            <span>Desde $500,000</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                                        Más Información
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- USA Property -->
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                                <img src="../images/properties/usa-property.jpg" alt="Propiedad en Estados Unidos" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">Miami Skyline Apartments</h3>
+                                    <p class="text-gray-600 mb-4">Modernas unidades con vistas panorámicas en el centro de Miami.</p>
+                                    <ul class="mb-4">
+                                        <li class="flex items-center mb-2">
+                                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                            <span>Miami, Florida, USA</span>
+                                        </li>
+                                        <li class="flex items-center mb-2">
+                                            <i class="fas fa-home text-primary mr-2"></i>
+                                            <span>80 - 150 m²</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-dollar-sign text-primary mr-2"></i>
+                                            <span>Desde $400,000</span>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                                        Más Información
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Investment Process Section -->
+                <section class="py-16 md:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Proceso de Inversión Internacional
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Te guiamos en cada paso para asegurar una inversión internacional exitosa.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">1</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Consulta Inicial</h3>
+                                <p class="text-gray-600">
+                                    Evaluamos tus objetivos y perfil de inversión.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">2</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Selección de Mercado</h3>
+                                <p class="text-gray-600">
+                                    Identificamos las mejores oportunidades según tus preferencias.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">3</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Due Diligence</h3>
+                                <p class="text-gray-600">
+                                    Realizamos un análisis exhaustivo de la propiedad y el mercado.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">4</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Cierre y Gestión</h3>
+                                <p class="text-gray-600">
+                                    Facilitamos el proceso de compra y ofrecemos servicios de gestión.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-16 md:py-24 bg-primary">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                                ¿Listo para invertir internacionalmente?
+                            </h2>
+                            <p class="text-white/90 text-lg mb-8">
+                                Contáctanos hoy mismo y descubre cómo puedes diversificar tu portafolio con inversiones inmobiliarias internacionales.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="#contacto" 
+                                   class="inline-flex items-center justify-center bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Solicitar Asesoría
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                                <a href="tel:+593987167782" 
+                                   class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Llamar Ahora
+                                    <i class="fas fa-phone ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Form Section -->
+                <section id="contacto" class="py-16 md:py-24">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-5xl mx-auto">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                <div>
+                                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                        Contacta con Nosotros
+                                    </h2>
+                                    <p class="text-gray-600 mb-8">
+                                        Completa el formulario y nos pondremos en contacto contigo para discutir las oportunidades de inversión internacional que mejor se adapten a tus objetivos.
+                                    </p>
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-phone text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Teléfono</h3>
+                                                <p class="text-gray-600">+593 98 716 7782</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-envelope text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Email</h3>
+                                                <p class="text-gray-600">janneth@jannethaguirre.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Ubicación</h3>
+                                                <p class="text-gray-600">Samborondón, Guayaquil, Ecuador</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-8 rounded-xl shadow-lg">
+                                    <form id="contact-form" class="space-y-6">
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+                                                <input type="text" 
+                                                       id="name" 
+                                                       name="name" 
+                                                       required 
+                                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                            </div>
+                                            <div>
+                                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                                <input type="email" 
+                                                       id="email" 
+                                                       name="email" 
+                                                       required 
+                                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                            <input type="tel" 
+                                                   id="phone" 
+                                                   name="phone" 
+                                                   required 
+                                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                        </div>
+                                        <div>
+                                            <label for="investment-country" class="block text-sm font-medium text-gray-700 mb-2">País de Interés</label>
+                                            <select id="investment-country" 
+                                                    name="investment-country" 
+                                                    required 
+                                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                                <option value="">Selecciona un país</option>
+                                                <option value="Ecuador">Ecuador</option>
+                                                <option value="Panamá">Panamá</option>
+                                                <option value="Estados Unidos">Estados Unidos</option>
+                                                <option value="Otro">Otro</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                                            <textarea id="message" 
+                                                      name="message" 
+                                                      rows="4" 
+                                                      required 
+                                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                                        </div>
+                                        <button type="submit" 
+                                                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                                            Enviar Mensaje
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            ${Footer()}
+            ${BottomNavigation()}
+            ${WhatsAppButton()}
+        `;
+
+        // Initialize contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const whatsappMessage = `Nombre: ${formData.get('name')}%0AEmail: ${formData.get('email')}%0ATeléfono: ${formData.get('phone')}%0APaís de Interés: ${formData.get('investment-country')}%0AMensaje: ${formData.get('message')}`;
+                window.open(`https://wa.me/593987167782?text=${whatsappMessage}`, '_blank');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
