@@ -16,13 +16,38 @@ function Header() {
 
               <!-- Desktop Navigation -->
               <nav class="hidden md:flex items-center space-x-8" role="menubar">
-                  <a href="#servicios" 
-                     class="text-gray-700 hover:text-primary transition-colors duration-300 relative group"
-                     role="menuitem"
-                     title="Servicios inmobiliarios en Ecuador">
-                      Servicios
-                      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                  </a>
+                  <div class="relative group">
+                      <a href="#servicios" 
+                         class="text-gray-700 hover:text-primary transition-colors duration-300 relative group inline-flex items-center"
+                         role="menuitem"
+                         aria-haspopup="true"
+                         aria-expanded="false"
+                         title="Servicios inmobiliarios en Ecuador">
+                          Servicios
+                          <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                      </a>
+                      <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block">
+                          <a href="services/compra-venta.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors duration-300">
+                              Compra y Venta de Propiedades
+                          </a>
+                          <a href="services/analisis-mercado.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors duration-300">
+                              Análisis de Mercado
+                          </a>
+                          <a href="services/gestion-ventas.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors duration-300">
+                              Gestión de Ventas
+                          </a>
+                          <a href="services/proyectos-planos.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors duration-300">
+                              Venta de Proyectos en Planos
+                          </a>
+                          <a href="services/gestion-alquileres.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors duration-300">
+                              Gestión de Alquileres
+                          </a>
+                          <a href="services/inversiones-internacionales.html" class="block px-4 py-2 text-gray-700 hover:bg-primary hover:text-white transition-colors duration-300">
+                              Inversiones Internacionales
+                          </a>
+                      </div>
+                  </div>
                   <a href="property-listing.html" 
                      class="text-gray-700 hover:text-primary transition-colors duration-300 relative group"
                      role="menuitem"
@@ -128,12 +153,37 @@ function Header() {
                           <i class="fas fa-home w-6" aria-hidden="true"></i>
                           <span>Inicio</span>
                       </a>
-                      <a href="#servicios" 
-                         class="mobile-link flex items-center space-x-4 text-lg text-gray-700 hover:text-primary transition-colors duration-300"
-                         title="Servicios inmobiliarios en Ecuador">
-                          <i class="fas fa-concierge-bell w-6" aria-hidden="true"></i>
-                          <span>Servicios</span>
-                      </a>
+                      <div class="space-y-2">
+                          <a href="#servicios" 
+                             class="mobile-link flex items-center justify-between w-full text-lg text-gray-700 hover:text-primary transition-colors duration-300"
+                             title="Servicios inmobiliarios en Ecuador">
+                              <div class="flex items-center space-x-4">
+                                  <i class="fas fa-concierge-bell w-6" aria-hidden="true"></i>
+                                  <span>Servicios</span>
+                              </div>
+                              <i class="fas fa-chevron-down"></i>
+                          </a>
+                          <div class="pl-10 space-y-2">
+                              <a href="services/compra-venta.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                                  Compra y Venta de Propiedades
+                              </a>
+                              <a href="services/analisis-mercado.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                                  Análisis de Mercado
+                              </a>
+                              <a href="services/gestion-ventas.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                                  Gestión de Ventas
+                              </a>
+                              <a href="services/proyectos-planos.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                                  Venta de Proyectos en Planos
+                              </a>
+                              <a href="services/gestion-alquileres.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                                  Gestión de Alquileres
+                              </a>
+                              <a href="services/inversiones-internacionales.html" class="block text-gray-600 hover:text-primary transition-colors duration-300">
+                                  Inversiones Internacionales
+                              </a>
+                          </div>
+                      </div>
                       <a href="property-listing.html" 
                          class="mobile-link flex items-center space-x-4 text-lg text-gray-700 hover:text-primary transition-colors duration-300"
                          title="Propiedades disponibles en Ecuador">
@@ -224,15 +274,14 @@ function Header() {
       const closeButton = document.getElementById('closeButton');
       const mobileMenu = document.getElementById('mobileMenu');
       const mobileLinks = document.querySelectorAll('.mobile-link');
-      
-      if (!menuButton || !closeButton || !mobileMenu) {
+     if (!menuButton || !closeButton || !mobileMenu) {
         console.error('Mobile menu elements not found');
         return;
       }
 
       function toggleMenu(event) {
         event.preventDefault();
-        const isOpen = !mobileMenu.classList.contains('hidden');
+        let isOpen = !mobileMenu.classList.contains('hidden');
         
         if (isOpen) {
           mobileMenu.classList.add('hidden');
@@ -244,10 +293,6 @@ function Header() {
           menuButton.setAttribute('aria-expanded', 'true');
         }
       }
-
-      // Add click event listeners
-      menuButton.addEventListener('click', toggleMenu);
-      closeButton.addEventListener('click', toggleMenu);
 
       // Close menu when clicking links
       mobileLinks.forEach(link => {
@@ -269,6 +314,10 @@ function Header() {
           toggleMenu(e);
         }
       });
+
+      // Add click event listeners
+      menuButton.addEventListener('click', toggleMenu);
+      closeButton.addEventListener('click', toggleMenu);
     }
 
     // Try to initialize immediately
