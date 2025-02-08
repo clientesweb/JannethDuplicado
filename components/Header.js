@@ -217,53 +217,69 @@ function Header() {
   </header>
 
   <script>
-    // Initialize mobile menu functionality
+  // Initialize mobile menu functionality immediately
+  (function() {
     function initMobileMenu() {
-        const menuButton = document.getElementById('menuButton');
-        const closeButton = document.getElementById('closeButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        const menuIcon = menuButton.querySelector('i');
+      const menuButton = document.getElementById('menuButton');
+      const closeButton = document.getElementById('closeButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      
+      if (!menuButton || !closeButton || !mobileMenu) {
+        console.error('Mobile menu elements not found');
+        return;
+      }
 
-        function toggleMenu() {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            document.body.style.overflow = isOpen ? '' : 'hidden';
-            menuIcon.classList.toggle('fa-bars');
-            menuIcon.classList.toggle('fa-times');
-            menuButton.setAttribute('aria-expanded', !isOpen);
+      function toggleMenu(event) {
+        event.preventDefault();
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        
+        if (isOpen) {
+          mobileMenu.classList.add('hidden');
+          document.body.style.overflow = '';
+          menuButton.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          menuButton.setAttribute('aria-expanded', 'true');
         }
+      }
 
-        // Add click event listeners
-        menuButton.addEventListener('click', toggleMenu);
-        closeButton.addEventListener('click', toggleMenu);
+      // Add click event listeners
+      menuButton.addEventListener('click', toggleMenu);
+      closeButton.addEventListener('click', toggleMenu);
 
-        // Close menu when clicking links
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
+      // Close menu when clicking links
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+      });
 
-        // Close menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-                toggleMenu();
-            }
-        });
+      // Close menu on window resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          document.body.style.overflow = '';
+          menuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
 
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                toggleMenu();
-            }
-        });
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          toggleMenu(e);
+        }
+      });
     }
 
-    // Call initialization immediately
+    // Try to initialize immediately
     initMobileMenu();
 
-    // Also call after DOM content is loaded to ensure elements exist
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-  </script>
+    // Also try after DOM content is loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileMenu);
+    }
+  })();
+</script>
 `
 }
 
