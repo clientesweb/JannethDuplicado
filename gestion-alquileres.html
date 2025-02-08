@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Alquileres | Janneth Aguirre Bienes Raíces</title>
+    <meta name="description" content="Servicio profesional de gestión de alquileres. Maximiza el rendimiento de tu propiedad con nuestra experiencia en el mercado inmobiliario.">
+    <meta name="keywords" content="gestión de alquileres, alquiler de propiedades, administración de propiedades, bienes raíces, Ecuador, Guayaquil, Samborondón">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gestión de Alquileres | Janneth Aguirre Bienes Raíces">
+    <meta property="og:description" content="Servicio profesional de gestión de alquileres. Maximiza el rendimiento de tu propiedad.">
+    <meta property="og:image" content="https://www.jannethaguirre.com/images/services/gestion-alquileres.jpg">
+    <meta property="og:url" content="https://www.jannethaguirre.com/services/gestion-alquileres.html">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF0000',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- Scripts -->
+    <script src="../components/Header.js"></script>
+    <script src="../components/Footer.js"></script>
+    <script src="../components/WhatsAppButton.js"></script>
+    <script src="../components/BottomNavigation.js"></script>
+
+    <script>
+        document.getElementById('app').innerHTML = `
+            ${Header()}
+            <main>
+                <!-- Hero Section -->
+                <section class="relative h-[60vh] min-h-[400px] overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <img src="../images/services/gestion-alquileres-hero.jpg" 
+                             alt="Gestión de Alquileres" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                    </div>
+                    <div class="relative z-10 h-full flex items-center">
+                        <div class="container mx-auto px-4">
+                            <div class="max-w-3xl">
+                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                                    Gestión de Alquileres
+                                </h1>
+                                <p class="text-xl text-white/90 mb-8">
+                                    Maximiza el rendimiento de tu propiedad con nuestra gestión profesional de alquileres
+                                </p>
+                                <a href="#contacto" 
+                                   class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Consultar Ahora
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section class="py-16 md:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Nuestros Servicios de Gestión de Alquileres
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Ofrecemos un servicio integral para maximizar el rendimiento de tu propiedad en alquiler.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-user-check text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Selección de Inquilinos</h3>
+                                <p class="text-gray-600">
+                                    Proceso riguroso de selección para garantizar inquilinos confiables y responsables.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-money-bill-wave text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Gestión de Cobros</h3>
+                                <p class="text-gray-600">
+                                    Administración eficiente de cobros y pagos puntuales de alquiler.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-tools text-2xl text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Mantenimiento</h3>
+                                <p class="text-gray-600">
+                                    Coordinación de mantenimiento y reparaciones para mantener la propiedad en óptimas condiciones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Section -->
+                <section class="py-16 md:py-24">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Beneficios de Nuestra Gestión de Alquileres
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Descubre por qué confiar en nosotros para la gestión de tus propiedades en alquiler.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-chart-line text-xl text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Maximización de Ingresos</h3>
+                                        <p class="text-gray-600">
+                                            Estrategias para optimizar el precio de alquiler y minimizar períodos de vacancia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-shield-alt text-xl text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Protección de tu Inversión</h3>
+                                        <p class="text-gray-600">
+                                            Cuidado y mantenimiento profesional para preservar el valor de tu propiedad.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-xl text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Ahorro de Tiempo</h3>
+                                        <p class="text-gray-600">
+                                            Nos encargamos de todos los aspectos de la gestión, liberando tu tiempo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-balance-scale text-xl text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-2">Cumplimiento Legal</h3>
+                                        <p class="text-gray-600">
+                                            Aseguramos el cumplimiento de todas las normativas y regulaciones de alquiler.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Process Section -->
+                <section class="py-16 md:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-3xl mx-auto text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                Nuestro Proceso de Gestión
+                            </h2>
+                            <p class="text-gray-600 text-lg">
+                                Un enfoque estructurado para una gestión de alquileres eficiente y sin complicaciones.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">1</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Evaluación de la Propiedad</h3>
+                                <p class="text-gray-600">
+                                    Análisis detallado y valoración de tu propiedad.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">2</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Marketing y Promoc
+ión</h3>
+                                <p class="text-gray-600">
+                                    Estrategias de marketing para atraer inquilinos ideales.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">3</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Selección y Contrato</h3>
+                                <p class="text-gray-600">
+                                    Selección cuidadosa de inquilinos y gestión de contratos.
+                                </p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span class="text-2xl font-bold text-primary">4</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4">Gestión Continua</h3>
+                                <p class="text-gray-600">
+                                    Administración diaria y mantenimiento de la propiedad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-16 md:py-24 bg-primary">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                                ¿Listo para maximizar el rendimiento de tu propiedad?
+                            </h2>
+                            <p class="text-white/90 text-lg mb-8">
+                                Contáctanos hoy mismo y descubre cómo nuestra gestión profesional de alquileres puede beneficiarte.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="#contacto" 
+                                   class="inline-flex items-center justify-center bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Solicitar Información
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                                <a href="tel:+593987167782" 
+                                   class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full transition-all duration-300">
+                                    Llamar Ahora
+                                    <i class="fas fa-phone ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Form Section -->
+                <section id="contacto" class="py-16 md:py-24">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-5xl mx-auto">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                <div>
+                                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                        Contacta con Nosotros
+                                    </h2>
+                                    <p class="text-gray-600 mb-8">
+                                        Completa el formulario y nos pondremos en contacto contigo para discutir cómo podemos ayudarte con la gestión de tu propiedad en alquiler.
+                                    </p>
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-phone text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Teléfono</h3>
+                                                <p class="text-gray-600">+593 98 716 7782</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-envelope text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Email</h3>
+                                                <p class="text-gray-600">janneth@jannethaguirre.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold">Ubicación</h3>
+                                                <p class="text-gray-600">Samborondón, Guayaquil, Ecuador</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-8 rounded-xl shadow-lg">
+                                    <form id="contact-form" class="space-y-6">
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+                                                <input type="text" 
+                                                       id="name" 
+                                                       name="name" 
+                                                       required 
+                                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                            </div>
+                                            <div>
+                                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                                <input type="email" 
+                                                       id="email" 
+                                                       name="email" 
+                                                       required 
+                                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                            <input type="tel" 
+                                                   id="phone" 
+                                                   name="phone" 
+                                                   required 
+                                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                        </div>
+                                        <div>
+                                            <label for="property-type" class="block text-sm font-medium text-gray-700 mb-2">Tipo de Propiedad</label>
+                                            <select id="property-type" 
+                                                    name="property-type" 
+                                                    required 
+                                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                                                <option value="">Selecciona un tipo de propiedad</option>
+                                                <option value="casa">Casa</option>
+                                                <option value="departamento">Departamento</option>
+                                                <option value="local">Local Comercial</option>
+                                                <option value="oficina">Oficina</option>
+                                                <option value="otro">Otro</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                                            <textarea id="message" 
+                                                      name="message" 
+                                                      rows="4" 
+                                                      required 
+                                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                                        </div>
+                                        <button type="submit" 
+                                                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                                            Enviar Mensaje
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            ${Footer()}
+            ${BottomNavigation()}
+            ${WhatsAppButton()}
+        `;
+
+        // Initialize contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const whatsappMessage = `Nombre: ${formData.get('name')}%0AEmail: ${formData.get('email')}%0ATeléfono: ${formData.get('phone')}%0ATipo de Propiedad: ${formData.get('property-type')}%0AMensaje: ${formData.get('message')}`;
+                window.open(`https://wa.me/593987167782?text=${whatsappMessage}`, '_blank');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
