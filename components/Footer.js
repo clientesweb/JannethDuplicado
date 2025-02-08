@@ -4,7 +4,7 @@ function Footer() {
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="space-y-6">
-                    <img src="images/logo-white.png" 
+                    <img src="images/logo.png" 
                          alt="Janneth Aguirre Bienes Raíces" 
                          class="h-16 md:h-20">
                     <p class="text-gray-400 max-w-xs">
@@ -138,8 +138,8 @@ function Footer() {
             </div>
 
             <div class="border-t border-gray-800 pt-8 mt-12">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <p class="text-gray-400 text-sm">
+                <div class="flex flex-col justify-between items-center space-y-4">
+                    <p class="text-gray-400 text-sm text-center">
                         &copy; ${new Date().getFullYear()} Janneth Aguirre Bienes Raíces. Todos los derechos reservados.
                     </p>
                     <div class="flex space-x-6">
