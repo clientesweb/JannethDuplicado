@@ -77,10 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileLinks = document.querySelectorAll(".mobile-link")
 
   function toggleMenu() {
+    const mobileMenu = document.getElementById("mobileMenu")
     mobileMenu.classList.toggle("hidden")
-    mobileMenu.classList.toggle("flex")
+    mobileMenu.classList.toggle("menu-hidden")
+    mobileMenu.classList.toggle("menu-visible")
     document.body.classList.toggle("overflow-hidden")
-    const isOpen = mobileMenu.classList.contains("flex")
+    const isOpen = mobileMenu.classList.contains("menu-visible")
     menuButton.setAttribute("aria-expanded", isOpen)
   }
 
