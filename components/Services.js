@@ -24,7 +24,7 @@ function Services() {
                         </div>
                         <h3 class="text-xl font-bold mb-4">Compra y Venta de Propiedades</h3>
                         <p class="text-gray-600 mb-6">Asesoramiento experto en la compra y venta de propiedades residenciales y comerciales.</p>
-                        <a href="#contacto" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
+                        <a href="https://jannethaguirre.com/compra-venta.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
                             Saber más <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -52,7 +52,7 @@ function Services() {
                         </div>
                         <h3 class="text-xl font-bold mb-4">Gestión de Ventas</h3>
                         <p class="text-gray-600 mb-6">Estrategias personalizadas para maximizar el valor de su propiedad en el mercado.</p>
-                        <a href="#contacto" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
+                        <a href="https://jannethaguirre.com/gestion-ventas.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
                             Saber más <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -66,7 +66,7 @@ function Services() {
                         </div>
                         <h3 class="text-xl font-bold mb-4">Venta de Proyectos en Planos</h3>
                         <p class="text-gray-600 mb-6">Comercialización de proyectos inmobiliarios desde su fase inicial.</p>
-                        <a href="#contacto" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
+                        <a href="https://jannethaguirre.com/proyecto-planos.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
                             Saber más <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -80,7 +80,7 @@ function Services() {
                         </div>
                         <h3 class="text-xl font-bold mb-4">Gestión de Alquileres</h3>
                         <p class="text-gray-600 mb-6">Administración integral de propiedades en alquiler para propietarios e inquilinos.</p>
-                        <a href="#contacto" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
+                        <a href="https://jannethaguirre.com/gestion-alquileres.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
                             Saber más <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -94,7 +94,7 @@ function Services() {
                         </div>
                         <h3 class="text-xl font-bold mb-4">Inversiones Internacionales</h3>
                         <p class="text-gray-600 mb-6">Asesoramiento en inversiones inmobiliarias en mercados internacionales.</p>
-                        <a href="#contacto" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
+                        <a href="https://jannethaguirre.com/inversiones-internacionales.html" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
                             Saber más <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
