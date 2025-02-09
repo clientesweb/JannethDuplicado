@@ -78,8 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleMenu() {
     mobileMenu.classList.toggle("hidden")
+    mobileMenu.classList.toggle("flex")
     document.body.classList.toggle("overflow-hidden")
-    const isOpen = !mobileMenu.classList.contains("hidden")
+    const isOpen = mobileMenu.classList.contains("flex")
     menuButton.setAttribute("aria-expanded", isOpen)
   }
 
