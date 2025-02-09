@@ -278,39 +278,34 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
-  function openMenu() {
-    mobileMenu.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    menuButton.setAttribute('aria-expanded', 'true');
+  function toggleMenu() {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+    menuButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
   }
 
-  function closeMenu() {
-    mobileMenu.classList.add('hidden');
-    document.body.style.overflow = '';
-    menuButton.setAttribute('aria-expanded', 'false');
-  }
-
-  menuButton.addEventListener('click', openMenu);
-  closeButton.addEventListener('click', closeMenu);
+  menuButton.addEventListener('click', toggleMenu);
+  closeButton.addEventListener('click', toggleMenu);
 
   mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', toggleMenu);
   });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-      closeMenu();
+      toggleMenu();
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-      closeMenu();
+      toggleMenu();
     }
   });
 
   // Asegurarse de que el menú esté cerrado al cargar la página
-  closeMenu();
+  mobileMenu.classList.add('hidden');
 });
 </script>
 `
