@@ -36,7 +36,7 @@ function Contact() {
                                     </div>
                                     <div>
                                         <h3 class="font-bold text-lg">Email</h3>
-                                        <p class="text-gray-600">janneth@jannethaguirre.com</p>
+                                        <p class="text-gray-600">info@jannethaguirrebienesraices.com</p>
                                     </div>
                                 </div>
                                 
