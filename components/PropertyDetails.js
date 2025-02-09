@@ -21,7 +21,7 @@ function PropertyDetails() {
     agent: {
       name: "Janneth Aguirre",
       phone: "+593 98 716 7782",
-      email: "janneth@jannethaguirre.com",
+      email: "info@jannethaguirrebienesraices.com",
     },
     status: "En Venta",
     type: "Departamento",
