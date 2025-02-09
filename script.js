@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app")
   app.innerHTML = `
-        ${TopBanner()}
-        ${Header()}
-        <main>
-            ${Hero()}
-            ${About()}
-            ${FeaturedProperties()}
-            ${Services()}
-            ${ConstructionProgress()}
-            ${OnlineMagazine()}
-            ${Playlists()}
-            ${Contact()}
-            ${AppDownload()}
-        </main>
-        ${Footer()}
-        ${BottomNavigation()}
-        ${WhatsAppButton()}
-    `
+    ${TopBanner()}
+    ${Header()}
+    <main>
+        ${Hero()}
+        ${About()}
+        ${FeaturedProperties()}
+        ${Services()}
+        ${ConstructionProgress()}
+        ${OnlineMagazine()}
+        ${Playlists()}
+        ${Contact()}
+        ${AppDownload()}
+    </main>
+    ${Footer()}
+    ${BottomNavigation()}
+    ${WhatsAppButton()}
+  `
 
   // Top Banner Animation
   const topBanner = document.querySelector(".animate-marquee")
@@ -70,11 +70,32 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Instagram Embed
-  if (window.instgrm) {
-    window.instgrm.Embeds.process()
-  } else {
-    console.warn("Instagram embed script not loaded")
+  // Mobile Menu Functionality
+  const menuButton = document.getElementById("menuButton")
+  const closeButton = document.getElementById("closeButton")
+  const mobileMenu = document.getElementById("mobileMenu")
+  const mobileLinks = document.querySelectorAll(".mobile-link")
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("hidden")
+    document.body.classList.toggle("overflow-hidden")
+    const isOpen = !mobileMenu.classList.contains("hidden")
+    menuButton.setAttribute("aria-expanded", isOpen)
+  }
+
+  if (menuButton && closeButton && mobileMenu) {
+    menuButton.addEventListener("click", toggleMenu)
+    closeButton.addEventListener("click", toggleMenu)
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", toggleMenu)
+    })
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+        toggleMenu()
+      }
+    })
   }
 
   // Bottom Navigation active state
@@ -120,11 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
       // Opcional: Limpiar el formulario después del envío
       contactForm.reset()
     })
-  } else {
-    console.error("Contact form not found")
   }
 
   // Load playlist videos
-  loadPlaylistVideos()
+  if (typeof loadPlaylistVideos === "function") {
+    loadPlaylistVideos()
+  }
+
+  // Instagram Embed
+  if (window.instgrm) {
+    window.instgrm.Embeds.process()
+  } else {
+    console.warn("Instagram embed script not loaded")
+  }
 })
 
