@@ -125,7 +125,7 @@ function Header() {
 
         <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" 
-             class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden md:hidden"
+             class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex-col"
              role="dialog"
              aria-modal="true"
              aria-label="Menú de navegación móvil">
