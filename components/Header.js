@@ -1,21 +1,21 @@
 function Header() {
   return `
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm" role="banner">
-      <nav class="container mx-auto px-4" role="navigation" aria-label="Navegación principal">
-          <div class="flex items-center justify-between h-20">
-              <!-- Logo -->
-              <div class="flex items-center">
-                  <a href="/" class="flex items-center space-x-2 group" aria-label="Janneth Aguirre Bienes Raíces - Inicio">
-                      <img src="images/logo.png" 
-                           alt="Janneth Aguirre Bienes Raíces Logo" 
-                           class="h-12 md:h-16 transform group-hover:scale-105 transition-transform duration-300"
-                           width="64"
-                           height="64">
-                  </a>
-              </div>
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm" role="banner">
+        <nav class="container mx-auto px-4" role="navigation" aria-label="Navegación principal">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2 group" aria-label="Janneth Aguirre Bienes Raíces - Inicio">
+                        <img src="images/logo.png" 
+                             alt="Janneth Aguirre Bienes Raíces Logo" 
+                             class="h-12 md:h-16 transform group-hover:scale-105 transition-transform duration-300"
+                             width="64"
+                             height="64">
+                    </a>
+                </div>
 
-              <!-- Desktop Navigation -->
-              <nav class="hidden md:flex items-center space-x-8" role="menubar">
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8" role="menubar">
                   <div class="relative group">
                       <a href="#servicios" 
                          class="text-gray-700 hover:text-primary transition-colors duration-300 relative group inline-flex items-center"
@@ -76,11 +76,11 @@ function Header() {
                       Instalar
                       <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                   </a>
-              </nav>
+                </nav>
 
-              <!-- Desktop Social Icons -->
-              <div class="flex items-center space-x-6">
-                  <div class="hidden md:flex items-center space-x-4" role="navigation" aria-label="Redes sociales">
+                <!-- Desktop Social Icons -->
+                <div class="flex items-center space-x-6">
+                    <div class="hidden md:flex items-center space-x-4" role="navigation" aria-label="Redes sociales">
                       <a href="https://www.facebook.com/@jannethaguirrebienesraices/?hr=1" 
                          target="_blank" 
                          rel="noopener noreferrer" 
@@ -109,44 +109,44 @@ function Header() {
                          aria-label="Síguenos en TikTok">
                           <i class="fab fa-tiktok text-lg" aria-hidden="true"></i>
                       </a>
-                  </div>
+                    </div>
 
-                  <!-- Mobile Menu Button -->
-                  <button id="menuButton" 
-                          class="md:hidden text-gray-600 hover:text-primary transition-colors duration-300"
-                          aria-label="Abrir menú móvil"
-                          aria-expanded="false"
-                          aria-controls="mobileMenu">
-                      <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
-                  </button>
-              </div>
-          </div>
-      </nav>
+                    <!-- Mobile Menu Button -->
+                    <button id="menuButton" 
+                            class="md:hidden text-gray-600 hover:text-primary transition-colors duration-300"
+                            aria-label="Abrir menú móvil"
+                            aria-expanded="false"
+                            aria-controls="mobileMenu">
+                        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-      <!-- Mobile Navigation Menu -->
-      <div id="mobileMenu" 
-           class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden md:hidden"
-           role="dialog"
-           aria-modal="true"
-           aria-label="Menú de navegación móvil">
-          <div class="h-full w-full flex flex-col">
-              <!-- Mobile Menu Header -->
-              <div class="bg-white px-6 py-4 flex justify-between items-center shadow-lg">
-                  <img src="images/logo.png" 
-                       alt="Janneth Aguirre Bienes Raíces Logo" 
-                       class="h-12"
-                       width="48"
-                       height="48">
-                  <button id="closeButton" 
-                          class="text-gray-600 hover:text-primary transition-colors duration-300"
-                          aria-label="Cerrar menú">
-                      <i class="fas fa-times text-2xl" aria-hidden="true"></i>
-                  </button>
-              </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" 
+             class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden md:hidden"
+             role="dialog"
+             aria-modal="true"
+             aria-label="Menú de navegación móvil">
+            <div class="h-full w-full flex flex-col">
+                <!-- Mobile Menu Header -->
+                <div class="bg-white px-6 py-4 flex justify-between items-center shadow-lg">
+                    <img src="images/logo.png" 
+                         alt="Janneth Aguirre Bienes Raíces Logo" 
+                         class="h-12"
+                         width="48"
+                         height="48">
+                    <button id="closeButton" 
+                            class="text-gray-600 hover:text-primary transition-colors duration-300"
+                            aria-label="Cerrar menú">
+                        <i class="fas fa-times text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
 
-              <!-- Mobile Menu Content -->
-              <div class="flex-1 overflow-y-auto bg-white">
-                  <nav class="py-8 px-6 space-y-6" role="navigation" aria-label="Menú móvil">
+                <!-- Mobile Menu Content -->
+                <div class="flex-1 overflow-y-auto bg-white">
+                    <nav class="py-8 px-6 space-y-6" role="navigation" aria-label="Menú móvil">
                       <a href="#inicio" 
                          class="mobile-link flex items-center space-x-4 text-lg text-gray-700 hover:text-primary transition-colors duration-300"
                          title="Inicio - Janneth Aguirre Bienes Raíces">
@@ -226,11 +226,11 @@ function Header() {
                           <i class="fas fa-download w-6" aria-hidden="true"></i>
                           <span>Instalar App</span>
                       </a>
-                  </nav>
+                    </nav>
 
-                  <!-- Mobile Social Links -->
-                  <div class="border-t border-gray-100 p-6">
-                      <div class="grid grid-cols-4 gap-4" role="navigation" aria-label="Redes sociales">
+                    <!-- Mobile Social Links -->
+                    <div class="border-t border-gray-100 p-6">
+                        <div class="grid grid-cols-4 gap-4" role="navigation" aria-label="Redes sociales">
                           <a href="https://www.facebook.com/@jannethaguirrebienesraices/?hr=1" 
                              target="_blank" 
                              rel="noopener noreferrer" 
@@ -259,55 +259,41 @@ function Header() {
                              aria-label="TikTok">
                               <i class="fab fa-tiktok text-lg" aria-hidden="true"></i>
                           </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.getElementById('menuButton');
-    const closeButton = document.getElementById('closeButton');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('menuButton');
+      const closeButton = document.getElementById('closeButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    if (!menuButton || !closeButton || !mobileMenu) {
-      console.error('Elementos del menú móvil no encontrados');
-      return;
-    }
-
-    function toggleMenu() {
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      document.body.style.overflow = isOpen ? '' : 'hidden';
-      menuButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    }
-
-    menuButton.addEventListener('click', toggleMenu);
-    closeButton.addEventListener('click', toggleMenu);
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', toggleMenu);
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-        toggleMenu();
+      function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        menuButton.setAttribute('aria-expanded', isOpen);
       }
-    });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-        toggleMenu();
-      }
-    });
+      menuButton.addEventListener('click', toggleMenu);
+      closeButton.addEventListener('click', toggleMenu);
 
-    // Asegurarse de que el menú esté cerrado al cargar la página
-    mobileMenu.classList.add('hidden');
-  });
-  </script>
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          toggleMenu();
+        }
+      });
+    });
+    </script>
   `
 }
 
