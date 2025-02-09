@@ -452,3 +452,35 @@ img {
   visibility: visible;
 }
 
+/* Mobile Menu Styles */
+#mobileMenu {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#mobileMenu.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#mobileMenu:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure the content is scrollable if it exceeds the screen height */
+#mobileMenu .flex-1 {
+  max-height: calc(100vh - 80px); /* Adjust based on your header height */
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#mobileMenu .flex-1::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#mobileMenu .flex-1 {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
