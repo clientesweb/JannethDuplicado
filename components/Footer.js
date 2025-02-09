@@ -123,7 +123,7 @@ function Footer() {
                         </li>
                         <li class="flex items-start space-x-3">
                             <i class="fas fa-envelope mt-1 text-primary"></i>
-                            <span class="text-gray-400">janneth@jannethaguirre.com</span>
+                            <span class="text-gray-400">info@jannethaguirrebienesraices.com</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
