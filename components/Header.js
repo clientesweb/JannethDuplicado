@@ -267,48 +267,48 @@ function Header() {
   </header>
 
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const menuButton = document.getElementById('menuButton');
-  const closeButton = document.getElementById('closeButton');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('menuButton');
+    const closeButton = document.getElementById('closeButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  if (!menuButton || !closeButton || !mobileMenu) {
-    console.error('Elementos del menú móvil no encontrados');
-    return;
-  }
-
-  function toggleMenu() {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden');
-    document.body.style.overflow = isOpen ? '' : 'hidden';
-    menuButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-  }
-
-  menuButton.addEventListener('click', toggleMenu);
-  closeButton.addEventListener('click', toggleMenu);
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', toggleMenu);
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-      toggleMenu();
+    if (!menuButton || !closeButton || !mobileMenu) {
+      console.error('Elementos del menú móvil no encontrados');
+      return;
     }
-  });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-      toggleMenu();
+    function toggleMenu() {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+      menuButton.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     }
-  });
 
-  // Asegurarse de que el menú esté cerrado al cargar la página
-  mobileMenu.classList.add('hidden');
-});
-</script>
-`
+    menuButton.addEventListener('click', toggleMenu);
+    closeButton.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', toggleMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+
+    // Asegurarse de que el menú esté cerrado al cargar la página
+    mobileMenu.classList.add('hidden');
+  });
+  </script>
+  `
 }
 
 // Export the Header function
