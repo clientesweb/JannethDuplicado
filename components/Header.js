@@ -125,11 +125,11 @@ function Header() {
 
         <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" 
-             class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex-col"
+             class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] hidden flex-col"
              role="dialog"
              aria-modal="true"
              aria-label="Menú de navegación móvil">
-            <div class="h-full w-full flex flex-col">
+            <div class="flex-1 overflow-y-auto bg-white w-full h-full">
                 <!-- Mobile Menu Header -->
                 <div class="bg-white px-6 py-4 flex justify-between items-center shadow-lg">
                     <img src="images/logo.png" 
@@ -275,8 +275,9 @@ function Header() {
 
       function toggleMenu() {
         mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
         document.body.classList.toggle('overflow-hidden');
-        const isOpen = !mobileMenu.classList.contains('hidden');
+        const isOpen = mobileMenu.classList.contains('flex');
         menuButton.setAttribute('aria-expanded', isOpen);
       }
 
