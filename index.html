@@ -108,57 +108,263 @@
       .float {
           animation: float 3s ease-in-out infinite;
       }
+      
+      /* Contador regresivo */
+      .countdown-container {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+      }
+      
+      @media (min-width: 768px) {
+          .countdown-container {
+              gap: 2rem;
+          }
+      }
+      
+      .countdown-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      
+      .countdown-box {
+          background-color: #FF0000;
+          color: white;
+          border-radius: 0.5rem;
+          width: 4rem;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+      }
+      
+      @media (min-width: 768px) {
+          .countdown-box {
+              width: 5rem;
+              height: 5rem;
+              font-size: 1.875rem;
+          }
+      }
+      
+      .countdown-label {
+          margin-top: 0.5rem;
+          font-size: 0.875rem;
+          color: #4B5563;
+      }
+      
+      @media (min-width: 768px) {
+          .countdown-label {
+              font-size: 1rem;
+          }
+      }
+      
+      /* Redes sociales */
+      .social-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+      }
+      
+      .social-link {
+          background-color: white;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          border-radius: 9999px;
+          padding: 0.75rem;
+          transition: background-color 0.2s;
+      }
+      
+      .social-link:hover {
+          background-color: #F3F4F6;
+      }
+      
+      .social-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: #FF0000;
+      }
   </style>
-  <script src="components/TopBanner.js"></script>
 </head>
-<body class="bg-white text-gray-800">
-  <div id="app">
-      <!-- Los componentes se insertarán aquí -->
+<body class="bg-white text-gray-800 min-h-screen flex flex-col">
+  <!-- Banner superior -->
+  <div class="bg-primary text-white py-2 overflow-hidden">
+    <div class="animate-marquee whitespace-nowrap">
+      <span class="inline-block mx-4">🏠 Estamos mejorando nuestro sitio para ofrecerte una mejor experiencia</span>
+      <span class="inline-block mx-4">🔍 Pronto volveremos con nuevas propiedades y funcionalidades</span>
+      <span class="inline-block mx-4">📱 Síguenos en nuestras redes sociales para mantenerte informado</span>
+      <span class="inline-block mx-4">📞 Contáctanos al +593 987 167 782 para consultas</span>
+    </div>
   </div>
-  <script>
-    document.getElementById('app').innerHTML = `
-      ${TopBanner()}
-      ${Header()}
-      <main>
-          ${Hero()}
-          ${About()}
-          ${FeaturedProperties()}
-          ${Services()}
-          ${ConstructionProgress()}
-          ${OnlineMagazine()}
-          ${Playlists()}
-          ${Contact()}
-          ${AppDownload()}
-      </main>
-      ${Footer()}
-      ${BottomNavigation()}
-      ${WhatsAppButton()}
-    `;
-  </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  <script async src="//www.instagram.com/embed.js"></script>
-  <script src="components/Header.js"></script>
-  <script src="components/Hero.js"></script>
-  <script src="components/About.js"></script>
-  <script src="components/Services.js"></script>
-  <script src="components/ConstructionProgress.js"></script>
-  <script src="components/FeaturedProperties.js"></script>
-  <script src="components/Playlists.js"></script>
-  <script src="components/Contact.js"></script>
-  <script src="components/AppDownload.js"></script>
-  <script src="components/Footer.js"></script>
-  <script src="components/BottomNavigation.js"></script>
-  <script src="components/PropertyDetails.js"></script>
-  <script src="components/PropertyListing.js"></script>
-  <script src="components/WhatsAppButton.js"></script>
-  <script src="script.js"></script>
-  <script src="components/OnlineMagazine.js"></script>
+  <!-- Contenido principal -->
+  <main class="flex-grow flex flex-col items-center justify-center p-4 md:p-8">
+    <div class="max-w-4xl w-full mx-auto text-center">
+      <!-- Título -->
+      <div class="mb-8 float">
+        <h1 class="font-serif text-4xl md:text-6xl font-bold text-secondary mb-2">
+          Sitio en Mantenimiento
+        </h1>
+        <div class="h-1 w-24 md:w-40 bg-primary mx-auto"></div>
+      </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  
+      <!-- Logo -->
+      <div class="mb-8">
+        <img 
+          src="/images/logo.png" 
+          alt="Janneth Aguirre Bienes Raíces" 
+          class="h-auto max-w-[200px] md:max-w-[300px] mx-auto"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/300x150?text=Janneth+Aguirre'"
+        >
+      </div>
 
-  <!-- Structured Data for Local SEO -->
+      <!-- Mensaje -->
+      <div class="mb-8 space-y-4 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-gray-700">
+          Estamos actualizando nuestro sitio web para brindarte una mejor experiencia.
+        </p>
+        <p class="text-lg md:text-xl text-gray-700">
+          Pronto volveremos con nuevas funcionalidades y propiedades exclusivas.
+        </p>
+      </div>
+
+      <!-- Contador -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-semibold text-secondary mb-4">Volvemos en:</h2>
+        <div class="countdown-container" id="countdown">
+          <div class="countdown-item">
+            <div class="countdown-box" id="days">0</div>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-box" id="hours">0</div>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-box" id="minutes">0</div>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-box" id="seconds">0</div>
+            <span class="countdown-label">Segundos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl font-semibold text-secondary mb-4">¿Necesitas ayuda?</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8">
+          <a 
+            href="mailto:info@jannethaguirre.com" 
+            class="flex items-center justify-center gap-2 bg-white border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors"
+          >
+            <i class="fas fa-envelope w-5 h-5"></i>
+            <span>Envíanos un email</span>
+          </a>
+          <a 
+            href="https://wa.me/593987167782" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors"
+          >
+            <i class="fas fa-phone w-5 h-5"></i>
+            <span>Llámanos</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div>
+        <h2 class="font-serif text-2xl font-semibold text-secondary mb-4">Síguenos en redes sociales</h2>
+        <div class="social-container">
+          <a 
+            href="https://www.facebook.com/1422611144634092" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-link"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f social-icon"></i>
+          </a>
+          <a 
+            href="https://www.instagram.com/janneth_aguirrem/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram social-icon"></i>
+          </a>
+          <a 
+            href="https://www.youtube.com/@jannethaguirrebienesraices5728" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-link"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube social-icon"></i>
+          </a>
+          <a 
+            href="https://vm.tiktok.com/ZMhnEwCHp/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-link"
+            aria-label="TikTok"
+          >
+            <i class="fab fa-tiktok social-icon"></i>
+          </a>
+          <a 
+            href="https://x.com/cbrjam" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-link"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter social-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary text-white py-6 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-home w-5 h-5"></i>
+          <span>Samborondón, Guayaquil, Ecuador</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fas fa-clock w-5 h-5"></i>
+          <span>Lun - Sáb: 9:00 - 18:00</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fas fa-phone w-5 h-5"></i>
+          <span>+593 987 167 782</span>
+        </div>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-700">
+        <p>&copy; <span id="current-year"></span> Janneth Aguirre Bienes Raíces. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón de WhatsApp -->
+  <a 
+    href="https://wa.me/593987167782" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
+    aria-label="WhatsApp"
+  >
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Structured Data para SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -202,6 +408,40 @@
     ]
   }
   </script>
+
+  <script>
+    // Establecer el año actual en el footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Configurar el contador regresivo (2 semanas desde hoy)
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 14);
+    
+    function updateCountdown() {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
+      
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+    
+    // Actualizar el contador cada segundo
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Actualizar inmediatamente al cargar
+    
+    // Banner animado
+    const topBanner = document.querySelector(".animate-marquee");
+    if (topBanner) {
+      const content = topBanner.innerHTML;
+      topBanner.innerHTML = content + content; // Duplicar contenido para un bucle sin problemas
+    }
+  </script>
 </body>
 </html>
-
