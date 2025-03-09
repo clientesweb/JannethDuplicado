@@ -192,8 +192,8 @@
   <!-- Banner superior -->
   <div class="bg-primary text-white py-2 overflow-hidden">
     <div class="animate-marquee whitespace-nowrap">
-      <span class="inline-block mx-4">🏠 Estamos mejorando nuestro sitio para ofrecerte una mejor experiencia</span>
-      <span class="inline-block mx-4">🔍 Pronto volveremos con nuevas propiedades y funcionalidades</span>
+      <span class="inline-block mx-4">🏠 ¡Estamos de vuelta! Hoy 9 de marzo con muchas novedades para ti</span>
+      <span class="inline-block mx-4">🔍 Explora nuestras nuevas propiedades y funcionalidades</span>
       <span class="inline-block mx-4">📱 Síguenos en nuestras redes sociales para mantenerte informado</span>
       <span class="inline-block mx-4">📞 Contáctanos al +593 987 167 782 para consultas</span>
     </div>
@@ -205,7 +205,7 @@
       <!-- Título -->
       <div class="mb-8 float">
         <h1 class="font-serif text-4xl md:text-6xl font-bold text-secondary mb-2">
-          Sitio en Mantenimiento
+          ¡Estamos de Vuelta!
         </h1>
         <div class="h-1 w-24 md:w-40 bg-primary mx-auto"></div>
       </div>
@@ -223,32 +223,31 @@
       <!-- Mensaje -->
       <div class="mb-8 space-y-4 max-w-2xl mx-auto">
         <p class="text-lg md:text-xl text-gray-700">
-          Estamos actualizando nuestro sitio web para brindarte una mejor experiencia.
+          Hoy 9 de marzo, nos complace anunciar que estamos de vuelta con un sitio web renovado.
         </p>
         <p class="text-lg md:text-xl text-gray-700">
-          Pronto volveremos con nuevas funcionalidades y propiedades exclusivas.
+          Hemos mejorado nuestra plataforma para ofrecerte una mejor experiencia y muchas novedades exclusivas.
         </p>
       </div>
 
-      <!-- Contador -->
+      <!-- Novedades (reemplaza el contador) -->
       <div class="mb-12">
-        <h2 class="font-serif text-2xl font-semibold text-secondary mb-4">Volvemos en:</h2>
-        <div class="countdown-container" id="countdown">
-          <div class="countdown-item">
-            <div class="countdown-box" id="days">0</div>
-            <span class="countdown-label">Días</span>
+        <h2 class="font-serif text-2xl font-semibold text-secondary mb-4">Nuestras Novedades</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fas fa-home text-primary text-3xl mb-3"></i>
+            <h3 class="font-serif text-xl font-semibold mb-2">Propiedades Exclusivas</h3>
+            <p class="text-gray-600">Nuevas propiedades seleccionadas especialmente para ti.</p>
           </div>
-          <div class="countdown-item">
-            <div class="countdown-box" id="hours">0</div>
-            <span class="countdown-label">Horas</span>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fas fa-search text-primary text-3xl mb-3"></i>
+            <h3 class="font-serif text-xl font-semibold mb-2">Búsqueda Mejorada</h3>
+            <p class="text-gray-600">Encuentra tu propiedad ideal de manera más rápida y sencilla.</p>
           </div>
-          <div class="countdown-item">
-            <div class="countdown-box" id="minutes">0</div>
-            <span class="countdown-label">Minutos</span>
-          </div>
-          <div class="countdown-item">
-            <div class="countdown-box" id="seconds">0</div>
-            <span class="countdown-label">Segundos</span>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fas fa-mobile-alt text-primary text-3xl mb-3"></i>
+            <h3 class="font-serif text-xl font-semibold mb-2">Experiencia Móvil</h3>
+            <p class="text-gray-600">Diseño optimizado para todos tus dispositivos.</p>
           </div>
         </div>
       </div>
@@ -412,29 +411,6 @@
   <script>
     // Establecer el año actual en el footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    
-    // Configurar el contador regresivo (2 semanas desde hoy)
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 14);
-    
-    function updateCountdown() {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
-      
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-      
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = minutes;
-      document.getElementById('seconds').textContent = seconds;
-    }
-    
-    // Actualizar el contador cada segundo
-    setInterval(updateCountdown, 1000);
-    updateCountdown(); // Actualizar inmediatamente al cargar
     
     // Banner animado
     const topBanner = document.querySelector(".animate-marquee");
