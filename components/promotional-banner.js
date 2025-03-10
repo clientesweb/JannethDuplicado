@@ -161,8 +161,7 @@ function PromotionalBanner() {
     </section>
 
     <script>
-      // Asegurarse de que este script se ejecute después de que el DOM esté completamente cargado
-      (function() {
+      document.addEventListener('DOMContentLoaded', function() {
         // Función para inicializar el slider
         function initSlider() {
           const track = document.getElementById('slider-track');
@@ -197,7 +196,7 @@ function PromotionalBanner() {
               track.style.transition = 'none';
             }
             
-            track.style.transform = \`translateX(\${-slideWidth * currentIndex}px)\`;
+            track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
             
             // Restaurar la transición después de un breve retraso si se desactivó
             if (!animate) {
@@ -245,6 +244,7 @@ function PromotionalBanner() {
           
           // Función para iniciar el autoplay
           function startAutoplay() {
+            clearInterval(autoplayInterval);
             autoplayInterval = setInterval(nextSlide, 6000); // Cambiar slide cada 6 segundos
           }
           
@@ -282,16 +282,9 @@ function PromotionalBanner() {
           }
         }
         
-        // Ejecutar la inicialización cuando el DOM esté listo
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initSlider);
-        } else {
-          initSlider();
-        }
-        
-        // También intentar inicializar después de que todo el contenido esté cargado
-        window.addEventListener('load', initSlider);
-      })();
+        // Intentar inicializar el slider
+        initSlider();
+      });
     </script>
   `;
 }
