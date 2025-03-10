@@ -42,17 +42,7 @@ function AppDownload() {
                              alt="App Janneth Aguirre Bienes Raíces" 
                              class="relative z-10 mx-auto transform hover:-rotate-2 transition-transform duration-500 max-w-sm">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-primary/10 backdrop-blur-sm rounded-xl p-6 shadow-xl">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-primary rounded-full p-3">
-                                <i class="fas fa-bell text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-gray-800">Notificaciones Instantáneas</p>
-                                <p class="text-sm text-gray-600">Mantente informado de nuevas propiedades</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- La tarjeta "Notificaciones Instantáneas" ha sido eliminada de aquí -->
                 </div>
             </div>
             <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -82,4 +72,3 @@ function AppDownload() {
     </section>
   `
 }
-
