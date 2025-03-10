@@ -35,22 +35,6 @@ function About() {
                             <p class="text-lg text-gray-700 leading-relaxed">
                                 Como Embajadora de Ecuador en eventos internacionales, Janneth representa la excelencia y el profesionalismo del sector inmobiliario ecuatoriano, brindando un servicio personalizado que trasciende fronteras.
                             </p>
-
-                            <!-- Logros destacados -->
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
-                                <div class="bg-white p-4 rounded-xl shadow-md">
-                                    <div class="text-2xl font-bold text-primary">300+</div>
-                                    <div class="text-sm text-gray-600">Propiedades Vendidas</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md">
-                                    <div class="text-2xl font-bold text-primary">98%</div>
-                                    <div class="text-sm text-gray-600">Clientes Satisfechos</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md">
-                                    <div class="text-2xl font-bold text-primary">15+</div>
-                                    <div class="text-sm text-gray-600">Reconocimientos</div>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- Botones de acción -->
@@ -77,7 +61,7 @@ function About() {
 
                 <!-- Contenedor de imagen -->
                 <div class="lg:w-1/2 relative">
-                    <div class="relative group">
+                    <div class="relative group overflow-visible">
                         <!-- Imagen principal -->
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/janneth-aguirre-embajadora-ecuador-inmo-peru.jpg-TIbqKt0T1SVRzFbUReGMMYPk0OVR11.jpeg" 
                              alt="Janneth Aguirre - Embajadora de Ecuador en el sector inmobiliario" 
@@ -86,10 +70,10 @@ function About() {
                         <!-- Decoración de fondo -->
                         <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-rose-500/20 rounded-[2rem] blur-2xl z-0 group-hover:blur-3xl transition-all duration-500"></div>
                         
-                        <!-- Badge flotante -->
-                        <div class="absolute -top-6 -right-6 bg-white px-4 py-2 rounded-full shadow-xl z-20 flex items-center gap-2">
-                            <span class="text-primary font-bold">INMO PERÚ</span>
-                            <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">2025</span>
+                        <!-- Badge flotante - Versión responsiva -->
+                        <div class="absolute top-4 right-4 md:-top-4 md:-right-4 bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-xl z-20 flex items-center gap-1.5 md:gap-2 transform scale-90 md:scale-100">
+                            <span class="text-primary font-bold text-sm md:text-base whitespace-nowrap">INMO PERÚ</span>
+                            <span class="bg-primary text-white text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-full whitespace-nowrap">2025</span>
                         </div>
                     </div>
                 </div>
