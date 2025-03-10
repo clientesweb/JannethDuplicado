@@ -21,24 +21,23 @@ function PromotionalBanner() {
             <div class="flex transition-transform duration-500 ease-out" id="slider-track">
               <!-- Slide 1 -->
               <div class="min-w-full relative">
-                <div class="aspect-video md:aspect-[16/9] w-full bg-gray-900 relative overflow-hidden">
+                <div class="aspect-[9/16] max-w-sm mx-auto bg-gray-900 relative overflow-hidden rounded-xl">
                   <video 
                     class="w-full h-full object-cover" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
-                    poster="/placeholder.svg?height=720&width=1280"
+                    poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de locales comerciales y consultorios médicos en Samborondón">
                     <source src="url/video/render_locales.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                    <div class="max-w-lg">
-                      <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Locales comerciales y consultorios médicos en Samborondón</h3>
-                      <p class="text-gray-200 mb-4 hidden md:block">Espacios premium para su negocio o consulta médica en la zona más exclusiva de Samborondón.</p>
-                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                    <div>
+                      <h3 class="text-lg md:text-xl font-bold text-white mb-2">Locales comerciales y consultorios médicos en Samborondón</h3>
+                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full justify-center">
                         Ver detalles
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -51,24 +50,23 @@ function PromotionalBanner() {
 
               <!-- Slide 2 -->
               <div class="min-w-full relative">
-                <div class="aspect-video md:aspect-[16/9] w-full bg-gray-900 relative overflow-hidden">
+                <div class="aspect-[9/16] max-w-sm mx-auto bg-gray-900 relative overflow-hidden rounded-xl">
                   <video 
                     class="w-full h-full object-cover" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
-                    poster="/placeholder.svg?height=720&width=1280"
+                    poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de departamentos de lujo en Isla Mocoli">
                     <source src="url/video/render_mocoli.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                    <div class="max-w-lg">
-                      <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Departamentos de lujo en Isla Mocoli</h3>
-                      <p class="text-gray-200 mb-4 hidden md:block">Exclusivos apartamentos con vistas panorámicas y acabados de primera en la prestigiosa Isla Mocoli.</p>
-                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                    <div>
+                      <h3 class="text-lg md:text-xl font-bold text-white mb-2">Departamentos de lujo en Isla Mocoli</h3>
+                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full justify-center">
                         Ver detalles
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -81,24 +79,23 @@ function PromotionalBanner() {
 
               <!-- Slide 3 -->
               <div class="min-w-full relative">
-                <div class="aspect-video md:aspect-[16/9] w-full bg-gray-900 relative overflow-hidden">
+                <div class="aspect-[9/16] max-w-sm mx-auto bg-gray-900 relative overflow-hidden rounded-xl">
                   <video 
                     class="w-full h-full object-cover" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
-                    poster="/placeholder.svg?height=720&width=1280"
+                    poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de Centro Comercial y Residencias">
                     <source src="url/video/render_samborodon.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                    <div class="max-w-lg">
-                      <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Centro Comercial y Residencias</h3>
-                      <p class="text-gray-200 mb-4 hidden md:block">Concepto mixto que integra comercio y vivienda en un entorno moderno y funcional en Samborondón.</p>
-                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                    <div>
+                      <h3 class="text-lg md:text-xl font-bold text-white mb-2">Centro Comercial y Residencias</h3>
+                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full justify-center">
                         Ver detalles
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -111,24 +108,23 @@ function PromotionalBanner() {
 
               <!-- Slide 4 -->
               <div class="min-w-full relative">
-                <div class="aspect-video md:aspect-[16/9] w-full bg-gray-900 relative overflow-hidden">
+                <div class="aspect-[9/16] max-w-sm mx-auto bg-gray-900 relative overflow-hidden rounded-xl">
                   <video 
                     class="w-full h-full object-cover" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
-                    poster="/placeholder.svg?height=720&width=1280"
+                    poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de Urbanización Residencial">
                     <source src="url/video/render_alsol.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-8">
-                    <div class="max-w-lg">
-                      <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Urbanización Residencial</h3>
-                      <p class="text-gray-200 mb-4 hidden md:block">Excelente oportunidad para adquirir tu hogar en una comunidad planificada con todas las comodidades.</p>
-                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                    <div>
+                      <h3 class="text-lg md:text-xl font-bold text-white mb-2">Urbanización Residencial</h3>
+                      <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full justify-center">
                         Ver detalles
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -162,10 +158,16 @@ function PromotionalBanner() {
           </div>
         </div>
       </div>
+    </section>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>
+      // Asegurarse de que este script se ejecute después de que el DOM esté completamente cargado
+      (function() {
+        // Función para inicializar el slider
+        function initSlider() {
           const track = document.getElementById('slider-track');
+          if (!track) return; // Salir si no se encuentra el elemento
+          
           const slides = track.children;
           const nextButton = document.getElementById('next-slide');
           const prevButton = document.getElementById('prev-slide');
@@ -178,16 +180,31 @@ function PromotionalBanner() {
           // Función para actualizar el ancho de los slides cuando cambia el tamaño de la ventana
           function updateSlideWidth() {
             slideWidth = slides[0].getBoundingClientRect().width;
-            goToSlide(currentIndex);
+            goToSlide(currentIndex, false);
           }
           
           // Función para ir a un slide específico
-          function goToSlide(index) {
+          function goToSlide(index, animate = true) {
             if (index < 0) index = slides.length - 1;
             if (index >= slides.length) index = 0;
             
             currentIndex = index;
+            
+            // Aplicar la transformación con o sin animación
+            if (animate) {
+              track.style.transition = 'transform 500ms ease-out';
+            } else {
+              track.style.transition = 'none';
+            }
+            
             track.style.transform = \`translateX(\${-slideWidth * currentIndex}px)\`;
+            
+            // Restaurar la transición después de un breve retraso si se desactivó
+            if (!animate) {
+              setTimeout(() => {
+                track.style.transition = 'transform 500ms ease-out';
+              }, 50);
+            }
             
             // Actualizar indicadores
             indicators.forEach((indicator, i) => {
@@ -238,8 +255,8 @@ function PromotionalBanner() {
           }
           
           // Event listeners
-          nextButton.addEventListener('click', nextSlide);
-          prevButton.addEventListener('click', prevSlide);
+          if (nextButton) nextButton.addEventListener('click', nextSlide);
+          if (prevButton) prevButton.addEventListener('click', prevSlide);
           
           indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => goToSlide(index));
@@ -253,17 +270,29 @@ function PromotionalBanner() {
           
           // Pausar autoplay cuando el usuario interactúa con el slider
           const slider = document.getElementById('renders-slider');
-          slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-          slider.addEventListener('mouseleave', startAutoplay);
-          
-          // Accesibilidad con teclado
-          slider.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-          });
-        });
-      </script>
-    </section>
+          if (slider) {
+            slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+            slider.addEventListener('mouseleave', startAutoplay);
+            
+            // Accesibilidad con teclado
+            slider.addEventListener('keydown', (e) => {
+              if (e.key === 'ArrowLeft') prevSlide();
+              if (e.key === 'ArrowRight') nextSlide();
+            });
+          }
+        }
+        
+        // Ejecutar la inicialización cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initSlider);
+        } else {
+          initSlider();
+        }
+        
+        // También intentar inicializar después de que todo el contenido esté cargado
+        window.addEventListener('load', initSlider);
+      })();
+    </script>
   `;
 }
 
