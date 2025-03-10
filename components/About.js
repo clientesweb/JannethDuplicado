@@ -22,24 +22,7 @@ function About() {
                                 Nuestro compromiso es brindar un servicio personalizado y de excelencia, asegurando que cada cliente encuentre la propiedad perfecta o logre la mejor inversión posible en el mercado inmobiliario.
                             </p>
                         </div>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
-                            <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="text-primary text-2xl font-bold">500+</div>
-                                <div class="text-gray-600">Propiedades Vendidas</div>
-                            </div>
-                            <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="text-primary text-2xl font-bold">1000+</div>
-                                <div class="text-gray-600">Clientes Satisfechos</div>
-                            </div>
-                            <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="text-primary text-2xl font-bold">14+</div>
-                                <div class="text-gray-600">Años de Experiencia</div>
-                            </div>
-                            <div class="text-center p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                <div class="text-primary text-2xl font-bold">95%</div>
-                                <div class="text-gray-600">Tasa de Satisfacción</div>
-                            </div>
-                        </div>
+                        <!-- Las tarjetas de estadísticas han sido eliminadas de aquí -->
                         <div class="flex flex-col sm:flex-row gap-4 pt-6">
                             <a href="#contacto" class="inline-flex items-center justify-center bg-primary text-white hover:bg-primary/90 transition-colors duration-300 font-bold py-3 px-8 rounded-full text-center group">
                                 Contáctanos
@@ -58,7 +41,6 @@ function About() {
                              alt="Janneth Aguirre" 
                              class="rounded-3xl shadow-2xl w-full relative z-10 transform hover:-rotate-2 transition-transform duration-500">
                     </div>
-                    <!-- La tarjeta "Reconocida Excelencia" ha sido eliminada de aquí -->
                 </div>
             </div>
             
