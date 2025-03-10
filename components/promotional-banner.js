@@ -31,7 +31,7 @@ function PromotionalBanner() {
     {
       id: "project4",
       title: "Urbanización Residencial",
-      location: "Vía a la Costa",
+      location: "Vía a Samborondón",
       description: "Proyecto residencial con amplias áreas verdes y casas diseñadas para familias que valoran la tranquilidad y el contacto con la naturaleza, sin renunciar a las comodidades de la vida moderna.",
       videoSrc: "/video/render_alsol.mp4",
       poster: "/placeholder.svg?height=1280&width=720",
@@ -114,7 +114,7 @@ function PromotionalBanner() {
                     </div>
                     
                     <!-- Botón de acción -->
-                    <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base">
+                    <a href="https://jannethaguirre.com/property-listing.html" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base">
                       Ver detalles del proyecto
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
