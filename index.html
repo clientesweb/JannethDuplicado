@@ -109,12 +109,12 @@
           animation: float 3s ease-in-out infinite;
       }
       
-      /* Estilos para ajustar la posición del chat de Tawk.to */
-      .tawk-min-container {
-          margin-bottom: 70px !important;
-      }
-      .tawk-card {
-          margin-bottom: 70px !important;
+      /* Estilos para controlar la posición del widget de Tawk.to */
+      #tawk-to-container {
+          position: fixed;
+          bottom: 80px;
+          right: 20px;
+          z-index: 1000;
       }
   </style>
   <script src="components/TopBanner.js"></script>
@@ -165,9 +165,38 @@
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   
+  <!-- Contenedor para el widget de Tawk.to -->
+  <div id="tawk-to-container"></div>
+  
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  
+  // Configuración personalizada de Tawk.to
+  Tawk_API.customStyle = {
+    zIndex: 1000,
+    position: 'fixed',
+    bottom: '80px',
+    right: '20px'
+  };
+  
+  // Evento que se ejecuta cuando el widget está listo
+  Tawk_API.onLoad = function(){
+    // Ajustar la posición del widget
+    setTimeout(function() {
+      const tawkIframe = document.getElementById('tawk-iframe');
+      if (tawkIframe) {
+        const tawkContainer = tawkIframe.closest('.tawk-min-container') || tawkIframe.parentElement;
+        if (tawkContainer) {
+          tawkContainer.style.bottom = '80px';
+          tawkContainer.style.right = '20px';
+          tawkContainer.style.position = 'fixed';
+          tawkContainer.style.zIndex = '1000';
+        }
+      }
+    }, 1000);
+  };
+  
   (function(){
   var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
   s1.async=true;
@@ -225,29 +254,54 @@
   </script>
   
   <script>
-  // Script para ajustar la posición del chat de Tawk.to respecto al botón de WhatsApp
+  // Script adicional para asegurar que el widget de Tawk.to esté correctamente posicionado
   document.addEventListener('DOMContentLoaded', function() {
-    // Función para observar cuando el chat de Tawk.to se carga
+    // Función para ajustar la posición del widget de Tawk.to
+    function adjustTawkPosition() {
+      // Buscar todos los elementos que podrían ser parte del widget de Tawk.to
+      const tawkElements = document.querySelectorAll('iframe[title*="chat"], .tawk-min-container, [id^="tawk-"], [class^="tawk-"]');
+      
+      tawkElements.forEach(element => {
+        // Verificar si es un elemento del widget
+        if (element.tagName === 'IFRAME' || element.className.includes('tawk')) {
+          // Ajustar la posición
+          element.style.bottom = '80px';
+          element.style.right = '20px';
+          element.style.position = 'fixed';
+          element.style.zIndex = '1000';
+          
+          // Si es un contenedor, ajustar también sus hijos
+          if (element.children && element.children.length > 0) {
+            Array.from(element.children).forEach(child => {
+              child.style.bottom = '80px';
+              child.style.right = '20px';
+              child.style.position = 'fixed';
+              child.style.zIndex = '1000';
+            });
+          }
+        }
+      });
+    }
+    
+    // Ejecutar la función después de que la página se cargue completamente
+    window.addEventListener('load', function() {
+      // Ejecutar inmediatamente
+      adjustTawkPosition();
+      
+      // Y luego cada segundo durante 5 segundos para asegurar que se aplique después de que Tawk.to se cargue
+      let count = 0;
+      const interval = setInterval(function() {
+        adjustTawkPosition();
+        count++;
+        if (count >= 5) clearInterval(interval);
+      }, 1000);
+    });
+    
+    // Observar cambios en el DOM para detectar cuando se añade el widget de Tawk.to
     const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
         if (mutation.addedNodes.length) {
-          // Buscar elementos de Tawk.to que se hayan añadido
-          const tawkElements = document.querySelectorAll('[class^="tawk-"]');
-          if (tawkElements.length > 0) {
-            // Ajustar la posición del chat para que esté por encima del botón de WhatsApp
-            const tawkMinContainer = document.querySelector('.tawk-min-container');
-            if (tawkMinContainer) {
-              tawkMinContainer.style.bottom = '80px';
-            }
-            
-            const tawkCard = document.querySelector('.tawk-card');
-            if (tawkCard) {
-              tawkCard.style.bottom = '80px';
-            }
-            
-            // Desconectar el observer una vez que se han hecho los ajustes
-            observer.disconnect();
-          }
+          adjustTawkPosition();
         }
       });
     });
