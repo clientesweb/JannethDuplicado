@@ -8,8 +8,6 @@
   <meta name="keywords" content="bienes raíces, propiedades, venta de casas, alquiler de apartamentos, Ecuador, Guayaquil, Quito, Janneth Aguirre">
   <meta name="author" content="Janneth Aguirre">
   <link rel="canonical" href="https://www.jannethaguirre.com/">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -52,12 +50,6 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Precargar videos para mejor rendimiento -->
-  <link rel="preload" href="url/video/render_locales.mp4" as="video" type="video/mp4">
-  <link rel="preload" href="url/video/render_mocoli.mp4" as="video" type="video/mp4">
-  <link rel="preload" href="url/video/render_samborodon.mp4" as="video" type="video/mp4">
-  <link rel="preload" href="url/video/render_alsol.mp4" as="video" type="video/mp4">
   
   <style>
       body {
@@ -123,33 +115,6 @@
           bottom: 80px;
           right: 20px;
           z-index: 1000;
-      }
-      
-      /* Estilos adicionales para el slider de videos */
-      .aspect-[9/16] {
-          aspect-ratio: 9 / 16;
-      }
-      
-      .indicator-active {
-          background-color: white !important;
-          transform: scale(1.2);
-      }
-      
-      /* Asegurar que el slider funcione correctamente en todos los dispositivos */
-      #slider-track {
-          display: flex;
-          transition: transform 500ms ease-out;
-      }
-      
-      #slider-track > div {
-          flex: 0 0 100%;
-      }
-      
-      /* Estilos para videos verticales */
-      #renders-slider video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
       }
   </style>
   <script src="components/TopBanner.js"></script>
@@ -256,9 +221,6 @@
     "telephone": "+593987167782",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "  "+593987167782",
-    "address": {
-      "@type": "PostalAddress",
       "streetAddress": "Samborondón",
       "addressLocality": "Guayaquil",
       "addressRegion": "Guayas",
@@ -348,44 +310,6 @@
     
     // Iniciar la observación del documento
     observer.observe(document.body, { childList: true, subtree: true });
-  });
-  </script>
-  
-  <!-- Script adicional para asegurar que el slider de videos funcione correctamente -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Verificar periódicamente si el slider está inicializado correctamente
-    let sliderCheckInterval = setInterval(function() {
-      const sliderTrack = document.getElementById('slider-track');
-      const sliderButtons = document.querySelectorAll('#prev-slide, #next-slide');
-      
-      if (sliderTrack && sliderButtons.length) {
-        // Asegurarse de que los botones tengan event listeners
-        sliderButtons.forEach(button => {
-          const clone = button.cloneNode(true);
-          button.parentNode.replaceChild(clone, button);
-          
-          if (clone.id === 'prev-slide') {
-            clone.addEventListener('click', function() {
-              const event = new CustomEvent('slider-prev');
-              document.dispatchEvent(event);
-            });
-          } else {
-            clone.addEventListener('click', function() {
-              const event = new CustomEvent('slider-next');
-              document.dispatchEvent(event);
-            });
-          }
-        });
-        
-        clearInterval(sliderCheckInterval);
-      }
-    }, 500);
-    
-    // Limpiar el intervalo después de 10 segundos para evitar bucles infinitos
-    setTimeout(function() {
-      clearInterval(sliderCheckInterval);
-    }, 10000);
   });
   </script>
 </body>
