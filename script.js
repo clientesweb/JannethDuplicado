@@ -1,20 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const TopBanner = () => { return `<div class="animate-marquee">Top Banner</div>` }
-  const Header = () => { return `<header>Header</header>` }
-  const Hero = () => { return `<section id="hero">Hero</section>` }
-  const About = () => { return `<section id="about">About</section>` }
-  const FeaturedProperties = () => { return `<section id="featured">Featured</section>` }
-  const Services = () => { return `<section id="services">Services</section>` }
-  const PromotionalBanner = () => { return `<section id="promo">Promo</section>` }
-  const ConstructionProgress = () => { return `<section id="construction">Construction</section>` }
-  const OnlineMagazine = () => { return `<section id="magazine">Magazine</section>` }
-  const Playlists = () => { return `<section id="playlists">Playlists</section>` }
-  const Contact = () => { return `<section id="contact">Contact</section>` }
-  const AppDownload = () => { return `<section id="app-download">App Download</section>` }
-  const Footer = () => { return `<footer>Footer</footer>` }
-  const BottomNavigation = () => { return `<nav class="fixed bottom-0">Bottom Nav</nav>` }
-  const WhatsAppButton = () => { return `<button>WhatsApp</button>` }
-
   const app = document.getElementById("app")
   app.innerHTML = `
     ${TopBanner()}
@@ -22,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <main>
         ${Hero()}
         ${About()}
+        ${PromotionalBanner()}
         ${FeaturedProperties()}
         ${Services()}
-        ${PromotionalBanner()}
         ${ConstructionProgress()}
         ${OnlineMagazine()}
         ${Playlists()}
@@ -164,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Load playlist videos
-  let loadPlaylistVideos; // Declare the variable
   if (typeof loadPlaylistVideos === "function") {
     loadPlaylistVideos()
   }
