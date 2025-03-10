@@ -7,7 +7,7 @@ function PromotionalBanner() {
       location: "Samborondón",
       description: "Modernos espacios comerciales y consultorios médicos ubicados en una de las zonas de mayor crecimiento de Samborondón. Diseñados para profesionales exigentes que buscan comodidad y prestigio.",
       videoSrc: "/video/render_locales.mp4",
-      poster: "/placeholder.svg?height=720&width=1280",
+      poster: "/placeholder.svg?height=1280&width=720",
       features: ["Áreas desde 50m²", "Acabados de lujo", "Seguridad 24/7", "Estacionamiento privado"]
     },
     {
@@ -16,7 +16,7 @@ function PromotionalBanner() {
       location: "Isla Mocoli",
       description: "Exclusivos departamentos con vistas panorámicas al río Daule. Diseño contemporáneo y acabados de primera calidad para quienes buscan un estilo de vida premium en un entorno natural privilegiado.",
       videoSrc: "/video/render_mocoli.mp4",
-      poster: "/placeholder.svg?height=720&width=1280",
+      poster: "/placeholder.svg?height=1280&width=720",
       features: ["2 y 3 dormitorios", "Áreas sociales", "Piscina infinity", "Gimnasio equipado"]
     },
     {
@@ -24,8 +24,8 @@ function PromotionalBanner() {
       title: "Centro Comercial y Residencias",
       location: "Samborondón",
       description: "Innovador proyecto de uso mixto que combina espacios comerciales en planta baja y residencias exclusivas en los pisos superiores. La perfecta combinación entre comodidad y estilo de vida urbano.",
-      videoSrc: "/video/render_samborodon.mp4",
-      poster: "/placeholder.svg?height=720&width=1280",
+      videoSrc: "/video/render_samborondon.mp4",
+      poster: "/placeholder.svg?height=1280&width=720",
       features: ["Locales comerciales", "Apartamentos de 1-3 habitaciones", "Áreas verdes", "Seguridad integrada"]
     },
     {
@@ -34,7 +34,7 @@ function PromotionalBanner() {
       location: "Vía a la Costa",
       description: "Proyecto residencial con amplias áreas verdes y casas diseñadas para familias que valoran la tranquilidad y el contacto con la naturaleza, sin renunciar a las comodidades de la vida moderna.",
       videoSrc: "/video/render_alsol.mp4",
-      poster: "/placeholder.svg?height=720&width=1280",
+      poster: "/placeholder.svg?height=1280&width=720",
       features: ["Casas desde 150m²", "Club social", "Áreas deportivas", "Seguridad perimetral"]
     }
   ];
@@ -58,47 +58,53 @@ function PromotionalBanner() {
         <div class="promo-projects-container" id="promo-projects">
           ${projects.map((project, index) => `
             <div class="promo-project ${index === 0 ? 'active' : 'hidden'}" data-project-id="${project.id}">
-              <div class="flex flex-col lg:flex-row gap-8 items-center">
-                <!-- Video Column -->
-                <div class="w-full lg:w-1/2 relative rounded-xl overflow-hidden shadow-2xl">
-                  <div class="aspect-video bg-gray-900 relative overflow-hidden">
-                    <video 
-                      class="w-full h-full object-cover" 
-                      ${index === 0 ? 'autoplay' : ''} 
-                      muted 
-                      loop 
-                      playsinline
-                      poster="${project.poster}"
-                      aria-label="Render de ${project.title} en ${project.location}">
-                      <source src="${project.videoSrc}" type="video/mp4">
-                      Tu navegador no soporta videos HTML5.
-                    </video>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <!-- Diseño responsivo con video vertical y contenido adaptable -->
+              <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 max-w-5xl mx-auto">
+                <!-- Video Column - Formato vertical como reel de Instagram -->
+                <div class="w-full md:w-auto flex justify-center">
+                  <div class="relative rounded-xl overflow-hidden shadow-2xl max-w-[280px] md:max-w-[320px]">
+                    <div class="aspect-[9/16] w-full bg-gray-900 relative overflow-hidden">
+                      <video 
+                        class="w-full h-full object-cover" 
+                        ${index === 0 ? 'autoplay' : ''} 
+                        muted 
+                        loop 
+                        playsinline
+                        poster="${project.poster}"
+                        aria-label="Render de ${project.title} en ${project.location}">
+                        <source src="${project.videoSrc}" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                      </video>
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    </div>
                   </div>
                 </div>
                 
-                <!-- Content Column -->
-                <div class="w-full lg:w-1/2 p-4 md:p-8">
-                  <div class="bg-black/30 backdrop-blur-sm p-6 md:p-8 rounded-xl">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white">
+                <!-- Content Column - Adaptable al espacio disponible -->
+                <div class="w-full md:w-3/5 lg:w-2/3">
+                  <div class="bg-black/30 backdrop-blur-sm p-5 md:p-6 rounded-xl">
+                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-white">
                       ${project.title}
                     </h3>
-                    <div class="flex items-center mb-4">
+                    <div class="flex items-center mb-3">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                       </svg>
                       <span class="text-gray-300">${project.location}</span>
                     </div>
-                    <p class="text-gray-300 mb-6">
+                    
+                    <!-- Descripción más compacta -->
+                    <p class="text-gray-300 text-sm md:text-base mb-4">
                       ${project.description}
                     </p>
                     
-                    <div class="mb-8">
-                      <h4 class="text-lg font-semibold mb-3 text-primary">Características destacadas:</h4>
-                      <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <!-- Características en grid más compacto -->
+                    <div class="mb-5">
+                      <h4 class="text-sm md:text-base font-semibold mb-2 text-primary">Características destacadas:</h4>
+                      <ul class="grid grid-cols-2 gap-1 text-sm">
                         ${project.features.map(feature => `
                           <li class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary mr-1" viewBox="0 0 20 20" fill="currentColor">
                               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
                             ${feature}
@@ -107,9 +113,10 @@ function PromotionalBanner() {
                       </ul>
                     </div>
                     
-                    <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <!-- Botón de acción -->
+                    <a href="#" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base">
                       Ver detalles del proyecto
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                       </svg>
                     </a>
@@ -120,8 +127,8 @@ function PromotionalBanner() {
           `).join('')}
         </div>
 
-        <!-- Project Navigation -->
-        <div class="flex justify-center mt-8 space-x-2" id="project-indicators">
+        <!-- Project Navigation - Más compacto y mejor posicionado -->
+        <div class="flex justify-center mt-6 space-x-2" id="project-indicators">
           ${projects.map((project, index) => `
             <button 
               class="w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${index === 0 ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/60'}" 
@@ -131,8 +138,8 @@ function PromotionalBanner() {
           `).join('')}
         </div>
 
-        <!-- Navigation Arrows -->
-        <div class="flex justify-center mt-8 space-x-4">
+        <!-- Navigation Arrows - Mejor posicionados -->
+        <div class="flex justify-center mt-4 space-x-4">
           <button id="prev-project" class="bg-black/30 hover:bg-black/50 text-white p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300 backdrop-blur-sm" aria-label="Proyecto anterior">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -157,6 +164,19 @@ function PromotionalBanner() {
         .promo-project.hidden {
           display: none;
           opacity: 0;
+        }
+        
+        /* Estilos adicionales para mejorar la apariencia en diferentes dispositivos */
+        @media (max-width: 640px) {
+          .promo-project .aspect-[9/16] {
+            max-height: 70vh; /* Limitar altura en móviles */
+          }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .promo-project .aspect-[9/16] {
+            max-height: 60vh; /* Limitar altura en tablets */
+          }
         }
       </style>
     </section>
