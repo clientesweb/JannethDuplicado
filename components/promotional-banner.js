@@ -24,7 +24,7 @@ function PromotionalBanner() {
       title: "Centro Comercial y Residencias",
       location: "Samborondón",
       description: "Innovador proyecto de uso mixto que combina espacios comerciales en planta baja y residencias exclusivas en los pisos superiores. La perfecta combinación entre comodidad y estilo de vida urbano.",
-      videoSrc: "/video/render_samborondon.mp4",
+      videoSrc: "/video/render_samborodon.mp4",
       poster: "/placeholder.svg?height=1280&width=720",
       features: ["Locales comerciales", "Apartamentos de 1-3 habitaciones", "Áreas verdes", "Seguridad integrada"]
     },
@@ -209,7 +209,6 @@ function initPromoProjects() {
   console.log('Elementos encontrados:', projects.length, 'proyectos,', indicators.length, 'indicadores');
   
   let currentIndex = 0;
-  let autoplayInterval;
   
   // Función para mostrar un proyecto específico
   function showProject(index) {
@@ -251,9 +250,6 @@ function initPromoProjects() {
         indicator.classList.add('bg-white/30');
       }
     });
-    
-    // Reiniciar autoplay
-    resetAutoplay();
   }
   
   // Función para ir al siguiente proyecto
@@ -266,21 +262,6 @@ function initPromoProjects() {
   function prevProject() {
     console.log('Proyecto anterior');
     showProject(currentIndex - 1);
-  }
-  
-  // Función para iniciar el autoplay
-  function startAutoplay() {
-    clearInterval(autoplayInterval);
-    autoplayInterval = setInterval(function() {
-      console.log('Autoplay: siguiente proyecto');
-      nextProject();
-    }, 8000); // Cambiar proyecto cada 8 segundos
-  }
-  
-  // Función para reiniciar el autoplay
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    startAutoplay();
   }
   
   // Agregar event listeners
@@ -311,24 +292,10 @@ function initPromoProjects() {
     });
   });
   
-  // Iniciar el carrusel
+  // Iniciar el carrusel mostrando el primer proyecto
   showProject(0);
-  startAutoplay();
   
-  // Pausar autoplay cuando el usuario interactúa con el carrusel
-  const promoSection = document.getElementById('proyectos-destacados');
-  if (promoSection) {
-    promoSection.addEventListener('mouseenter', () => {
-      console.log('Mouse enter: pausando autoplay');
-      clearInterval(autoplayInterval);
-    });
-    promoSection.addEventListener('mouseleave', () => {
-      console.log('Mouse leave: reiniciando autoplay');
-      startAutoplay();
-    });
-  }
-  
-  console.log('Carrusel de proyectos inicializado correctamente');
+  console.log('Carrusel de proyectos inicializado correctamente (sin autoplay)');
 }
 
 // También intentar inicializar después de que la ventana esté completamente cargada
