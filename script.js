@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </main>
     ${Footer()}
     ${BottomNavigation()}
-    ${WhatsAppButton()}
   `
 
   // Top Banner Animation
