@@ -58,17 +58,7 @@ function About() {
                              alt="Janneth Aguirre" 
                              class="rounded-3xl shadow-2xl w-full relative z-10 transform hover:-rotate-2 transition-transform duration-500">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-xl max-w-xs">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-primary rounded-full p-3">
-                                <i class="fas fa-award text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-gray-800">Reconocida Excelencia</p>
-                                <p class="text-sm text-gray-600">Premiada por su destacada trayectoria en el sector inmobiliario</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- La tarjeta "Reconocida Excelencia" ha sido eliminada de aquí -->
                 </div>
             </div>
             
@@ -93,4 +83,3 @@ function About() {
     </section>
     `
 }
-
