@@ -1,36 +1,27 @@
 function OnlineMagazine() {
   const articles = [
     {
-      title: "La Domotización en Bienes Raíces",
-      subtitle: "Transformando Espacios para el Futuro",
+      title: "Día Internacional de la Mujer",
+      subtitle: "Celebrando el Liderazgo Femenino en Bienes Raíces",
       description:
-        "La domotización revoluciona el mercado inmobiliario, mejorando eficiencia, seguridad y confort. Descubre su impacto y las oportunidades que ofrece.",
-      author: "Juan Carlos Solano Aguirre",
-      date: "2 Feb 2025",
-      url: "https://jannethaguirre.online/articulo/la-domotizacion-en-bienes-raices-por-juan-carlos-solano-aguirre",
-      image: "https://jannethaguirre.online/juan-solano-aguirre.jpg",
-      readTime: "5 min",
-    },
-    {
-      title: "José Solines Aguayo",
-      subtitle: "Construyendo Sueños y Transformando Ecuador",
-      description:
-        "Descubre la historia de uno de los constructores más emblemáticos e influyentes de Ecuador y su impacto en el desarrollo de Samborondón y Vía a la Costa.",
+        "En este día especial, destacamos el papel fundamental de las mujeres en el sector inmobiliario y su contribución al desarrollo del mercado en Ecuador.",
       author: "Janneth Aguirre",
-      date: "1 Feb 2025",
-      url: "https://jannethaguirre.online/articulo/jose-solines-aguayo-construyendo-suenos",
-      image: "https://jannethaguirre.online/portada-jose-solines.jpg",
+      date: "8 Mar 2024",
+      url: "https://jannethaguirre.online/articulo/dia-internacional-mujer",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dia-internacional-mujer%20%281%29.jpg-Fstg8x1V66oIFSFPYYlGvFnwjJGNQX.png",
       readTime: "4 min",
     },
     {
-      title: "Boquete Pino Alto Country Club",
-      subtitle: "Lujo y Naturaleza en Panamá",
+      title: "Yunguilla: El Secreto Mejor Guardado del Azuay",
+      subtitle: "Una Oportunidad Única de Inversión en el Sur de Ecuador",
       description:
-        "Descubre el exclusivo desarrollo residencial en las montañas de Boquete, que combina lujo, golf y una impresionante belleza natural.",
+        "Descubre el potencial de inversión en Yunguilla, un paraíso natural en el Azuay que combina clima privilegiado, naturaleza exuberante y desarrollo inmobiliario sostenible.",
       author: "Janneth Aguirre",
-      date: "28 Ene 2025",
-      url: "https://jannethaguirre.online/articulo/boquete-pino-alto-country-club",
-      image: "https://jannethaguirre.online/boquete-pino-alto-country-club.jpg",
+      date: "5 Mar 2024",
+      url: "https://jannethaguirre.online/articulo/yunguilla-inversion-azuay",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/yunguilla-azuay.jpg-zu2SMFCqA4d237H6RwWB7XUEH7YBD1.jpeg",
       readTime: "6 min",
     },
   ]
@@ -51,23 +42,26 @@ function OnlineMagazine() {
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           ${articles
             .map(
               (article) => `
             <article class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div class="relative overflow-hidden">
-                <img src="${article.image}" alt="${article.title}" 
-                     class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="relative overflow-hidden aspect-[16/9]">
+                <img src="${article.image}" 
+                     alt="${article.title}" 
+                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div class="absolute bottom-4 left-4 right-4 text-white">
-                  <span class="text-sm bg-primary/90 px-3 py-1 rounded-full">${article.readTime} lectura</span>
+                  <span class="text-sm bg-primary/90 px-3 py-1 rounded-full backdrop-blur-sm">${article.readTime} lectura</span>
                 </div>
               </div>
               <div class="p-6">
                 <div class="flex items-center mb-4 text-sm text-gray-500">
                   <span class="flex items-center">
-                    <i class="fas fa-user-edit mr-2"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                     ${article.author}
                   </span>
                   <span class="mx-2">•</span>
@@ -78,8 +72,19 @@ function OnlineMagazine() {
                 </h3>
                 <h4 class="text-gray-600 font-semibold mb-3">${article.subtitle}</h4>
                 <p class="text-gray-600 mb-4 line-clamp-2">${article.description}</p>
-                <a href="${article.url}" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300 group-hover:translate-x-2 transform">
-                  Leer artículo <i class="fas fa-arrow-right ml-2"></i>
+                <a href="${article.url}" 
+                   class="inline-flex items-center text-primary hover:text-primary/80 transition-all duration-300 group-hover:translate-x-2 transform">
+                  Leer artículo 
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                       class="h-4 w-4 ml-2" 
+                       fill="none" 
+                       viewBox="0 0 24 24" 
+                       stroke="currentColor">
+                    <path stroke-linecap="round" 
+                          stroke-linejoin="round" 
+                          stroke-width="2" 
+                          d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </a>
               </div>
             </article>
@@ -89,14 +94,28 @@ function OnlineMagazine() {
         </div>
 
         <div class="mt-12 text-center">
-          <a href="https://jannethaguirre.online" target="_blank" rel="noopener noreferrer" 
-             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 group">
+          <a href="https://jannethaguirre.online" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 group shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
             Explorar Más Artículos
-            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                 class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
+                 fill="none" 
+                 viewBox="0 0 24 24" 
+                 stroke="currentColor">
+              <path stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
         </div>
       </div>
     </section>
   `
 }
+
+// Export the Magazine function
+window.OnlineMagazine = OnlineMagazine
 
