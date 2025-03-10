@@ -10,25 +10,25 @@ function Hero() {
                 <!-- Versión móvil de la imagen -->
                 <source
                     media="(max-width: 640px)"
-                    srcset="images/magazine-janneth-aguirre-mobile.png"
+                    srcset="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/magazine-janneth-aguirre-MQQJdAAMLDxg2rXQZrGeGoZuIUiJJU.png"
                 >
                 <!-- Versión tablet de la imagen -->
                 <source
                     media="(max-width: 1024px)"
-                    srcset="images/magazine-janneth-aguirre-tablet.png"
+                    srcset="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/magazine-janneth-aguirre-MQQJdAAMLDxg2rXQZrGeGoZuIUiJJU.png"
                 >
                 <!-- Versión desktop de la imagen -->
                 <img 
-                    src="images/magazine-janneth-aguirre.png"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/magazine-janneth-aguirre-MQQJdAAMLDxg2rXQZrGeGoZuIUiJJU.png"
                     alt="Janneth Aguirre, experta en bienes raíces, junto a la bandera de Ecuador"
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-cover object-center"
                     loading="eager"
                     fetchpriority="high"
                 >
             </picture>
             <!-- Overlay con gradiente -->
             <div 
-                class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"
+                class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"
                 aria-hidden="true"
             ></div>
         </div>
@@ -40,7 +40,7 @@ function Hero() {
                     <div class="space-y-8">
                         <!-- Título principal -->
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
-                            <span class="text-primary block mb-2">
+                            <span class="text-yellow-400 block mb-2">
                                 Descubre Tu Hogar Ideal
                             </span>
                             <span class="text-white">
@@ -58,7 +58,7 @@ function Hero() {
                         <div class="flex flex-col sm:flex-row gap-4 pt-6">
                             <a 
                                 href="#servicios" 
-                                class="inline-flex items-center justify-center bg-primary hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full transition-colors duration-300"
+                                class="inline-flex items-center justify-center bg-yellow-400 hover:bg-white hover:text-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full transition-colors duration-300"
                                 role="button"
                                 aria-label="Explorar nuestros servicios"
                             >
@@ -80,7 +80,7 @@ function Hero() {
                             </a>
                             <a 
                                 href="#contacto" 
-                                class="inline-flex items-center justify-center bg-white hover:bg-primary text-primary hover:text-white font-bold py-4 px-8 rounded-full transition-colors duration-300"
+                                class="inline-flex items-center justify-center bg-white hover:bg-yellow-400 text-gray-900 hover:text-gray-900 font-bold py-4 px-8 rounded-full transition-colors duration-300"
                                 role="button"
                                 aria-label="Contactar con nosotros"
                             >
@@ -95,3 +95,4 @@ function Hero() {
     </section>
   `
 }
+
