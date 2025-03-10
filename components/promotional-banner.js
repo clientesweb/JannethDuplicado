@@ -8,7 +8,7 @@ function PromotionalBanner() {
       description: "Modernos espacios comerciales y consultorios médicos ubicados en una de las zonas de mayor crecimiento de Samborondón. Diseñados para profesionales exigentes que buscan comodidad y prestigio.",
       videoSrc: "/video/render_locales.mp4",
       poster: "/placeholder.svg?height=1280&width=720",
-      features: ["Áreas desde 50m²", "Acabados de lujo", "Seguridad 24/7", "Estacionamiento privado"]
+      features: ["Áreas desde 40m²", "Acabados de lujo", "Seguridad 24/7", "Estacionamiento privado"]
     },
     {
       id: "project2",
@@ -24,9 +24,9 @@ function PromotionalBanner() {
       title: "Centro Comercial y Residencias",
       location: "Samborondón",
       description: "Innovador proyecto de uso mixto que combina espacios comerciales en planta baja y residencias exclusivas en los pisos superiores. La perfecta combinación entre comodidad y estilo de vida urbano.",
-      videoSrc: "/video/render_samborodon.mp4",
+      videoSrc: "/video/render_samborondon.mp4",
       poster: "/placeholder.svg?height=1280&width=720",
-      features: ["Locales comerciales", "Apartamentos de 1-3 habitaciones", "Áreas verdes", "Seguridad integrada"]
+      features: ["Locales comerciales", "Apartamentos de 1-2 habitaciones", "Áreas verdes", "Seguridad integrada"]
     },
     {
       id: "project4",
@@ -35,7 +35,7 @@ function PromotionalBanner() {
       description: "Proyecto residencial con amplias áreas verdes y casas diseñadas para familias que valoran la tranquilidad y el contacto con la naturaleza, sin renunciar a las comodidades de la vida moderna.",
       videoSrc: "/video/render_alsol.mp4",
       poster: "/placeholder.svg?height=1280&width=720",
-      features: ["Casas desde 150m²", "Club social", "Áreas deportivas", "Seguridad perimetral"]
+      features: ["Casas desde 135m²", "Club social", "Áreas deportivas", "Seguridad perimetral"]
     }
   ];
 
