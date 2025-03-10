@@ -84,21 +84,39 @@ function About() {
                 <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center">
                     <span class="text-primary">Nuestros</span> Colaboradores y Aliados
                 </h3>
-                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                    <img src="images/logo-c1.png" alt="Logo Colaborador 1" 
-                         class="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
-                    <img src="images/logo-c2.png" alt="Logo Colaborador 2" 
-                         class="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
-                    <img src="images/logo-c3.png" alt="Logo Colaborador 3" 
-                         class="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
-                    <img src="images/logo-c4.png" alt="Logo Colaborador 4" 
-                         class="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
-                    <img src="images/logo-c5.png" alt="Logo Colaborador 5" 
-                         class="h-16 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 justify-items-center items-center max-w-7xl mx-auto px-4">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-c1-Go2PYwCFbaFAK4j5UY3q0IQBMqTxkG.png" 
+                         alt="ACBIR Guayas - Asociación de Corredores de Bienes Raíces del Guayas" 
+                         loading="lazy"
+                         class="h-20 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
+                    
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-c2-pDuqv6QM96mfDW0LsLvXUfOTiv9MOl.png" 
+                         alt="National Association of Realtors - NAR" 
+                         loading="lazy"
+                         class="h-20 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
+                    
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-c3-UyvaHUbIR4cMKiMfmRyRDpDeDhWbyX.png" 
+                         alt="FENACBRE - Federación Nacional de Corredores de Bienes Raíces del Ecuador" 
+                         loading="lazy"
+                         class="h-20 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
+                    
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-c4-9y5ehLo4tfIrhtDjaMvSZjaPkdBXSE.png" 
+                         alt="CILA - Confederación Inmobiliaria Latinoamericana" 
+                         loading="lazy"
+                         class="h-20 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
+                    
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SaveInsta.to_449749459_1848309612340611_9048053673957752669_n-removebg-preview-PH9a3NYqZzlcpJyYmAZca0NBKfU6gI.png" 
+                         alt="INMOPERÚ Mujer - Red de Mujeres Inmobiliarias de Perú" 
+                         loading="lazy"
+                         class="h-20 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
+                    
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-c5-vUis09BoPvHC5cFE4UP5SxQv6omYr2.png" 
+                         alt="CRS - Certified Residential Specialist" 
+                         loading="lazy"
+                         class="h-20 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105">
                 </div>
             </div>
         </div>
     </section>
   `
 }
-
