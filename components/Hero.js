@@ -1,117 +1,97 @@
 function Hero() {
   return `
-    <section class="relative h-screen overflow-hidden">
+    <section 
+      class="relative min-h-screen w-full overflow-hidden"
+      aria-label="Sección principal"
+    >
+        <!-- Contenedor de la imagen de fondo -->
         <div class="absolute inset-0 z-0">
-            <img src="images/magazine-janneth-aguirre.png" 
-                 alt="Hero Background" 
-                 class="w-full h-full object-cover animate-ken-burns">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <picture>
+                <!-- Versión móvil de la imagen -->
+                <source
+                    media="(max-width: 640px)"
+                    srcset="images/magazine-janneth-aguirre-mobile.png"
+                >
+                <!-- Versión tablet de la imagen -->
+                <source
+                    media="(max-width: 1024px)"
+                    srcset="images/magazine-janneth-aguirre-tablet.png"
+                >
+                <!-- Versión desktop de la imagen -->
+                <img 
+                    src="images/magazine-janneth-aguirre.png"
+                    alt="Janneth Aguirre, experta en bienes raíces, junto a la bandera de Ecuador"
+                    class="w-full h-full object-cover"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </picture>
+            <!-- Overlay con gradiente -->
+            <div 
+                class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"
+                aria-hidden="true"
+            ></div>
         </div>
 
+        <!-- Contenido principal -->
         <div class="relative z-10 h-full flex items-center">
-            <div class="container mx-auto px-4">
+            <div class="container mx-auto px-4 py-12 md:py-24">
                 <div class="max-w-3xl">
-                    <div class="space-y-6 animate-fade-in-up">
-                        <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold font-serif leading-tight">
-                            <span class="text-primary animate-text-glow">Descubre Tu Hogar Ideal</span>
-                            <span class="text-white"> en Ecuador</span>
+                    <div class="space-y-8">
+                        <!-- Título principal -->
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
+                            <span class="text-primary block mb-2">
+                                Descubre Tu Hogar Ideal
+                            </span>
+                            <span class="text-white">
+                                en Ecuador
+                            </span>
                         </h1>
                         
-                        <p class="text-lg md:text-xl lg:text-2xl text-white/90 max-w-2xl animate-fade-in">
-                            Janneth Aguirre: Tu experta en bienes raíces con más de 14 años de experiencia
+                        <!-- Subtítulo -->
+                        <p class="text-xl md:text-2xl text-white/90 max-w-2xl">
+                            Janneth Aguirre: Tu experta en bienes raíces con más de 14 años 
+                            brindando asesoría inmobiliaria profesional
                         </p>
                         
-                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                            <a href="#servicios" 
-                               class="inline-flex items-center justify-center bg-primary hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 group">
+                        <!-- Botones de acción -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                            <a 
+                                href="#servicios" 
+                                class="inline-flex items-center justify-center bg-primary hover:bg-white hover:text-primary text-white font-bold py-4 px-8 rounded-full transition-colors duration-300"
+                                role="button"
+                                aria-label="Explorar nuestros servicios"
+                            >
                                 Explorar Servicios
-                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                                <span class="sr-only">Ver todos nuestros servicios inmobiliarios</span>
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    class="h-5 w-5 ml-2" 
+                                    viewBox="0 0 20 20" 
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path 
+                                        fill-rule="evenodd" 
+                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
+                                        clip-rule="evenodd" 
+                                    />
+                                </svg>
                             </a>
-                            <a href="#contacto" 
-                               class="inline-flex items-center justify-center bg-white hover:bg-primary text-primary hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                            <a 
+                                href="#contacto" 
+                                class="inline-flex items-center justify-center bg-white hover:bg-primary text-primary hover:text-white font-bold py-4 px-8 rounded-full transition-colors duration-300"
+                                role="button"
+                                aria-label="Contactar con nosotros"
+                            >
                                 Contactar Ahora
+                                <span class="sr-only">Ponte en contacto con nuestro equipo</span>
                             </a>
-                        </div>
-
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-12 pt-6">
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
-                                <div class="text-2xl font-bold">500+</div>
-                                <div class="text-sm text-white/80">Propiedades Vendidas</div>
-                            </div>
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
-                                <div class="text-2xl font-bold">14+</div>
-                                <div class="text-sm text-white/80">Años de Experiencia</div>
-                            </div>
-                            <div class="hidden sm:block bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
-                                <div class="text-2xl font-bold">500+</div>
-                                <div class="text-sm text-white/80">Clientes Satisfechos</div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div>
-
-        <style>
-            @keyframes ken-burns {
-                0% {
-                    transform: scale(1);
-                }
-                100% {
-                    transform: scale(1.1);
-                }
-            }
-
-            .animate-ken-burns {
-                animation: ken-burns 20s ease-out infinite alternate;
-            }
-
-            @keyframes fade-in-up {
-                0% {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .animate-fade-in-up {
-                animation: fade-in-up 1s ease-out forwards;
-            }
-
-            @keyframes fade-in {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
-
-            .animate-fade-in {
-                animation: fade-in 1s ease-out forwards;
-                animation-delay: 0.5s;
-                opacity: 0;
-            }
-
-            @keyframes text-glow {
-                0%, 100% {
-                    text-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
-                }
-                50% {
-                    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-                }
-            }
-
-            .animate-text-glow {
-                animation: text-glow 3s ease-in-out infinite;
-            }
-        </style>
     </section>
   `
 }
-
