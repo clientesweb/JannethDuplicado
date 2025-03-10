@@ -6,7 +6,7 @@ function PromotionalBanner() {
       title: "Locales comerciales y consultorios médicos",
       location: "Samborondón",
       description: "Modernos espacios comerciales y consultorios médicos ubicados en una de las zonas de mayor crecimiento de Samborondón. Diseñados para profesionales exigentes que buscan comodidad y prestigio.",
-      videoSrc: "url/video/render_locales.mp4",
+      videoSrc: "/video/render_locales.mp4",
       poster: "/placeholder.svg?height=720&width=1280",
       features: ["Áreas desde 50m²", "Acabados de lujo", "Seguridad 24/7", "Estacionamiento privado"]
     },
@@ -15,7 +15,7 @@ function PromotionalBanner() {
       title: "Departamentos de lujo",
       location: "Isla Mocoli",
       description: "Exclusivos departamentos con vistas panorámicas al río Daule. Diseño contemporáneo y acabados de primera calidad para quienes buscan un estilo de vida premium en un entorno natural privilegiado.",
-      videoSrc: "url/video/render_mocoli.mp4",
+      videoSrc: "/video/render_mocoli.mp4",
       poster: "/placeholder.svg?height=720&width=1280",
       features: ["2 y 3 dormitorios", "Áreas sociales", "Piscina infinity", "Gimnasio equipado"]
     },
@@ -24,7 +24,7 @@ function PromotionalBanner() {
       title: "Centro Comercial y Residencias",
       location: "Samborondón",
       description: "Innovador proyecto de uso mixto que combina espacios comerciales en planta baja y residencias exclusivas en los pisos superiores. La perfecta combinación entre comodidad y estilo de vida urbano.",
-      videoSrc: "url/video/render_samborodon.mp4",
+      videoSrc: "/video/render_samborodon.mp4",
       poster: "/placeholder.svg?height=720&width=1280",
       features: ["Locales comerciales", "Apartamentos de 1-3 habitaciones", "Áreas verdes", "Seguridad integrada"]
     },
@@ -33,7 +33,7 @@ function PromotionalBanner() {
       title: "Urbanización Residencial",
       location: "Vía a la Costa",
       description: "Proyecto residencial con amplias áreas verdes y casas diseñadas para familias que valoran la tranquilidad y el contacto con la naturaleza, sin renunciar a las comodidades de la vida moderna.",
-      videoSrc: "url/video/render_alsol.mp4",
+      videoSrc: "/video/render_alsol.mp4",
       poster: "/placeholder.svg?height=720&width=1280",
       features: ["Casas desde 150m²", "Club social", "Áreas deportivas", "Seguridad perimetral"]
     }
@@ -159,130 +159,179 @@ function PromotionalBanner() {
           opacity: 0;
         }
       </style>
-
-      <script>
-        // Script para inicializar el carrusel de proyectos
-        document.addEventListener('DOMContentLoaded', function() {
-          initPromoProjects();
-        });
-
-        function initPromoProjects() {
-          const projects = document.querySelectorAll('.promo-project');
-          const indicators = document.querySelectorAll('#project-indicators button');
-          const nextButton = document.getElementById('next-project');
-          const prevButton = document.getElementById('prev-project');
-          
-          if (!projects.length || !indicators.length) return;
-          
-          let currentIndex = 0;
-          let autoplayInterval;
-          
-          // Función para mostrar un proyecto específico
-          function showProject(index) {
-            if (index < 0) index = projects.length - 1;
-            if (index >= projects.length) index = 0;
-            
-            currentIndex = index;
-            
-            // Ocultar todos los proyectos y mostrar solo el actual
-            projects.forEach((project, i) => {
-              if (i === currentIndex) {
-                project.classList.remove('hidden');
-                project.classList.add('active');
-                
-                // Reproducir el video del proyecto actual
-                const video = project.querySelector('video');
-                if (video) {
-                  video.play().catch(e => console.log('Error al reproducir video:', e));
-                }
-              } else {
-                project.classList.add('hidden');
-                project.classList.remove('active');
-                
-                // Pausar los videos de los proyectos no visibles
-                const video = project.querySelector('video');
-                if (video) {
-                  video.pause();
-                }
-              }
-            });
-            
-            // Actualizar indicadores
-            indicators.forEach((indicator, i) => {
-              if (i === currentIndex) {
-                indicator.classList.add('bg-white', 'scale-125');
-                indicator.classList.remove('bg-white/30');
-              } else {
-                indicator.classList.remove('bg-white', 'scale-125');
-                indicator.classList.add('bg-white/30');
-              }
-            });
-            
-            // Reiniciar autoplay
-            resetAutoplay();
-          }
-          
-          // Función para ir al siguiente proyecto
-          function nextProject() {
-            showProject(currentIndex + 1);
-          }
-          
-          // Función para ir al proyecto anterior
-          function prevProject() {
-            showProject(currentIndex - 1);
-          }
-          
-          // Función para iniciar el autoplay
-          function startAutoplay() {
-            clearInterval(autoplayInterval);
-            autoplayInterval = setInterval(nextProject, 8000); // Cambiar proyecto cada 8 segundos
-          }
-          
-          // Función para reiniciar el autoplay
-          function resetAutoplay() {
-            clearInterval(autoplayInterval);
-            startAutoplay();
-          }
-          
-          // Agregar event listeners
-          if (nextButton) {
-            nextButton.addEventListener('click', function(e) {
-              e.preventDefault();
-              nextProject();
-            });
-          }
-          
-          if (prevButton) {
-            prevButton.addEventListener('click', function(e) {
-              e.preventDefault();
-              prevProject();
-            });
-          }
-          
-          indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function(e) {
-              e.preventDefault();
-              showProject(index);
-            });
-          });
-          
-          // Iniciar el carrusel
-          showProject(0);
-          startAutoplay();
-          
-          // Pausar autoplay cuando el usuario interactúa con el carrusel
-          const promoSection = document.getElementById('proyectos-destacados');
-          if (promoSection) {
-            promoSection.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-            promoSection.addEventListener('mouseleave', startAutoplay);
-          }
-          
-          console.log('Carrusel de proyectos inicializado correctamente');
-        }
-      </script>
     </section>
   `;
 }
 
 // Exportar la función PromotionalBanner
 window.PromotionalBanner = PromotionalBanner;
+
+// Inicializar el carrusel de proyectos cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+  // Esperar un poco para asegurarse de que el componente esté en el DOM
+  setTimeout(initPromoProjects, 500);
+});
+
+// Función global para inicializar el carrusel de proyectos
+function initPromoProjects() {
+  console.log('Inicializando carrusel de proyectos...');
+  
+  const projects = document.querySelectorAll('.promo-project');
+  const indicators = document.querySelectorAll('#project-indicators button');
+  const nextButton = document.getElementById('next-project');
+  const prevButton = document.getElementById('prev-project');
+  
+  if (!projects.length || !indicators.length) {
+    console.log('No se encontraron elementos del carrusel');
+    return;
+  }
+  
+  console.log('Elementos encontrados:', projects.length, 'proyectos,', indicators.length, 'indicadores');
+  
+  let currentIndex = 0;
+  let autoplayInterval;
+  
+  // Función para mostrar un proyecto específico
+  function showProject(index) {
+    if (index < 0) index = projects.length - 1;
+    if (index >= projects.length) index = 0;
+    
+    currentIndex = index;
+    
+    // Ocultar todos los proyectos y mostrar solo el actual
+    projects.forEach((project, i) => {
+      if (i === currentIndex) {
+        project.classList.remove('hidden');
+        project.classList.add('active');
+        
+        // Reproducir el video del proyecto actual
+        const video = project.querySelector('video');
+        if (video) {
+          video.play().catch(e => console.log('Error al reproducir video:', e));
+        }
+      } else {
+        project.classList.add('hidden');
+        project.classList.remove('active');
+        
+        // Pausar los videos de los proyectos no visibles
+        const video = project.querySelector('video');
+        if (video) {
+          video.pause();
+        }
+      }
+    });
+    
+    // Actualizar indicadores
+    indicators.forEach((indicator, i) => {
+      if (i === currentIndex) {
+        indicator.classList.add('bg-white', 'scale-125');
+        indicator.classList.remove('bg-white/30');
+      } else {
+        indicator.classList.remove('bg-white', 'scale-125');
+        indicator.classList.add('bg-white/30');
+      }
+    });
+    
+    // Reiniciar autoplay
+    resetAutoplay();
+  }
+  
+  // Función para ir al siguiente proyecto
+  function nextProject() {
+    console.log('Siguiente proyecto');
+    showProject(currentIndex + 1);
+  }
+  
+  // Función para ir al proyecto anterior
+  function prevProject() {
+    console.log('Proyecto anterior');
+    showProject(currentIndex - 1);
+  }
+  
+  // Función para iniciar el autoplay
+  function startAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(function() {
+      console.log('Autoplay: siguiente proyecto');
+      nextProject();
+    }, 8000); // Cambiar proyecto cada 8 segundos
+  }
+  
+  // Función para reiniciar el autoplay
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+  
+  // Agregar event listeners
+  if (nextButton) {
+    console.log('Configurando botón siguiente');
+    nextButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      nextProject();
+    });
+  } else {
+    console.log('Botón siguiente no encontrado');
+  }
+  
+  if (prevButton) {
+    console.log('Configurando botón anterior');
+    prevButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      prevProject();
+    });
+  } else {
+    console.log('Botón anterior no encontrado');
+  }
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', function(e) {
+      e.preventDefault();
+      showProject(index);
+    });
+  });
+  
+  // Iniciar el carrusel
+  showProject(0);
+  startAutoplay();
+  
+  // Pausar autoplay cuando el usuario interactúa con el carrusel
+  const promoSection = document.getElementById('proyectos-destacados');
+  if (promoSection) {
+    promoSection.addEventListener('mouseenter', () => {
+      console.log('Mouse enter: pausando autoplay');
+      clearInterval(autoplayInterval);
+    });
+    promoSection.addEventListener('mouseleave', () => {
+      console.log('Mouse leave: reiniciando autoplay');
+      startAutoplay();
+    });
+  }
+  
+  console.log('Carrusel de proyectos inicializado correctamente');
+}
+
+// También intentar inicializar después de que la ventana esté completamente cargada
+window.addEventListener('load', function() {
+  setTimeout(initPromoProjects, 1000);
+});
+
+// Intentar inicializar periódicamente hasta que tenga éxito
+let initAttempts = 0;
+const maxAttempts = 5;
+const initInterval = setInterval(function() {
+  initAttempts++;
+  console.log('Intento de inicialización #' + initAttempts);
+  
+  const projects = document.querySelectorAll('.promo-project');
+  const nextButton = document.getElementById('next-project');
+  
+  if (projects.length && nextButton) {
+    initPromoProjects();
+    clearInterval(initInterval);
+    console.log('Inicialización exitosa en el intento #' + initAttempts);
+  } else if (initAttempts >= maxAttempts) {
+    clearInterval(initInterval);
+    console.log('Se alcanzó el número máximo de intentos de inicialización');
+  }
+}, 2000);
