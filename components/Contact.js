@@ -78,6 +78,12 @@ function Contact() {
                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300">
                                         <i class="fab fa-tiktok"></i>
                                     </a>
+                                    <a href="https://www.linkedin.com/in/janneth-aguirre-bienes-raices/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -188,4 +194,3 @@ function Contact() {
     </section>
   `
 }
-
