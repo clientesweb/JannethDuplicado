@@ -28,7 +28,7 @@ function Hero() {
             </picture>
             <!-- Overlay con gradiente -->
             <div 
-                class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"
+                class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
                 aria-hidden="true"
             ></div>
         </div>
@@ -36,29 +36,36 @@ function Hero() {
         <!-- Contenido principal -->
         <div class="relative z-10 h-full flex items-center">
             <div class="container mx-auto px-4 py-12 md:py-24">
-                <div class="max-w-3xl">
-                    <div class="space-y-8">
-                        <!-- Título principal -->
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
-                            <span class="text-yellow-400 block mb-2">
-                                Descubre Tu Hogar Ideal
-                            </span>
-                            <span class="text-white">
-                                en Ecuador
-                            </span>
-                        </h1>
+                <!-- Contenedor principal con diseño moderno -->
+                <div class="max-w-4xl backdrop-blur-sm bg-black/20 p-8 md:p-12 rounded-2xl border border-white/10 shadow-2xl">
+                    <div class="space-y-10">
+                        <!-- Título principal con diseño mejorado -->
+                        <div class="space-y-4">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
+                                <span class="text-primary block mb-2 relative">
+                                    Descubre Tu Hogar Ideal
+                                    <span class="absolute -left-4 top-0 h-full w-1 bg-primary"></span>
+                                </span>
+                                <span class="text-white">
+                                    en Ecuador
+                                </span>
+                            </h1>
+                            
+                            <!-- Subtítulo con mejor espaciado -->
+                            <p class="text-xl md:text-2xl text-white/90 max-w-2xl border-l-4 border-primary/40 pl-4 italic">
+                                Janneth Aguirre: Tu experta en bienes raíces con más de 14 años 
+                                brindando asesoría inmobiliaria profesional
+                            </p>
+                        </div>
                         
-                        <!-- Subtítulo -->
-                        <p class="text-xl md:text-2xl text-white/90 max-w-2xl">
-                            Janneth Aguirre: Tu experta en bienes raíces con más de 14 años 
-                            brindando asesoría inmobiliaria profesional
-                        </p>
+                        <!-- Separador decorativo -->
+                        <div class="w-24 h-1 bg-primary"></div>
                         
-                        <!-- Botones de acción -->
-                        <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                        <!-- Botones de acción con diseño mejorado -->
+                        <div class="flex flex-col sm:flex-row gap-6 pt-2">
                             <a 
                                 href="#servicios" 
-                                class="inline-flex items-center justify-center bg-yellow-400 hover:bg-white hover:text-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full transition-colors duration-300"
+                                class="inline-flex items-center justify-center bg-primary hover:bg-white hover:text-primary text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                                 role="button"
                                 aria-label="Explorar nuestros servicios"
                             >
@@ -80,13 +87,20 @@ function Hero() {
                             </a>
                             <a 
                                 href="#contacto" 
-                                class="inline-flex items-center justify-center bg-white hover:bg-yellow-400 text-gray-900 hover:text-gray-900 font-bold py-4 px-8 rounded-full transition-colors duration-300"
+                                class="inline-flex items-center justify-center bg-white hover:bg-primary text-primary hover:text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                                 role="button"
                                 aria-label="Contactar con nosotros"
                             >
                                 Contactar Ahora
                                 <span class="sr-only">Ponte en contacto con nuestro equipo</span>
                             </a>
+                        </div>
+                        
+                        <!-- Indicador de desplazamiento -->
+                        <div class="hidden md:flex justify-center pt-8 animate-bounce">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
                         </div>
                     </div>
                 </div>
