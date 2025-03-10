@@ -30,7 +30,7 @@ function PromotionalBanner() {
                     playsinline
                     poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de locales comerciales y consultorios médicos en Samborondón">
-                    <source src="url/video/render_locales.mp4" type="video/mp4">
+                    <source src="/video/render_locales.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
@@ -59,7 +59,7 @@ function PromotionalBanner() {
                     playsinline
                     poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de departamentos de lujo en Isla Mocoli">
-                    <source src="url/video/render_mocoli.mp4" type="video/mp4">
+                    <source src="/video/render_mocoli.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
@@ -88,7 +88,7 @@ function PromotionalBanner() {
                     playsinline
                     poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de Centro Comercial y Residencias">
-                    <source src="url/video/render_samborodon.mp4" type="video/mp4">
+                    <source src="/video/render_samborodon.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
@@ -117,7 +117,7 @@ function PromotionalBanner() {
                     playsinline
                     poster="/placeholder.svg?height=1280&width=720"
                     aria-label="Render de Urbanización Residencial">
-                    <source src="url/video/render_alsol.mp4" type="video/mp4">
+                    <source src="/video/render_alsol.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                   </video>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
@@ -159,135 +159,156 @@ function PromotionalBanner() {
         </div>
       </div>
     </section>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Función para inicializar el slider
-        function initSlider() {
-          const track = document.getElementById('slider-track');
-          if (!track) return; // Salir si no se encuentra el elemento
-          
-          const slides = track.children;
-          const nextButton = document.getElementById('next-slide');
-          const prevButton = document.getElementById('prev-slide');
-          const indicators = document.querySelectorAll('#slider-indicators button');
-          
-          let currentIndex = 0;
-          let slideWidth = slides[0].getBoundingClientRect().width;
-          let autoplayInterval;
-          
-          // Función para actualizar el ancho de los slides cuando cambia el tamaño de la ventana
-          function updateSlideWidth() {
-            slideWidth = slides[0].getBoundingClientRect().width;
-            goToSlide(currentIndex, false);
-          }
-          
-          // Función para ir a un slide específico
-          function goToSlide(index, animate = true) {
-            if (index < 0) index = slides.length - 1;
-            if (index >= slides.length) index = 0;
-            
-            currentIndex = index;
-            
-            // Aplicar la transformación con o sin animación
-            if (animate) {
-              track.style.transition = 'transform 500ms ease-out';
-            } else {
-              track.style.transition = 'none';
-            }
-            
-            track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
-            
-            // Restaurar la transición después de un breve retraso si se desactivó
-            if (!animate) {
-              setTimeout(() => {
-                track.style.transition = 'transform 500ms ease-out';
-              }, 50);
-            }
-            
-            // Actualizar indicadores
-            indicators.forEach((indicator, i) => {
-              if (i === currentIndex) {
-                indicator.classList.add('bg-white', 'indicator-active');
-                indicator.classList.remove('bg-white/30');
-              } else {
-                indicator.classList.remove('bg-white', 'indicator-active');
-                indicator.classList.add('bg-white/30');
-              }
-            });
-            
-            // Pausar y reproducir videos según el slide activo
-            Array.from(slides).forEach((slide, i) => {
-              const video = slide.querySelector('video');
-              if (video) {
-                if (i === currentIndex) {
-                  video.play().catch(e => console.log('Error al reproducir video:', e));
-                } else {
-                  video.pause();
-                }
-              }
-            });
-            
-            // Reiniciar el autoplay
-            resetAutoplay();
-          }
-          
-          // Función para ir al siguiente slide
-          function nextSlide() {
-            goToSlide(currentIndex + 1);
-          }
-          
-          // Función para ir al slide anterior
-          function prevSlide() {
-            goToSlide(currentIndex - 1);
-          }
-          
-          // Función para iniciar el autoplay
-          function startAutoplay() {
-            clearInterval(autoplayInterval);
-            autoplayInterval = setInterval(nextSlide, 6000); // Cambiar slide cada 6 segundos
-          }
-          
-          // Función para reiniciar el autoplay
-          function resetAutoplay() {
-            clearInterval(autoplayInterval);
-            startAutoplay();
-          }
-          
-          // Event listeners
-          if (nextButton) nextButton.addEventListener('click', nextSlide);
-          if (prevButton) prevButton.addEventListener('click', prevSlide);
-          
-          indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => goToSlide(index));
-          });
-          
-          window.addEventListener('resize', updateSlideWidth);
-          
-          // Iniciar el slider
-          updateSlideWidth();
-          startAutoplay();
-          
-          // Pausar autoplay cuando el usuario interactúa con el slider
-          const slider = document.getElementById('renders-slider');
-          if (slider) {
-            slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-            slider.addEventListener('mouseleave', startAutoplay);
-            
-            // Accesibilidad con teclado
-            slider.addEventListener('keydown', (e) => {
-              if (e.key === 'ArrowLeft') prevSlide();
-              if (e.key === 'ArrowRight') nextSlide();
-            });
-          }
-        }
-        
-        // Intentar inicializar el slider
-        initSlider();
-      });
-    </script>
   `;
 }
 
 // Exportar la función PromotionalBanner
 window.PromotionalBanner = PromotionalBanner;
+
+// Inicializar el slider cuando el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+  // Esta función se ejecutará después de que el componente se haya insertado en el DOM
+  initPromotionalSlider();
+});
+
+// También inicializar cuando la ventana esté completamente cargada
+window.addEventListener('load', function() {
+  initPromotionalSlider();
+});
+
+// Función para inicializar el slider
+function initPromotionalSlider() {
+  const track = document.getElementById('slider-track');
+  if (!track) return; // Salir si no se encuentra el elemento
+  
+  const slides = track.children;
+  const nextButton = document.getElementById('next-slide');
+  const prevButton = document.getElementById('prev-slide');
+  const indicators = document.querySelectorAll('#slider-indicators button');
+  
+  let currentIndex = 0;
+  let slideWidth = slides[0].getBoundingClientRect().width;
+  let autoplayInterval;
+  
+  // Función para actualizar el ancho de los slides cuando cambia el tamaño de la ventana
+  function updateSlideWidth() {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    goToSlide(currentIndex, false);
+  }
+  
+  // Función para ir a un slide específico
+  function goToSlide(index, animate = true) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    
+    currentIndex = index;
+    
+    // Aplicar la transformación con o sin animación
+    if (animate) {
+      track.style.transition = 'transform 500ms ease-out';
+    } else {
+      track.style.transition = 'none';
+    }
+    
+    track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
+    
+    // Restaurar la transición después de un breve retraso si se desactivó
+    if (!animate) {
+      setTimeout(() => {
+        track.style.transition = 'transform 500ms ease-out';
+      }, 50);
+    }
+    
+    // Actualizar indicadores
+    indicators.forEach((indicator, i) => {
+      if (i === currentIndex) {
+        indicator.classList.add('bg-white', 'indicator-active');
+        indicator.classList.remove('bg-white/30');
+      } else {
+        indicator.classList.remove('bg-white', 'indicator-active');
+        indicator.classList.add('bg-white/30');
+      }
+    });
+    
+    // Pausar y reproducir videos según el slide activo
+    Array.from(slides).forEach((slide, i) => {
+      const video = slide.querySelector('video');
+      if (video) {
+        if (i === currentIndex) {
+          video.play().catch(e => console.log('Error al reproducir video:', e));
+        } else {
+          video.pause();
+        }
+      }
+    });
+    
+    // Reiniciar el autoplay
+    resetAutoplay();
+  }
+  
+  // Función para ir al siguiente slide
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+  
+  // Función para ir al slide anterior
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+  
+  // Función para iniciar el autoplay
+  function startAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextSlide, 6000); // Cambiar slide cada 6 segundos
+  }
+  
+  // Función para reiniciar el autoplay
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+  
+  // Limpiar event listeners existentes para evitar duplicados
+  if (nextButton) {
+    const newNextButton = nextButton.cloneNode(true);
+    nextButton.parentNode.replaceChild(newNextButton, nextButton);
+    newNextButton.addEventListener('click', nextSlide);
+  }
+  
+  if (prevButton) {
+    const newPrevButton = prevButton.cloneNode(true);
+    prevButton.parentNode.replaceChild(newPrevButton, prevButton);
+    newPrevButton.addEventListener('click', prevSlide);
+  }
+  
+  indicators.forEach((indicator, index) => {
+    const newIndicator = indicator.cloneNode(true);
+    indicator.parentNode.replaceChild(newIndicator, indicator);
+    newIndicator.addEventListener('click', () => goToSlide(index));
+  });
+  
+  // Escuchar eventos personalizados
+  document.addEventListener('slider-next', nextSlide);
+  document.addEventListener('slider-prev', prevSlide);
+  
+  window.addEventListener('resize', updateSlideWidth);
+  
+  // Iniciar el slider
+  updateSlideWidth();
+  startAutoplay();
+  
+  // Pausar autoplay cuando el usuario interactúa con el slider
+  const slider = document.getElementById('renders-slider');
+  if (slider) {
+    slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    slider.addEventListener('mouseleave', startAutoplay);
+    
+    // Accesibilidad con teclado
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+    });
+  }
+  
+  console.log('Promotional slider initialized successfully');
+}
