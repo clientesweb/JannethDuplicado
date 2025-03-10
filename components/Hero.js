@@ -42,7 +42,7 @@ function Hero() {
                     <div class="lg:col-span-7 space-y-6">
                         <!-- Etiqueta superior -->
                         <div class="inline-block bg-primary/90 text-white px-4 py-1 rounded-r-full -ml-4 mb-2 shadow-md">
-                            <span class="text-sm font-bold tracking-wider uppercase">Bienes Raíces Premium</span>
+                            <span class="text-sm font-bold tracking-wider uppercase">Bienes Raíces</span>
                         </div>
                         
                         <!-- Título principal con diseño moderno -->
@@ -143,7 +143,7 @@ function Hero() {
                             <div class="mt-6 pt-4 border-t border-white/20 flex items-center justify-between">
                                 <div class="text-white/80 text-sm">
                                     <span class="block font-medium">Certificada por:</span>
-                                    <span class="text-primary font-bold">Asociación de Corredores de Bienes Raíces</span>
+                                    <span class="text-primary font-bold">Sociedades y afiliaciones internacionales</span>
                                 </div>
                                 <div class="bg-white/90 h-12 w-12 rounded-full flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" viewBox="0 0 20 20" fill="currentColor">
